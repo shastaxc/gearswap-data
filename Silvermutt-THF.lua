@@ -417,8 +417,8 @@ function init_gear_sets()
   -- Ranged weapon sets
   sets.RangedWeaponSet = {}
   sets.RangedWeaponSet['Archery'] = {
-    -- ranged="Ullr",
-    -- ammo="Eminent Arrow",
+    ranged="Ullr",
+    ammo="Eminent Arrow",
   }
   sets.RangedWeaponSet['Throwing'] = {
     ranged="Antitail +1",
@@ -581,7 +581,7 @@ function init_gear_sets()
     feet="Pillager's Poulaines +3",   -- 15, 52 [__/__,  99]
     neck="Pentalagus Charm",          --  2, __ [__/__, ___]
     ear1="Odr Earring",               -- __, 10 [__/__, ___]
-    ear2="Telos Earring",             -- __, 10 [__/__, ___]
+    ear2="Skulker's Earring +1",      -- __, 12 [__/__, ___]
     ring1="Regal Ring",               -- __, __ [__/__, ___]
     ring2="Ephramad's Ring",          -- __, 20 [__/__, ___]
     back=gear.THF_DW_Cape,            -- __, 20 [10/__, ___]
@@ -712,13 +712,13 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> [__/__, ___] __; ftp+
     ear1="Sherida Earring",             -- __, __, __, __ < 5, __, __> [__/__, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> [__/__, ___] __
     ring1="Gere Ring",                  -- __, __, 16, __ <__,  5, __> [__/__, ___] __
     ring2="Ilabrat Ring",               -- 10, __, 25, __ <__, __, __> [__/__, ___] __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> [__/__, ___] __
-    -- 210 AGI, 23 WSD, 308 Att, 31 TA Dmg <12 DA, 45 TA, 0 QA> [19 PDT/9 MDT, 399 M.Eva] 0 PDL
+    -- 210 AGI, 23 WSD, 308 Att, 31 TA Dmg <12 DA, 46 TA, 0 QA> [19 PDT/9 MDT, 399 M.Eva] 0 PDL
 
     -- ear2="Skulker's Earring +2",     -- 15, __, __, __ <__,  5, __> [__/__, ___] __
     -- back=gear.THF_WS3_Cape,          -- 30, __, 20, 20 <10, __, __> [10/__, ___] __
@@ -1061,13 +1061,13 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
     ear1="Dedition Earring",            -- __,  8,-10, __ <__, __, __> (__, __) [__/__, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> (__, __) [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> (__, __) [__/__, ___] __
     ring1="Moonlight Ring",             -- __,  5,  8, __ <__, __, __> (__, __) [ 5/ 5, ___] __
     ring2="Gere Ring",                  -- __, __, __, __ <__,  5, __> (__, __) [__/__, ___] __
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Chiner's Belt +1",           -- __, __, __,  5 <__,  2, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 0 DW, 62 STP, 281 Acc, 61 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
+    -- 0 DW, 62 STP, 281 Acc, 61 TA Dmg <3 DA, 43 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
 
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
     -- 0 DW, 70 STP, 301 Acc, 61 TA Dmg <3 DA, 44 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
@@ -1095,13 +1095,13 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
     ear1="Dedition Earring",            -- __,  8,-10, __ <__, __, __> (__, __) [__/__, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> (__, __) [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> (__, __) [__/__, ___] __
     ring1="Defending Ring",             -- __, __, __, __ <__, __, __> (__, __) [10/10, ___] __
     ring2="Gere Ring",                  -- __, __, __, __ <__,  5, __> (__, __) [__/__, ___] __
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 7 DW, 61 STP, 283 Acc, 56 TA Dmg <3 DA, 40 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
+    -- 7 DW, 61 STP, 283 Acc, 56 TA Dmg <3 DA, 41 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
     -- 7 DW, 69 STP, 303 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
@@ -1130,13 +1130,13 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
     ear1="Suppanomimi",                 --  5, __, __, __ <__, __, __> (__, __) [__/__, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> (__, __) [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> (__, __) [__/__, ___] __
     ring1="Defending Ring",             -- __, __, __, __ <__, __, __> (__, __) [10/10, ___] __
     ring2="Gere Ring",                  -- __, __, __, __ <__,  5, __> (__, __) [__/__, ___] __
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 12 DW, 53 STP, 293 Acc, 56 TA Dmg <3 DA, 40 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
+    -- 12 DW, 53 STP, 293 Acc, 56 TA Dmg <3 DA, 41 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
     -- 12 DW, 61 STP, 313 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
@@ -1266,13 +1266,13 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
     ear1="Odnowa Earring +1",           -- __, __, __, __ <__, __, __> (__, __) [ 3/ 5, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> (__, __) [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> (__, __) [__/__, ___] __
     ring1="Moonlight Ring",             -- __,  5,  8, __ <__, __, __> (__, __) [ 5/ 5, ___] __
     ring2="Gere Ring",                  -- __, __, __, __ <__,  5, __> (__, __) [__/__, ___] __
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Chiner's Belt +1",           -- __, __, __,  5 <__,  2, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 0 DW, 51 STP, 294 Acc, 61 TA Dmg <0 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
+    -- 0 DW, 51 STP, 294 Acc, 61 TA Dmg <0 DA, 39 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
 
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
     -- 0 DW, 59 STP, 314 Acc, 61 TA Dmg <0 DA, 40 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
@@ -1303,13 +1303,13 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
     ear1="Dedition Earring",            -- __,  8,-10, __ <__, __, __> (__, __) [__/__, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> (__, __) [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> (__, __) [__/__, ___] __
     ring1="Defending Ring",             -- __, __, __, __ <__, __, __> (__, __) [10/10, ___] __
     ring2="Gere Ring",                  -- __, __, __, __ <__,  5, __> (__, __) [__/__, ___] __
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 7 DW, 61 STP, 286 Acc, 56 TA Dmg <3 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
+    -- 7 DW, 61 STP, 286 Acc, 56 TA Dmg <3 DA, 37 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
     -- 7 DW, 69 STP, 306 Acc, 56 TA Dmg <3 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
@@ -1344,13 +1344,13 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
     ear1="Suppanomimi",                 --  5, __, __, __ <__, __, __> (__, __) [__/__, ___] __
-    ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> (__, __) [__/__, ___] __
+    ear2="Skulker's Earring +1",        -- __, __, __, __ <__,  4, __> (__, __) [__/__, ___] __
     ring1="Defending Ring",             -- __, __, __, __ <__, __, __> (__, __) [10/10, ___] __
     ring2="Gere Ring",                  -- __, __, __, __ <__,  5, __> (__, __) [__/__, ___] __
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 12 DW, 51 STP, 296 Acc, 56 TA Dmg <0 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
+    -- 12 DW, 51 STP, 296 Acc, 56 TA Dmg <0 DA, 37 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
     -- 12 DW, 59 STP, 316 Acc, 56 TA Dmg <0 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
