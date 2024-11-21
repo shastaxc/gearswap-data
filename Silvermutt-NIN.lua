@@ -340,25 +340,29 @@ function init_gear_sets()
   sets.WeaponSet['Heishi'] = {
     main="Heishi Shorinken",
     sub="Kunimitsu",
+    range="empty",
   }
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
     sub="Kunimitsu",
     -- sub="Hitaki",
+    range="empty",
   }
   sets.WeaponSet['Enmity'] = {
     -- main=gear.Fudo_Masamune_C,
     sub="Tsuru",
+    range="empty",
   }
   sets.WeaponSet['Aeolian'] = {
     main="Tauret",
     sub=gear.Malevolence_1,
+    range="empty",
   }
   sets.WeaponSet['Gokotai'] = {
     main="Gokotai",
     sub=gear.Malevolence_1,
-    -- range="Ullr",
-    ammo=empty,
+    range="Ullr",
+    ammo="empty",
   }
 
 
@@ -367,7 +371,7 @@ function init_gear_sets()
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.defense.PDT = {
-    range=empty,
+    range="empty",
     ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] ___, 11
     head=gear.Nyame_B_head,           -- [ 7/ 7, 123]  91, __
     body=gear.Nyame_B_body,           -- [ 9/ 9, 139] 102, __
@@ -461,7 +465,7 @@ function init_gear_sets()
   }
 
   sets.precast.Waltz = {
-    range=empty,
+    range="empty",
     ammo="Yamarang",
     body="Passion Jacket",
     legs="Dashing Subligar",
@@ -476,7 +480,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.FC = {
-    range=empty,
+    range="empty",
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head=gear.Herc_Refresh_head,      --  7 [__/__,  59]
     body=gear.Taeon_FC_body,          --  9 [__/__,  64]
@@ -511,7 +515,7 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
-    range=empty,
+    range="empty",
     ammo="Seething Bomblet +1",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -535,7 +539,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -561,7 +565,7 @@ function init_gear_sets()
   })
 
   sets.HybridWS = {
-    range=empty,
+    range="empty",
     ammo="Seething Bomblet +1",
     head="Mochizuki Hatsuburi +3",
     body=gear.Nyame_B_body,
@@ -600,7 +604,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Chi'].AttCappedMaxTP = set_combine(sets.HybridWS.AttCappedMaxTP, {})
 
   sets.precast.WS['Blade: Ei'] = {
-    range=empty,
+    range="empty",
     ammo="Seething Bomblet +1",
     head="Pixie Hairpin +1",
     body=gear.Nyame_B_body,
@@ -624,7 +628,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    range=empty,
+    range="empty",
     ammo="Ghastly Tathlum +1",
     head="Mochizuki Hatsuburi +3",
     body=gear.Nyame_B_body,
@@ -653,7 +657,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Yu'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].AttCappedMaxTP, {})
 
   sets.precast.WS['Blade: Hi'] = {
-    range=empty,
+    range="empty",
     ammo="Yetshila +1",
     head="Blistering Sallet +1",
     body="Hattori Ningi +2",
@@ -675,7 +679,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Hi'].MaxTP = set_combine(sets.precast.WS['Blade: Hi'], {})
   sets.precast.WS['Blade: Hi'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Yetshila +1",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -697,7 +701,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Hi'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Hi'].AttCapped, {})
   
   sets.precast.WS['Blade: Kamu'] = {
-    range=empty,
+    range="empty",
     ammo="Seething Bomblet +1",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -717,7 +721,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Kamu'].MaxTP = set_combine(sets.precast.WS['Blade: Kamu'], {})
   sets.precast.WS['Blade: Kamu'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -738,7 +742,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Kamu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Kamu'].AttCapped, {})
 
   sets.precast.WS['Blade: Ku'] = {
-    range=empty,
+    range="empty",
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -759,7 +763,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Ku'].MaxTP = set_combine(sets.precast.WS['Blade: Ku'], {})
   sets.precast.WS['Blade: Ku'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head="Blistering Sallet +1",
     body=gear.Nyame_B_body,
@@ -781,7 +785,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Ku'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ku'].AttCapped, {})
 
   sets.precast.WS['Blade: Metsu'] = {
-    range=empty,
+    range="empty",
     ammo="Coiste Bodhar",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -802,7 +806,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Metsu'].MaxTP = set_combine(sets.precast.WS['Blade: Metsu'], {})
   sets.precast.WS['Blade: Metsu'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -824,7 +828,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Metsu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Metsu'].AttCapped, {})
 
   sets.precast.WS['Blade: Shun'] = {
-    range=empty,
+    range="empty",
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_head,
@@ -849,7 +853,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS['Blade: Shun'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head="Ken. Jinpachi +1",
     body="Malignance Tabard",
@@ -875,7 +879,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Blade: Ten'] = {
-    range=empty,
+    range="empty",
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -900,7 +904,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS['Blade: Ten'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -926,7 +930,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Evisceration'] = {
-    range=empty,
+    range="empty",
     ammo="Yetshila +1",
     head="Blistering Sallet +1",
     body="Hattori Ningi +2",
@@ -946,7 +950,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
   sets.precast.WS['Evisceration'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Yetshila +1",
     head="Blistering Sallet +1",
     body="Ken. Samue +1",
@@ -967,7 +971,7 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {})
   
   sets.precast.WS['Savage Blade'] = {
-    range=empty,
+    range="empty",
     ammo="Seething Bomblet +1",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -992,7 +996,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS['Savage Blade'].AttCapped = {
-    range=empty,
+    range="empty",
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -1020,20 +1024,20 @@ function init_gear_sets()
 
   -- Used for "Proc" mode, when you typically don't want it to do a lot of damage. Focus acc.
   sets.precast.WS['Proc'] = {
-    range=empty,
+    range="empty",
     ammo="Yamarang",
     head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Malignance Tights",
     feet="Malignance Boots",
-    neck=empty,
-    ear1=empty,
-    ear2=empty,
-    ring1=empty,
-    ring2=empty,
-    back=empty,
-    waist=empty,
+    neck="empty",
+    ear1="empty",
+    ear2="empty",
+    ring1="empty",
+    ring2="empty",
+    back="empty",
+    waist="empty",
   }
 
 
@@ -1057,7 +1061,7 @@ function init_gear_sets()
 
   -- DT > FC > +Enmity > SIRD
   sets.midcast.Utsusemi = {
-    range=empty,
+    range="empty",
     ammo="Staunch Tathlum +1",        -- __, __, __, 11 [ 3/ 3, ___]
     head=gear.Herc_Refresh_head,      -- __,  7, __, __ [__/__,  59]
     body=gear.Taeon_FC_body,          -- __,  9, __, __ [__/__,  64]
@@ -1083,7 +1087,7 @@ function init_gear_sets()
 
   -- DT > +Enmity > FC > SIRD
   sets.midcast.Utsusemi.Yonin = {
-    range=empty,
+    range="empty",
     ammo="Sapience Orb",              -- __,  2,  2, __ [__/__, ___]
     head="Hattori Zukin +2",          -- __, __, __, __ [ 9/ 9, 109]
     body="Emet Harness +1",           -- __, __, 10, __ [ 6/__,  64]
@@ -1112,7 +1116,7 @@ function init_gear_sets()
   -- NIN99 with merits has 469 Ninjusu skill, so naturally capped on Ichi and Ni. San could use more Ninjutsu skill for dmg.
   -- Ninjutsu skill is capped for San at Master Level 30 so we do not need to use any in gear.
   sets.midcast.ElementalNinjutsu = {
-    range=empty,
+    range="empty",
     ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 (__, __) [__/__, ___]
     head="Mochizuki Hatsuburi +3",    -- 32, 82, __, 37, __ (__, __) [__/__,  63]
     body=gear.Nyame_B_body,           -- 42, 30, __, 40, __ ( 7, __) [ 9/ 9, 139]
@@ -1131,7 +1135,7 @@ function init_gear_sets()
     -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __, (15, __) [__/__, 103]; Ninjutsu dmg +18%
   }
   sets.midcast.ElementalNinjutsu.MB = {
-    range=empty,
+    range="empty",
     ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 (__, __) [__/__, ___]
     head="Mochizuki Hatsuburi +3",    -- 32, 82, __, 37, __ (__, __) [__/__,  63]
     body=gear.Nyame_B_body,           -- 42, 30, __, 40, __ ( 7, __) [ 9/ 9, 139]
@@ -1156,7 +1160,7 @@ function init_gear_sets()
   -- m.acc bonuses from ninjutsu skill).
   -- Aim for 700 m.acc from gear/weapons (including skill bonuses)
   sets.midcast.ElementalNinjutsu.Resistant = {
-    range=empty,
+    range="empty",
     ammo="Yamarang",                  -- __, __, __, 15, __ (__, __) [__/__,  15]
     head="Hachiya Hatsuburi +3",      -- 31, __, 17, 54, __ (__, __) [__/__,  63]
     body=gear.Nyame_B_body,           -- 42, 30, __, 40, __ ( 7, __) [ 9/ 9, 139]
@@ -1179,7 +1183,7 @@ function init_gear_sets()
   sets.midcast.ElementalNinjutsu.Resistant.MB = set_combine(sets.midcast.ElementalNinjutsu.Resistant, {})
 
   sets.midcast.EnfeeblingNinjutsu = {
-    range=empty,
+    range="empty",
     ammo="Yamarang",                  -- 15, __ [__/__,  15]
     head="Hachiya Hatsuburi +3",      -- 54, 17 [__/__,  63]
     body="Hattori Ningi +2",          -- 54, __ [12/12, 119]
@@ -1206,7 +1210,7 @@ function init_gear_sets()
   -- to about 50%. Lowering it further will just cause non-threatening attacks to wear off Migawari so I am
   -- choosing not to stack Ninjutsu skill in this set. Focusing Ninja Tool Expertise and defensive stats.
   sets.midcast.EnhancingNinjutsu = {
-    range=empty,
+    range="empty",
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
     head="Hattori Zukin +2",          -- __ [ 9/ 9, 109]
     body="Hattori Ningi +2",          -- __ [12/12, 119]
@@ -1243,7 +1247,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Tatenashi Haramaki +1",     -- __,  9,  65/__ <__,  5, __> [__/__,  59]  44, __
@@ -1282,7 +1286,7 @@ function init_gear_sets()
 
   -- Low DW (15 needed from gear)
   sets.engaged.LowDW = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1321,7 +1325,7 @@ function init_gear_sets()
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
@@ -1351,7 +1355,7 @@ function init_gear_sets()
 
   -- High DW (25 needed from gear)
   sets.engaged.HighDW = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1381,7 +1385,7 @@ function init_gear_sets()
 
   -- Super DW (32 needed from gear)
   sets.engaged.SuperDW = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
@@ -1411,7 +1415,7 @@ function init_gear_sets()
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1445,7 +1449,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged.HeavyDef = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1474,7 +1478,7 @@ function init_gear_sets()
 
   -- Low DW (15 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1503,7 +1507,7 @@ function init_gear_sets()
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW.HeavyDef = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1529,7 +1533,7 @@ function init_gear_sets()
 
   -- High DW (25 needed from gear)
   sets.engaged.HighDW.HeavyDef = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1559,7 +1563,7 @@ function init_gear_sets()
 
   -- Super DW (32 needed from gear)
   sets.engaged.SuperDW.HeavyDef = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1589,7 +1593,7 @@ function init_gear_sets()
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
-    range=empty,
+    range="empty",
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1672,6 +1676,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
+  equip(select_weapons())
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1726,6 +1732,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
+  equip(select_weapons())
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1739,6 +1747,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   if not spell.interrupted and spell.english == "Migawari: Ichi" then
     state.Buff.Migawari = true
   end
+  
+  equip(select_weapons())
 end
 
 -- Called after the default aftercast handling is complete.
@@ -1861,7 +1871,9 @@ function customize_idle_set(idleSet)
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
-  
+
+  idleSet = set_combine(idleSet, select_weapons())
+
   return idleSet
 end
 
@@ -1882,6 +1894,8 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  meleeSet = set_combine(meleeSet, select_weapons())
+
   return meleeSet
 end
 
@@ -1900,6 +1914,8 @@ function customize_defense_set(defenseSet)
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
+
+  defenseSet = set_combine(defenseSet, select_weapons())
 
   return defenseSet
 end
@@ -2013,7 +2029,8 @@ function select_weapons()
   end
 
   -- Equip appropriate ammo
-  local range_weapon_name = weapons_to_equip.ranged or weapons_to_equip.range
+  local range_weapon = weapons_to_equip.ranged or weapons_to_equip.range
+  local range_weapon_name = type(range_weapon) == 'table' and range_weapon.name or range_weapon
   if range_weapon_name and silibs.is_weapon(range_weapon_name) then
     weapons_to_equip.ammo = 'empty'
   end
@@ -2168,11 +2185,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 -- Select default macro book on initial load or subjob change.
