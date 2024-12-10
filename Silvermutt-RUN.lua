@@ -724,7 +724,7 @@ function init_gear_sets()
     head="Agwu's Cap",                              -- 35, __/__ [ 38]; R0
     body=gear.Nyame_B_body,                         -- 30,  9/ 9 [136]
     hands=gear.Carmine_D_hands,                     -- 42, __/__ [ 27]
-    legs="Agwu's Slops",                            -- 55,  8/ 8 [ 50]
+    legs="Agwu's Slops",                            -- 60, 10/10 [ 50]; R30
     feet=gear.Herc_MAB_feet,                        -- 57,  2/__ [  9]
     neck="Sibyl Scarf",                             -- 10, __/__ [___]
     ear1="Friomisi Earring",                        -- 10, __/__ [___]
@@ -733,12 +733,11 @@ function init_gear_sets()
     ring2="Shiva Ring +1",                          --  3, __/__ [___]
     back="Argochampsa Mantle",                      -- 12, __/__ [___]
     waist="Orpheus's Sash",
-    -- 268 MAB, 26 PDT / 16 MDT [415 HP]
+    -- 273 MAB, 28 PDT / 18 MDT [415 HP]
 
     -- head="Agwu's Cap",                           -- 60, __/__ [ 38]; R30
     -- body="Agwu's Robe",                          -- 60, __/__ [ 61]; R30
     -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
-    -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
     -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
     -- back=gear.RUN_Nuke_Cape,                     -- 10, 10/__ [___]
     -- 349 MAB, 27 PDT / 9 MDT [369 HP]
@@ -747,8 +746,8 @@ function init_gear_sets()
     ammo="Seething Bomblet +1",                     --  7, __/__ [___]
     head=gear.Nyame_B_head,                         -- 30,  7/ 7 [ 91]
     body=gear.Nyame_B_body,                         -- 30,  9/ 9 [136]
-    hands=gear.Carmine_D_hands,                     -- 42, __/__ [ 27]
-    legs={name=gear.Nyame_B_legs,priority=1},       -- 30,  8/ 8 [114]
+    hands="Agwu's Gages",                           -- 56, __/__ [ 38]; R21
+    legs="Agwu's Slops",                            -- 60, 10/10 [ 50]; R30
     feet=gear.Herc_MAB_feet,                        -- 57,  2/__ [  9]
     neck="Futhark Torque +2",                       -- __,  7/ 7 [ 60]
     ear1="Friomisi Earring",                        -- 10, __/__ [___]
@@ -757,10 +756,9 @@ function init_gear_sets()
     ring2="Moonlight Ring",                         -- __,  5/ 5 [110]
     back={name="Moonlight Cape",priority=1},        -- __,  6/ 6 [275]
     waist="Platinum Moogle Belt",                   -- __,  3/ 3 [___]; HP+10%
-    -- 206 MAB, 54 PDT / 44 MDT [957 HP]
+    -- 257 MAB, 56 PDT / 46 MDT [904 HP]
     
     -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
-    -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
     -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
     -- HP from belt                                               341
     -- 264 MAB, 54 PDT / 46 MDT [922/1263 HP]
@@ -813,7 +811,7 @@ function init_gear_sets()
     head="Runeist Bandeau +3",                            -- {14} __/__,  83 [109]
     body="Erilaz Surcoat +3",                             -- {13} __/__, 130 [143]
     hands=gear.Leyline_Gloves,                            -- { 8} __/__,  62 [ 25]
-    legs="Agwu's Slops",                                  -- { 7}  8/ 8, 134 [ 50]
+    legs="Agwu's Slops",                                  -- { 7} 10/10, 134 [ 50]; R30
     feet={name=gear.Carmine_D_feet.name,
       augments=gear.Carmine_D_feet.augments,priority=1},  -- { 8}  4/__,  80 [ 95]
     neck="Futhark Torque +2",                             -- {__}  7/ 7,  30 [ 60]
@@ -824,9 +822,6 @@ function init_gear_sets()
     back=gear.RUN_FC_Cape,                                -- {10} 10/__,  20 [ 80]
     waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
     -- HP from belt                                                           341
-    -- 64% Fast Cast, 47 PDT/27 MDT, 554 M.Eva [917/1258 HP]
-
-    -- legs="Agwu's Slops",                               -- { 7} 10/10, 134 [ 50]; R30
     -- 64% Fast Cast, 49 PDT/29 MDT, 554 M.Eva [917/1258 HP]
   }
 
