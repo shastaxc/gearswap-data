@@ -1066,16 +1066,17 @@ function init_gear_sets()
     feet="Heathen's Solleretes +3",         -- 22, 60, __, __ [__/__, 119]
     neck="Erra Pendant",                    -- __, 17, 10,  5 [__/__, ___]
     ear1="Malignance Earring",              --  8, 10, __, __ [__/__, ___]
-    ear2="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Heathen's Earring +1",            -- __, 12, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",              -- 16, 15, __, __ [__/__, ___]
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __, __ [10/__, ___]; Duration +10s
     waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
-    -- 205 INT, 352 M.Acc, 59 Dark skill, 5 Absorb Potency% [33 PDT/29 MDT, 451 M.Eva]
+    -- 205 INT, 364 M.Acc, 59 Dark skill, 5 Absorb Potency% [30 PDT/24 MDT, 451 M.Eva]
     
     -- hands="Heathen's Gauntlets +3",      -- 25, 62, __, __ [10/10,  82]; Enhances Absorb-TP
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30, __ [12/12, 119]
-    -- 215 INT, 372 M.Acc, 64 Dark skill, 5 Absorb Potency% [35 PDT/31 MDT, 471 M.Eva]
+    -- ear2="Heathen's Earring +2",         -- 15, 20, __, __ [__/__, ___]
+    -- 230 INT, 392 M.Acc, 64 Dark skill, 5 Absorb Potency% [32 PDT/26 MDT, 471 M.Eva]
   })
   sets.midcast['Absorb-Attri'] = set_combine(sets.midcast['Absorb-TP'], {})
 
@@ -1360,6 +1361,10 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
+  if spellMap == 'Absorb' and silibs.get_day_weather_multiplier('Dark', true, false) > 1 then
+    equip({waist='Hachirin-no-Obi'})
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
