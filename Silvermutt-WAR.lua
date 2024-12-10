@@ -140,6 +140,7 @@ __Keybind___Name______________Command_____________
 [ CTRL+1 ] Berserk        /ja "Berserk" <me>
 [ CTRL+2 ] Warcry         /ja "Warcry" <me>
 [ CTRL+3 ] Aggresso       /ja "Aggressor" <me>
+[ CTRL+4 ] Tomahawk       /ja "Tomahawk" <t>
 [ CTRL+9 ] MightySt       /ja "Mighty Strikes" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
 [ ALT+1 ]  Restrain       /ja "Restraint" <me>
@@ -475,8 +476,8 @@ function init_gear_sets()
     -- head="Agoge Mask +3", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
   }
   sets.precast.JA['Tomahawk'] = {
+    ammo="Throwing Tomahawk",
     feet="Agoge Calligae +3", -- Increase defense reduction based on merits; +1 is acceptable
-    -- ammo="Throwing Tomahawk",
   }
   sets.precast.JA['Retaliation'] = {
     feet="Boii Calligae +3", -- Increase retaliation damage
@@ -649,15 +650,15 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +2",    -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
-    ring1="Sroda Ring",                   -- 15, __, __, __,  3 (__, __) <__, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
     ring2="Niqmaddu Ring",                -- 10, __, __, __, __ (__, __) <__, __,  3> [__/__, ___]
-    back=gear.WAR_STR_Crit_Cape,          -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
+    back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 272 STR, 380 Attack, 279 Accuracy, 50 WSD, 3 PDL (12 Crit Rate, 19 Crit Dmg) <68 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 267 STR, 400 Attack, 299 Accuracy, 60 WSD, 10 PDL (2 Crit Rate, 19 Crit Dmg) <68 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 277 STR, 375 Attack, 299 Accuracy, 47 WSD, 3 PDL (20 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 272 STR, 395 Attack, 319 Accuracy, 57 WSD, 10 PDL (10 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"], {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
@@ -668,9 +669,9 @@ function init_gear_sets()
   })
   sets.precast.WS["Ukko's Fury"].AttCapped = {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head="Sakpata's Helm",                -- 33, 70, 55, __,  5 (__, __) < 5, __, __> [ 7/ 7, 123]
-    body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
-    hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 (__, __) < 6, __, __> [ 8/ 8, 112]
+    head=gear.Nyame_B_head,               -- 26, 65, 50, 11, __ (__, __) < 5, __, __> [ 7/ 7, 123]
+    body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs="Boii Cuisses +3",               -- 53, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Boii Calligae +3",              -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
     neck="Warrior's Bead Necklace +2",    -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
@@ -681,10 +682,10 @@ function init_gear_sets()
     back=gear.WAR_STR_Crit_Cape,          -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 273 STR, 423 Attack, 357 Accuracy, 3 WSD, 42 PDL (17 Crit Rate, 19 Crit Dmg) <72 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 262 STR, 408 Attack, 322 Accuracy, 38 WSD, 20 PDL (12 Crit Rate, 19 Crit Dmg) <70 DA, 2 TA, 3 QA> [43 PDT/33 MDT, 634 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 278 STR, 423 Attack, 378 Accuracy, 0 WSD, 42 PDL (25 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 267 STR, 408 Attack, 342 Accuracy, 35 WSD, 20 PDL (20 Crit Rate, 19 Crit Dmg) <79 DA, 2 TA, 3 QA> [43 PDT/33 MDT, 634 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
@@ -1125,7 +1126,7 @@ function init_gear_sets()
     head="Hjarrandi Helm",                -- [10/10,  53]  7 <__, __,  6> __, __
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
-    legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
+    legs="Boii Cuisses +3",               -- [__/__, 130] __ <__, __,  8> __,  8; DA dmg+11%
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
@@ -1135,7 +1136,7 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 103 DA> 4 Crit Rate, 25 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 504 MEVA] 48 STP <0 QA, 0 TA, 105 DA> 4 Crit Rate, 27 Haste; DA dmg+31%
 
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
