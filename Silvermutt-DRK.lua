@@ -415,7 +415,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                -- __ [ 3/ 3, ___]
     head={name="Ratri Sallet +1",priority=1}, -- __ [-8/-8, 101]; Used for HP balance
     body="Sakpata's Breastplate",             -- 10 [10/10, 139]; Resist status+15
-    hands="Heathen's Gauntlets +2",           --  4 [ 9/ 9,  72]
+    hands="Heathen's Gauntlets +3",           --  5 [10/10,  82]
     legs="Heathen's Flanchards +2",           --  7 [11/11, 109]; Realistically this will be move speed
     feet="Sakpata's Leggings",                --  7 [ 6/ 6, 150]
     neck="Loricate Torque +1",                -- __ [ 6/ 6, ___]
@@ -425,9 +425,8 @@ function init_gear_sets()
     ring2="Defending Ring",                   -- __ [10/10, ___]
     back=gear.DRK_FC_Cape,                    -- __ [10/__, ___]
     waist="Carrier's Sash",                   -- __ [__/__, ___]; Resists
-    -- 28 M.Def [62 PDT/52 MDT, 571 M.Eva]
+    -- 29 M.Def [63 PDT/53 MDT, 581 M.Eva]
 
-    -- hands="Heathen's Gauntlets +3",        --  5 [10/10,  82]
     -- legs="Heathen's Flanchards +3",        --  8 [12/12, 119]; Realistically this will be move speed
     -- 30 M.Def [64 PDT/54 MDT, 591 M.Eva]
   }
@@ -882,9 +881,9 @@ function init_gear_sets()
   sets.precast.WS['Armor Break'] = {
     ammo="Pemphredo Tathlum",             -- __,  8,  4 [__/__, ___]
     head="Heathen's Burgeonet +3",        -- 61, 61, 31 [__/__,  87]
-    body="Heathen's Cuirass +3",          -- 64, 64, 35 [13/13, 103]
+    body="Heathen's Cuirass +2",
     hands="Heathen's Gauntlets +3",       -- 62, 62, 25 [10/10,  82]
-    legs="Heathen's Flanchard +3",        -- 63, 63, 41 [12/12, 119]
+    legs="Heathen's Flanchard +2",
     feet="Sakpata's Leggings",            -- 55, 55, __ [ 6/ 6, 150]
     neck="Abyssal Beads +2",              -- 15, 15, __ [__/__, ___]
     ear1="Dignitary's Earring",           -- 10, 10, __ [__/__, ___]
@@ -893,6 +892,9 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",            -- __, 16, 16 [__/__, ___]
     back=gear.DRK_MAB_Cape,               -- __, 20, 30 [10/__, ___]
     waist="Eschan Stone",                 -- 15,  7, __ [__/__, ___]
+    
+    -- body="Heathen's Cuirass +3",       -- 64, 64, 35 [13/13, 103]
+    -- legs="Heathen's Flanchard +3",     -- 63, 63, 41 [12/12, 119]
     -- 364 Accuracy, 400 M.Acc, 182 INT [51 PDT/41 MDT, 541 M.Eva]
   }
   sets.precast.WS['Weapon Break'] = set_combine(sets.precast.WS['Armor Break'], {})
@@ -933,7 +935,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",         --  4,  8, __ [__/__, ___]
     head=gear.Carmine_D_head,         -- 26, 50, 11 [__/__,  53]
     body="Heathen's Cuirass +2",      -- 30, 54, __ [__/__,  93]
-    hands="Heathen's Gauntlets +2",   -- 20, 52, __ [ 9/ 9,  72]
+    hands="Heathen's Gauntlets +3",   -- 25, 62, __ [10/10,  82]
     legs="Heathen's Flanchard +2",    -- 36, 53, __ [11/11, 109]
     feet="Heathen's Sollerets +3",    -- 22, 60, __ [__/__, 119]
     neck="Erra Pendant",              -- __, 17, __ [__/__, ___]
@@ -943,10 +945,9 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- __, 11,  8 [__/__, ___]
     back=gear.DRK_MAB_Cape,           -- 30, 20, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __ [__/__, ___]
-    -- 192 INT, 369 M.Acc, 19 Enfeeb Skill [30 PDT/20 MDT, 446 M.Eva]
+    -- 197 INT, 379 M.Acc, 19 Enfeeb Skill [31 PDT/21 MDT, 456 M.Eva]
 
     -- body="Heathen's Cuirass +3",   -- 35, 64, __ [__/__, 103]
-    -- hands="Heathen's Gauntlets +3",-- 25, 62, __ [10/10,  82]
     -- legs="Heathen's Flanchard +3", -- 41, 63, __ [12/12, 119]
     -- 207 INT, 399 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 476 M.Eva]
   }
@@ -1033,7 +1034,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",               --  4,  8, __, __ [__/__, ___]
     head="Fallen's Burgeonet +3",           -- 22, 37, __, __ [__/__,  52]; Duration+50%
     body=gear.Carmine_C_body,               -- 38, 38, 16, __ [__/ 4,  64]
-    hands="Heathen's Gauntlets +2",         -- 20, 52, __, __ [ 9/ 9,  72]
+    hands="Heathen's Gauntlets +3",         -- 25, 62, __, __ [10/10,  82]
     legs="Heathen's Flanchard +2",          -- 36, 53, 25, __ [11/11, 109]
     feet="Ratri Sollerets +1",              -- __, 43, __, __ [-6/-6, 139]; Duration+25%
     neck="Erra Pendant",                    -- __, 17, 10,  5 [__/__, ___]
@@ -1043,9 +1044,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     back="Chuparrosa Mantle",               -- __, __, __, 10 [__/__, ___]; Duration+20s
     waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
-    -- 128 INT, 281 M.Acc, 59 Dark skill, 15 Absorb Potency% [17 PDT/23 MDT, 436 M.Eva]
+    -- 133 INT, 291 M.Acc, 59 Dark skill, 15 Absorb Potency% [18 PDT/24 MDT, 446 M.Eva]
     
-    -- hands="Heathen's Gauntlets +3",      -- 25, 62, __, __ [10/10,  82]
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30, __ [12/12, 119]
     -- 138 INT, 301 M.Acc, 64 Dark skill, 15 Absorb Potency% [19 PDT/25 MDT, 456 M.Eva]
   }
@@ -1061,7 +1061,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",               --  4,  8, __, __ [__/__, ___]
     head="Heathen's Burgeonet +3",          -- 31, 61, __, __ [__/__,  87]
     body=gear.Carmine_C_body,               -- 38, 38, 16, __ [__/ 4,  64]
-    hands="Heathen's Gauntlets +2",         -- 20, 52, __, __ [ 9/ 9,  72]; Enhances Absorb-TP
+    hands="Heathen's Gauntlets +3",         -- 25, 62, __, __ [10/10,  82]; Enhances Absorb-TP
     legs="Heathen's Flanchard +2",          -- 36, 53, 25, __ [11/11, 109]
     feet="Heathen's Solleretes +3",         -- 22, 60, __, __ [__/__, 119]
     neck="Erra Pendant",                    -- __, 17, 10,  5 [__/__, ___]
@@ -1071,9 +1071,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __, __ [10/__, ___]; Duration +10s
     waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
-    -- 205 INT, 364 M.Acc, 59 Dark skill, 5 Absorb Potency% [30 PDT/24 MDT, 451 M.Eva]
+    -- 210 INT, 374 M.Acc, 59 Dark skill, 5 Absorb Potency% [31 PDT/25 MDT, 461 M.Eva]
     
-    -- hands="Heathen's Gauntlets +3",      -- 25, 62, __, __ [10/10,  82]; Enhances Absorb-TP
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30, __ [12/12, 119]
     -- ear2="Heathen's Earring +2",         -- 15, 20, __, __ [__/__, ___]
     -- 230 INT, 392 M.Acc, 64 Dark skill, 5 Absorb Potency% [32 PDT/26 MDT, 471 M.Eva]
@@ -1157,7 +1156,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",
     -- head="empty",
     -- body="Crepuscular Cloak",
-    hands="Heathen's Gauntlets +2",
+    hands="Heathen's Gauntlets +3",
     legs="Heathen's Flanchard +2",
     feet="Heathen's Sollerets +3",
     neck="Erra Pendant",
@@ -1168,7 +1167,6 @@ function init_gear_sets()
     back=gear.DRK_MAB_Cape,
     waist="Eschan Stone",
     
-    -- hands="Heathen's Gauntlets +3",
     -- legs="Heathen's Flanchard +3",
   })
 
