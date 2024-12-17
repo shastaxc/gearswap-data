@@ -306,13 +306,6 @@ function init_gear_sets()
   --     Defense
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  sets.HeavyDef = {
-    ear2="Odnowa Earring +1",     --  3/ 5, ___
-    ring1="Gelatinous Ring +1",   --  7/__, ___
-    ring2="Defending Ring",       -- 10/10, ___
-    -- 10 PDT from JSE cape
-  } -- 30 PDT/15 MDT, 0 MEVA
-
   -- Overcapped DT to account for regain gear swap
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",    -- [ 3/ 3, ___] {__/__}; status resist
