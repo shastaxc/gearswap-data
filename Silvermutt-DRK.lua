@@ -1246,20 +1246,20 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef = set_combine(sets.engaged.LowDW.HeavyDef, {})
 
   sets.engaged.SubtleBlow = {
-    ammo="Seething Bomblet +1",           -- __, 13 <__, __, __> (__, __) [__/__, ___]  5, __(__)
+    ammo="Coiste Bodhar",                 --  3, __ < 3, __, __> (__, __) [__/__, ___] __, __(__)
     head="Sakpata's Helm",                -- __, 55 < 5, __, __> (__, __) [ 7/ 7, 123]  4, __(__)
     body="Dagon Breastplate",             -- __, 45 <__,  5, __> ( 4, __) [__/__,  86]  1, __(10)
     hands="Sakpata's Gauntlets",          --  8, 55 < 6, __, __> (__, __) [ 8/ 8, 112]  4,  8(__)
-    legs="Sakpata's Cuisses",             -- __, 55 < 7, __, __> (__, __) [ 9/ 9, 150]  4, __(__)
+    legs="Volte Tights",                  --  8, 38 <__, __, __> (__, __) [__/__, 107]  9,  8(__)
     feet="Sakpata's Leggings",            -- __, 55 < 4, __, __> (__, __) [ 6/ 6, 150]  2, 15(__)
     neck="Loricate Torque +1",            -- __, __ <__, __, __> (__, __) [ 6/ 6, ___] __, __(__)
     ear1="Telos Earring",                 --  5, 10 < 1, __, __> (__, __) [__/__, ___] __, __(__)
-    ear2="Dedition Earring",              --  8,-10 < 1, __, __> (__, __) [__/__, ___] __, __(__)
+    ear2="Brutal Earring",                --  1, __ < 5, __, __> (__, __) [__/__, ___] __, __(__)
     ring1="Chirich Ring +1",              --  6, 10 <__, __, __> (__, __) [__/__, ___] __, 10(__)
-    ring2="Niqmaddu Ring",                -- __, __ <__, __, __> (__, __) [__/__, ___] __, __( 5)
+    ring2="Chirich Ring +1",              --  6, 10 <__, __, __> (__, __) [__/__, ___] __, 10(__)
     back=gear.DRK_STP_Cape,               -- 10, 20 <__, __, __> (__, __) [10/__, ___] __, __(__)
-    waist="Peiste Belt +1",               -- __, __ <__, __, __> (__, __) [__/__, ___] __, 10(__)
-    -- 37 STP, 308 Acc <24 DA, 5 TA, 0 QA> (4 Crit Rate, 0 Crit Dmg) [46 PDT/36 MDT, 621 MEVA] 20 Haste, 43(15) Subtle Blow
+    waist="Ioskeha Belt +1",              -- __, 17 < 9, __, __> (__, __) [__/__, ___]  8, __(__)
+    -- 47 STP, 315 Acc <33 DA, 5 TA, 0 QA> (4 Crit Rate, 0 Crit Dmg) [37 PDT/27 MDT, 578 MEVA] 28 Haste, 51(10) Subtle Blow
   }
   -- TODO
   sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {
