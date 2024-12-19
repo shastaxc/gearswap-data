@@ -356,7 +356,7 @@ function job_setup()
       ['^numpad-'] = 'input /ja "Souleater" <me>',
     },
     ['SAM'] = {
-      ['^numlock'] = 'input /ja "Thrd Eye" <me>',
+      ['^numlock'] = 'input /ja "Third Eye" <me>',
       ['^numpad/'] = 'input /ja "Meditate" <me>',
       ['^numpad*'] = 'input /ja "Sekkanoki" <me>',
       ['^numpad-'] = 'input /ja "Hasso" <me>',
