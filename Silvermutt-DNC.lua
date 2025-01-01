@@ -407,7 +407,7 @@ function init_gear_sets()
   sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Twashtar"}
   sets.WeaponSet['Healing'] = {main="Terpsichore", sub="Enchufla"}
   sets.WeaponSet['SubtleBlow'] = {
-    -- main=gear.Setan_Kober_B,
+    main=gear.Setan_Kober_B,
     sub="Twashtar"
   }
   sets.WeaponSet['H2H'] = {main="Karambit", sub="empty"}
