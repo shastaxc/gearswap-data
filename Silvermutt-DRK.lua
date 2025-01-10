@@ -203,7 +203,7 @@ function job_setup()
 
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger','Sword','Club','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Caladbolg', 'Naegling', 'Lycurgos', 'Club', 'DaggerAcc', 'Dagger'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Lycurgos', 'Anguta', 'Caladbolg', 'Naegling', 'Club', 'DaggerAcc', 'Dagger'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Foenaria', 'Apocalypse', 'Caladbolg', 'Naegling', 'Club', 'Dagger'}
 
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
@@ -241,7 +241,7 @@ function job_setup()
       ['^pageup'] = 'gs c toyweapon cycle',
       ['^pagedown'] = 'gs c toyweapon cycleback',
       ['!pagedown'] = 'gs c toyweapon reset',
-      ['^q'] = 'input /ja "Weapon Bash" <t>',
+      ['^q'] = 'input /ja "Weapon Bash" <stnpc>',
       ['!q'] = 'input /ja "Nether Void" <me>',
       ['!w'] = 'input /ja "Dark Seal" <me>',
       ['!z'] = 'input /ja "Arcane Circle" <me>',
@@ -1800,11 +1800,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck="empty" }) end
-  if locked_ear1 then equip({ ear1="empty" }) end
-  if locked_ear2 then equip({ ear2="empty" }) end
-  if locked_ring1 then equip({ ring1="empty" }) end
-  if locked_ring2 then equip({ ring2="empty" }) end
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
 end)
 
 -- Select default macro book on initial load or subjob change.

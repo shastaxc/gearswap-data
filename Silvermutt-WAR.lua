@@ -375,11 +375,11 @@ function init_gear_sets()
     sub=gear.Malevolence_2,
   }
   sets.WeaponSet['Phys Axe'] = {
-    main="Dolichenus",
+    main="Ikenga's Axe",
     sub="Blurred Shield +1",
   }
   sets.WeaponSet['Phys Axe'].DW = {
-    main="Dolichenus",
+    main="Ikenga's Axe",
     sub="Sangarius +1",
   }
   sets.WeaponSet['Great Sword'] = {
@@ -1804,11 +1804,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck="empty" }) end
-  if locked_ear1 then equip({ ear1="empty" }) end
-  if locked_ear2 then equip({ ear2="empty" }) end
-  if locked_ring1 then equip({ ring1="empty" }) end
-  if locked_ring2 then equip({ ring2="empty" }) end
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
 end)
 
 -- Select default macro book on initial load or subjob change.
