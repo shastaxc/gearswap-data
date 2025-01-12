@@ -284,8 +284,8 @@ function job_setup()
   gambit_duration = 92
 
   expended_runes={} -- Do not modify
-  rayke_target=nil -- Do not modify
-  gambit_target=nil -- Do not modify
+  rayke_tracker={} -- Do not modify
+  gambit_tracker={} -- Do not modify
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
@@ -1707,11 +1707,12 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   if spell.name == 'Rayke' then
     if spell.interrupted then
-      add_to_chat(1, 'Rayke interrupted')
+      add_to_chat(123, 'Rayke interrupted!')
       expended_runes = {}
     else
-      -- Record Rayke target
-      rayke_target = spell.target
+      -- Add data to tracker table indexed by target ID
+      local tracker_data = {coroutine_key=math.random(),target=spell.target}
+      rayke_tracker[spell.target.id] = tracker_data
 
       -- Print chat message
       local element_potencies = get_element_potencies()
@@ -1730,16 +1731,17 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
       send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
       send_command('@input '..chat_mode..' [Rayke] Resist Down '..el_msg..' '..string.char(129, 168)..' <t>;')
-      coroutine.schedule(display_rayke_worn, rayke_duration)
+      display_rayke_worn:schedule(rayke_duration, tracker_data)
       expended_runes = {} -- Reset tracking of expended runes
     end
   elseif spell.name == 'Gambit' then
     if spell.interrupted then
       expended_runes = {}
-      add_to_chat(1, 'Gambit interrupted')
+      add_to_chat(123, 'Gambit interrupted!')
     else
-      -- Record Rayke target
-      gambit_target = spell.target
+      -- Add data to tracker table indexed by target ID
+      local tracker_data = {coroutine_key=math.random(),target=spell.target}
+      gambit_tracker[spell.target.id] = tracker_data
 
       -- Print chat message
       local element_potencies = get_element_potencies()
@@ -1758,7 +1760,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
       send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
       send_command('@input '..chat_mode..' [Gambit] M.Def Down '..el_msg..' '..string.char(129,168)..' <t>;')
-      coroutine.schedule(display_gambit_worn, gambit_duration)
+      display_gambit_worn:schedule(gambit_duration, tracker_data)
       expended_runes = {} -- Reset tracking of expended runes
     end
   end
@@ -2119,53 +2121,78 @@ function get_element_potencies()
   return element_potencies;
 end
 
-function display_rayke_worn()
+function display_rayke_worn(tracker_data, --[[optional]]force_execute)
+  -- Target info is required at minimum
+  if not tracker_data or not tracker_data.target then
+    return
+  end
+
+  -- If force_execute, then skip all checks and execute this function
+  if not force_execute then
+    -- Check if data is still being tracked, if not ignore
+    local lookup = rayke_tracker[tracker_data.target.id]
+    if not lookup then
+      return
+    end
+
+    -- Prevent displaying message if a new coroutine has been created for this target before the
+    -- first goes off, such as when you reapply Rayke before the first wears off (i.e. COR resets Rayke)
+    if tracker_data.coroutine_key ~= lookup.coroutine_key then
+      return
+    end
+  end
+
   local chat_mode = '/p'
   if windower.ffxi.get_party().party1_count == 1 then
     chat_mode = '/echo'
   end
 
+  local target_name = tracker_data.target.name
   -- Ensure execution only once by checking for saved target data
-  if rayke_target ~= nil then
-    send_command('@input '..chat_mode..' [Rayke] Just wore off!;')
-    -- If timer still exists, clear it
-    send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
+  send_command('@input '..chat_mode..' [Rayke] Just wore off!;')
+  -- If timer still exists, clear it
+  send_command('@timers d "Rayke ['..target_name..']"') -- Requires Timers plugin
 
-    rayke_target = nil -- Reset target
-  end
+  -- Clear tracker for this target after execution
+  rayke_tracker[tracker_data.target.id] = nil
 end
 
-function display_gambit_worn()
+function display_gambit_worn(tracker_data, --[[optional]]force_execute)
+  -- Target info is required at minimum
+  if not tracker_data or not tracker_data.target then
+    return
+  end
+
+  -- If force_execute, then skip all checks and execute this function
+  if not force_execute then
+    -- Check if data is still being tracked, if not ignore
+    local lookup = gambit_tracker[tracker_data.target.id]
+    if not lookup then
+      return
+    end
+
+    -- Prevent displaying message if a new coroutine has been created for this target before the
+    -- first goes off, such as when you reapply Gambit before the first wears off (i.e. COR resets Gambit)
+    if tracker_data.coroutine_key ~= lookup.coroutine_key then
+      return
+    end
+  end
+
   local chat_mode = '/p'
   if windower.ffxi.get_party().party1_count == 1 then
     chat_mode = '/echo'
   end
 
+  local target_name = tracker_data.target.name
   -- Ensure execution only once by checking for saved target data
-  if gambit_target ~= nil then
-    send_command('@input '..chat_mode..' [Gambit] Just wore off!;')
-    -- If timer still exists, clear it
-    send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
+  send_command('@input '..chat_mode..' [Gambit] Just wore off!;')
+  -- If timer still exists, clear it
+  send_command('@timers d "Gambit ['..target_name..']"') -- Requires Timers plugin
 
-    gambit_target = nil -- Reset target
-  end
+  -- Clear tracker for this target after execution
+  gambit_tracker[tracker_data.target.id] = nil
 end
 
-function display_rayke_gambit_worn()
-  local chat_mode = '/p'
-  if windower.ffxi.get_party().party1_count == 1 then
-    chat_mode = '/echo'
-  end
-
-  send_command('@input '..chat_mode..' [Rayke & Gambit] Just wore off!;')
-  -- If timer still exists, clear it
-  send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
-  -- If timer still exists, clear it
-  send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
-
-  rayke_target = nil -- Reset target
-  gambit_target = nil -- Reset target
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
@@ -2277,15 +2304,19 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
     local message_id = data:unpack('H',0x19)%2^15 -- Cut off the most significant bit
     if message_id == 6 then
       local defeated_mob_id = data:unpack('I',0x09)
-      if (rayke_target ~= nil and defeated_mob_id == rayke_target.id) and (gambit_target ~= nil and defeated_mob_id == gambit_target.id) then
-        -- Display message that Rayke and Gambit have worn off due to mob death (if applicable)
-        display_rayke_gambit_worn()
-      elseif rayke_target ~= nil and defeated_mob_id == rayke_target.id then
-        -- Display message that Rayke has worn off (because Rayked mob was killed)
-        display_rayke_worn()
-      elseif gambit_target ~= nil and defeated_mob_id == gambit_target.id then
-        -- Display message that Gambit has worn off (because Gambited mob was killed)
-        display_gambit_worn()
+      local rayke_data = rayke_tracker[defeated_mob_id]
+      local gambit_data = gambit_tracker[defeated_mob_id]
+      if rayke_data then
+        -- If timer still exists, clear it
+        send_command('@timers d "Rayke ['..rayke_data.target.name..']"') -- Requires Timers plugin
+        -- Clear tracker for this target
+        rayke_tracker[defeated_mob_id] = nil
+      end
+      if gambit_data then
+        -- If timer still exists, clear it
+        send_command('@timers d "Gambit ['..gambit_data.target.name..']"') -- Requires Timers plugin
+        -- Clear tracker for this target
+        gambit_tracker[defeated_mob_id] = nil
       end
     end
   end
