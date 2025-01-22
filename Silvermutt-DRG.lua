@@ -931,7 +931,7 @@ function init_gear_sets()
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
-    back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__ __, __> [10/__, ___] {__/__}
+    back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__, __, __> [10/__, ___] {__/__}
     waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 26 Haste, 63 STP, 375 Att, 308 Acc, 23 Crit Rate <20 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
   })
