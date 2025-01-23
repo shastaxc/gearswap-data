@@ -189,26 +189,34 @@ function job_setup()
   -- This map will be used by SilverLibs to determine which ammo to use
   -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
   -- Accuracy: Used in high accuracy situations.
-  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Physical_Weaponskill_Ranged: Used for ranged physical weaponskills.
   -- Magic_Damage: Used when you are dealing magic damage.
+  -- Physical_Weaponskill_Melee: Used for melee physical weaponskills.
+  -- Magical_Weaponskill_Melee: Used for melee magical weaponskills.
   silibs.enable_handle_ammo_swaps({
     Bow = {
       Default = "Artemis's Arrow", -- Chrono Arrow is better
       Accuracy = "Artemis's Arrow", -- Yoichi's Arrow is better
-      Physical_Weaponskill = "Artemis's Arrow", -- Chrono Arrow is better
+      Physical_Weaponskill_Ranged = "Artemis's Arrow", -- Chrono Arrow is better
       Magic_Damage = "Artemis's Arrow", -- Chrono Arrow is better
+      Physical_Weaponskill_Melee = "Hauksbok Arrow", -- Does not get consumed
+      Magical_Weaponskill_Melee = "Hauksbok Arrow", -- Does not get consumed
     },
     Crossbow = {
       Default = "Quelling Bolt",
       Accuracy = "Quelling Bolt",
-      Physical_Weaponskill = "Quelling Bolt",
+      Physical_Weaponskill_Ranged = "Quelling Bolt",
       Magic_Damage = "Quelling Bolt",
+      Physical_Weaponskill_Melee = "Quelling Bolt", -- Does not get consumed
+      Magical_Weaponskill_Melee = "Quelling Bolt", -- Does not get consumed
     },
     Gun_or_Cannon = {
       Default = "Chrono Bullet",
       Accuracy = "Devastating Bullet", -- Eradicating Bullet is better
-      Physical_Weaponskill = "Chrono Bullet",
+      Physical_Weaponskill_Ranged = "Chrono Bullet",
       Magic_Damage = "Devastating Bullet",
+      Physical_Weaponskill_Melee = "Hauksbok Bullet", -- Does not get consumed
+      Magical_Weaponskill_Melee = "Hauksbok Bullet", -- Does not get consumed
     }
   })
 

@@ -47,18 +47,22 @@ function job_setup()
   -- This map will be used by SilverLibs to determine which ammo to use
   -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
   -- Accuracy: Used in high accuracy situations.
-  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Physical_Weaponskill_Ranged: Used for ranged physical weaponskills.
   -- Magic_Damage: Used when you are dealing magic damage.
   -- Magic_Accuracy: Used for Light Shot and Dark Shot.
   -- Quick_Draw: Used when performing Quick Draws (not Light or Dark). This ammo is never consumed.
+  -- Physical_Weaponskill_Melee: Used for melee physical weaponskills.
+  -- Magical_Weaponskill_Melee: Used for melee magical weaponskills.
   silibs.enable_handle_ammo_swaps({
     Gun_or_Cannon = {
       Default = "Chrono Bullet",
       Accuracy = "Chrono Bullet",
-      Physical_Weaponskill = "Chrono Bullet",
+      Physical_Weaponskill_Ranged = "Chrono Bullet",
       Magic_Damage = "Chrono Bullet",
       Magic_Accuracy = "Chrono Bullet",
       Quick_Draw = "Hauksbok Bullet", -- Does not get consumed
+      Physical_Weaponskill_Melee = "Hauksbok Bullet", -- Does not get consumed
+      Magical_Weaponskill_Melee = "Hauksbok Bullet", -- Does not get consumed
     }
   })
 

@@ -221,13 +221,15 @@ function job_setup()
   -- This map will be used by SilverLibs to determine which ammo to use
   -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
   -- Accuracy: Used in high accuracy situations.
-  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Physical_Weaponskill_Ranged: Used for ranged physical weaponskills.
   -- Magic_Damage: Used when you are dealing magic damage.
+  -- Physical_Weaponskill_Melee: Used for melee physical weaponskills.
+  -- Magical_Weaponskill_Melee: Used for melee magical weaponskills.
   silibs.enable_handle_ammo_swaps({
     Bow = {
       Default = "Eminent Arrow", -- Beryllium Arrow is better
       Accuracy = "Eminent Arrow", -- Beryllium Arrow is better
-      Physical_Weaponskill = "Eminent Arrow", -- Beryllium Arrow is better
+      Physical_Weaponskill_Ranged = "Eminent Arrow", -- Beryllium Arrow is better
       Magic_Damage = "Eminent Arrow", -- Beryllium Arrow is better
     },
   })
