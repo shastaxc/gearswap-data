@@ -25,6 +25,7 @@ Modes
 * AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
   intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
   from BRD, COR, GEO, etc.
+* High Enmity Mode: When on, equips high enmity variant gear sets for certain actions.
 
 Weapons
 * Use keybinds to cycle weapons.
@@ -76,6 +77,7 @@ Modes:
   [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]             Toggle Capacity Points Mode
   [ CTRL+F8 ]           Toggle Attack Capped mode
+  [ ALT+F8 ]            Toggle High Enmity mode
 
 Weapons:
   [ CTRL+Insert ]       Cycle Weapon Sets
@@ -205,6 +207,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger','Sword','Club','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Lycurgos', 'Anguta', 'Caladbolg', 'Naegling', 'Club', 'DaggerAcc', 'Dagger'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Foenaria', 'Apocalypse', 'Caladbolg', 'Naegling', 'Club', 'Dagger'}
+  state.HighEnmityMode = M(false, 'High Enmity Mode')
 
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
@@ -235,6 +238,7 @@ function job_setup()
       ['^`'] = 'gs c cycle treasuremode',
       ['@c'] = 'gs c toggle CP',
       ['^f8'] = 'gs c toggle AttCapped',
+      ['!f8'] = 'gs c toggle HighEnmityMode',
       ['^insert'] = 'gs c weaponset cycle',
       ['^delete'] = 'gs c weaponset cycleback',
       ['!delete'] = 'gs c weaponset reset',
@@ -489,6 +493,10 @@ function init_gear_sets()
     hands="Ignominy Gauntlets +2", -- Increase damage, add Chainbound effect
     -- hands="Ignominy Gauntlets +3", -- Increase damage, add Chainbound effect
   }
+  sets.precast.JA['Weapon Bash'].Enmity = set_combine(sets.Enmity, {
+    hands="Ignominy Gauntlets +2", -- Increase damage, add Chainbound effect
+    -- hands="Ignominy Gauntlets +3", -- Increase damage, add Chainbound effect
+  })
   sets.precast.JA['Souleater'] = {
     head="Ignominy Burgeonet +1", -- Increase HP consumption and attack boost
     -- head="Ignominy Burgeonet +3", -- Increase HP consumption and attack boost
@@ -1119,6 +1127,7 @@ function init_gear_sets()
     waist="Null Belt",                      -- __, 30, __ [__/__,  30]
     -- 214 INT, 366 M.Acc, 82 Dark skill [22 PDT/16 MDT, 448 M.Eva]
   }
+  sets.midcast.Stun.Enmity = set_combine(sets.Enmity, {})
 
   sets.midcast['Elemental Magic'] = {
     ammo="Pemphredo Tathlum",               --  4,  8,  4, __ [__/__, ___]
@@ -1316,6 +1325,14 @@ function job_precast(spell, action, spellMap, eventArgs)
       (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
     send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
   end
+
+  if spell.english == 'Weapon Bash'
+    and sets.precast.JA['Weapon Bash'].Enmity
+    and state.HighEnmityMode.value
+  then
+    equip(sets.precast.JA['Weapon Bash'].Enmity)
+    eventArgs.handled = true
+  end
 end
 
 -- Run after the general precast() is done.
@@ -1340,6 +1357,14 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  if spell.english == 'Stun'
+    and sets.midcast.Stun.Enmity
+    and state.HighEnmityMode.value
+  then
+    equip(sets.midcast.Stun.Enmity)
+    eventArgs.handled = true
+  end
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
