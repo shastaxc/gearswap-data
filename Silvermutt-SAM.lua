@@ -282,19 +282,24 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
-    ammo="Sapience Orb",
-    head="Loess Barbuta +1",
-    body="Emet Harness +1",
-    hands="Kurys Gloves",
-    neck="Unmoving Collar +1",
-    ear1="Cryptic Earring",
-    ear2="Trux Earring",
-    ring1="Supershear Ring",
-    ring2="Eihwaz Ring",
-    -- legs=gear.Valorous_Enmity_legs,
-    -- feet=gear.Valorous_Enmity_feet,
-    -- back=gear.SAM_Enmity_Cape,
-    -- waist="Trance Belt",
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Loess Barbuta +1",          -- 24 [10/10, ___]
+    body="Emet Harness +1",           -- 10 [ 6/__,  64]
+    hands="Kurys Gloves",             --  9 [ 2/ 2,  57]
+    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150]
+    neck="Unmoving Collar +1",        -- 10 [__/__, ___]
+    ear1="Trux Earring",              --  5 [__/__, ___]
+    ear2="Cryptic Earring",           --  4 [__/__, ___]
+    ring1="Moonlight Ring",           -- __ [ 5/ 5, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back="Reiki Cloak",               --  6 [__/ 8, ___]
+    waist="Platinum Moogle Belt",     -- __ [ 3/ 3,  15]
+    -- 70 Enmity [51 PDT/53 MDT, 436 M.Eva]
+
+    -- legs=gear.Valorous_Enmity_legs,--  8 [ 2/__,  80]
+    -- feet=gear.Valorous_Enmity_feet,--  8 [__/ 2,  80]
+    -- 86 Enmity [38 PDT/40 MDT, 296 M.Eva]
   }
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎

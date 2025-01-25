@@ -336,19 +336,25 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
-    ammo="Sapience Orb",
-    head="Halitus Helm",
-    body="Emet Harness +1",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Loricate Torque +1",
-    ear1="Friomisi Earring",
-    ear2="Cryptic Earring",
-    ring1="Moonlight Ring",
-    ring2="Defending Ring",
-    -- back=???
-    -- waist=???
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Loess Barbuta +1",          -- 24 [10/10, ___]
+    body="Emet Harness +1",           -- 10 [ 6/__,  64]
+    hands="Sakpata's Gauntlets",      -- __ [ 8/ 8, 112]
+    legs="Sakpata's Cuisses",         -- __ [ 9/ 9, 150]
+    feet="Sakpata's Leggings",        -- __ [ 6/ 6, 150]
+    neck="Unmoving Collar +1",        -- 10 [__/__, ___]
+    ear1="Trux Earring",              --  5 [__/__, ___]
+    ear2="Cryptic Earring",           --  4 [__/__, ___]
+    ring1="Moonlight Ring",           -- __ [ 5/ 5, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back="Reiki Cloak",               --  6 [__/ 8, ___]
+    waist="Platinum Moogle Belt",     -- __ [ 3/ 3,  15]
+    -- 61 Enmity [57 PDT/59 MDT, 491 M.Eva]
+
+    -- body="Obviation Cuirass +1",   -- 13 [ 8/__, 129]
+    -- hands=gear.Yorium_Enmity_hands,-- 14 [ 5/ 3,  56]
+    -- feet=gear.Yorium_Enmity_feet,  -- 15 [ 3/ 3,  69]
+    -- 93 Enmity [53 PDT/51 MDT, 419 M.Eva]
   }
 
 
@@ -424,8 +430,8 @@ function init_gear_sets()
     ring1="Moonlight Ring",                   -- __ [ 5/ 5, ___]
     ring2="Defending Ring",                   -- __ [10/10, ___]
     back=gear.DRK_FC_Cape,                    -- __ [10/__, ___]
-    waist="Carrier's Sash",                   -- __ [__/__, ___]; Resists
-    -- 30 M.Def [64 PDT/54 MDT, 591 M.Eva]
+    waist="Null Belt",                        --  3 [__/__,  30]
+    -- 33 M.Def [64 PDT/54 MDT, 621 M.Eva]
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
@@ -438,8 +444,9 @@ function init_gear_sets()
     head={name="Ratri Sallet +1", priority=1}, -- 5
   }
   sets.latent_regen = {
-    body="Sacro Breastplate", --13
-    ear1="Infused Earring",
+    body="Sacro Breastplate", -- 13
+    ear1="Infused Earring",   --  1
+    waist="Null Belt",        --  3
   }
   sets.latent_refresh = {
     neck="Sibyl Scarf", -- Must be Windurstian
@@ -538,9 +545,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
-  -- PDL caps at 100. Don't overcap it.
-  -- Aria of Passion = assume +22% PDL (max song+ bonus)
-  -- PrimeAM = assume 12% PDL (stage 4 AM3)
   sets.precast.WS = {
     ammo="Knobkierrie",                   -- __, __, 23, __,  6, __ [__/__, ___]
     head=gear.Nyame_B_head,               -- 26, 26, 65, 50, 11, __ [ 7/ 7, 123]
@@ -887,10 +891,10 @@ function init_gear_sets()
     ring1="Etana Ring",                   --  7,  7, __ [__/__, ___]
     ring2="Metamorph Ring +1",            -- __, 16, 16 [__/__, ___]
     back=gear.DRK_MAB_Cape,               -- __, 20, 30 [10/__, ___]
-    waist="Eschan Stone",                 -- 15,  7, __ [__/__, ___]
+    waist="Null Belt",                    -- 15, 30, __ [__/__,  30]
     
     -- body="Heathen's Cuirass +3",       -- 64, 64, 35 [13/13, 103]
-    -- 364 Accuracy, 400 M.Acc, 182 INT [51 PDT/41 MDT, 541 M.Eva]
+    -- 379 Accuracy, 423 M.Acc, 182 INT [51 PDT/41 MDT, 571 M.Eva]
   }
   sets.precast.WS['Weapon Break'] = set_combine(sets.precast.WS['Armor Break'], {})
   sets.precast.WS['Shield Break'] = set_combine(sets.precast.WS['Armor Break'], {})
@@ -939,11 +943,11 @@ function init_gear_sets()
     ring1="Metamorph Ring +1",        -- 16, 15, __ [__/__, ___]
     ring2="Stikini Ring +1",          -- __, 11,  8 [__/__, ___]
     back=gear.DRK_MAB_Cape,           -- 30, 20, __ [10/__, ___]
-    waist="Eschan Stone",             -- __,  7, __ [__/__, ___]
-    -- 202 INT, 389 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 466 M.Eva]
+    waist="Null Belt",                -- __, 30, __ [__/__,  30]
+    -- 202 INT, 412 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 496 M.Eva]
 
     -- body="Heathen's Cuirass +3",   -- 35, 64, __ [__/__, 103]
-    -- 207 INT, 399 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 476 M.Eva]
+    -- 207 INT, 422 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 506 M.Eva]
   }
 
   sets.midcast.Poison = set_combine(sets.midcast['Enfeebling Magic'],{})
@@ -1034,8 +1038,8 @@ function init_gear_sets()
     ring1="Kishar Ring",                    -- __,  5, __, __ [__/__, ___]; Duration+10%
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     back="Chuparrosa Mantle",               -- __, __, __, 10 [__/__, ___]; Duration+20s
-    waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
-    -- 138 INT, 301 M.Acc, 64 Dark skill, 15 Absorb Potency% [19 PDT/25 MDT, 456 M.Eva]
+    waist="Null Belt",                      -- __, 30, __, __ [__/__,  30]
+    -- 138 INT, 324 M.Acc, 64 Dark skill, 15 Absorb Potency% [19 PDT/25 MDT, 486 M.Eva]
   }
   sets.AbsorbWeapon = {
     -- main="Liberator",
@@ -1058,11 +1062,11 @@ function init_gear_sets()
     ring1="Metamorph Ring +1",              -- 16, 15, __, __ [__/__, ___]
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __, __ [10/__, ___]; Duration +10s
-    waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
-    -- 215 INT, 384 M.Acc, 64 Dark skill, 5 Absorb Potency% [32 PDT/26 MDT, 471 M.Eva]
+    waist="Null Belt",                      -- __, 30, __, __ [__/__,  30]
+    -- 215 INT, 407 M.Acc, 64 Dark skill, 5 Absorb Potency% [32 PDT/26 MDT, 501 M.Eva]
     
     -- ear2="Heathen's Earring +2",         -- 15, 20, __, __ [__/__, ___]
-    -- 230 INT, 392 M.Acc, 64 Dark skill, 5 Absorb Potency% [32 PDT/26 MDT, 471 M.Eva]
+    -- 230 INT, 415 M.Acc, 64 Dark skill, 5 Absorb Potency% [32 PDT/26 MDT, 501 M.Eva]
   })
   sets.midcast['Absorb-Attri'] = set_combine(sets.midcast['Absorb-TP'], {})
 
@@ -1112,8 +1116,8 @@ function init_gear_sets()
     ring1="Stikini Ring +1",                -- __, 11,  8 [__/__, ___]
     ring2="Metamorph Ring +1",              -- 16, 15, __ [__/__, ___]
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __ [10/__, ___]
-    waist="Eschan Stone",                   -- __,  7, __ [__/__, ___]
-    -- 214 INT, 343 M.Acc, 82 Dark skill [22 PDT/16 MDT, 418 M.Eva]
+    waist="Null Belt",                      -- __, 30, __ [__/__,  30]
+    -- 214 INT, 366 M.Acc, 82 Dark skill [22 PDT/16 MDT, 448 M.Eva]
   }
 
   sets.midcast['Elemental Magic'] = {
@@ -1147,7 +1151,7 @@ function init_gear_sets()
     ring1="Stikini Ring +1",
     ring2="Metamorph Ring +1",
     back=gear.DRK_MAB_Cape,
-    waist="Eschan Stone",
+    waist="Null Belt",
   })
 
 

@@ -309,19 +309,24 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
-    ammo="Sapience Orb",
-    head="Halitus Helm",
-    body="Emet Harness +1",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    feet="Sakpata's Leggings",
-    neck="Loricate Torque +1",
-    ear1="Friomisi Earring",
-    ear2="Cryptic Earring",
-    ring1="Moonlight Ring",
-    ring2="Defending Ring",
-    back=gear.WAR_STR_DA_Cape,
-    waist="Engraved Belt",
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Halitus Helm",              --  8 [__/__,  43]
+    body="Souveran Cuirass +1",       -- 20 [10/10,  69]
+    hands="Sakpata's Gauntlets",      -- __ [ 8/ 8, 112]
+    legs="Sakpata's Cuisses",         -- __ [ 9/ 9, 150]
+    feet="Sakpata's Leggings",        -- __ [ 6/ 6, 150]
+    neck="Unmoving Collar +1",        -- 10 [__/__, ___]
+    ear1="Trux Earring",              --  5 [__/__, ___]
+    ear2="Cryptic Earring",           --  4 [__/__, ___]
+    ring1="Moonlight Ring",           -- __ [ 5/ 5, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back="Reiki Cloak",               --  6 [__/ 8, ___]
+    waist="Platinum Moogle Belt",     -- __ [ 3/ 3,  15]
+    -- 55 Enmity [51 PDT/59 MDT, 539 M.Eva]
+
+    -- hands=gear.Yorium_Enmity_hands,-- 14 [ 5/ 3,  56]
+    -- feet=gear.Yorium_Enmity_feet,  -- 15 [ 3/ 3,  69]
+    -- 84 Enmity [45 PDT/51 MDT, 402 M.Eva]
   }
 
 
