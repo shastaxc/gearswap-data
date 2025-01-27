@@ -296,10 +296,6 @@ function init_gear_sets()
     back="Reiki Cloak",               --  6 [__/ 8, ___]
     waist="Platinum Moogle Belt",     -- __ [ 3/ 3,  15]
     -- 70 Enmity [51 PDT/53 MDT, 436 M.Eva]
-
-    -- legs=gear.Valorous_Enmity_legs,--  8 [ 2/__,  80]
-    -- feet=gear.Valorous_Enmity_feet,--  8 [__/ 2,  80]
-    -- 86 Enmity [38 PDT/40 MDT, 296 M.Eva]
   }
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎

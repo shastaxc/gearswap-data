@@ -357,8 +357,8 @@ function init_gear_sets()
 
     -- body="Obviation Cuirass +1",   -- 13 [ 8/__, 129]
     -- hands=gear.Yorium_Enmity_hands,-- 14 [ 5/ 3,  56]
-    -- feet=gear.Yorium_Enmity_feet,  -- 15 [ 3/ 3,  69]
-    -- 93 Enmity [53 PDT/51 MDT, 419 M.Eva]
+    -- feet=gear.Eschite_A_feet,      -- 15 [ 4/ 3,  64]
+    -- 93 Enmity [54 PDT/51 MDT, 414 M.Eva]
   }
 
 

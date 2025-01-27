@@ -325,8 +325,8 @@ function init_gear_sets()
     -- 55 Enmity [51 PDT/59 MDT, 539 M.Eva]
 
     -- hands=gear.Yorium_Enmity_hands,-- 14 [ 5/ 3,  56]
-    -- feet=gear.Yorium_Enmity_feet,  -- 15 [ 3/ 3,  69]
-    -- 84 Enmity [45 PDT/51 MDT, 402 M.Eva]
+    -- feet=gear.Eschite_A_feet,      -- 15 [ 4/ 3,  64]
+    -- 84 Enmity [46 PDT/51 MDT, 397 M.Eva]
   }
 
 

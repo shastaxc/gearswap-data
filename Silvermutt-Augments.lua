@@ -165,7 +165,6 @@ gear.Telchine_STP_feet = {} -- 20 Acc, 6 STP, 10 DEX
 
 -- Yorium
 -- gear.Yorium_Enmity_hands = { name="Yorium Gauntlets", augments={'Mag. Evasion+25','Damage taken-3%','Enmity+10'}}
--- gear.Yorium_Enmity_feet = { name="Yorium Sabatons", augments={'Mag. Evasion+25','Damage taken-3%','Enmity+10'}}
 
 
 ----------------------------------------------------------------------
