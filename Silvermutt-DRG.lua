@@ -425,10 +425,7 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",              -- __, 17 < 9, __, __> [__/__, ___]
     -- 73 STP, 289 Acc <44 DA, 5 TA, 3 QA> [39 PDT/22 MDT, 378 M.Eva]
   }
-  sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
-    legs="Vishap Brais +2", -- Increase enmity reduction
-    -- legs="Vishap Brais +3", -- Increase enmity reduction
-  })
+  sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {})
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
     feet="Peltast's Schynbalds +2",       -- __, 50 <__, __, __> [10/10, 120]; Spirit Jump TP+80
     ring2="Chirich Ring +1",              --  6, 10 <__, __, __> [__/__, ___]
