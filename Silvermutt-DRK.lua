@@ -1063,7 +1063,7 @@ function init_gear_sets()
     body=gear.Carmine_C_body,               -- 38, 38, 16, __ [__/ 4,  64]
     hands="Heathen's Gauntlets +3",         -- 25, 62, __, __ [10/10,  82]; Enhances Absorb-TP
     legs="Heathen's Flanchard +3",          -- 41, 63, 30, __ [12/12, 119]
-    feet="Heathen's Solleretes +3",         -- 22, 60, __, __ [__/__, 119]
+    feet="Heathen's Sollerets +3",          -- 22, 60, __, __ [__/__, 119]
     neck="Erra Pendant",                    -- __, 17, 10,  5 [__/__, ___]
     ear1="Malignance Earring",              --  8, 10, __, __ [__/__, ___]
     ear2="Heathen's Earring +1",            -- __, 12, __, __ [__/__, ___]
