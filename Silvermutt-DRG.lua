@@ -405,7 +405,7 @@ function init_gear_sets()
   sets.precast.JA['Spirit Link'] = {
     hands="Peltast's Vambraces +1", -- Augments pet debuff erasure, maybe TP transfer/HP restoration
     feet="Pteroslaver Greaves +1", -- Augments pet buff duration; +1 is acceptable
-    -- hands="Pteroslaver Vambraces +3", -- Augments pet debuff erasure, maybe TP transfer/HP restoration
+    -- hands="Peltast's Vambraces +3", -- Augments pet debuff erasure, maybe TP transfer/HP restoration
   }
 
   -- STP > Multihit
