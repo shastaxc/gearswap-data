@@ -380,6 +380,8 @@ function init_gear_sets()
   sets.WeaponSet['PhysRA RangedOnly'] = {
     main="Gleti's Knife",
     sub={name="Nusku Shield", priority=1},
+    
+    -- main="Perun +1",
   }
   sets.WeaponSet['Melee'] = {
     main="Naegling",
