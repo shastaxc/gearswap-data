@@ -603,7 +603,7 @@ function init_gear_sets()
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
     -- Assume Utu Grip                              -- __/__, ___ [ 70] (__, __)
-    ammo="Thunder Sachet",                            -- __/__, ___ [___] (__, __); Elemental resist & absorb
+    ammo="Thunder Sachet",                          -- __/__, ___ [___] (__, __); Elemental resist & absorb
     head="Erilaz Galea +3",                         -- __/__, 119 [111] (__, __)
     body="Erilaz Surcoat +3",                       -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
     hands="Erilaz Gauntlets +3",                    -- 11/11,  87 [ 59] ( 8, __)

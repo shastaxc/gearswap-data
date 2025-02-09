@@ -426,7 +426,7 @@ function init_gear_sets()
     head={name="Ratri Sallet +1",priority=1}, -- __ [-8/-8, 101]; Used for HP balance
     body="Sakpata's Breastplate",             -- 10 [10/10, 139]; Resist status+15
     hands="Heathen's Gauntlets +3",           --  5 [10/10,  82]
-    legs="Heathen's Flanchards +3",           --  8 [12/12, 119]; Realistically this will be move speed
+    legs="Heathen's Flanchard +3",            --  8 [12/12, 119]; Realistically this will be move speed
     feet="Sakpata's Leggings",                --  7 [ 6/ 6, 150]
     neck="Loricate Torque +1",                -- __ [ 6/ 6, ___]
     ear1="Hearty Earring",                    -- __ [__/__, ___]; Resists
