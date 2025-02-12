@@ -2152,7 +2152,7 @@ function display_rayke_worn(tracker_data, --[[optional]]force_execute)
 
   local target_name = tracker_data.target.name
   -- Ensure execution only once by checking for saved target data
-  send_command('@input '..chat_mode..' [Rayke] Just wore off!;')
+  send_command('@input '..chat_mode..' [Rayke] Just wore off!')
   -- If timer still exists, clear it
   send_command('@timers d "Rayke ['..target_name..']"') -- Requires Timers plugin
 
@@ -2188,7 +2188,7 @@ function display_gambit_worn(tracker_data, --[[optional]]force_execute)
 
   local target_name = tracker_data.target.name
   -- Ensure execution only once by checking for saved target data
-  send_command('@input '..chat_mode..' [Gambit] Just wore off!;')
+  send_command('@input '..chat_mode..' [Gambit] Just wore off!')
   -- If timer still exists, clear it
   send_command('@timers d "Gambit ['..target_name..']"') -- Requires Timers plugin
 
