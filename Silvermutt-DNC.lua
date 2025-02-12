@@ -381,18 +381,18 @@ function init_gear_sets()
   sets.HybridAcc = {
     ammo="Yamarang",                  -- 15, 15 [__/__, ___]
     head="Maculele Tiara +3",         -- 61, 61 [__/__,  99]
-    body="Horos Casaque +3",          -- 50, 40 [ 6/__,  84]; +41 V. Flourish Acc
+    body="Horos Casaque +3",          -- 50, 40 [ 6/__,  84]
     hands="Maculele Bangles +3",      -- 62, 62 [11/11,  83]
     legs="Malignance Tights",         -- 50, 50 [ 7/ 7, 150]
     feet="Maculele Toe Shoes +3",     -- 60, 60 [10/10, 115]
-    neck="Etoile Gorget +2",          -- 25, 25 [__/__, ___]
+    neck="Null Loop",                 -- 50, 50 [ 5/ 5, ___]
     ear1="Dignitary's Earring",       -- 10, 10 [__/__, ___]
     ear2="Maculele Earring +1",       -- 14, 14 [__/__, ___]
     ring1="Etana Ring",               -- 10, 10 [__/__, ___]
-    ring2="Metamorph Ring +1",        -- __, 16 [__/__, ___]
-    back=gear.DNC_WS1_Cape,           -- 20, __ [10/__, ___]
-    waist="Olseni Belt",              -- 20, __ [__/__, ___]
-    -- 438 Acc, 404 MAcc [44 PDT/28 MDT, 531 M.Eva]
+    ring2="Defending Ring",           -- __, __ [10/10, ___]
+    back="Null Shawl",                -- 50, 50 [__/__,  50]
+    waist="Null Belt",                -- 30, 30 [__/__,  30]
+    -- 462 Acc, 452 MAcc [49 PDT/43 MDT, 611 M.Eva]
   }
 
 
@@ -437,14 +437,15 @@ function init_gear_sets()
     hands="Malignance Gloves",  --  5/ 5, 112
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
-    neck="Etoile Gorget +2",    -- __/__, ___
+    neck="Loricate Torque +1",  --  5/ 5, ___
     ear1="Arete Del Luna +1",   -- __/__, ___
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.DNC_TP_DW_Cape,   -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --63 PDT/55 MDT, 689 MEVA
+    -- 68 PDT/60 MDT, 689 MEVA
+  }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
   sets.defense.MDT = set_combine(sets.HeavyDef, {})
@@ -493,8 +494,6 @@ function init_gear_sets()
   sets.idle.HeavyDef = set_combine(sets.HeavyDef, {})
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
-    neck="Loricate Torque +1",  --  6/ 6, ___
-    ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Gelatinous Ring +1", --  7/-1, ___
     back="Moonlight Cape",      --  6/ 6, ___
   })
@@ -537,9 +536,20 @@ function init_gear_sets()
     -- 53 Potency (8 Self Potency), 195 CHR, 117 VIT <-4 Delay> [39 PDT/29 MDT, 325 M.Eva]
   })
   sets.precast.WaltzSafe = {
-    ring1="Gelatinous Ring +1",     -- __(_), __, 15 <__> [ 7/-1, ___]
-    waist="Flume Belt +1",          -- __(_), __, __ <__> [ 4/__, ___]
-    -- 53 Potency (8 Self Potency), 171 CHR, 147 VIT <-4 Delay> [50 PDT/28 MDT, 325 M.Eva]
+    ammo="Staunch Tathlum +1",      -- __(_), __, __ <__> [ 3/ 3, ___]
+    head=gear.Nyame_B_head,         -- __(_), 24, 24 <__> [ 7/ 7, 123]
+    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2> [__/__,  84]
+    hands="Maculele Bangles +3",    -- __(_), 28, 40 <__> [11/11,  83]
+    legs=gear.Nyame_B_legs,         -- __(_), 24, 30 <__> [ 8/ 8, 150]
+    feet="Maxixi Toe Shoes +3",     -- 14(_), 40, 22 <__> [__/__,  89]
+    neck="Etoile Gorget +2",        -- 10(_), 25, __ <__> [__/__, ___]
+    -- ear1="Sjofn Earring",        -- 10(_), __, __ <__> [__/__, ___]
+    ear2="Odnowa Earring +1",       -- __(_), __,  3 <__> [ 3/ 5, ___]
+    ring1="Moonlight Ring",         -- __(_), __,  3 <__> [ 3/ 5, ___]
+    ring2="Defending Ring",         -- __(_), __, __ <__> [10/10, ___]
+    back=gear.DNC_WTZ_Cape,         -- __(_), 30, __ <__> [10/__, ___]; Enmity-10
+    waist="Null Belt",              -- __(_), __, __ <__> [__/__,  30]
+    -- 53 Potency (8 Self Potency), 204 CHR, 156 VIT <-2 Delay> [55 PDT/49 MDT, 559 M.Eva]
   }
 
   -- Focus Waltz delay. Dashing Subligar does not give shadows for healing waltz on others
@@ -573,21 +583,21 @@ function init_gear_sets()
 
   -- Acc
   sets.precast.Step = {
-    ammo="Yamarang",              -- __/__, 15 (__)
+    ammo="Staunch Tathlum +1",    --  3/ 3, __ (__)
     head="Maxixi Tiara +3",       -- __/__, 47 (35)
-    body="Malignance Tabard",     -- 14/14, 64 (__)
+    body="Maculele Casaque +3",   -- 14/14, 64 (__)
     hands="Maxixi Bangles +3",    -- __/__, 48 (40)
     legs="Malignance Tights",     --  7/ 7, 50 (__)
     feet="Horos Toe Shoes +3",    -- __/__, 42 (24); Step TP -20
-    neck="Etoile Gorget +2",      -- __/__, 25 (__)
+    neck="Null Loop",             --  5/ 5, 50 (__)
     ear1="Telos Earring",         -- __/__, 10 (__)
     ear2="Odnowa Earring +1",     --  3/ 5, __ (__)
-    ring1="Gelatinous Ring +1",   --  7/-1, __ (__)
+    ring1="Moonlight Ring",       --  5/ 5,  8 (__)
     ring2="Defending Ring",       -- 10/10, __ (__)
-    back=gear.DNC_TP_DW_Cape,     -- 10/__, 20 (__)
-    waist="Engraved Belt",        -- __/__, 10 (__); Elemental resist
+    back="Null Shawl",            -- __/__, 50 (__)
+    waist="Null Belt",            -- __/__, 30 (__)
     -- Maxixi set bonus           -- __/__, 15 (__)
-    -- 51 PDT /35 MDT, 346 Acc (99 Step Acc)
+    -- 47 PDT / 49 MDT, 414 Acc (99 Step Acc)
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
@@ -768,40 +778,22 @@ function init_gear_sets()
   sets.precast.WS['Pyrrhic Kleos'].AttCappedMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].AttCapped, {})
   sets.precast.WS['Pyrrhic Kleos'].Safe = {
     ammo="Coiste Bodhar",             -- 10, 10, __, 15, __ < 3, __, __> [__/__, ___]
-    head=gear.Lustratio_D_head,       -- 47, 45, __, __, __ <__, __, __> [__/__, ___]
+    head=gear.Nyame_B_head,           -- 26, 25, 11, 65, __ < 5, __, __> [ 7/ 7, 123]
     body=gear.Nyame_B_body,           -- 45, 24, 13, 65, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 17, 42, 11, 65, __ < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 58, __, 12, 65, __ < 6, __, __> [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,           -- 23, 26, 11, 65, __ < 5, __, __> [ 7/ 7, 150]
-    neck="Etoile Gorget +2",          -- __, 25, __, __, 10 <__, __, __> [__/__, ___]
+    neck="Warder's Charm +1",         -- __, __, __, __, __ <__, __, __> [__/__, ___]; Ele resist
     ear1="Sherida Earring",           --  5,  5, __, __, __ < 5, __, __> [__/__, ___]
-    ear2="Odr Earring",               -- __, 10, __, __, __ <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         --  3, __, __, __, __ <__, __, __> [ 5/ 5, ___]
     ring1="Defending Ring",           -- __, __, __, __, __ <__, __, __> [10/10, ___]
     ring2="Gere Ring",                -- 10, __, __, 16, __ <__,  5, __> [__/__, ___]
     back=gear.DNC_WS2_Cape,           -- __, 30, __, 20, __ <10, __, __> [10/__, ___]
-    waist="Fotia Belt",               -- __, __, __, __, __ <__, __, __> [__/__, ___]; +0.1 ftp
-    -- 215 STR, 217 DEX, 47 WSD, 311 Att, 10 PDL <41 DA, 5 TA, 0 QA> [51 PDT/41 MDT, 551 M.Eva]
+    waist="Engraved Belt",            --  7, __, __, __, __ <__, __, __> [__/__, ___]; Ele resist
+    -- 204 STR, 162 DEX, 58 WSD, 376 Att, 0 PDL <46 DA, 5 TA, 0 QA> [63 PDT/53 MDT, 674 M.Eva]
   }
   sets.precast.WS['Pyrrhic Kleos'].SafeMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].Safe, {})
-  sets.precast.WS['Pyrrhic Kleos'].SafeAttCapped = {
-    ammo="Crepuscular Pebble",        --  3, __, __, __,  3 <__, __, __> [ 3/ 3, ___]
-    head="Maculele Tiara +3",         -- 31, 38, 12, 71, __ <__, __, __> [__/__,  99]
-    body="Gleti's Cuirass",           -- 39, 34, __, 70,  9 <10, __, __> [ 9/__, 102]
-    hands="Gleti's Gauntlets",        -- 20, 47, __, 70,  9 <__, __, __> [ 7/__,  75]
-    legs="Gleti's Breeches",          -- 49, __, __, 70,  8 <__,  5, __> [ 8/__, 112]
-    feet=gear.Nyame_B_feet,           -- 23, 26, 11, 65, __ < 5, __, __> [ 7/ 7, 150]
-    neck="Etoile Gorget +2",          -- __, 25, __, __, 10 <__, __, __> [__/__, ___]
-    ear1="Sherida Earring",           --  5,  5, __, __, __ < 5, __, __> [__/__, ___]
-    ear2="Maculele Earring +1",       -- __, __, __, __,  8 <__, __, __> [__/__, ___]
-    ring1="Ephramad's Ring",          -- 10, 10, __, 20, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __, __, __ <__, __, __> [10/10, ___]
-    back=gear.DNC_WS2_Cape,           -- __, 30, __, 20, __ <__, __, __> [10/__, ___]
-    waist="Fotia Belt",               -- __, __, __, __, __ <__, __, __> [__/__, ___]; +0.1 ftp
-    -- 180 STR, 215 DEX, 23 WSD, 386 Att, 57 PDL <20 DA, 5 TA, 0 QA> [54 PDT/20 MDT, 538 M.Eva]
-
-    -- ear2="Maculele Earring +2",    -- __, 15, __, __,  9 <__, __, __> [__/__, ___]
-    -- 180 STR, 230 DEX, 23 WSD, 386 Att, 58 PDL <20 DA, 5 TA, 0 QA> [54 PDT/20 MDT, 538 M.Eva]
-  }
+  sets.precast.WS['Pyrrhic Kleos'].SafeAttCapped = set_combine(sets.precast.WS['Pyrrhic Kleos'].Safe, {})
   sets.precast.WS['Pyrrhic Kleos'].SafeAttCappedMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].SafeAttCapped, {})
   -- Required to prevent extra gear from equipping during Climactic
   -- Is overlaid, don't set_combine; this WS should not swap gear for climactic flourish
@@ -849,46 +841,27 @@ function init_gear_sets()
   })
   sets.precast.WS['Evisceration'].Safe = {
     ammo="Charis Feather",            --  5, __, __, __ (__,  5) <__, __, __> [__/__, ___]
-    head="Gleti's Mask",              -- 28, __, 70,  6 ( 5, __) <__, __, __> [ 6/__,  86]
-    body="Meghanada Cuirie +2",       -- 45, __, 46, __ (__,  6) <__, __, __> [ 8/__,  64]
-    hands="Maculele Bangles +3",      -- 53, __, 62, __ (__, __) <__, __, __> [11/11,  83]
-    legs="Gleti's Breeches",          -- __, __, 70,  8 ( 7, __) <__,  5, __> [ 8/__, 112]
-    feet=gear.Herc_DEX_CritDmg_feet,  -- 24, __, 19, __ (__,  5) <__,  2, __> [ 2/__,  75]
-    neck="Fotia Gorget",              -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
+    head=gear.Nyame_B_head,           -- 25, 11, 65, __ (__, __) < 5, __, __> [ 7/ 7, 123]
+    body=gear.Nyame_B_body,           -- 24, 13, 65, __ (__, __) < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 42, 11, 65, __ (__, __) < 5, __, __> [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- __, 12, 65, __ (__, __) < 6, __, __> [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- 26, 11, 65, __ (__, __) < 5, __, __> [ 7/ 7, 150]
+    neck="Warder's Charm +1",         -- __, __, __, __, __ <__, __, __> [__/__, ___]; Ele resist
     ear1="Moonshade Earring",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ring1="Moonlight Ring",           -- __, __,  8, __ (__, __) <__, __, __> [ 5/ 5, ___]
     ring2="Defending Ring",           -- __, __, __, __ (__, __) <__, __, __> [10/10, ___]
     back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
-    waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
-    -- 195 DEX, 0 WSD, 295 Att, 14 PDL (27 Crit Rate, 21 Crit Dmg) <0 DA, 7 TA, 0 QA> [50 PDT/26 MDT, 420 M.Eva]
+    waist="Engraved Belt",            --  7, __, __, __, __ <__, __, __> [__/__, ___]; Ele resist
+    -- 162 DEX, 58 WSD, 353 Att, 14 PDL (15 Crit Rate, 10 Crit Dmg) <28 DA, 0 TA, 0 QA> [53 PDT/53 MDT, 674 M.Eva]
   }
   sets.precast.WS['Evisceration'].SafeMaxTP = set_combine(sets.precast.WS['Evisceration'].Safe, {
     ear1="Sherida Earring",           --  5, __, __, __ (__, __) < 5, __, __> [__/__, ___]
   })
-  sets.precast.WS['Evisceration'].SafeAttCapped = {
-    ammo="Charis Feather",            --  5, __, __, __ (__,  5) <__, __, __> [__/__, ___]
-    head="Gleti's Mask",              -- 28, __, 70,  6 ( 5, __) <__, __, __> [ 6/__,  86]
-    body="Meghanada Cuirie +2",       -- 45, __, 46, __ (__,  6) <__, __, __> [ 8/__,  64]
-    hands="Maculele Bangles +3",      -- 53, __, 62, __ (__, __) <__, __, __> [11/11,  83]
-    legs="Gleti's Breeches",          -- __, __, 70,  8 ( 7, __) <__,  5, __> [ 8/__, 112]
-    feet="Gleti's Boots",             -- 29, __, 70,  5 ( 4, __) <__, __, __> [ 5/__, 112]
-    neck="Etoile Gorget +2",          -- 25, __, __, 10 (__, __) <__, __, __> [__/__, ___]
-    ear1="Moonshade Earring",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]
-    ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
-    ring1="Defending Ring",           -- __, __, __, __ (__, __) <__, __, __> [10/10, ___]
-    ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
-    back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
-    waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
-    -- 235 DEX, 0 WSD, 338 Att, 39 PDL (31 Crit Rate, 16 Crit Dmg) <0 DA, 5 TA, 0 QA> [48 PDT/21 MDT, 457 M.Eva]
-  }
-  sets.precast.WS['Evisceration'].SafeAttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].SafeAttCapped, {
-    ear1="Sherida Earring",           --  5, __, __, __ (__, __) < 5, __, __> [__/__, ___]
-  })
+  sets.precast.WS['Evisceration'].SafeAttCapped = set_combine(sets.precast.WS['Evisceration'].Safe, {})
+  sets.precast.WS['Evisceration'].SafeAttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].SafeAttCapped, {})
   -- Is overlaid, don't set_combine
-  sets.precast.WS['Evisceration'].Climactic = {
-    head="Maculele Tiara +3",
-  }
+  sets.precast.WS['Evisceration'].Climactic = {}
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = {
@@ -1072,18 +1045,19 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.RA = {
-    head="Malignance Chapeau",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    legs="Malignance Tights",
-    feet="Malignance Boots",
-    neck="Etoile Gorget +2",
-    ear1="Telos Earring",
-    ear2="Enervating Earring",
-    ring1="Crepuscular Ring",
-    ring2="Defending Ring",
-    back=gear.DNC_TP_DA_Cape,
-    waist="Yemaya Belt",
+    head="Malignance Chapeau",        -- 33,  8, 50/__ [ 6/ 6, 123]
+    body="Malignance Tabard",         -- 42, 11, 50/__ [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- 24, 12, 50/__ [ 5/ 5, 112]
+    legs="Malignance Tights",         -- 42, 10, 50/__ [ 7/ 7, 150]
+    feet="Malignance Boots",          -- 49,  9, 50/__ [ 4/ 4, 150]
+    neck="Null Loop",                 -- __, __, 50/__ [ 5/ 5, ___]
+    ear1="Telos Earring",             -- __,  5, 10/10 [__/__, ___]
+    ear2="Enervating Earring",        -- __,  4,  7/ 7 [__/__, ___]
+    ring1="Crepuscular Ring",         -- __,  6, 10/__ [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __/__ [10/10, ___]
+    back="Null Shawl",                -- __,  7, 50/__ [__/__,  50]
+    waist="Yemaya Belt",              -- __,  4, 10/10 [__/__, ___]
+    -- 190 AGI, 76 STP, 387 racc / 27 ratt [46 PDT/46 MDT, 724 M.Eva]
   }
 
 
@@ -1222,7 +1196,7 @@ function init_gear_sets()
   sets.engaged.HighDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1234,7 +1208,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 58 STP, 242 Acc <15 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 465 M.Eva] 52 Subtle Blow
+    -- 28 DW, 58 STP, 306 Acc <15 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 465 M.Eva] 52 Subtle Blow
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -1263,7 +1237,7 @@ function init_gear_sets()
   sets.engaged.SuperDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1275,7 +1249,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 473 M.Eva] 47 Subtle Blow
+    -- 37 DW, 48 STP, 296 Acc <9 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 473 M.Eva] 47 Subtle Blow
   }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -1301,7 +1275,7 @@ function init_gear_sets()
   sets.engaged.MaxDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands="Floral Gauntlets",       --  5, __, 36 <__,  3, __> [__/ 4,  37] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1313,7 +1287,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 42 DW, 41 STP, 216 Acc <9 DA, 14 TA, 0 QA> [40 PDT/34 MDT, 467 M.Eva] 47 Subtle Blow
+    -- 42 DW, 41 STP, 280 Acc <9 DA, 14 TA, 0 QA> [40 PDT/34 MDT, 467 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -1338,12 +1312,12 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Windbuffet Belt +1",     -- __,  2, __ <__,  2,  2> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 35 DW, 80 STP, 315 Acc <19 DA, 7 TA, 2 QA> [52 PDT/42 MDT, 639 M.Eva] 38 Subtle Blow
+    -- 35 DW, 80 STP, 323 Acc <19 DA, 7 TA, 2 QA> [52 PDT/42 MDT, 639 M.Eva] 38 Subtle Blow
   }
   sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
   sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.LowAcc.HeavyDef, {})
@@ -1397,7 +1371,7 @@ function init_gear_sets()
   sets.engaged.HighDW.HeavyDef = {
     ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1409,7 +1383,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 55 STP, 242 Acc <9 DA, 12 TA, 0 QA> [53 PDT/43 MDT, 465 M.Eva] 52 Subtle Blow
+    -- 28 DW, 55 STP, 306 Acc <9 DA, 12 TA, 0 QA> [53 PDT/43 MDT, 465 M.Eva] 52 Subtle Blow
   }
   sets.engaged.HighDW.LowAcc.HeavyDef = set_combine(sets.engaged.HighDW.HeavyDef, {})
   sets.engaged.HighDW.MidAcc.HeavyDef = set_combine(sets.engaged.HighDW.LowAcc.HeavyDef, {})
@@ -1419,7 +1393,7 @@ function init_gear_sets()
   sets.engaged.SuperDW.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1431,7 +1405,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 56 STP, 265 Acc <6 DA, 8 TA, 0 QA> [52 PDT/42 MDT, 617 M.Eva] 47 Subtle Blow
+    -- 37 DW, 56 STP, 329 Acc <6 DA, 8 TA, 0 QA> [52 PDT/42 MDT, 617 M.Eva] 47 Subtle Blow
   }
   sets.engaged.SuperDW.LowAcc.HeavyDef = set_combine(sets.engaged.SuperDW.HeavyDef, {})
   sets.engaged.SuperDW.MidAcc.HeavyDef = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {})
@@ -1441,54 +1415,110 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet=gear.Herc_DW_feet,         --  5, __, 23 <__,  2, __> [ 2/__,  75] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 42 DW, 49 STP, 228 Acc <3 DA, 7 TA, 0 QA> [49 PDT/37 MDT, 577 M.Eva] 47 Subtle Blow
+    -- 42 DW, 49 STP, 300 Acc <3 DA, 7 TA, 0 QA> [49 PDT/37 MDT, 577 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.LowAcc.HeavyDef = set_combine(sets.engaged.MaxDW.HeavyDef, {})
   sets.engaged.MaxDW.MidAcc.HeavyDef = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {})
   sets.engaged.MaxDW.HighAcc.HeavyDef = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef,{})
 
 
-  sets.engaged.Safe = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.LowAcc.Safe = set_combine(sets.engaged.LowAcc.HeavyDef, {})
-  sets.engaged.MidAcc.Safe = set_combine(sets.engaged.MidAcc.HeavyDef, {})
-  sets.engaged.HighAcc.Safe = set_combine(sets.engaged.HighAcc.HeavyDef, {})
+  ------------------------------------------------------------------------------------------
 
-  sets.engaged.LowDW.Safe = set_combine(sets.engaged.LowDW.HeavyDef, {})
-  sets.engaged.LowDW.LowAcc.Safe = set_combine(sets.engaged.LowDW.LowAcc.HeavyDef, {})
-  sets.engaged.LowDW.MidAcc.Safe = set_combine(sets.engaged.LowDW.MidAcc.HeavyDef, {})
-  sets.engaged.LowDW.HighAcc.Safe = set_combine(sets.engaged.LowDW.HighAcc.HeavyDef, {})
+  -- No DW (0-1 needed from gear)
+  sets.engaged.Safe = {
+    ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
+    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
+    neck="Warder's Charm +1",       -- __, __, __ <__, __, __> [__/__, ___] __(__); Ele resist, Occ. absorb magic
+    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
+    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
+    ring1="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    ring2="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
+    back="Null Shawl",              -- __,  7, 50 < 7, __, __> [__/__,  50] __(__)
+    waist="Engraved Belt",          -- __, __, __ <__, __, __> [__/__, ___] __(__); Ele resist
+    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 35 DW, 70 STP, 320 Acc <13 DA, 5 TA, 0 QA> [50 PDT/50 MDT, 689 M.Eva] 33(5) Subtle Blow
+  }
+  sets.engaged.LowAcc.Safe = set_combine(sets.engaged.Safe, {})
+  sets.engaged.MidAcc.Safe = set_combine(sets.engaged.LowAcc.Safe, {})
+  sets.engaged.HighAcc.Safe = set_combine(sets.engaged.MidAcc.Safe, {})
 
-  sets.engaged.MidDW.Safe = set_combine(sets.engaged.MidDW.HeavyDef, {})
-  sets.engaged.MidDW.LowAcc.Safe = set_combine(sets.engaged.MidDW.LowAcc.HeavyDef, {})
-  sets.engaged.MidDW.MidAcc.Safe = set_combine(sets.engaged.MidDW.MidAcc.HeavyDef, {})
-  sets.engaged.MidDW.HighAcc.Safe = set_combine(sets.engaged.MidDW.HighAcc.HeavyDef, {})
+  -- Low DW (8 needed from gear)
+  sets.engaged.LowDW.Safe = {
+    ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
+    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
+    neck="Warder's Charm +1",       -- __, __, __ <__, __, __> [__/__, ___] __(__); Ele resist, Occ. absorb magic
+    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
+    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
+    ring1="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    ring2="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
+    back="Null Shawl",              -- __,  7, 50 < 7, __, __> [__/__,  50] __(__)
+    waist="Engraved Belt",          -- __, __, __ <__, __, __> [__/__, ___] __(__); Ele resist
+    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 46 DW, 64 STP, 342 Acc <13 DA, 5 TA, 0 QA> [50 PDT/50 MDT, 659 M.Eva] 47(5) Subtle Blow
+  }
+  sets.engaged.LowDW.LowAcc.Safe = set_combine(sets.engaged.LowDW.Safe, {})
+  sets.engaged.LowDW.MidAcc.Safe = set_combine(sets.engaged.LowDW.LowAcc.Safe, {})
+  sets.engaged.LowDW.HighAcc.Safe = set_combine(sets.engaged.LowDW.MidAcc.Safe, {})
 
-  sets.engaged.HighDW.Safe = set_combine(sets.engaged.HighDW.HeavyDef, {})
-  sets.engaged.HighDW.LowAcc.Safe = set_combine(sets.engaged.HighDW.LowAcc.HeavyDef, {})
-  sets.engaged.HighDW.MidAcc.Safe = set_combine(sets.engaged.HighDW.MidAcc.HeavyDef, {})
-  sets.engaged.HighDW.HighAcc.Safe = set_combine(sets.engaged.HighDW.HighAcc.HeavyDef, {})
+  -- Mid DW (21 needed from gear)
+  sets.engaged.MidDW.Safe = {
+    ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
+    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
+    neck="Warder's Charm +1",       -- __, __, __ <__, __, __> [__/__, ___] __(__); Ele resist, Occ. absorb magic
+    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
+    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ring1="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    ring2="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
+    back="Null Shawl",              -- __,  7, 50 < 7, __, __> [__/__,  50] __(__)
+    waist="Engraved Belt",          -- __, __, __ <__, __, __> [__/__, ___] __(__); Ele resist
+    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 55 DW, 54 STP, 332 Acc <7 DA, 5 TA, 0 QA> [50 PDT/50 MDT, 667 M.Eva] 47(0) Subtle Blow
+  }
+  sets.engaged.MidDW.LowAcc.Safe = set_combine(sets.engaged.MidDW.Safe, {})
+  sets.engaged.MidDW.MidAcc.Safe = set_combine(sets.engaged.MidDW.LowAcc.Safe, {})
+  sets.engaged.MidDW.HighAcc.Safe = set_combine(sets.engaged.MidDW.MidAcc.Safe,{})
 
-  sets.engaged.SuperDW.Safe = set_combine(sets.engaged.SuperDW.HeavyDef, {})
-  sets.engaged.SuperDW.LowAcc.Safe = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {})
-  sets.engaged.SuperDW.MidAcc.Safe = set_combine(sets.engaged.SuperDW.MidAcc.HeavyDef, {})
-  sets.engaged.SuperDW.HighAcc.Safe = set_combine(sets.engaged.SuperDW.HighAcc.HeavyDef, {})
+  -- High DW (28 needed from gear)
+  sets.engaged.HighDW.Safe = set_combine(sets.engaged.MidDW.Safe, {})
+  sets.engaged.HighDW.LowAcc.Safe = set_combine(sets.engaged.HighDW.Safe, {})
+  sets.engaged.HighDW.MidAcc.Safe = set_combine(sets.engaged.HighDW.LowAcc.Safe, {})
+  sets.engaged.HighDW.HighAcc.Safe = set_combine(sets.engaged.HighDW.MidAcc.Safe, {})
 
-  sets.engaged.MaxDW.Safe = set_combine(sets.engaged.MaxDW.HeavyDef, {})
-  sets.engaged.MaxDW.LowAcc.Safe = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {})
-  sets.engaged.MaxDW.MidAcc.Safe = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef, {})
-  sets.engaged.MaxDW.HighAcc.Safe = set_combine(sets.engaged.MaxDW.HighAcc.HeavyDef, {})
+  -- Super DW (39 needed from gear)
+  sets.engaged.SuperDW.Safe = set_combine(sets.engaged.HighDW.Safe, {})
+  sets.engaged.SuperDW.LowAcc.Safe = set_combine(sets.engaged.SuperDW.Safe, {})
+  sets.engaged.SuperDW.MidAcc.Safe = set_combine(sets.engaged.SuperDW.LowAcc.Safe, {})
+  sets.engaged.SuperDW.HighAcc.Safe = set_combine(sets.engaged.SuperDW.MidAcc.Safe,{})
+
+  -- Max DW (46 needed from gear)
+  sets.engaged.MaxDW.Safe = set_combine(sets.engaged.SuperDW.Safe, {})
+  sets.engaged.MaxDW.LowAcc.Safe = set_combine(sets.engaged.MaxDW.Safe, {})
+  sets.engaged.MaxDW.MidAcc.Safe = set_combine(sets.engaged.MaxDW.LowAcc.Safe, {})
+  sets.engaged.MaxDW.HighAcc.Safe = set_combine(sets.engaged.MaxDW.MidAcc.Safe,{})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1506,12 +1536,12 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
     ring2="Chirich Ring +1",        -- __,  6, 10 <__, __, __> [__/__, ___] 10(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Peiste Belt +1",         -- __, __, __ <__, __, __> [__/__, ___] 10(__)
     -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 35 DW, 84 STP, 325 Acc <19 DA, 0 TA, 0 QA> [52 PDT/42 MDT, 639 M.Eva] 53(5) Subtle Blow
+    -- 35 DW, 84 STP, 333 Acc <19 DA, 0 TA, 0 QA> [52 PDT/42 MDT, 639 M.Eva] 53(5) Subtle Blow
   }
   sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
   sets.engaged.MidAcc.SubtleBlow = set_combine(sets.engaged.LowAcc.SubtleBlow, {})
@@ -1528,12 +1558,12 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Windbuffet Belt +1",     -- __,  2, __ <__,  2,  2> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 11 DW, 66 STP, 294 Acc <22 DA, 10 TA, 2 QA> [50 PDT/40 MDT, 534 M.Eva] 47(5) Subtle Blow
+    -- 11 DW, 66 STP, 302 Acc <22 DA, 10 TA, 2 QA> [50 PDT/40 MDT, 534 M.Eva] 47(5) Subtle Blow
   }
   sets.engaged.LowDW.LowAcc.SubtleBlow = set_combine(sets.engaged.LowDW.SubtleBlow, {})
   sets.engaged.LowDW.MidAcc.SubtleBlow = set_combine(sets.engaged.LowDW.LowAcc.SubtleBlow, {})
@@ -1550,12 +1580,12 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts          -- __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 22 DW, 63 STP, 294 Acc <21 DA, 8 TA, 0 QA> [50 PDT/40 MDT, 542 M.Eva] 47(5) Subtle Blow
+    -- 22 DW, 63 STP, 302 Acc <21 DA, 8 TA, 0 QA> [50 PDT/40 MDT, 542 M.Eva] 47(5) Subtle Blow
   }
   sets.engaged.MidDW.LowAcc.SubtleBlow = set_combine(sets.engaged.MidDW.SubtleBlow, {})
   sets.engaged.MidDW.MidAcc.SubtleBlow = set_combine(sets.engaged.MidDW.LowAcc.SubtleBlow, {})
@@ -1565,7 +1595,7 @@ function init_gear_sets()
   sets.engaged.HighDW.SubtleBlow = {
     ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1577,7 +1607,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 55 STP, 242 Acc <9 DA, 12 TA, 0 QA> [53 PDT/43 MDT, 465 M.Eva] 47(5) Subtle Blow
+    -- 28 DW, 55 STP, 306 Acc <9 DA, 12 TA, 0 QA> [53 PDT/43 MDT, 465 M.Eva] 47(5) Subtle Blow
   }
   sets.engaged.HighDW.LowAcc.SubtleBlow = set_combine(sets.engaged.HighDW.SubtleBlow, {})
   sets.engaged.HighDW.MidAcc.SubtleBlow = set_combine(sets.engaged.HighDW.LowAcc.SubtleBlow, {})
@@ -1587,7 +1617,7 @@ function init_gear_sets()
   sets.engaged.SuperDW.SubtleBlow = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
@@ -1599,7 +1629,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 56 STP, 265 Acc <6 DA, 8 TA, 0 QA> [52 PDT/42 MDT, 617 M.Eva] 47 Subtle Blow
+    -- 37 DW, 56 STP, 329 Acc <6 DA, 8 TA, 0 QA> [52 PDT/42 MDT, 617 M.Eva] 47 Subtle Blow
   }
   sets.engaged.SuperDW.LowAcc.SubtleBlow = set_combine(sets.engaged.SuperDW.SubtleBlow, {})
   sets.engaged.SuperDW.MidAcc.SubtleBlow = set_combine(sets.engaged.SuperDW.LowAcc.SubtleBlow, {})
@@ -1609,19 +1639,19 @@ function init_gear_sets()
   sets.engaged.MaxDW.SubtleBlow = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
+    body="Maculele Casaque +3",     -- 11, __, 64 <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet=gear.Herc_DW_feet,         --  5, __, 23 <__,  2, __> [ 2/__,  75] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5,  8 <__, __, __> [ 5/ 5, ___] __(__)
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 42 DW, 49 STP, 228 Acc <3 DA, 7 TA, 0 QA> [49 PDT/37 MDT, 577 M.Eva] 47 Subtle Blow
+    -- 42 DW, 49 STP, 300 Acc <3 DA, 7 TA, 0 QA> [49 PDT/37 MDT, 577 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.LowAcc.SubtleBlow = set_combine(sets.engaged.MaxDW.SubtleBlow, {})
   sets.engaged.MaxDW.MidAcc.SubtleBlow = set_combine(sets.engaged.MaxDW.LowAcc.SubtleBlow, {})
