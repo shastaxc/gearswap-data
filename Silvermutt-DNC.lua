@@ -804,18 +804,17 @@ function init_gear_sets()
     ammo="Charis Feather",            --  5, __, __, __ (__,  5) <__, __, __> [__/__, ___]
     head=gear.Adhemar_B_head,         -- 33, __, 56, __ (__,  6) <__,  4, __> [__/__,  59]
     body="Meghanada Cuirie +2",       -- 45, __, 46, __ (__,  6) <__, __, __> [ 8/__,  64]
-    hands="Mummu Wrists +2",          -- 53, __, __, __ ( 6, __) < 6, __, __> [__/__,  43]
+    hands=gear.Nyame_B_hands,         -- 42, 11, 65, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Lustratio_B_legs,       -- 43, __, 38, __ ( 3, __) <__, __, __> [__/__, ___]
     feet=gear.Herc_DEX_CritDmg_feet,  -- 24, __, 19, __ (__,  5) <__,  2, __> [ 2/__,  75]
     neck="Fotia Gorget",              -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     ear1="Moonshade Earring",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
-    ring1="Mummu Ring",               -- __, __, __, __ ( 3, __) <__, __, __> [__/__, ___]
+    ring1="Ilabrat Ring",             -- 10, __, 25, __ (__, __) <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
     back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
-    -- Mummu set bonuses                  8
-    -- 261 DEX, 0 WSD, 179 Att, 10 PDL (27 Crit Rate, 27 Crit Dmg) <6 DA, 6 TA, 0 QA> [10 PDT/0 MDT, 241 M.Eva]
+    -- 252 DEX, 11 WSD, 269 Att, 10 PDL (18 Crit Rate, 27 Crit Dmg) <5 DA, 6 TA, 0 QA> [17 PDT/7 MDT, 310 M.Eva]
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ear1="Sherida Earring",           --  5, __, __, __ (__, __) < 5, __, __> [__/__, ___]
@@ -846,7 +845,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,         -- 42, 11, 65, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- __, 12, 65, __ (__, __) < 6, __, __> [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,           -- 26, 11, 65, __ (__, __) < 5, __, __> [ 7/ 7, 150]
-    neck="Warder's Charm +1",         -- __, __, __, __, __ <__, __, __> [__/__, ___]; Ele resist
+    neck="Warder's Charm +1",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; Ele resist
     ear1="Moonshade Earring",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ring1="Moonlight Ring",           -- __, __,  8, __ (__, __) <__, __, __> [ 5/ 5, ___]
@@ -875,10 +874,10 @@ function init_gear_sets()
     ear1="Moonshade Earring",       -- __, __, __, __ [__/__, ___]; TP Bonus+250
     ear2="Odr Earring",             -- 10, __, __, __ [__/__, ___]
     ring1="Ilabrat Ring",           -- 10, __, 25, __ [__/__, ___]
-    ring2="Epaminondas's Ring",     -- __,  5, __, __ [__/__, ___]
+    ring2="Ephramad's Ring",        -- 10, __, 20, 10 [__/__, ___]
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __ [10/__, ___]; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __ [__/__, ___]
-    -- 268 DEX, 62 WSD, 364 Att, 10 PDL [33 PDT/23 MDT, 500 M.Eva]
+    -- 278 DEX, 57 WSD, 384 Att, 20 PDL [33 PDT/23 MDT, 500 M.Eva]
   }
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear1="Ishvara Earring",         -- __,  2, __, __ [__/__, ___]
@@ -1725,7 +1724,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       if spell.target.type == 'SELF' then
         equip(sets.precast.WaltzSelf)
       end
-      if (state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None') then
+      if (state.HybridMode.value == 'Safe' or state.DefenseMode.value == 'Safe') then
         equip(sets.precast.WaltzSafe)
       end
     elseif spell.english == 'Healing Waltz' and spell.target.type == 'SELF' then
