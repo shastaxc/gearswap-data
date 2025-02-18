@@ -331,7 +331,8 @@ function job_setup()
       ['!i'] = 'input /ma "Stoneskin" <me>',
       ['!o'] = 'input /ma "Phalanx" <me>',
       ['!p'] = 'input /ma "Aquaveil" <me>',
-      ['!;'] = 'input /ma "Regen IV" <stpc>',
+      ['!;'] = 'input /ma "Regen IV" <stpc>', -- This appears to be broken
+      ['!enter'] = 'input /ma "Regen IV" <stpc>',
       ['!\''] = 'input /ma "Refresh" <stpc>',
       ['!z'] = 'input /ma "Temper" <me>',
       ['!,'] = 'input /ma "Blaze Spikes" <me>',
@@ -1516,24 +1517,26 @@ function init_gear_sets()
   sets.Encumbrance = {
     -- Epeolatry                    --(25)/_, ___ [___] __ (__, ___) 23, __
     sub="Alber Strap",              --  2/__, ___ [___] __ (__, ___)  5, __
-    ammo="Sapience Orb",            -- __/__, ___ [___] __ (__, ___)  2,  2
+    ammo="Snow Sachet",             -- __/__, ___ [___] __ (__, ___) __, __; Ice resist + absorb
     head="Halitus Helm",            -- __/__,  43 [ 88]  2 (__, ___)  8, __
     body="Erilaz Surcoat +3",       -- __/__, 130 [143] 10 (__, ___) __, 13; Retain enmity; Convert dmg to MP
-    hands="Kurys Gloves",           --  2/ 2,  57 [ 25]  2 (__, ___)  9, __
+    hands="Erilaz Gauntlets +3",    -- 11/11,  87 [ 59]  7 ( 8, ___) __, __
     legs="Erilaz Leg Guards +3",    -- 13/13, 157 [100] 10 (__, ___) 13, __
     feet="Erilaz Greaves +3",       -- 11/11, 157 [ 48]  9 (__,  35)  8, __
     neck="Warder's Charm +1",       -- __/__, ___ [___] __ (__,  20)  8, __; Absorb magic dmg
     ear1="Odnowa Earring +1",       --  3/ 5, ___ [110] __ (__, ___) __, __
     ear2="Cryptic Earring",         -- __/__, ___ [ 40] __ (__, ___)  4, __
-    ring1="Moonlight Ring",         --  5/ 5, ___ [110] __ (__, ___) __, __
-    ring2="Moonlight Ring",         --  5/ 5, ___ [110] __ (__, ___) __, __
+    ring1="Shadow Ring",            -- __/__, ___ [___] __ (__, ___) __, __
+    ring2="Eihwaz Ring",            -- __/__, ___ [ 70] __ (__, ___)  5, __
     back="Moonlight Cape",          --  6/ 6, ___ [275] __ (__, ___) __, __
     waist="Platinum Moogle Belt",   --  3/ 3,  15 [___] __ (__, ___) __, __; HP+10%
-    -- HP from belt                                354
+    -- HP from belt (ML30)                         328
     -- Runes                        -- __/__, ___ [___] __ (__, 253) __, __
     -- Bar-spell                    -- __/__, ___ [___] __ (__, 131) __, __
     -- Trait                        -- __/__, ___ [___] 22 (__, ___) __, __
-    -- 50(+25)PDT / 50 MDT, 559 Meva [1049/1403 HP] 55 M.Def.Bns. (0 Status Resist, 439 Ele Resist) 80 Enmity, 15 Fast Cast
+    -- 49(+25)PDT / 49 MDT, 589 Meva [933/1261 HP] 60 M.Def.Bns. (8 Status Resist, 439 Ele Resist) 74 Enmity, 13 Fast Cast
+
+    -- ammo="Sapience Orb",         -- __/__, ___ [___] __ (__, ___)  2,  2
   }
 end
 
