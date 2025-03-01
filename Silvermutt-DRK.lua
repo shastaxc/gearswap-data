@@ -197,6 +197,11 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  silibs.enable_auto_reraise({
+    set = {head="Crepuscular Helm", body="Crepuscular Mail"},
+    mode = 'off',
+    hpp = 10,
+  })
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'SubtleBlow', 'Normal')
@@ -311,6 +316,8 @@ function init_gear_sets()
 
   if sets.org then
     sets.org.job = {}
+    sets.org.job[1] = {ammo="Crepuscular Helm"}
+    sets.org.job[2] = {ammo="Crepuscular Mail"}
   end
 
   sets.TreasureHunter = {
