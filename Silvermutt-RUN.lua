@@ -1514,6 +1514,7 @@ function init_gear_sets()
   sets.Embolden = {
     back=gear.RUN_Adoulin_Cape
   }
+
   sets.Encumbrance = {
     -- Epeolatry                    --(25)/_, ___ [___] __ (__, ___) 23, __
     sub="Alber Strap",              --  2/__, ___ [___] __ (__, ___)  5, __
@@ -1528,13 +1529,13 @@ function init_gear_sets()
     ear2="Cryptic Earring",         -- __/__, ___ [ 40] __ (__, ___)  4, __
     ring1="Shadow Ring",            -- __/__, ___ [___] __ (__, ___) __, __
     ring2="Eihwaz Ring",            -- __/__, ___ [ 70] __ (__, ___)  5, __
-    back="Moonlight Cape",          --  6/ 6, ___ [275] __ (__, ___) __, __
+    back=gear.RUN_Enmity_Cape,      --  5/ 5,  20 [ 60] __ (__, ___) 10, __
     waist="Platinum Moogle Belt",   --  3/ 3,  15 [___] __ (__, ___) __, __; HP+10%
-    -- HP from belt (ML30)                         328
+    -- HP from belt (ML30)                         310
     -- Runes                        -- __/__, ___ [___] __ (__, 253) __, __
     -- Bar-spell                    -- __/__, ___ [___] __ (__, 131) __, __
     -- Trait                        -- __/__, ___ [___] 22 (__, ___) __, __
-    -- 49(+25)PDT / 49 MDT, 589 Meva [933/1261 HP] 60 M.Def.Bns. (8 Status Resist, 439 Ele Resist) 74 Enmity, 13 Fast Cast
+    -- 48(+25)PDT / 48 MDT, 609 Meva [718/1028 HP] 60 M.Def.Bns. (8 Status Resist, 439 Ele Resist) 84 Enmity, 13 Fast Cast
 
     -- ammo="Sapience Orb",         -- __/__, ___ [___] __ (__, ___)  2,  2
   }
