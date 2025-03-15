@@ -1043,7 +1043,7 @@ function init_gear_sets()
     hands="Regal Cuffs",            --  2, __
     waist="Emphatikos Rope",        --  1, __
     -- main="Vadose Rod",           --  1, __
-    -- legs="Shedir seraweels",     --  1, __
+    -- legs="Shedir Seraweels",     --  1, __
     -- +6 Aquaveil, 32% Enh Duration
   })
 
