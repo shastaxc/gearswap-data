@@ -4,7 +4,7 @@ File Status: Good.
 Author: Silvermutt
 Required external libraries: SilverLibs
 Required addons: N/A
-Recommended addons: WSBinder, Reorganizer, PetTP, Autocontrol
+Recommended addons: WSBinder, Reorganizer, PetTP
 Misc Recommendations: Disable RollTracker
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -13,10 +13,13 @@ Misc Recommendations: Disable RollTracker
 Modes
 * The intended use for pet is to set your pet mode using the cycle before summoning the pet. You cannot change
   mode while pet is active (because the game restricts you from changing attachments when pet is active).
-* You can add or remove pet modes from the cycle but if you add, you should also make sure there is a corresponding
-  set name in AutoControl addon so it can equip the proper attachments. You should also add a corresponding entry
-  to the defaultManeuvers table, and sets for sets.idle.PetEngaged.NewNameHere, sets.engaged.Pet.NewNameHere, and
-  sets.engaged.Halfsies.NewNameHere (the additional .Acc sets are optional).
+* If you want to add/remove pet modes, you need to update:
+  * Add/remove state in the `state.PetMode` cycle
+  * Add/remove an entry in the `defaultManeuvers` table
+  * Add/remove an entry in the `autosets` table
+  * Add/remove a set for sets.idle.PetEngaged.NewNameHere
+  * Add/remove a set for sets.engaged.PetNewNameHere
+  * Add/remove a set for sets.engaged.HalfsiesNewNameHere
 * Offense Mode: Changes melee accuracy level
 * Hybrid Mode: Changes damage taken level while engaged
   * Master: Gear does not swap for pet abilities and does not include stats for pet.
@@ -167,218 +170,6 @@ __Keybind___Name______________Command_____________
 [ ALT+4 ]  ErasePet       /ja "Maintenance" <me>
 [ ALT+9 ]  Heady          /ja "Heady Artifice" <me>
 [ ALT+0 ]  SwapHP         /ja "Role Reversal" <me>
-
-∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-                                            Automaton Attachment Sets
-∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-<heal>
-    <frame>Stormwaker Frame</frame>
-    <head>Soulsoother Head</head>
-    <slot01>Mana Booster</slot01>
-    <slot02>Tactical Processor</slot02>
-    <slot03>Mana Tank II</slot03>
-    <slot04>Mana Tank IV</slot04>
-    <slot05>Vivi-valve II</slot05>
-    <slot06>Damage Gauge</slot06>
-    <slot07>Damage Gauge II</slot07>
-    <slot08>Optic Fiber</slot08>
-    <slot09>Optic Fiber II</slot09>
-    <slot10>Resister</slot10>
-    <slot11>Resister II</slot11>
-    <slot12>Scanner</slot12>
-</heal>
-<meleesc>
-    <frame>Sharpshot Frame</frame>
-    <head>Valoredge Head</head>
-    <slot01>Inhibitor</slot01>
-    <slot02>Inhibitor II</slot02>
-    <slot03>Speedloader II</slot03>
-    <slot04>Attuner</slot04>
-    <slot05>Magniplug</slot05>
-    <slot06>Magniplug II</slot06>
-    <slot07>Truesights</slot07>
-    <slot08>Turbo Charger</slot08>
-    <slot09>Turbo Charger II</slot09>
-    <slot10>Optic Fiber</slot10>
-    <slot11>Optic Fiber II</slot11>
-    <slot12>Coiler II</slot12>
-</meleesc>
-<meleescregen>
-    <frame>Sharpshot Frame</frame>
-    <head>Valoredge Head</head>
-    <slot01>Inhibitor</slot01>
-    <slot02>Inhibitor II</slot02>
-    <slot03>Speedloader II</slot03>
-    <slot04>Attuner</slot04>
-    <slot05>Magniplug</slot05>
-    <slot06>Magniplug II</slot06>
-    <slot07>Truesights</slot07>
-    <slot08>Turbo Charger</slot08>
-    <slot09>Turbo Charger II</slot09>
-    <slot10>Optic Fiber</slot10>
-    <slot11>Optic Fiber II</slot11>
-    <slot12>Coiler II</slot12>
-</meleescregen>
-<meleespam>
-    <frame>Sharpshot Frame</frame>
-    <head>Valoredge Head</head>
-    <slot01>Barrage Turbine</slot01>
-    <slot02>Heat Capacitor</slot02>
-    <slot03>Heat Capacitor II</slot03>
-    <slot04>Attuner</slot04>
-    <slot05>Magniplug</slot05>
-    <slot06>Magniplug II</slot06>
-    <slot07>Truesights</slot07>
-    <slot08>Turbo Charger</slot08>
-    <slot09>Turbo Charger II</slot09>
-    <slot10>Optic Fiber</slot10>
-    <slot11>Optic Fiber II</slot11>
-    <slot12>Coiler II</slot12>
-</meleespam>
-<nuke>
-    <frame>Stormwaker Frame</frame>
-    <head>Spiritreaver Head</head>
-    <slot01>Amplifier</slot01>
-    <slot02>Amplifier II</slot02>
-    <slot03>Tactical Processor</slot03>
-    <slot04>Loudspeaker IV</slot04>
-    <slot05>Tranquilizer</slot05>
-    <slot06>Optic Fiber</slot06>
-    <slot07>Optic Fiber II</slot07>
-    <slot08>Mana Tank III</slot08>
-    <slot09>Mana Tank IV</slot09>
-    <slot10>Economizer</slot10>
-    <slot11>Mana Jammer III</slot11>
-    <slot12>Mana Jammer IV</slot12>
-</nuke>
-<overdrivedd>
-    <frame>Sharpshot Frame</frame>
-    <head>Valoredge Head</head>
-    <slot01>Armor Plate IV</slot01>
-    <slot02>Magniplug</slot02>
-    <slot03>Speedloader II</slot03>
-    <slot04>Turbo Charger II</slot04>
-    <slot05>Auto-Repair Kit IV</slot05>
-    <slot06>Optic Fiber</slot06>
-    <slot07>Optic Fiber II</slot07>
-    <slot08>Coiler II</slot08>
-    <slot09>Inhibitor</slot09>
-    <slot10>Inhibitor II</slot10>
-    <slot11>Attuner</slot11>
-    <slot12>Magniplug II</slot12>
-</overdrivedd>
-<rangedsc>
-    <frame>Sharpshot Frame</frame>
-    <head>Sharpshot Head</head>
-    <slot01>Inhibitor</slot01>
-    <slot02>Inhibitor II</slot02>
-    <slot03>Speedloader II</slot03>
-    <slot04>Magniplug</slot04>
-    <slot05>Magniplug II</slot05>
-    <slot06>Scope IV</slot06>
-    <slot07>Truesights</slot07>
-    <slot08>Barrage Turbine</slot08>
-    <slot09>Repeater</slot09>
-    <slot10>Drum Magazine</slot10>
-    <slot11>Optic Fiber</slot11>
-    <slot12>Optic Fiber II</slot12>
-</rangedsc>
-<rangedspam>
-    <frame>Sharpshot Frame</frame>
-    <head>Sharpshot Head</head>
-    <slot01>Scope II</slot01>
-    <slot02>Scope IV</slot02>
-    <slot03>Truesights</slot03>
-    <slot04>Repeater</slot04>
-    <slot05>Drum Magazine</slot05>
-    <slot06>Dynamo III</slot06>
-    <slot07>Armor Plate IV</slot07>
-    <slot08>Mana Jammer IV</slot08>
-    <slot09>Magniplug</slot09>
-    <slot10>Magniplug II</slot10>
-    <slot11>Optic Fiber</slot11>
-    <slot12>Optic Fiber II</slot12>
-</rangedspam>
-<skillupmelee>
-    <frame>Valoredge Frame</frame>
-    <head>Valoredge Head</head>
-    <slot01>Percolator</slot01>
-    <slot02>Stabilizer IV</slot02>
-    <slot03>Barrage Turbine</slot03>
-    <slot04>Auto-Repair Kit IV</slot04>
-    <slot05>Mana Jammer IV</slot05>
-    <slot06>Armor Plate IV</slot06>
-    <slot07>Turbo Charger</slot07>
-    <slot08>Turbo Charger II</slot08>
-    <slot09>Optic Fiber</slot09>
-    <slot10>Optic Fiber II</slot10>
-    <slot11>Coiler</slot11>
-    <slot12>Coiler II</slot12>
-</skillupmelee>
-<skillupnuke>
-    <frame>Stormwaker Frame</frame>
-    <head>Spiritreaver Head</head>
-    <slot01>Percolator</slot01>
-    <slot02>Optic Fiber</slot02>
-    <slot03>Optic Fiber II</slot03>
-    <slot04>Amplifier</slot04>
-    <slot05>Amplifier II</slot05>
-    <slot06>Mana Conserver</slot06>
-    <slot07>Turbo Charger</slot07>
-    <slot08>Turbo Charger II</slot08>
-    <slot09>Mana Booster</slot09>
-    <slot10>Power Cooler</slot10>
-    <slot11>Armor Plate IV</slot11>
-    <slot12>Auto-repair Kit III</slot12>
-</skillupnuke>
-<skillupranged>
-    <frame>Sharpshot Frame</frame>
-    <head>Sharpshot Head</head>
-    <slot01>Percolator</slot01>
-    <slot02>Optic Fiber</slot02>
-    <slot03>Optic Fiber II</slot03>
-    <slot04>Barrage Turbine</slot04>
-    <slot05>Repeater</slot05>
-    <slot06>Drum Magazine</slot06>
-    <slot07>Turbo Charger</slot07>
-    <slot08>Turbo Charger II</slot08>
-    <slot09>Coiler</slot09>
-    <slot10>Coiler II</slot10>
-    <slot11>Armor Plate IV</slot11>
-    <slot12>Auto-repair Kit IV</slot12>
-</skillupranged>
-<tank>
-    <frame>Valoredge Frame</frame>
-    <head>Soulsoother Head</head>
-    <slot01>Steam Jacket</slot01>
-    <slot02>Strobe</slot02>
-    <slot03>Strobe II</slot03>
-    <slot04>Mana Jammer III</slot04>
-    <slot05>Mana Jammer IV</slot05>
-    <slot06>Armor Plate II</slot06>
-    <slot07>Armor Plate IV</slot07>
-    <slot08>Barrier Module II</slot08>
-    <slot09>Auto-Repair Kit IV</slot09>
-    <slot10>Optic Fiber</slot10>
-    <slot11>Optic Fiber II</slot11>
-    <slot12>Flashbulb</slot12>
-</tank>
-<rdm>
-    <frame>Stormwaker Frame</frame>
-    <head>Stormwaker Head</head>
-    <slot01>Tranquilizer IV</slot01>
-    <slot02>Tranquilizer III</slot02>
-    <slot03>Tranquilizer II</slot03>
-    <slot04>Tranquilizer</slot04>
-    <slot05>Tactical Processor</slot05>
-    <slot06>Optic Fiber II</slot06>
-    <slot07>Optic Fiber</slot07>
-    <slot08>Turbo Charger II</slot08>
-    <slot09>Turbo Charger</slot09>
-    <slot10>Armor Plate IV</slot10>
-    <slot11>Mana Tank IV</slot11>
-    <slot12>Auto-Repair Kit III</slot12>
-</rdm>
 
 ]]--
 
@@ -1743,6 +1534,8 @@ function init_gear_sets()
   })
   sets.engaged.PetNuke = set_combine(sets.engaged.PetHeal, {})
   sets.engaged.PetNuke.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
+  sets.engaged.PetRDM = set_combine(sets.engaged.PetHeal, {})
+  sets.engaged.PetRDM.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
   sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRangedSC, {})
   sets.engaged.SkillUpMelee = set_combine(sets.engaged.PetMeleeSpam, {})
 
@@ -1826,6 +1619,8 @@ function init_gear_sets()
   sets.engaged.HalfsiesHeal.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
   sets.engaged.HalfsiesNuke = set_combine(sets.engaged.PetNuke, {})
   sets.engaged.HalfsiesNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
+  sets.engaged.HalfsiesRDM = set_combine(sets.engaged.HalfsiesNuke, {})
+  sets.engaged.HalfsiesRDM.Acc = set_combine(sets.engaged.HalfsiesNuke.Acc, {})
   sets.engaged.HalfsiesSkillUpRanged = set_combine(sets.engaged.HalfsiesRangedSC, {})
   sets.engaged.HalfsiesSkillUpMelee = set_combine(sets.engaged.HalfsiesMeleeSpam, {})
 
@@ -2189,8 +1984,8 @@ end
 
 function equip_attachments(set_name)
   -- Must check 'is_setting_attachments' to avoid trying to set the same mode twice
-  -- This would not cause a functional difference, but causes autocontrol to spam
-  -- messages in the console.
+  -- This would not cause a functional difference, but may cause messages to spam
+  -- in the console.
   if set_name == state.PetMode.current and not is_setting_attachments then
     is_setting_attachments = true
     attach_set(set_name)
