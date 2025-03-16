@@ -1,5 +1,6 @@
 --[[
 File Status: Good.
+TODO: Issues with grip not staying equipped when in encumbrance PDT mode.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
