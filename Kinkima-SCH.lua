@@ -1544,17 +1544,17 @@ function init_gear_sets()
     ear2="Halasz Earring",            -- __, __, __ [__/__, ___]  5; Magic crit rate +14%
     ring1="Freke Ring",               -- 10,  8, __ [__/__, ___] 10
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
-    back=gear.SCH_MAB_Cape,           -- 30, 10, 20 [__/__,  15] __; TODO: Swap to PDT
+    back=gear.SCH_MAB_Cape,           -- 30, 10, 20 [10/__, ___] __
     waist="Orpheus's Sash",           -- Swap conditionally to Hachirin-no-obi
     -- Merit points                   -- __, __, __ [__/__, ___] 10
-    -- 225 INT, 299 MAB, 309 M.Acc [34 PDT/34 MDT, 518 M.Eva] 107 SIRD
+    -- 225 INT, 299 MAB, 309 M.Acc [44 PDT/34 MDT, 503 M.Eva] 107 SIRD
 
     -- main="Mpaca's Staff",          -- 20, 65, 55 [__/__, ___] __; R30
     -- legs="Agwu's Slops",           -- 54, 60, 55 [10/10, 134] __; R30
     -- feet="Agwu's Pigaches",        -- 30, 60, 55 [__/__, 134] 10; R30
     -- neck="Null Loop",              -- __, __, 50 [ 5/ 5, ___] __; Once you have agwu feet R30
     -- ear2="Arbatel earring +2"      -- 15,  9, 20 [__/__, ___] __
-    -- 247 INT, 315 MAB, 391 M.Acc [34 PDT/34 MDT, 518 M.Eva] 102 SIRD
+    -- 247 INT, 315 MAB, 391 M.Acc [44 PDT/34 MDT, 503 M.Eva] 102 SIRD
   }
 
   -- Cap SubtleBlow and DT. Minimize INT/MAB/M.Acc to maybe hit 0 dmg, which feeds 0 TP.
