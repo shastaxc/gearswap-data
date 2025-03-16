@@ -32,6 +32,7 @@ Modes
 * Regen Mode: Determines which set variant to use for Regen spells
   * Potency: Maximizes Regen potency
   * Duration: Maximizes duration of the Regen buff
+* SubtleSkillchain: Equips sets.SubtleSkillchain for spells used as part of a skillchain (with Immanence). Mainly for Bumba v25.
 
 Weapons
 * Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
@@ -86,6 +87,7 @@ Modes:
   [ ALT+` ]             Toggle Magic Burst mode
   [ WIN+H ]             Cycle Helix mode
   [ WIN+R ]             Cycle Regen mode
+  [ ALT+F8 ]            Toggle SubtleSkillchain mode
 
 Weapons:
   [ CTRL+Insert ]       Cycle Weapon Sets
@@ -294,7 +296,9 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
-  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus, function ()
+    return not tempDisableElementalBelt
+  end)
 
   state.CP = M(false, 'Capacity Points Mode')
 
@@ -304,6 +308,7 @@ function job_setup()
   state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'CaitSith'}
   state.MagicBurst = M(true, 'Magic Burst')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Khatvanga'}
+  state.SubtleSkillchain = M(false, 'Subtle Skillchain')
 
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
@@ -340,6 +345,7 @@ function job_setup()
       ['@w'] = 'gs c toggle RearmingLock',
       ['@c'] = 'gs c toggle CP',
       ['!`'] = 'gs c toggle MagcBurst',
+      ['!f8'] = 'gs c toggle SubtleSkillchain',
       ['^insert'] = 'gs c weaponset cycle',
       ['^delete'] = 'gs c weaponset cycleback',
       ['!delete'] = 'gs c weaponset reset',
@@ -1521,6 +1527,25 @@ function init_gear_sets()
     back="Bookworm's Cape",
   }
 
+  sets.SubtleSkillchain = {
+    main="Malignance Pole",           -- __, __, __ [20/20, ___] __
+    sub="",
+    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] __; Resists
+    -- head="Lenore's Hairpin",       -- __, __, __ [__/__, ___]  9
+    -- body="Adamantite Armor",       -- 38, __, 40 [20/20, 107] __
+    hands=gear.Telchine_ENH_hands,    -- 17, __, __ [__/__,  62] __
+    legs="Pinga Pants +1",            -- 44, __, __ [__/__, 147] __; Alt is Assiduity Pants +1
+    feet=gear.Telchine_ENH_feet,      -- 17, __, __ [__/__, 132] __
+    neck="Bathy Choker +1",           -- __, __, __ [__/__, ___] 11
+    ear1="Arete Del Luna +1",         -- __, __, __ [__/__, ___] __; Resists
+    ear2="Digni. Earring",            -- __, __, 10 [__/__, ___]  5
+    ring1="Chirich Ring +1",          -- __, __, __ [__/__, ___] 10
+    ring2="Chirich Ring +1",          -- __, __, __ [__/__, ___] 10
+    back=gear.SCH_FC_Cape,            -- __, __, __ [10/__,  30] __
+    -- waist="Nusku's Sash",          -- __, __, __ [__/__, ___]  5; Alt is Ninurta's Sash
+    -- 116 INT, 0 MAB, 50 M.Acc [53 PDT/43 MDT, 478 M.Eva] 50 Subtle Blow
+  }
+
   sets.buff['Ebullience'] = {
     head="Arbatel Bonnet +3",
   }
@@ -1708,6 +1733,16 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(sets.CaitSith)
   end
 
+  if state.SubtleSkillchain.current == 'on'
+    and state.Buff.Immanence
+    and spell.skill == 'Elemental Magic'
+    and spellMap ~= 'ElementalEnfeeble'
+  then
+    -- Temporarily disable elemental belt swaps
+    tempDisableElementalBelt = true
+    equip(sets.SubtleSkillchain)
+  end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1716,6 +1751,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   
+  -- Remove temporary lock on elemental belt swaps
+  tempDisableElementalBelt = false
+
   if not spell.interrupted then
     if in_battle_mode() and spell.english == 'Dispelga' then
       equip(select_weapons())
