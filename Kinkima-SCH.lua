@@ -32,7 +32,9 @@ Modes
 * Regen Mode: Determines which set variant to use for Regen spells
   * Potency: Maximizes Regen potency
   * Duration: Maximizes duration of the Regen buff
-* SubtleSkillchain: Equips sets.SubtleSkillchain for spells used as part of a skillchain (with Immanence). Mainly for Bumba v25.
+* Immanence Mode: Determines what set of midcast gear to use when casting an elemental nuke under Immanence
+  * SIRD: Equips SIRD-capped set.
+  * SubtleBlow: Equips Subtle Blow-capped set. Mainly for Bumba v25.
 
 Weapons
 * Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
@@ -87,7 +89,7 @@ Modes:
   [ ALT+` ]             Toggle Magic Burst mode
   [ WIN+H ]             Cycle Helix mode
   [ WIN+R ]             Cycle Regen mode
-  [ ALT+F8 ]            Toggle SubtleSkillchain mode
+  [ ALT+F8 ]            Cycle Immanence mode
 
 Weapons:
   [ CTRL+Insert ]       Cycle Weapon Sets
@@ -308,7 +310,7 @@ function job_setup()
   state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'CaitSith'}
   state.MagicBurst = M(true, 'Magic Burst')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Khatvanga'}
-  state.SubtleSkillchain = M(false, 'Subtle Skillchain')
+  state.ImmanenceMode = M{['description']='Immanence Mode', 'SIRD', 'SubtleBlow'}
 
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
@@ -345,7 +347,7 @@ function job_setup()
       ['@w'] = 'gs c toggle RearmingLock',
       ['@c'] = 'gs c toggle CP',
       ['!`'] = 'gs c toggle MagcBurst',
-      ['!f8'] = 'gs c toggle SubtleSkillchain',
+      ['!f8'] = 'gs c cycle ImmanenceMode',
       ['^insert'] = 'gs c weaponset cycle',
       ['^delete'] = 'gs c weaponset cycleback',
       ['!delete'] = 'gs c weaponset reset',
@@ -826,7 +828,6 @@ function init_gear_sets()
   -- SIRD_options          CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
   -- main="Eremite's Wand +1",     -- __, __, ___,   2, ___, 25, __/__, __
   -- sub="Culminus",               -- __, __, ___, ___, ___, 10, __/__, __
-
   -- sub="Magic Strap",            -- __, __, ___, ___, ___,  5, __/__, __
   -- ammo="Staunch Tathlum +1",    -- __, __, ___, ___, ___, 11,  3/ 3, __
   -- head=gear.Kaykaus_C_head,     -- __, 11,  16,  19,  14, 12, __/ 3, __
@@ -834,7 +835,7 @@ function init_gear_sets()
   -- head="Chironic Hat",          -- __, __, ___,  29,  14, 11, __/ 2, __
   -- body=gear.Kaykaus_C_body,     --  4, __, ___,  33,  20, 12, __/__, __
   -- body="Rosette Jaseran +1",    -- __, __, ___,  29,  21, 25,  5/ 5, 13
-  -- body="Chrionic Doublet",      -- __, 13, ___,  34,  16, 11, __/__, __
+  -- body="Chironic Doublet",      -- __, 13, ___,  34,  16, 11, __/__, __
   -- hands="Chironic Gloves",      -- __, __, ___,  38,  20, 31, __/__,  4
   -- hands=gear.Amalric_B_hands,   -- __, __, ___,  34,  20, 11, __/__,  6
   -- legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
@@ -1264,10 +1265,8 @@ function init_gear_sets()
   MB_options = {
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
-    
     -- main=gear.Akademos_C,          -- 27, 25, 53, 228, 217, 10, __
     -- sub="Enki Strap",              -- 10, 10, __, ___, ___, __, __
-
     -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
     -- head="Agwu's Cap",             -- 33, 55, 60, ___,  35,  7, __
     -- head=gear.Nyame_B_head,        -- 28, 40, 30, ___, ___,  5, __
@@ -1527,7 +1526,40 @@ function init_gear_sets()
     back="Bookworm's Cape",
   }
 
-  sets.SubtleSkillchain = {
+  -- Do not modify
+  sets.Immanence = {}
+
+  -- Cap SIRD and DT, fill the rest with MAB
+  sets.Immanence.SIRD = {
+    main="Mpaca's Staff",             -- 18, 60, 50 [__/__, ___] __; R25
+    sub="Khonsu",                     -- __, __, 30 [ 6/ 6, ___] __
+    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] 11
+    -- head="Agwu's Cap",             -- 33, 60, 55 [__/__, 107] 10
+    body=gear.Kaykaus_C_body,         -- 30, 28, 35 [__/__,  80] 12
+    hands=gear.Chironic_SIRD_hands,   -- 25, 15, 16 [__/__,  48] 31
+    legs="Agwu's Slops",              -- 49, 60, 50 [ 9/ 9, 134] __; R25
+    -- feet="Agwu's Pigaches",        -- 30, 58, 53 [__/__, 134]  5; R25
+    neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___]  5
+    ear1="Magnetic Earring",          -- __, __, __ [__/__, ___]  8
+    ear2="Halasz Earring",            -- __, __, __ [__/__, ___]  5; Magic crit rate +14%
+    ring1="Freke Ring",               -- 10,  8, __ [__/__, ___] 10
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
+    back=gear.SCH_MAB_Cape,           -- 30, 10, 20 [__/__,  15] __; TODO: Swap to PDT
+    waist="Orpheus's Sash",           -- Swap conditionally to Hachirin-no-obi
+    -- Merit points                   -- __, __, __ [__/__, ___] 10
+    -- 225 INT, 299 MAB, 309 M.Acc [34 PDT/34 MDT, 518 M.Eva] 107 SIRD
+
+    -- main="Mpaca's Staff",          -- 20, 65, 55 [__/__, ___] __; R30
+    -- legs="Agwu's Slops",           -- 54, 60, 55 [10/10, 134] __; R30
+    -- feet="Agwu's Pigaches",        -- 30, 60, 55 [__/__, 134] 10; R30
+    -- neck="Null Loop",              -- __, __, 50 [ 5/ 5, ___] __; Once you have agwu feet R30
+    -- ear2="Arbatel earring +2"      -- 15,  9, 20 [__/__, ___] __
+    -- 247 INT, 315 MAB, 391 M.Acc [34 PDT/34 MDT, 518 M.Eva] 102 SIRD
+  }
+
+  -- Cap SubtleBlow and DT. Minimize INT/MAB/M.Acc to maybe hit 0 dmg, which feeds 0 TP.
+  -- TODO: Needs testing to see if you can hit 0 dmg on these spells. If you can't, increase the MAB/m.acc.
+  sets.Immanence.SubtleBlow = {
     main="Malignance Pole",           -- __, __, __ [20/20, ___] __
     sub="",
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] __; Resists
@@ -1555,8 +1587,6 @@ function init_gear_sets()
   sets.buff['Perpetuance'] = {
     hands="Arbatel Bracers +3",
   }
-  -- Cap SIRD and DT
-  sets.buff['Immanence'] = set_combine(sets.midcast.CureNormal, {})
   sets.buff['Penury'] = {
     legs="Arbatel Pants +3",
   }
@@ -1731,16 +1761,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
     equip(sets.CaitSith)
-  end
-
-  if state.SubtleSkillchain.current == 'on'
-    and state.Buff.Immanence
-    and spell.skill == 'Elemental Magic'
-    and spellMap ~= 'ElementalEnfeeble'
-  then
-    -- Temporarily disable elemental belt swaps
-    tempDisableElementalBelt = true
-    equip(sets.SubtleSkillchain)
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -2084,7 +2104,13 @@ function apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
       equip(sets.buff['Ebullience'])
     end
     if state.Buff.Immanence then
-      equip(sets.buff['Immanence'])
+      if state.ImmanenceMode.current == 'SIRD' then
+        equip(sets.Immanence.SIRD)
+      elseif state.ImmanenceMode.current == 'SubtleBlow' then
+        -- Temporarily disable elemental belt swaps
+        tempDisableElementalBelt = true
+        equip(sets.Immanence.SubtleBlow)
+      end
     end
     if state.Buff.Klimaform and spell.skill == 'Elemental Magic' and spell.element == world.weather_element then
       equip(sets.buff['Klimaform'])
