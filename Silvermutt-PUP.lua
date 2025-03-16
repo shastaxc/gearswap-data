@@ -363,6 +363,22 @@ __Keybind___Name______________Command_____________
     <slot11>Optic Fiber II</slot11>
     <slot12>Flashbulb</slot12>
 </tank>
+<rdm>
+    <frame>Stormwaker Frame</frame>
+    <head>Stormwaker Head</head>
+    <slot01>Tranquilizer IV</slot01>
+    <slot02>Tranquilizer III</slot02>
+    <slot03>Tranquilizer II</slot03>
+    <slot04>Tranquilizer</slot04>
+    <slot05>Tactical Processor</slot05>
+    <slot06>Optic Fiber II</slot06>
+    <slot07>Optic Fiber</slot07>
+    <slot08>Turbo Charger II</slot08>
+    <slot09>Turbo Charger</slot09>
+    <slot10>Armor Plate IV</slot10>
+    <slot11>Mana Tank IV</slot11>
+    <slot12>Auto-Repair Kit III</slot12>
+</rdm>
 
 ]]--
 
@@ -408,8 +424,8 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'OverdriveDD', 'Nuke'}
-  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
+  state.PetMode = M{['description']='Pet Mode', 'RDM', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'OverdriveDD', 'Nuke'}
+  -- state.PetMode = M{['description']='Pet Mode', 'RDM', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
 
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
@@ -419,6 +435,7 @@ function job_setup()
   -- The list of elements must only contain the following values: 'Light', 'Dark', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water'
   -- Elements should be listed in the order you wish them to be activated.
 	defaultManeuvers = {
+    RDM =           L{'Wind', 'Earth', 'Light'},
 		Tank =          L{'Light', 'Fire', 'Fire'},
 		RangedSpam =    L{'Wind', 'Wind', 'Wind'},
 		RangedSC =      L{'Wind', 'Wind', 'Fire'},
@@ -433,6 +450,22 @@ function job_setup()
 	}
 
   autosets = T{
+    ['RDM'] = T{
+      frame="Stormwaker Frame",
+      head="Stormwaker Head",
+      slot01="Tranquilizer IV",
+      slot02="Tranquilizer III",
+      slot03="Tranquilizer II",
+      slot04="Tranquilizer",
+      slot05="Tactical Processor",
+      slot06="Optic Fiber II",
+      slot07="Optic Fiber",
+      slot08="Turbo Charger II",
+      slot09="Turbo Charger",
+      slot10="Armor Plate IV",
+      slot11="Mana Tank IV",
+      slot12="Auto-Repair Kit III",
+    },
     ['Tank'] = T{
       frame="Valoredge Frame",
       head="Soulsoother Head",
@@ -934,6 +967,7 @@ function init_gear_sets()
   sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.RangedSC, {})
   sets.idle.PetEngaged.SkillUpMelee = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
   sets.idle.PetEngaged.Nuke = set_combine(sets.idle.PetEngaged.Heal, {})
+  sets.idle.PetEngaged.RDM = set_combine(sets.idle.PetEngaged.Heal, {})
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
