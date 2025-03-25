@@ -210,7 +210,7 @@ function job_setup()
 
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger','Sword','Club','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Lycurgos', 'Anguta', 'Caladbolg', 'Naegling', 'Club', 'DaggerAcc', 'Dagger'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Caladbolg', 'Anguta', 'Lycurgos', 'Naegling', 'Club', 'DaggerAcc', 'Dagger'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Foenaria', 'Apocalypse', 'Caladbolg', 'Naegling', 'Club', 'Dagger'}
   state.HighEnmityMode = M(false, 'High Enmity Mode')
 
