@@ -913,11 +913,12 @@ function init_gear_sets()
     -- Master level 10              -- __, 20
     -- 0 Geomancy, 927 geo skill, 92 Conserve MP, 281 Indi Duration, 20 Indi Duration % [52 PDT/ 42 MDT, 499 M.Eva] {Pet: 63 DT, 4 Regen}
     
+    -- main=gear.Gada_Entrust,      -- __, __, __, __, 11 [__/__, ___] {__, __}
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  7, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- 0 Geomancy, 932 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 63 DT, 5 Regen}
+    -- 0 Geomancy, 927 geo skill, 93 Conserve MP, 271 Indi Duration, 31 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 63 DT, 5 Regen}
   })
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
@@ -1387,7 +1388,7 @@ function init_gear_sets()
     body=gear.Telchine_ENH_body,      -- __, __, 10 [__/__, 104] {__/__, __}
     hands="Azimuth Gloves +2",        -- __, __, __ [11/11,  88] {__/__, __}
     legs=gear.Telchine_ENH_legs,      -- __, __, 10 [__/__, 132] {__/__, __}
-    feet="Azimuth Gaiters +2",        -- __, __, __ [10/10, 158] {__/__, __}
+    feet="Inspirited Boots",          -- __, 15, __ [__/__, 118] {__/__, __}
     neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Mimir Earring",             -- __, __, __ [__/__, ___] {__/__, __}
     ear2="Azimuth Earring +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
@@ -1395,11 +1396,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
     waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
-    -- 2 Refresh Potency, 0 Refresh Duration, 46% Enh Duration [50 PDT/42 MDT, 598 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [40 PDT/32 MDT, 558 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
     
     -- body=gear.Telchine_ENH_body,   -- __, __, 10 [__/__, 105] {__/__, __}
     -- hands="Azimuth Gloves +3",     -- __, __, __ [12/12,  98] {__/__, __}
-    -- feet="Inspirited Boots",       -- __, 15, __ [__/__, 118] {__/__, __}
     -- ear1="Genmei Earring",         -- __, __, __ [ 2/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- __, __, __ [ 7/ 7, ___] {__/__, __}
     -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [47 PDT/37 MDT, 569 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}

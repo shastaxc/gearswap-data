@@ -14,6 +14,7 @@ gear.Colada_ENH = { name="Colada", augments={'Enh. Mag. eff. dur. +4','STR+9','"
 -- Gada
 gear.Gada_MND = { name="Gada", augments={'"Cure" spellcasting time -3%','MND+15','Mag. Acc.+15','"Mag.Atk.Bns."+7',}} -- 15 MND (2 CP would also be great)
 gear.Gada_ENH = { name="Gada", augments={'Enh. Mag. eff. dur. +6','MND+1','Mag. Acc.+14','"Mag.Atk.Bns."+11',}} -- 6 Enh Duration, 6 FC
+-- gear.Gada_Entrust = {} -- Indi Duration +11%
 
 -- Grioavolr
 -- gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
