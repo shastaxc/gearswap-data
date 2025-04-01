@@ -466,11 +466,11 @@ function init_gear_sets()
   -- 10% cap on Quick Magic
   sets.precast.FC.QuickMagic = {
     main="Malignance Pole",           -- __ [20/20, ___] __
-    sub="Mensch Strap +1",            -- __ [ 5/__, ___] __
+    sub="Clerisy Strap +1",           --  3 [__/__, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
-    hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
+    hands=gear.Gende_SongFC_hands,    --  7 [ 4/__,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet="Volte Gaiters",             --  6 [__/__, 142] __
     neck="Cleric's Torque +1",        --  8 [__/__, ___] __
@@ -478,25 +478,12 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
     ring1="Kishar Ring",              --  4 [__/__, ___] __
     ring2="Defending Ring",           -- __ [10/10, ___] __
-    back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __
+    back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 80 Fast Cast [58 PDT/44 MDT, 577 MEVA] 5 Quick Magic
+    -- 73 Fast Cast [44 PDT/42 MDT, 577 MEVA] 9 Quick Magic
 
-    -- main="Malignance Pole",        -- __ [20/20, ___] __
-    -- sub="Clerisy Strap +1",        --  3 [__/__, ___] __
-    -- ammo="Impatiens",              -- __ [__/__, ___]  2
-    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123] __
-    -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
-    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
-    -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
-    -- feet="Volte Gaiters",          --  6 [__/__, 142] __
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __
-    -- ear1="Malignance Earring",     --  4 [__/__, ___] __
     -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___] __
-    -- ring1="Kishar Ring",           --  4 [__/__, ___] __
-    -- ring2="Defending Ring",        -- __ [10/10, ___] __
-    -- back="Perimede Cape",          -- __ [__/__, ___]  4
-    -- waist="Witful Belt",           --  3 [__/__, ___]  3
     -- 75 Fast Cast [49 PDT/45 MDT, 577 MEVA] 9 Quick Magic
   }
 
