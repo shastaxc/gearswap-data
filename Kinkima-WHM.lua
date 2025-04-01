@@ -1594,6 +1594,7 @@ function auto_solace_and_arts()
       and not state.Buff['Afflatus Misery']
   local needs_arts = state.AutoLightArts.current == 'on'
       and player.sub_job == 'SCH'
+      and player.sub_job_level > 9
       and not buffactive['Light Arts']
       and not buffactive['Addendum: White']
       and not buffactive['Dark Arts']
