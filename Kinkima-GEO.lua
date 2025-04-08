@@ -1662,6 +1662,12 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(select_weapons())
   end
 
+  if not eventArgs.cancel then
+    if spell.english == 'Entrust' then
+      state.Buff['Entrust'] = true
+    end
+  end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1705,6 +1711,10 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       state.Buff['Dark Arts'] = false
       state.Buff['Addendum: White'] = false
       state.Buff['Addendum: Black'] = true
+    end
+  else
+    if state.Buff['Entrust'] then
+      state.Buff['Entrust'] = buffactive['Entrust']
     end
   end
 

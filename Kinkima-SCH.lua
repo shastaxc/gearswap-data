@@ -1763,6 +1763,14 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(sets.CaitSith)
   end
 
+  if not eventArgs.cancel then
+    if spell.english == 'Immanence' then
+      state.Buff['Immanence'] = true
+    elseif spell.english == 'Ebullience' then
+      state.Buff['Ebullience'] = true
+    end
+  end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1778,7 +1786,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     if in_battle_mode() and spell.english == 'Dispelga' then
       equip(select_weapons())
     end
-    
+
     if spell.english == "Sleep II" then
       send_command('@timers c "Sleep II ['..spell.target.name..']" 90 down spells/00259.png')
     elseif spell.english == "Sleep" or spell.english == "Sleepga" then -- Sleep & Sleepga Countdown --
@@ -1805,6 +1813,12 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       state.Buff['Dark Arts'] = false
       state.Buff['Addendum: White'] = false
       state.Buff['Addendum: Black'] = true
+    end
+  else
+    if state.Buff['Immanence'] then
+      state.Buff['Immanence'] = buffactive['Immanence']
+    elseif state.Buff['Ebullience'] then
+      state.Buff['Ebullience'] = buffactive['Ebullience']
     end
   end
 
