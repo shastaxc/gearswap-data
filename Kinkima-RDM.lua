@@ -1337,7 +1337,7 @@ function init_gear_sets()
   sets.midcast.SkillEnfeebles = {
     main="Contemplator +1",           -- 228, 70, 22, __ (__, __, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
-    range="empty",                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    range="empty",                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
     head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
@@ -1353,9 +1353,11 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Traits/Gifts                                   38  15         476
     -- 228 M.Acc skill, 440 M.Acc, 301 MND, 52 FC (21 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [24 PDT/16 MDT, 537 M.Eva]
-    
+
+    -- body="Lethargy Sayon +3",      -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]; Use at ML22+
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 228 M.Acc skill, 443 M.Acc, 301 MND, 52 FC (21 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [24 PDT/16 MDT, 537 M.Eva]
+    -- ML22                                                           22
+    -- 228 M.Acc skill, 452 M.Acc, 303 MND, 52 FC (21 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 625 Enf. Skill) [38 PDT/16 MDT, 573 M.Eva]
   }
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
   })
