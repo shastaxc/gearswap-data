@@ -1558,16 +1558,15 @@ function init_gear_sets()
   }
 
   -- Cap SubtleBlow and DT. Minimize INT/MAB/M.Acc to maybe hit 0 dmg, which feeds 0 TP.
-  -- TODO: Needs testing to see if you can hit 0 dmg on these spells. If you can't, increase the MAB/m.acc.
   sets.Immanence.SubtleBlow = {
     main="Malignance Pole",           -- __, __, __ [20/20, ___] __
     sub="",
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] __; Resists
     -- head="Lenore's Hairpin",       -- __, __, __ [__/__, ___]  9
-    -- body="Adamantite Armor",       -- 38, __, 40 [20/20, 107] __
-    hands=gear.Telchine_ENH_hands,    -- 17, __, __ [__/__,  62] __
-    legs="Pinga Pants +1",            -- 44, __, __ [__/__, 147] __; Alt is Assiduity Pants +1
-    feet=gear.Telchine_ENH_feet,      -- 17, __, __ [__/__, 132] __
+    body=empty,
+    hands=empty,
+    legs=empty,
+    feet=empty,
     neck="Bathy Choker +1",           -- __, __, __ [__/__, ___] 11
     ear1="Arete Del Luna +1",         -- __, __, __ [__/__, ___] __; Resists
     ear2="Digni. Earring",            -- __, __, 10 [__/__, ___]  5
@@ -1575,7 +1574,7 @@ function init_gear_sets()
     ring2="Chirich Ring +1",          -- __, __, __ [__/__, ___] 10
     back=gear.SCH_FC_Cape,            -- __, __, __ [10/__,  30] __
     -- waist="Nusku's Sash",          -- __, __, __ [__/__, ___]  5; Alt is Ninurta's Sash
-    -- 116 INT, 0 MAB, 50 M.Acc [53 PDT/43 MDT, 478 M.Eva] 50 Subtle Blow
+    -- 0 INT, 0 MAB, 10 M.Acc [33 PDT/23 MDT, 30 M.Eva] 50 Subtle Blow
   }
 
   sets.buff['Ebullience'] = {
