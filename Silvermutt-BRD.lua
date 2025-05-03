@@ -1180,7 +1180,6 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
