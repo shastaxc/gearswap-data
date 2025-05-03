@@ -723,7 +723,9 @@ function init_gear_sets()
     -- Set bonuses                 __, __, 60, ___
   }) -- 266 CHR, 65% Duration, 542 M.Acc, 255 M.Acc skill
 
-  -- For Horde Lullaby maxiumum AOE range.
+  -- For Horde Lullaby increased AOE range
+  -- Horde II 7' radius = 567 skill
+  -- Horde II 8' radius = 648 skill
   sets.midcast.SongStringSkill = {
     ear1="Gersemi Earring",
     ring2="Stikini Ring +1",
@@ -1192,14 +1194,19 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
     if spell.name == 'Honor March' then
       equip({range="Marsyas"})
-    end
-    if string.find(spell.name,'Lullaby') then
+    elseif string.find(spell.name,'Lullaby') then
       if buffactive.Troubadour then
+        -- Increase curation
         equip({range="Marsyas"})
       elseif state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
+        -- Increase range
         equip({range="Daurdabla"})
-        equip(sets.midcast.SongStringSkill)
+        if spell.english == 'Horde Lullaby II' then
+          -- Increase duration and range (not needed for Horde 1 because it's skill capped naturally)
+          equip(sets.midcast.SongStringSkill)
+        end
       else
+        -- Increase duration
         equip({range="Gjallarhorn"})
       end
     end
