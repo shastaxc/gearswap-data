@@ -1181,6 +1181,10 @@ function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+end
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'BardSong' then
     -- layer general gear on first, then let default handler add song-specific gear.
     local generalClass = get_song_class(spell)
@@ -1200,12 +1204,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
         equip({range="Gjallarhorn"})
       end
     end
-  end
-end
 
--- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
-function job_post_midcast(spell, action, spellMap, eventArgs)
-  if spell.type == 'BardSong' then
     if silibs.can_dual_wield() then
       equip(sets.SongDWDuration)
     end
