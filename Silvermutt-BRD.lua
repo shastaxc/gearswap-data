@@ -1182,16 +1182,18 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-end
-
--- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
-function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'BardSong' then
     -- layer general gear on first, then let default handler add song-specific gear.
     local generalClass = get_song_class(spell)
     if generalClass and sets.midcast[generalClass] then
       equip(sets.midcast[generalClass])
     end
+  end
+end
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+function job_post_midcast(spell, action, spellMap, eventArgs)
+  if spell.type == 'BardSong' then
     if spell.name == 'Honor March' then
       equip({range="Marsyas"})
     elseif string.find(spell.name,'Lullaby') then
