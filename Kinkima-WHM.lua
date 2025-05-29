@@ -416,20 +416,19 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
     legs=gear.Nyame_B_legs,         --  8/ 8, 150 [__]
     feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
-    neck="Cleric's Torque +1",      -- __/__, ___ [20]
+    neck="Cleric's Torque +2",      -- __/__, ___ [25]
     ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
     ear2="Ebers Earring +1",        --  5/ 5, ___ [ 8]
     ring1="Kuchekula Ring",         -- __/__, ___ [ 7]
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- 77 PDT / 47 MDT, 661 M.Eva [52 -Enmity]
+    -- 77 PDT / 47 MDT, 661 M.Eva [57 -Enmity]
 
     -- main="Bunzi's Rod",          -- __/__, ___ [ 5]; R30
     -- head="Ebers Cap +3",         -- __/__, 125 [__]
     -- legs="Ebers Pantaloons +3",  -- 13/13, 157 [__]
     -- feet="Ebers Duckbills +3",   -- 11/11, 157 [__]
-    -- neck="Cleric's Torque +2",   -- __/__, ___ [25]
     -- ear2="Ebers Earring +2",     --  8/ 8, ___ [ 9]
     -- 82 PDT / 52 MDT, 677 M.Eva [56 -Enmity]
   }
@@ -448,18 +447,16 @@ function init_gear_sets()
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet="Volte Gaiters",             --  6 [__/__, 142]
-    neck="Cleric's Torque +1",        --  8 [__/__, ___]
-    ear1="Malignance Earring",        --  4 [__/__, ___]
+    neck="Cleric's Torque +2",        -- 10 [__/__, ___]
+    ear1="Hearty Earring",            -- __ [__/__, ___]; Resist Status +5
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
     ring1="Shadow Ring",              -- __ [__/__, ___]; Annuls magic dmg
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
-    -- 82 Fast Cast [53 PDT/45 MDT, 597 MEVA]
+    -- 80 Fast Cast [53 PDT/45 MDT, 597 MEVA]
 
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
-    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
-    -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status +5
     -- 80 Fast Cast [54 PDT/43 MDT, 597 MEVA]
   }
 
@@ -473,16 +470,15 @@ function init_gear_sets()
     hands=gear.Gende_SongFC_hands,    --  7 [ 4/__,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet="Volte Gaiters",             --  6 [__/__, 142] __
-    neck="Cleric's Torque +1",        --  8 [__/__, ___] __
+    neck="Cleric's Torque +2",        -- 10 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
     ring1="Kishar Ring",              --  4 [__/__, ___] __
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 73 Fast Cast [44 PDT/42 MDT, 577 MEVA] 9 Quick Magic
+    -- 75 Fast Cast [44 PDT/42 MDT, 577 MEVA] 9 Quick Magic
 
-    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __
     -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___] __
     -- 75 Fast Cast [49 PDT/45 MDT, 577 MEVA] 9 Quick Magic
   }
@@ -522,17 +518,16 @@ function init_gear_sets()
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet="Volte Gaiters",             --  6 [__/__, 142]
-    neck="Cleric's Torque +1",        --  8 [__/__, ___]
+    neck="Cleric's Torque +2",        -- 10 [__/__, ___]
     ear1="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
     ear2="Malignance Earring",        --  4 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
-    -- 79 Fast Cast [50 PDT/24 MDT, 627 MEVA]
+    -- 81 Fast Cast [50 PDT/24 MDT, 627 MEVA]
 
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
-    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
     -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___]
     -- ring1="Kishar Ring",           --  4 [__/__, ___]
     -- 81 Fast Cast [52 PDT/31 MDT, 627 MEVA]
@@ -670,7 +665,7 @@ function init_gear_sets()
     hands=gear.Kaykaus_C_hands,       -- __, 11, 12 [__/__,  37]  6
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet=gear.Kaykaus_D_feet,         -- __, 17, __ [__/__, 107]  6
-    neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
+    neck="Cleric's Torque +2",        -- __, 10, __ [__/__, ___] 25
     ear1="Etiolation Earring",        -- __, __, __ [__/ 3, ___] __; Resist Silence +15
     ear2="Ebers Earring +1",          -- __, __, __ [ 5/ 5, ___]  8
     ring1="Freke Ring",               -- __, __, 10 [__/__, ___] __
@@ -679,10 +674,9 @@ function init_gear_sets()
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      8, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 12 CPII, 56 CP, 102 SIRD [50 PDT/36 MDT, 446 M.Eva] 49 -Enmity
+    -- 12 CPII, 59 CP, 102 SIRD [50 PDT/36 MDT, 446 M.Eva] 54 -Enmity
     
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
-    -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
     -- ear1="Glorious Earring",       --  2, __, __ [__/__, ___]  5
     -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
     -- Kaykaus bonus                      8, __, __ [__/__, ___] __
@@ -698,7 +692,7 @@ function init_gear_sets()
     hands=gear.Kaykaus_C_hands,       -- __, 11, 12 [__/__,  37]  6
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet="Theophany Duckbills +3",    -- __, __, 29 [__/__, 127] __
-    neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
+    neck="Cleric's Torque +2",        -- __, 10, __ [__/__, ___] 25
     ear1="Nourishing Earring +1",     -- __,  7,  5 [__/__, ___] __; Resist Silence +15
     ear2="Ebers Earring +1",          -- __, __, __ [ 5/ 5, ___]  8
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
@@ -707,7 +701,7 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __; Weather bonus
     -- Kaykaus set bonus              --  4, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 56 CP, 104 SIRD [57 PDT/37 MDT, 466 M.Eva] 52 -Enmity
+    -- 4 CPII, 59 CP, 104 SIRD [57 PDT/37 MDT, 466 M.Eva] 57 -Enmity
 
     -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __; Weather bonus
     -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
@@ -738,7 +732,7 @@ function init_gear_sets()
     hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48]  4; Can add more DT or Enmity
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet=gear.Kaykaus_D_feet,         -- __, 17, __ [__/__, 107]  6
-    neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
+    neck="Cleric's Torque +2",        -- __, 10, __ [__/__, ___] 25
     ear1="Halasz Earring",            -- __, __,  5 [__/__, ___]  3
     ear2="Ebers Earring +1",          -- __, __, __ [ 5/ 5, ___]  8
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
@@ -747,7 +741,7 @@ function init_gear_sets()
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 50 CP, 104 SIRD [57PDT/32MDT, 497 M.Eva] 50 -Enmity
+    -- 4 CPII, 53 CP, 104 SIRD [57PDT/32MDT, 497 M.Eva] 55 -Enmity
     
     -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ___] __
     -- sub="Culminus",                -- __, __, 10 [__/__, ___] __
@@ -778,7 +772,7 @@ function init_gear_sets()
     hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48]  4; Can add more DT or Enmity
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet="Theophany Duckbills +3",    -- __, __, 29 [__/__, 127] __
-    neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
+    neck="Cleric's Torque +2",        -- __, 10, __ [__/__, ___] 25
     ear1="Novia Earring",             -- __, __, __ [__/__, ___]  7
     ear2="Halasz Earring",            -- __, __,  5 [__/__, ___]  3
     ring1="Lebeche Ring",             -- __,  3, __ [__/__, ___]  5
@@ -787,7 +781,7 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 0 CPII, 54 CP, 106 SIRD [50PDT/35MDT, 442 M.Eva] 50 -Enmity
+    -- 0 CPII, 57 CP, 106 SIRD [50PDT/35MDT, 442 M.Eva] 55 -Enmity
 
     -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __
     -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
@@ -823,7 +817,7 @@ function init_gear_sets()
     hands=gear.Chironic_SIRD_hands,   -- __,  3, 31 [__/__,  48]
     legs="Ebers Pantaloons +2",       -- __,  5, __ [12/12, 147]; Ayanmo is BiS
     feet="Theophany Duckbills +3",    -- __,  3, 29 [__/__, 127]
-    neck="Cleric's Torque +1",        --  8, __, __ [__/__, ___]
+    neck="Cleric's Torque +2",        -- 10, __, __ [__/__, ___]
     ear1="Malignance Earring",        --  4, __, __ [__/__, ___]
     ear2="Enchanter's Earring +1",    --  2, __, __ [__/__, ___]
     ring1="Freke Ring",               -- __, __, 10 [__/__, ___]
@@ -831,12 +825,11 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,            -- 10, __, __ [10/__, ___]
     waist="Shinjutsu-no-obi +1",      --  5, __, __ [__/__, ___]
     -- Merit points                      __, __, 10 [__/__, ___]
-    -- 51 FC, 20 Haste, 105 SIRD [59 PDT/44 MDT, 525 M.Eva]
+    -- 53 FC, 20 Haste, 105 SIRD [59 PDT/44 MDT, 525 M.Eva]
     
     -- main=gear.Asclepius_C,         -- __, __, __ [15/15, ___]; Augments Esuna effect
     -- sub="Genmei Shield",           -- __, __, __ [10/__, ___]
     -- legs="Ebers Pantaloons +3",    -- __,  5, __ [13/13, 157]; Ayanmo is BiS
-    -- neck="Cleric's Torque +2",     -- 10, __, __ [__/__, ___]
     -- 53 FC, 20 Haste, 105 SIRD [60 PDT/40 MDT, 535 M.Eva]
   }
 
@@ -918,7 +911,7 @@ function init_gear_sets()
     hands="Ebers Mitts +2",           -- __ [10/10,  77] __, 11
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __,  8
     feet="Theophany Duckbills +3",    -- __ [__/__, 127] 29, __
-    neck="Cleric's Torque +1",        --  7 [__/__, ___] __, 20; Erase+1
+    neck="Cleric's Torque +2",        -- 10 [__/__, ___] __, 25; Erase+1
     ear1="Malignance Earring",        --  4 [__/__, ___] __, __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __, __
     ring1="Freke Ring",               -- __ [__/__, ___] 10, __
@@ -926,10 +919,9 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __, __
     waist="Sanctuary Obi +1",         -- __ [__/__, ___] 10,  4
     -- Merits                                            10,  5
-    -- 50 FC [48 PDT/40 MDT, 574 MEVA] 105 SIRD, 68 -Enmity
+    -- 53 FC [48 PDT/40 MDT, 574 MEVA] 105 SIRD, 73 -Enmity
 
     -- hands="Ebers Mitts +3",        -- __ [11/11,  87] __, 12
-    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __, 25; Erase+1
     -- 53 FC [49 PDT/41 MDT, 584 MEVA] 105 SIRD, 74 -Enmity
   }
 
