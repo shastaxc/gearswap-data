@@ -1193,12 +1193,9 @@ function job_precast(spell, action, spellMap, eventArgs)
     send_command('input /ja "Dark Arts" <me>')
     eventArgs.cancel = true
   end
-  
-  -- Handle summoning avatar that is already active
-  if pet.name == spell.english and pet.hpp > 50 then
-    add_to_chat(122, "You already have that avatar active!")
-    eventArgs.cancel = true
-  elseif avatars:contains(spell.english) and pet.isvalid then
+
+  -- Handle summoning avatar if one is already active
+  if avatars:contains(spell.english) and pet.isvalid then
     eventArgs.cancel = true
     windower.chat.input('/pet Release <me>')
     windower.chat.input:schedule(2,'/ma "'..spell.english..'" <me>')
@@ -1209,10 +1206,13 @@ function job_precast(spell, action, spellMap, eventArgs)
     equip(get_smn_pet_midcast_set(spell, spellMap))
     eventArgs.handled = true
   else
+    -- Cancel action if pet is using ability
     if pending_pet_ability() then
       eventArgs.cancel = true
       add_to_chat(122, 'Action canceled because pet was midaction.')
     end
+
+    -- Equip Nirvana variant sets 
     if state.CastingMode.current == 'NirvAM' then -- Normal casting mode is handled automatically
       if spell.type == 'BloodPactWard' or spell.type == 'BloodPactRage' then
         equip(sets.precast[spell.type].NirvAM)

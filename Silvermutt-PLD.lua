@@ -1199,14 +1199,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if spell.english == 'Rampart' then
-    self_rampart = true
-  end
-
-  if runes:contains(spell.english) then
-    eventArgs.handled = true
-  end
-
   -- Use defensive "safe" sets if any are defined. Falls back to normal sets if a "safe" set is not defined.
   if state.DefenseMode.value ~= 'None'
       or (state.HybridMode.value ~= 'Normal' and player.in_combat)
@@ -1218,16 +1210,10 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
-  -- Cancel shadows if casting more shadows
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
+  if spell.english == 'Rampart' then
+    self_rampart = true
+  elseif runes:contains(spell.english) then
+    eventArgs.handled = true
   end
 end
 

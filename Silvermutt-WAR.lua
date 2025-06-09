@@ -1285,11 +1285,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   elseif spell.english == 'Defender' and buffactive['Defender'] then
     send_command('cancel Defender')
   end
-
-  if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
-      (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
-    send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-  end
 end
 
 -- Run after the general precast() is done.

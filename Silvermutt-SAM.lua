@@ -876,11 +876,6 @@ function job_precast(spell, action, spellMap, eventArgs)
       equip(sets.buff['Sekkanoki'])
     end
   end
-
-  if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
-      (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
-    send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-  end
 end
 
 -- Run after the general precast() is done.

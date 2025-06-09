@@ -772,6 +772,42 @@ function init_gear_sets()
   sets.precast.JA['Swipe'] = set_combine(sets.precast.JA['Lunge'], {})
   sets.precast.JA['Swipe'].Safe = set_combine(sets.precast.JA['Lunge'].Safe, {})
 
+  -- Bumba v25 variant
+  -- sets.precast.JA['Gambit'] = set_combine({
+  --   ammo="Staunch Tathlum +1",
+  --   head=gear.Nyame_B_head,
+  --   body=gear.Nyame_B_body,
+  --   hands=gear.Nyame_B_hands,
+  --   legs=gear.Nyame_B_legs,
+  --   feet=gear.Nyame_B_feet,
+  --   neck="Null Loop",
+  --   ear1="Halasz Earring",
+  --   ear2="Novia Earring",
+  --   ring1="Prolix Ring",
+  --   ring2="Defending Ring",
+  --   back="Moonlight Cape",
+  --   waist="Platinum Moogle Belt",
+  -- }, {
+  --   hands="Runeist Mitons +3", -- Increase duration
+  -- })
+  -- sets.precast.JA['Rayke'] = set_combine({
+  --   ammo="Staunch Tathlum +1",
+  --   head=gear.Nyame_B_head,
+  --   body=gear.Nyame_B_body,
+  --   hands=gear.Nyame_B_hands,
+  --   legs=gear.Nyame_B_legs,
+  --   feet=gear.Nyame_B_feet,
+  --   neck="Null Loop",
+  --   ear1="Halasz Earring",
+  --   ear2="Novia Earring",
+  --   ring1="Prolix Ring",
+  --   ring2="Defending Ring",
+  --   back="Moonlight Cape",
+  --   waist="Platinum Moogle Belt",
+  -- }, {
+  --   feet="Futhark Boots +1", -- Enhance effect (exact effect unknown); +1 is acceptable
+  -- })
+
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {
     hands="Runeist Mitons +3", -- Increase duration
   })
@@ -1550,10 +1586,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if runes:contains(spell.english) then
-    eventArgs.handled = true
-  end
-
   -- Use defensive "safe" sets if any are defined. Falls back to normal sets if a "safe" set is not defined.
   if state.DefenseMode.value ~= 'None'
       or (state.HybridMode.value ~= 'Normal' and player.in_combat)
@@ -1565,52 +1597,18 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  if runes:contains(spell.english) then
+    eventArgs.handled = true
   -- Use Swipe if Lunge is on cooldown
-  if spell.english == 'Lunge' then
+  elseif spell.english == 'Lunge' then
     local abil_recasts = windower.ffxi.get_ability_recasts()
     if abil_recasts[spell.recast_id] > 0 then
       send_command('input /jobability "Swipe" <t>')
       eventArgs.cancel = true
       return
     end
-  end
-
-  if spell.english == 'Valiance' then
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    -- Use Vallation if Valiance is on cooldown or not available at current master level
-    if abil_recasts[spell.recast_id] > 0 then
-      send_command('input /jobability "Vallation" <me>')
-      cancel_spell()
-      eventArgs.handled = true
-      return
-    -- Cancel Vallation buff before using Valiance
-    elseif abil_recasts[spell.recast_id] == 0 and buffactive['Vallation'] then
-      cast_delay(0.2)
-      send_command('cancel Vallation') -- command requires 'cancel' add-on to work
-    end
-    -- Cancel Valiance buff before using Vallation
-  elseif spell.english == 'Vallation' then
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    if buffactive['Valiance'] and abil_recasts[spell.recast_id] == 0 then
-      cast_delay(0.2)
-      send_command('cancel Valiance') -- command requires 'cancel' add-on to work
-    end
-  end
-
-  -- Cancel shadows if casting more shadows
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
-  end
-
   -- Record which rune elements are active when Rayke or Gambit is used.
-  if spell.english == 'Rayke' or spell.english == 'Gambit' then
+  elseif spell.english == 'Rayke' or spell.english == 'Gambit' then
     -- Examine all active buffs
     for k,buff_id in pairs(player.buffs) do
       -- Translate buff ID into English

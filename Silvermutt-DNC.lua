@@ -1764,15 +1764,13 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
+  -- Cancel conflicting buffs
+  if spell.type == 'Waltz' and buffactive['Saber Dance'] then
+    cast_delay(0.2)
+    send_command('cancel saber dance')
+  elseif spell.type == 'Samba' and buffactive['Fan Dance'] then
+    cast_delay(0.2)
+    send_command('cancel fan dance')
   end
 end
 

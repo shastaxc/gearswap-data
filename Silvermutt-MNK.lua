@@ -1019,42 +1019,15 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     eventArgs.handled = true
   end
+
   if spell.english == 'Boost' then
     if buffactive.Warcry then
       windower.add_to_chat(167, 'Stopped due to conflicting buff: Warcry.')
       eventArgs.cancel = true -- Ensures gear doesn't swap
-      return -- Ends function without finishing loop
     elseif not player.in_combat and state.DefenseMode.current == 'None' then
       equip(sets.precast.JA['Boost'].Idle)
       eventArgs.handled = true
     end
-  end
-
-  if spell.english == 'Valiance' then
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    -- Use Vallation if Valiance is on cooldown or not available at current master level
-    if abil_recasts[spell.recast_id] > 0 or player.sub_job_level < 50 then
-      send_command('input /jobability "Vallation" <me>')
-      cancel_spell()
-      eventArgs.handled = true
-      return
-    -- Cancel Vallation buff before using Valiance
-    elseif abil_recasts[spell.recast_id] == 0 and buffactive['Vallation'] then
-      cast_delay(0.2)
-      send_command('cancel Vallation') -- command requires 'cancel' add-on to work
-    end
-    -- Cancel Valiance buff before using Vallation
-  elseif spell.english == 'Vallation' then
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    if buffactive['Valiance'] and abil_recasts[spell.recast_id] == 0 then
-      cast_delay(0.2)
-      send_command('cancel Valiance') -- command requires 'cancel' add-on to work
-    end
-  end
-
-  if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
-      (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
-    send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
   end
 end
 

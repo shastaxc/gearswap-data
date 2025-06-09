@@ -1144,10 +1144,6 @@ function job_precast(spell, action, spellMap, eventArgs)
       end
     end
   end
-  if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
-      (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
-    send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-  end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.

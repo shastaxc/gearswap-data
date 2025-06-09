@@ -1647,16 +1647,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.skill == 'Ninjutsu' then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
   end
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
-  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)

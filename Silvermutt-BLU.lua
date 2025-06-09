@@ -1272,19 +1272,13 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
-    eventArgs.cancel = true
-    windower.send_command('@input /ja "Unbridled Learning" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
-  end
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
+  if unbridled_spells:contains(spell.english) then
+    if not state.Buff['Unbridled Learning'] then
+      eventArgs.cancel = true
+      windower.send_command('@input /ja "Unbridled Learning" <me>; wait 1.5; input /ma "'..spell.name..'" '..spell.target.name)
     end
+  elseif spell.english == ('Diamondhide') or spell.english == ('Magic Barrier') then
+    send_command('@wait 1;cancel stoneskin')
   end
 end
 

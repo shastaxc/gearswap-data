@@ -1020,7 +1020,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
-    
+
     local safeSet = sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Safe
     if state.HybridMode.value == 'HeavyDef' and safeSet then
       equip(safeSet)

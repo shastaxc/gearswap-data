@@ -2040,7 +2040,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  -- Gear
   if spell.type == 'CorsairRoll' and not silibs.midaction() then
     roll_timer = os.clock()
   elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
@@ -2048,9 +2047,6 @@ function job_precast(spell, action, spellMap, eventArgs)
       equip(sets.precast.FoldDoubleBust)
       eventArgs.handled = true
     end
-  elseif spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
-      (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
-    send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
   end
 end
 

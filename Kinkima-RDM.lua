@@ -2042,15 +2042,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   elseif spell.english == 'Addendum: Dark' and not state.Buff['Dark Arts'] then
     send_command('input /ja "Dark Arts" <me>')
     eventArgs.cancel = true
-  elseif spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
   elseif spell.english == 'Stun' and buffactive['Chainspell'] then
     equip(sets.midcast.Stun)
     eventArgs.handled = true
