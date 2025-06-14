@@ -543,7 +543,7 @@ function init_gear_sets()
     -- legs="Lanun Trews +3", -- Increase chance of 0 recast; +1 is acceptable
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes +3", -- Reduce chance of rolling 1 or 2; +1 is acceptable
+    feet="Lanun Bottes +4", -- Reduce chance of rolling 1 or 2; +1 is acceptable
   }
   sets.precast.JA['Random Deal'] = {
     body="Lanun Frac +3", -- Reduce failure chance, allow restoring 2 JAs ; +1 is acceptable
@@ -607,7 +607,7 @@ function init_gear_sets()
     body="Lanun Frac +3",         -- 43, 61, 40, __,  6/__
     hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
     legs=gear.Nyame_B_legs,       -- 34, 30, 40, __,  8/ 8
-    feet="Lanun Bottes +3",       -- 49, 61, 36, __,  6/__
+    feet="Lanun Bottes +4",       -- 49, 58, 41, __,  6/__
     neck="Commodore Charm +2",    -- 15,  7, 25, __, __/__
     ear1="Friomisi Earring",      -- __, 10, __, __, __/__
     ear2="Novio Earring",         -- __,  7, __, __, __/__
@@ -615,10 +615,10 @@ function init_gear_sets()
     ring2="Shiva Ring +1",        -- __,  3, __, __, __/__
     back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
     waist="Eschan Stone",         -- __,  7,  7, __, __/__
-    -- 232 AGI, 323 MAB, 203 M.Acc, 24 STP, 30PDT/8MDT
+    -- 232 AGI, 320 MAB, 208 M.Acc, 24 STP, 30PDT/8MDT
 
     -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
-    -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
+    -- 232 AGI, 330 MAB, 228 M.Acc, 14 STP, 30PDT/8MDT
   }
 
   -- Full STP; and more recast reduction
@@ -828,7 +828,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,
     hands="Meg. Gloves +2",
     legs=gear.Nyame_B_legs,
-    feet="Lanun Bottes +3",
+    feet="Lanun Bottes +4",
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -904,7 +904,7 @@ function init_gear_sets()
     body="Lanun Frac +3", --61
     hands=gear.Nyame_B_hands, --30; WSD
     legs=gear.Nyame_B_legs, --30; WSD
-    feet="Lanun Bottes +3", --55; WSD
+    feet="Lanun Bottes +4", --58; WSD
     neck="Commodore Charm +2",
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
