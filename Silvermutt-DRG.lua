@@ -438,7 +438,7 @@ function init_gear_sets()
 
   sets.precast.JA['Angon'] = {
     ammo="Angon",
-    hands="Pteroslaver Finger Gauntlets +1", -- Increase potency based on merits; +1 is acceptable
+    hands="Pteroslaver Finger Gauntlets +2", -- Increase potency based on merits; +1 is acceptable
     ear2="Dragoon's Earring", -- Chance to not deplete Angon consumable
     -- hands="Pteroslaver Finger Gauntlets +3", -- Increase potency based on merits; +1 is acceptable
   }
