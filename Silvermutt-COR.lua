@@ -654,9 +654,9 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- __, 15, __/__
     back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
     waist="K. Kachina Belt +1",       --  8, 20, __/__
-    -- AF Set Effect                  -- __, 30, __/__
+    -- AF Set Effect                  -- __, 15, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 271 AGI, 160 M.Acc, 35 PDT/25 MDT
+    -- 271 AGI, 445 M.Acc, 35 PDT/25 MDT
 
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
   }
