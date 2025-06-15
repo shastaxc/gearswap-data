@@ -1082,7 +1082,7 @@ function init_gear_sets()
     head="Ebers Cap +2",              -- __, __ [__/__, 115] __, __; Set bonus
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
     hands="Ebers Mitts +2",           -- __, __ [10/10,  77] __, __; Set bonus
-    legs="Piety Pantaloons +2",       -- 24, __ [__/__, 117] 33, __
+    legs="Piety Pantaloons +4",       -- 27, __ [__/__, 167] 36, __
     feet="Ebers Duckbills +2",        -- 30, __ [10/10, 147] __, __; Set bonus
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
     ear1="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
@@ -1096,7 +1096,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                     15
     -- Afflatus Solace                                       __,  5
-    -- 514 Enh Skill, 20% Enh Duration [49 PDT/43 MDT, 576 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
+    -- 517 Enh Skill, 20% Enh Duration [49 PDT/43 MDT, 626 MEVA] 86 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] __, __
@@ -1104,7 +1104,7 @@ function init_gear_sets()
     -- head="Ebers Cap +3",           -- __, __ [__/__, 125] __, __; Set bonus
     -- body="Ebers Bliaut +3",        -- __, __ [__/__, 130] __, 18; Set bonus
     -- hands="Ebers Mitts +3",        -- __, __ [11/11,  87] __, __; Set bonus
-    -- legs="Piety Pantaloons +3",    -- 26, __ [__/__, 127] 36, __
+    -- legs="Piety Pantaloons +4",    -- 27, __ [__/__, 167] 36, __
     -- feet="Ebers Duckbills +3",     -- 35, __ [11/11, 157] __, __; Set bonus
     -- neck="Loricate Torque +1",     -- __, __ [ 6/ 6, ___] __, __
     -- ear1="Odnowa Earring +1",      -- __, __ [ 3/ 5, ___] __, __
@@ -1119,7 +1119,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                      4
     -- Afflatus Solace                                       __,  5
-    -- 500 Enh Skill, 20% Enh Duration [52 PDT/54 MDT, 626 MEVA] 86 Barspell Resistance, 38 Barspell M.Def
+    -- 501 Enh Skill, 20% Enh Duration [52 PDT/54 MDT, 666 MEVA] 86 Barspell Resistance, 38 Barspell M.Def
   }
 
   sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
