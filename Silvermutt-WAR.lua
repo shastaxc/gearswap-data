@@ -477,8 +477,7 @@ function init_gear_sets()
     -- body="Pummeler's Lorica +3", -- Increase duration
   }
   sets.precast.JA['Warcry'] = {
-    head="Agoge Mask +1", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
-    -- head="Agoge Mask +3", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
+    head="Agoge Mask +3", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
   }
   sets.precast.JA['Tomahawk'] = {
     ammo="Throwing Tomahawk",
