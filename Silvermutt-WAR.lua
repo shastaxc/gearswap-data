@@ -477,7 +477,7 @@ function init_gear_sets()
     -- body="Pummeler's Lorica +3", -- Increase duration
   }
   sets.precast.JA['Warcry'] = {
-    head="Agoge Mask +3", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
+    head="Agoge Mask +4", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
   }
   sets.precast.JA['Tomahawk'] = {
     ammo="Throwing Tomahawk",
@@ -550,7 +550,7 @@ function init_gear_sets()
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     ammo="Knobkierrie",                   -- __, __, 23, __,  6, __ [__/__, ___]
-    head=gear.Nyame_B_head,               -- 26, 26, 65, 50, 11, __ [ 7/ 7, 123]
+    head="Agoge Mask +4",                 -- 40, 28, 93, 42, 12, __ [__/__, 113]
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ [ 9/ 9, 139]
     hands="Boii Mufflers +3",             -- 24, 38, 62, 62, 12, __ [__/__,  82]
     legs=gear.Nyame_B_legs,               -- 58, 32, 65, 40, 12, __ [ 8/ 8, 150]
@@ -562,11 +562,11 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ [__/__, ___]
-    -- 261 STR, 159 MND, 405 Attack, 294 Accuracy, 83 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
+    -- 275 STR, 161 MND, 433 Attack, 286 Accuracy, 84 WSD, 3 PDL [34 PDT/24 MDT, 634 M.Eva]
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Schere Earring",                --  5, __, 15, 15, __, __ [__/__, ___]
-    -- 266 STR, 159 MND, 420 Attack, 305 Accuracy, 83 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
+    -- 280 STR, 161 MND, 448 Attack, 297 Accuracy, 84 WSD, 3 PDL [34 PDT/24 MDT, 634 M.Eva]
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",            --  3, __, __, __, __,  3 [ 3/ 3, ___]
@@ -598,7 +598,7 @@ function init_gear_sets()
   -- DA Dmg does not apply to WS, but DA itself will cause the WS to deal more dmg
   sets.precast.WS['Upheaval'] = {
     ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    head=gear.Nyame_B_head,               -- 24, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
+    head="Agoge Mask +4",                 -- 40, 93, 42, 12, __ <__, __, __> [__/__, 113]
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands="Boii Mufflers +3",             -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     legs=gear.Nyame_B_legs,               -- 30, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
@@ -611,10 +611,10 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 205 VIT, 410 Attack, 311 Accuracy, 78 WSD, 0 PDL <72 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
+    -- 221 VIT, 438 Attack, 303 Accuracy, 79 WSD, 0 PDL <67 DA, 0 TA, 0 QA> [41 PDT/23 MDT, 634 M.Eva]
 
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
-    -- 235 VIT, 410 Attack, 311 Accuracy, 78 WSD, 0 PDL <72 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
+    -- 251 VIT, 438 Attack, 303 Accuracy, 79 WSD, 0 PDL <67 DA, 0 TA, 0 QA> [41 PDT/23 MDT, 634 M.Eva]
   }
   sets.precast.WS['Upheaval'].MaxTP = set_combine(sets.precast.WS['Upheaval'], {
     ear1="Schere Earring",                -- __, 15, 15, __, __ < 6, __, __> [__/__, ___]
@@ -646,7 +646,7 @@ function init_gear_sets()
   -- 80% STR; 2 hit, crit varies with TP
   sets.precast.WS["Ukko's Fury"] = {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head=gear.Nyame_B_head,               -- 26, 65, 50, 11, __ (__, __) < 5, __, __> [ 7/ 7, 123]
+    head="Agoge Mask +4",                 -- 40, 93, 42, 12, __ (__, __) <__, __, __> [__/__, 113]
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 65, 40, 12, __ (__, __) < 6, __, __> [ 8/ 8, 150]
@@ -659,10 +659,10 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 267 STR, 400 Attack, 299 Accuracy, 60 WSD, 10 PDL (2 Crit Rate, 19 Crit Dmg) <68 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 281 STR, 428 Attack, 291 Accuracy, 61 WSD, 10 PDL (2 Crit Rate, 19 Crit Dmg) <63 DA, 2 TA, 3 QA> [44 PDT/34 MDT, 644 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 272 STR, 395 Attack, 319 Accuracy, 57 WSD, 10 PDL (10 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 286 STR, 428 Attack, 311 Accuracy, 58 WSD, 10 PDL (10 Crit Rate, 19 Crit Dmg) <72 DA, 2 TA, 3 QA> [44 PDT/34 MDT, 644 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"], {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
@@ -673,7 +673,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Ukko's Fury"].AttCapped = {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head=gear.Nyame_B_head,               -- 26, 65, 50, 11, __ (__, __) < 5, __, __> [ 7/ 7, 123]
+    head="Agoge Mask +4",                 -- 40, 93, 42, 12, __ (__, __) <__, __, __> [__/__, 113]
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs="Boii Cuisses +3",               -- 53, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
@@ -686,10 +686,10 @@ function init_gear_sets()
     back=gear.WAR_STR_Crit_Cape,          -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 262 STR, 408 Attack, 322 Accuracy, 38 WSD, 20 PDL (12 Crit Rate, 19 Crit Dmg) <70 DA, 2 TA, 3 QA> [43 PDT/33 MDT, 634 M.Eva]
+    -- 276 STR, 436 Attack, 314 Accuracy, 39 WSD, 20 PDL (12 Crit Rate, 19 Crit Dmg) <65 DA, 2 TA, 3 QA> [36 PDT/26 MDT, 624 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 267 STR, 408 Attack, 342 Accuracy, 35 WSD, 20 PDL (20 Crit Rate, 19 Crit Dmg) <79 DA, 2 TA, 3 QA> [43 PDT/33 MDT, 634 M.Eva]
+    -- 281 STR, 436 Attack, 334 Accuracy, 36 WSD, 20 PDL (20 Crit Rate, 19 Crit Dmg) <74 DA, 2 TA, 3 QA> [36 PDT/26 MDT, 624 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
