@@ -1074,23 +1074,23 @@ function init_gear_sets()
 
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
   sets.precast.WS['Evisceration'] = {
-    head=gear.Adhemar_B_head,         -- 33, __, 56, __ (__,  6) <__,  4, __> [__/__,  59]
-    body="Meghanada Cuirie +2",       -- 45, __, 46, __ (__,  6) <__, __, __> [ 8/__,  64]
-    hands="Chasseur's Gants +2",      -- 44,  8, __, __ ( 7, __) <__, __, __> [__/__,  83]
+    head=gear.Adhemar_B_head,         -- 33, 56, __, __ (__,  6) <__,  4, __> [__/__,  59]
+    body="Meghanada Cuirie +2",       -- 45, 46, __, __ (__,  6) <__, __, __> [ 8/__,  64]
+    hands="Chasseur's Gants +2",      -- 44, __,  8, __ ( 7, __) <__, __, __> [__/__,  83]
     legs="Mummu Kecks +2",            -- 11, __, __, __ ( 7, __) <__, __, __> [ 5/ 5, 107]
-    feet=gear.Herc_DEX_CritDmg_feet,  -- 24, __, 19, __ (__,  5) <__,  2, __> [ 2/__,  75]
+    feet=gear.Herc_DEX_CritDmg_feet,  -- 24, 19, __, __ (__,  5) <__,  2, __> [ 2/__,  75]
     neck="Fotia Gorget",              -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     ear1="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]
-    ring1="Ilabrat Ring",             -- 10, __, 25, __ (__, __) <__, __, __> [__/__, ___]
+    ring1="Ilabrat Ring",             -- 10, 25, __, __ (__, __) <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
-    back=gear.COR_TP_Cape,            -- 30, __, 20, __ (__, __) <10, __, __> [10/__, ___]
+    back=gear.COR_TP_Cape,            -- 30, 20, __, __ (__, __) <10, __, __> [10/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
-    -- 217 DEX, 8 WSD, 166 Att, 10 PDL (19 Crit Rate, 17 Crit Dmg) <10 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 388 M.Eva]
+    -- 217 DEX, 166 Att, 8 WSD, 10 PDL (19 Crit Rate, 17 Crit Dmg) <10 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 388 M.Eva]
     
-    -- hands="Chasseur's Gants +3",   -- 49, 12, __, __ ( 8, __) <__, __, __> [__/__,  93]
-    -- back=gear.COR_WS5_Cape,        -- 30, __, 20, __ (10, __) <__, __, __> [10/__, ___]
-    -- 222 DEX, 12 WSD, 166 Att, 10 PDL (30 Crit Rate, 17 Crit Dmg) <0 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 398 M.Eva]
+    -- hands="Chasseur's Gants +3",   -- 49, __, 12, __ ( 8, __) <__, __, __> [__/__,  93]
+    -- back=gear.COR_WS5_Cape,        -- 30, 20, __, __ (10, __) <__, __, __> [10/__, ___]
+    -- 222 DEX, 166 Att, 12 WSD, 10 PDL (30 Crit Rate, 17 Crit Dmg) <0 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 398 M.Eva]
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ear2="Telos Earring",
