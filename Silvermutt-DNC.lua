@@ -891,7 +891,7 @@ function init_gear_sets()
     head="Maculele Tiara +3",       -- 38, 71, 12, __ [__/__,  99]
     body="Gleti's Cuirass",         -- 34, 70, __,  9 [ 9/__, 102]
     hands="Maxixi Bangles +4",      -- 48, 40, 12, __ [__/__,  82]
-    legs="Maculele Tights +3",      -- __, 63, __, 10 [__/__, 115]
+    legs="Gleti's Breeches",        -- __, 70, __,  8 [ 8/__, 112]
     feet=gear.Nyame_B_feet,         -- 26, 65, 11, __ [ 7/ 7, 150]
     neck="Etoile Gorget +2",        -- 25, __, __, 10 [__/__, ___]
     ear1="Moonshade Earring",       -- __, __, __, __ [__/__, ___]; TP Bonus+250
@@ -900,8 +900,9 @@ function init_gear_sets()
     ring2="Ephramad's Ring",        -- 10, 20, __, 10 [__/__, ___]
     back=gear.DNC_WS1_Cape,         -- 30, 20, 10, __ [10/__, ___]; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __ [__/__, ___]
-    -- 221 DEX, 349 Att, 50 WSD, 50 PDL [29 PDT/10 MDT, 548 M.Eva]
+    -- 221 DEX, 356 Att, 50 WSD, 48 PDL [37 PDT/10 MDT, 545 M.Eva]
     
+    -- legs="Maculele Tights +3",   -- __, 63, __, 10 [__/__, 115]
     -- ear2="Maculele Earring +2",  -- 15, __, __,  9 [__/__, ___]
     -- 236 DEX, 349 Att, 50 WSD, 51 PDL [29 PDT/10 MDT, 548 M.Eva]
   }
@@ -986,7 +987,7 @@ function init_gear_sets()
     head="Maculele Tiara +3",       -- 38, 71, 12, __ [__/__,  99]
     body="Gleti's Cuirass",         -- 34, 70, __,  9 [ 9/__, 102]
     hands="Maxixi Bangles +4",      -- 48, 40, 12, __ [__/__,  82]
-    legs="Maculele Tights +3",      -- __, 63, __, 10 [__/__, 115]
+    legs="Gleti's Breeches",        -- __, 70, __,  8 [ 8/__, 112]
     feet=gear.Nyame_B_feet,         -- 26, 65, 11, __ [ 7/ 7, 150]
     neck="Etoile Gorget +2",        -- 25, __, __, 10 [__/__, ___]
     ear1="Moonshade Earring",       -- __, __, __, __ [__/__, ___]; TP Bonus+250
@@ -995,8 +996,9 @@ function init_gear_sets()
     ring2="Ephramad's Ring",        -- 10, 20, __, 10 [__/__, ___]
     back=gear.DNC_WS1_Cape,         -- 30, 20, 10, __ [10/__, ___]; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __ [__/__, ___]
-    -- 231 DEX, 364 Att, 50 WSD, 47 PDL [26 PDT/7 MDT, 548 M.Eva]
+    -- 231 DEX, 371 Att, 50 WSD, 45 PDL [34 PDT/7 MDT, 545 M.Eva]
     
+    -- legs="Maculele Tights +3",   -- __, 63, __, 10 [__/__, 115]
     -- ear2="Maculele Earring +2",  -- 15, __, __,  9 [__/__, ___]
     -- 246 DEX, 364 Att, 50 WSD, 48 PDL [26 PDT/7 MDT, 548 M.Eva]
   }
