@@ -1162,7 +1162,7 @@ function init_gear_sets()
     ammo="Devastating Bullet",
     head=gear.Carmine_D_head,
     body="Chasseur's Frac +3",
-    hands="Chasseur's Gants +3",
+    hands="Chasseur's Gants +2",
     legs="Chasseur's Culottes +3",
     feet="Chasseur's Bottes +3",
     neck="Commodore Charm +2",
@@ -1172,6 +1172,8 @@ function init_gear_sets()
     ring2="Metamorph ring +1",
     back=gear.COR_WS4_Cape,
     waist="Kwahu Kachina Belt +1",
+    
+    -- hands="Chasseur's Gants +3",
   }
 
 
