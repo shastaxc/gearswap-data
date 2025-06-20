@@ -700,8 +700,12 @@ function init_gear_sets()
   sets.WeaponSet = {} -- DO NOT MODIFY
   sets.WeaponSet['Naegling'] = {main="Naegling", sub="Sacro Bulwark"}
   sets.WeaponSet['Naegling'].DW = {main="Naegling", sub="Ikenga's Axe"}
-  sets.WeaponSet['Farsha'] = {main="Farsha", sub="Sacro Bulwark"}
-  sets.WeaponSet['Farsha'].DW = {main="Farsha", sub="Ikenga's Axe"}
+  sets.WeaponSet['Farsha'] = {
+    -- main="Farsha", sub="Sacro Bulwark"
+  }
+  sets.WeaponSet['Farsha'].DW = {
+    -- main="Farsha", sub="Ikenga's Axe"
+  }
   sets.WeaponSet['Piercing'] = {main="Tauret", sub="Sacro Bulwark"}
   sets.WeaponSet['Piercing'].DW = {main="Tauret", sub="Ikenga's Axe"}
   sets.WeaponSet['Cleaving'] = {main=gear.Malevolence_1, sub="Sacro Bulwark"}
