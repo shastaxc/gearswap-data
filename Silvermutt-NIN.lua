@@ -522,9 +522,9 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Ninja Nodowa +2",
-    ear1="Moonshade Earring",
-    ear2="Lugra Earring +1",
+    neck="Fotia Gorget",
+    ear1="Lugra Earring +1",
+    ear2="Moonshade Earring",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     back=gear.NIN_WSD_STR_Cape,
@@ -534,8 +534,6 @@ function init_gear_sets()
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Hattori Earring +1",
-
-    -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
@@ -554,15 +552,18 @@ function init_gear_sets()
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
+    -- head="Hachiya Hatsuburi +4",
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
-    ear2="Hattori Earring +1",
-
-    -- ear1="Lugra Earring +1",
-    -- ear2="Hattori Earring +2",
+    ear1="Lugra Earring +1",
   })
+
+  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Savage Blade'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   sets.HybridWS = {
     range="empty",
@@ -583,7 +584,24 @@ function init_gear_sets()
   sets.HybridWS.MaxTP = set_combine(sets.HybridWS, {
     ear1="Novio Earring",
   })
-  sets.HybridWS.AttCapped = set_combine(sets.HybridWS, {})
+  sets.HybridWS.AttCapped = {
+    range="empty",
+    ammo="Seething Bomblet +1",
+    head="Mochizuki Hatsuburi +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Hattori Earring +1",
+    ring1="Sroda Ring",
+    ring2="Ephramad's Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Eschan Stone",
+
+    -- ear2="Hattori Earring +2"
+  }
   sets.HybridWS.AttCappedMaxTP = set_combine(sets.HybridWS.AttCapped, {
     ear1="Novio Earring",
   })
@@ -606,7 +624,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Ei'] = {
     range="empty",
     ammo="Seething Bomblet +1",
-    head="Pixie Hairpin +1",
+    head="Mochizuki Hatsuburi +3",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
@@ -659,29 +677,31 @@ function init_gear_sets()
   sets.precast.WS['Blade: Hi'] = {
     range="empty",
     ammo="Yetshila +1",
-    head="Blistering Sallet +1",
+    head="Hachiya Hatsuburi +3",
     body="Hattori Ningi +2",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Ninja Nodowa +2",
     ear1="Odr Earring",
-    ear2="Hattori Earring +1",
-    ring1="Begrudging Ring",
+    ear2="Ishvara Earring",
+    ring1="Ilabrat Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_Crit_AGI_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
+    -- head="Hachiya Hatsuburi +4",
     -- body="Hattori Ningi +3",
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_Crit_AGI_Cape,
+    -- waist="Gerdr Belt +1",
   }
   sets.precast.WS['Blade: Hi'].MaxTP = set_combine(sets.precast.WS['Blade: Hi'], {})
   sets.precast.WS['Blade: Hi'].AttCapped = {
     range="empty",
     ammo="Yetshila +1",
-    head=gear.Nyame_B_head,
+    head="Hachiya Hatsuburi +3",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Mpaca's Hose",
@@ -691,39 +711,21 @@ function init_gear_sets()
     ear2="Hattori Earring +1",
     ring1="Epaminondas's Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_AGI_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
+    -- head="Hachiya Hatsuburi +4",
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_Crit_AGI_Cape,
+    -- waist="Gerdr Belt +1",
   }
   sets.precast.WS['Blade: Hi'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Hi'].AttCapped, {})
-  
+
   sets.precast.WS['Blade: Kamu'] = {
     range="empty",
-    ammo="Seething Bomblet +1",
-    head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Ninja Nodowa +2",
-    ear1="Lugra Earring +1",
-    ear2="Hattori Earring +1",
-    ring1="Sroda Ring",
-    ring2="Gere Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
-    back=gear.NIN_WSD_STR_Cape,
-    waist="Sailfi Belt +1",
-    
-    -- ear2="Hattori Earring +2",
-  }
-  sets.precast.WS['Blade: Kamu'].MaxTP = set_combine(sets.precast.WS['Blade: Kamu'], {})
-  sets.precast.WS['Blade: Kamu'].AttCapped = {
-    range="empty",
-    ammo="Crepuscular Pebble",
-    head=gear.Nyame_B_head,
+    ammo="Crepuscular Earring",
+    head="Hachiya Hatsuburi +3",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Mpaca's Hose",
@@ -731,15 +733,14 @@ function init_gear_sets()
     neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
-    ring1="Sroda Ring",
-    ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
+    ring1="Ephramad's Ring",
+    ring2="Gere Ring",
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_WSD_STR_Cape,
   }
-  sets.precast.WS['Blade: Kamu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Kamu'].AttCapped, {})
 
   sets.precast.WS['Blade: Ku'] = {
     range="empty",
@@ -751,20 +752,20 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring +1",
+    ear2="Brutal Earring",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_DA_STR_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
-    
+
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_DA_STR_Cape,
   }
   sets.precast.WS['Blade: Ku'].MaxTP = set_combine(sets.precast.WS['Blade: Ku'], {})
   sets.precast.WS['Blade: Ku'].AttCapped = {
     range="empty",
-    ammo="Crepuscular Pebble",
+    ammo="Coiste Bodhar",
     head="Blistering Sallet +1",
     body=gear.Nyame_B_body,
     hands="Malignance Gloves",
@@ -773,14 +774,14 @@ function init_gear_sets()
     neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
-    ring1="Sroda Ring",
+    ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_DA_STR_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
-    
+
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_DA_STR_Cape,
   }
   sets.precast.WS['Blade: Ku'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ku'].AttCapped, {})
 
@@ -794,22 +795,22 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring +1",
+    ear2="Mache Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_DEX_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
-    
+
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_WSD_DEX_Cape,
   }
   sets.precast.WS['Blade: Metsu'].MaxTP = set_combine(sets.precast.WS['Blade: Metsu'], {})
   sets.precast.WS['Blade: Metsu'].AttCapped = {
     range="empty",
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
+    body="Malignance Tabard",
     hands=gear.Nyame_B_hands,
     legs="Mpaca's Hose",
     feet=gear.Nyame_B_feet,
@@ -818,12 +819,12 @@ function init_gear_sets()
     ear2="Hattori Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_DEX_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Kentarch Belt +1",
     
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_WSD_DEX_Cape,
   }
   sets.precast.WS['Blade: Metsu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Metsu'].AttCapped, {})
 
@@ -833,31 +834,6 @@ function init_gear_sets()
     head="Mpaca's Cap",
     body=gear.Nyame_B_head,
     hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Fotia Gorget",
-    ear1="Moonshade Earring",
-    ear2="Lugra Earring +1",
-    ring1="Gere Ring",
-    ring2="Ephramad's Ring",
-    -- back=gear.NIN_DA_DEX_Cape,
-    back=gear.NIN_WSD_STR_Cape,
-    waist="Fotia Belt",
-    
-    -- feet="Hattori Kyahan +3",
-  }
-  sets.precast.WS['Blade: Shun'].MaxTP = set_combine(sets.precast.WS['Blade: Shun'], {
-    ear2="Hattori Earring +1",
-
-    -- ear1="Lugra Earring +1",
-    -- ear2="Hattori Earring +2",
-  })
-  sets.precast.WS['Blade: Shun'].AttCapped = {
-    range="empty",
-    ammo="Crepuscular Pebble",
-    head="Ken. Jinpachi +1",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
     legs="Mpaca's Hose",
     feet=gear.Nyame_B_feet,
     neck="Ninja Nodowa +2",
@@ -865,22 +841,46 @@ function init_gear_sets()
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_DA_DEX_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- feet="Hattori Kyahan +3",
+    -- back=gear.NIN_DA_DEX_Cape,
   }
-  sets.precast.WS['Blade: Shun'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Shun'].AttCapped, {
+  sets.precast.WS['Blade: Shun'].MaxTP = set_combine(sets.precast.WS['Blade: Shun'], {
+    ammo="Crepuscular Pebble",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
 
-    -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
+  })
+  sets.precast.WS['Blade: Shun'].AttCapped = {
+    range="empty",
+    ammo="Crepuscular Pebble",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_head,
+    hands=gear.Nyame_B_hands,
+    legs="Mpaca's Hose",
+    feet=gear.Nyame_B_feet,
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Hattori Earring +1",
+    ring1="Gere Ring",
+    ring2="Ephramad's Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Fotia Belt",
+
+    -- feet="Hattori Kyahan +3",
+    -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_DA_DEX_Cape,
+  }
+  sets.precast.WS['Blade: Shun'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Shun'].AttCapped, {
+    ear1="Lugra Earring +1",
   })
 
   sets.precast.WS['Blade: Ten'] = {
     range="empty",
-    ammo="Coiste Bodhar",
+    ammo="Seething Bomblet +1",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -889,16 +889,17 @@ function init_gear_sets()
     neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
-    ring1="Gere Ring",
+    ring1="Regal Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
-    
+
     -- feet="Hattori Kyahan +3",
+    -- back=gear.NIN_WSD_STR_Cape,
   }
   sets.precast.WS['Blade: Ten'].MaxTP = set_combine(sets.precast.WS['Blade: Ten'], {
-    ear2="Hattori Earring +1",
+    head=gear.Nyame_B_head,
+    ear1="Mache Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -913,113 +914,65 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    ear2="Lugra Earring +1",
-    ring1="Sroda Ring",
+    ear2="Hattori Earring +1",
+    ring1="Regal Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
-    
+
     -- feet="Hattori Kyahan +3",
+    -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_WSD_STR_Cape,
   }
   sets.precast.WS['Blade: Ten'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ten'].AttCapped, {
-    ear2="Hattori Earring +1",
+    head=gear.Nyame_B_head,
+    ear1="Lugra Earring +1",
 
-    -- ear1="Lugra Earring +1",
-    -- ear2="Hattori Earring +2",
+    -- head="Hachiya Hatsuburi +4",
   })
 
   sets.precast.WS['Evisceration'] = {
     range="empty",
     ammo="Yetshila +1",
-    head="Blistering Sallet +1",
+    head=gear.Adhemar_B_head,
     body="Hattori Ningi +2",
     hands=gear.Ryuo_A_hands,
     legs="Mpaca's Hose",
-    feet="Ken. Sune-Ate +1",
+    feet="Kendatsuba Sune-Ate +1",
     neck="Fotia Gorget",
     ear1="Odr Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_Crit_DEX_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
-    
+
     -- body="Hattori Ningi +3",
+    -- back=gear.NIN_Crit_DEX_Cape,
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
   sets.precast.WS['Evisceration'].AttCapped = {
     range="empty",
     ammo="Yetshila +1",
-    head="Blistering Sallet +1",
-    body="Ken. Samue +1",
+    head=gear.Adhemar_B_head,
+    body="Hattori Ningi +2",
     hands=gear.Ryuo_A_hands,
     legs="Mpaca's Hose",
-    feet="Ken. Sune-Ate +1",
+    feet="Kendatsuba Sune-Ate +1",
     neck="Ninja Nodowa +2",
     ear1="Odr Earring",
     ear2="Hattori Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_Crit_DEX_Cape,
     back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
-    
-    -- ear2="Hattori Earring +2",
-  }
-  sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {})
-  
-  sets.precast.WS['Savage Blade'] = {
-    range="empty",
-    ammo="Seething Bomblet +1",
-    head="Mpaca's Cap",
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Ninja Nodowa +2",
-    ear1="Moonshade Earring",
-    ear2="Lugra Earring +1",
-    ring1="Gere Ring",
-    ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
-    back=gear.NIN_WSD_STR_Cape,
-    waist="Sailfi Belt +1",
-    
-    -- feet="Hattori Kyahan +3",
-  }
-  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
-    ear2="Hattori Earring +1",
 
-    -- ear1="Lugra Earring +1",
+    -- body="Hattori Ningi +3",
     -- ear2="Hattori Earring +2",
-  })
-  sets.precast.WS['Savage Blade'].AttCapped = {
-    range="empty",
-    ammo="Crepuscular Pebble",
-    head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Ninja Nodowa +2",
-    ear1="Moonshade Earring",
-    ear2="Hattori Earring +1",
-    ring1="Sroda Ring",
-    ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
-    back=gear.NIN_WSD_STR_Cape,
-    waist="Sailfi Belt +1",
-    
-    -- feet="Hattori Kyahan +3",
-    -- ear2="Hattori Earring +2",
+    -- back=gear.NIN_Crit_DEX_Cape,
   }
-  sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
-    ear2="Hattori Earring +1",
-    
-    -- ear1="Lugra Earring +1",
-    -- ear2="Hattori Earring +2",
+  sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {
+    ear2="Lugra Earring +1",
   })
 
   -- Used for "Proc" mode, when you typically don't want it to do a lot of damage. Focus acc.
