@@ -489,13 +489,13 @@ function init_gear_sets()
     legs="Gleti's Breeches",
     feet="Gleti's Boots",
     neck="Mirage Stole +1",       -- __,  6, 20 <__, __, __> [__/__, ___]
+    ear1="Mache Earring +1",
     ear2="Odr Earring",
     ring1="Epona's Ring",
     ring2="Begrudging Ring",
     waist="Fotia Belt",
     -- ammo="Aurgelmir Orb +1",
     -- neck="Mirage Stole +2",
-    -- ear1="Mache Earring +1",
     -- back=gear.BLU_Crit_Cape,
   }
 
@@ -658,9 +658,9 @@ function init_gear_sets()
 
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {
+    ear2="Mache Earring +1",
     ring2="Ilabrat Ring",
     waist="Grunfeld Rope",
-    -- ear2="Mache Earring +1",
     -- back=gear.BLU_Crit_Cape,
   })
 
@@ -745,9 +745,9 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
     ammo="Aurgelmir Orb",
+    ear2="Mache Earring +1",
     ring2="Ilabrat Ring",
     -- ammo="Aurgelmir Orb +1",
-    -- ear2="Mache Earring +1",
   })
   sets.midcast['Blue Magic'].MagicalDex.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
@@ -801,11 +801,11 @@ function init_gear_sets()
     legs="Malignance Tights",
     feet="Malignance Boots",
     neck="Mirage Stole +1",
+    ear2="Mache Earring +1",
     waist="Eschan Stone",
 
     -- ammo="Voluspa Tathlum",
     -- neck="Mirage Stole +2",
-    -- ear2="Mache Earring +1",
     -- back=gear.BLU_STP_Cape,
   })
 

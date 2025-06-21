@@ -1093,14 +1093,12 @@ function init_gear_sets()
     -- 222 DEX, 166 Att, 12 WSD, 10 PDL (30 Crit Rate, 17 Crit Dmg) <0 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 398 M.Eva]
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
-    ear2="Telos Earring",
-    -- ear2="Mache Earring +1",
+    ear2="Mache Earring +1",
   })
   sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
   })
   sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
-    ear2="Telos Earring",
-    -- ear2="Mache Earring +1",
+    ear2="Mache Earring +1",
   })
   sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
   })

@@ -748,15 +748,14 @@ function init_gear_sets()
     feet=gear.Lustratio_D_feet,       -- 47, 48, __, __, __ <__, __, __> [__/__, ___]
     neck="Fotia Gorget",              -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     ear1="Sherida Earring",           --  5,  5, __, __, __ < 5, __, __> [__/__, ___]
-    ear2="Odr Earring",               -- __, 10, __, __, __ <__, __, __> [__/__, ___]
+    ear2="Mache Earring +1",          -- __,  8, __, __, __ < 2, __, __> [__/__, ___]
     ring1="Ephramad's Ring",          -- 10, 10, 20, __, 10 <__, __, __> [__/__, ___]
     ring2="Gere Ring",                -- 10, __, 16, __, __ <__,  5, __> [__/__, ___]
     back=gear.DNC_WS1_Cape,           -- __, 30, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Fotia Belt",               -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
-    -- 222 STR, 232 DEX, 358 Att, 45 WSD, 10 PDL <19 DA, 9 TA, 0 QA> [31 PDT/15 MDT, 445 M.Eva]
+    -- 222 STR, 230 DEX, 358 Att, 45 WSD, 10 PDL <21 DA, 9 TA, 0 QA> [31 PDT/15 MDT, 445 M.Eva]
 
     -- body="Horos Casaque +4",       -- 37, 39, 96, __, __ <__,  4, __> [ 6/__, 124]
-    -- ear2="Mache Earring +1",       -- __,  8, __, __, __ < 2, __, __> [__/__, ___]
     -- 225 STR, 230 DEX, 368 Att, 45 WSD, 10 PDL <21 DA, 9 TA, 0 QA> [31 PDT/15 MDT, 485 M.Eva]
   }
   sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {})
