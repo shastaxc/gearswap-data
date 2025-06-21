@@ -1068,6 +1068,7 @@ function init_gear_sets()
     -- 270 STR, 170 DEX, 274 Att, 294 Acc, 25 WSD, 20 PDL <31 DA, 17 TA, 3 QA> [42 PDT/17 MDT, 485 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].AttCappedMaxTP = set_combine(sets.precast.WS['Dragon Kick'].AttCapped, {
+    ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
   })
   sets.precast.WS['Dragon Kick'].Safe = set_combine(sets.precast.WS['Dragon Kick'], {})
   sets.precast.WS['Dragon Kick'].SafeMaxTP = set_combine(sets.precast.WS['Dragon Kick'].Safe, {
