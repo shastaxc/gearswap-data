@@ -1314,56 +1314,57 @@ function init_gear_sets()
   -- Aeolian Edge: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
   -- Stack MAB > INT > DEX > WSD
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    ammo="Ghastly Tathlum +1",        -- __, 11, __, __ [__/__, ___] {__/__, ___}
-    head=gear.Nyame_B_head,           -- 25, 28, 30, 11 [ 7/ 7, 123] {__/__, ___}
-    body=gear.Nyame_B_body,           -- 24, 42, 30, 13 [ 9/ 9, 139] {__/__, ___}
-    hands=gear.Nyame_B_hands,         -- 42, 28, 30, 11 [ 7/ 7, 112] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- __, 44, 30, 12 [ 8/ 8, 150] {__/__, ___}
-    feet=gear.Nyame_B_feet,           -- 26, 25, 30, 11 [ 7/ 7, 150] {__/__, ___}
-    neck="Sibyl Scarf",               -- __, 10, 10, __ [__/__, ___] {__/__, ___}
-    ear1="Friomisi Earring",          -- __, __, 10, __ [__/__, ___] {__/__, ___}
-    ear2="Novio Earring",             -- __, __,  7, __ [__/__, ___] {__/__, ___}
-    ring1="Shiva Ring +1",            -- __,  9,  3, __ [__/__, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, ___}
-    back="Argochampsa Mantle",        -- __, __, 12, __ [__/__, ___] {__/__, ___}
-    waist="Skrymir Cord",             -- __, __,  5, __ [__/__, ___] {__/__, ___}
-    -- 115 DEX, 172 INT, 216 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+    ammo="Ghastly Tathlum +1",        -- __, 11, __ {__, 21, __} [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 25, 28, 11 {30, __, 40} [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 24, 42, 13 {30, __, 40} [ 9/ 9, 139] {__/__, ___}
+    hands=gear.Nyame_B_hands,         -- 42, 28, 11 {30, __, 40} [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Nyame_B_legs,           -- __, 44, 12 {30, __, 40} [ 8/ 8, 150] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 26, 25, 11 {30, __, 40} [ 7/ 7, 150] {__/__, ___}
+    neck="Sibyl Scarf",               -- __, 10, __ {10, __, __} [__/__, ___] {__/__, ___}
+    ear1="Friomisi Earring",          -- __, __, __ {10, __, __} [__/__, ___] {__/__, ___}
+    ear2="Novio Earring",             -- __, __, __ { 7, __, __} [__/__, ___] {__/__, ___}
+    ring1="Shiva Ring +1",            -- __,  9, __ { 3, __, __} [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __ {__, __, __} [10/10, ___] {__/__, ___}
+    back="Argochampsa Mantle",        -- __, __, __ {12, __, __} [__/__, ___] {__/__, ___}
+    waist="Skrymir Cord",             -- __, __, __ { 5, 30,  5} [__/__, ___] {__/__, ___}
+    -- 115 DEX, 172 INT, 52 WSD {216 MAB, 51 M.Dmg, 205 M.Acc} [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
-    -- back=gear.BST_INT_MAB_Cape,    -- __, 30, 10, __ [10/__, ___] {__/__, ___}
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __ [__/__, ___] {__/__, ___}
+    -- back=gear.BST_INT_MAB_Cape,    -- __, 30, __ {10, 20, 20} [10/__, ___] {__/__, ___}
+    -- waist="Skrymir Cord +1",       -- __, __, __ { 7, 35,  7} [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {})
   sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MaxTP, {})
 
   -- 60% CHR/30% DEX. dStat CHR. Dmg varies with TP. Light elemental.
   sets.precast.WS['Primal Rend'] = set_combine(sets.precast.WS, {
-    ammo="Pemphredo Tathlum",         -- __, __,  4,  8, __ [__/__, ___] {__/__, ___}
-    head=gear.Nyame_B_head,           -- 24, 25, 30, 40, 11 [ 7/ 7, 123] {__/__, ___}
-    body=gear.Nyame_B_body,           -- 35, 24, 30, 40, 13 [ 9/ 9, 139] {__/__, ___}
-    hands=gear.Nyame_B_hands,         -- 24, 42, 30, 40, 11 [ 7/ 7, 112] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- 24, __, 30, 40, 12 [ 8/ 8, 150] {__/__, ___}
-    feet=gear.Nyame_B_feet,           -- 38, 26, 30, 40, 11 [ 7/ 7, 150] {__/__, ___}
-    neck="Baetyl Pendant",            -- __, __, 13, __, __ [__/__, ___] {__/__, ___}
-    ear1="Friomisi Earring",          -- __, __, 10, __, __ [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __, __, __, __ [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Weatherspoon Ring",        -- __, __, 10, __, __ [__/__, ___] {__/__, ___}; Light MAB+10
-    ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___] {__/__, ___}
-    back="Argochampsa Mantle",        -- __, __, 12, __, __ [__/__, ___] {__/__, ___}
-    waist="Skrymir Cord",             -- __, __,  5,  5, __ [__/__, ___] {__/__, ___}
-    -- 145 CHR, 117 DEX, 211 MAB, 213 M.Acc, 58 WSD [48 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+    ammo="Pemphredo Tathlum",         -- __, __, __ {__,  4, __,  8} [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 24, 25, 11 {__, 30, __, 40} [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 35, 24, 13 {__, 30, __, 40} [ 9/ 9, 139] {__/__, ___}
+    hands=gear.Nyame_B_hands,         -- 24, 42, 11 {__, 30, __, 40} [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Nyame_B_legs,           -- 24, __, 12 {__, 30, __, 40} [ 8/ 8, 150] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 38, 26, 11 {__, 30, __, 40} [ 7/ 7, 150] {__/__, ___}
+    neck="Baetyl Pendant",            -- __, __, __ {__, 13, __, __} [__/__, ___] {__/__, ___}
+    ear1="Friomisi Earring",          -- __, __, __ {__, 10, __, __} [__/__, ___] {__/__, ___}
+    ear2="Moonshade Earring",         -- __, __, __ {__, __, __, __} [__/__, ___] {__/__, ___}; TP Bonus+250
+    ring1="Weatherspoon Ring",        -- __, __, __ {10, __, __, 10} [__/__, ___] {__/__, ___}; Light MAB+10
+    ring2="Defending Ring",           -- __, __, __ {__, __, __, __} [10/10, ___] {__/__, ___}
+    back="Argochampsa Mantle",        -- __, __, __ {__, 12, __, __} [__/__, ___] {__/__, ___}
+    waist="Skrymir Cord",             -- __, __, __ {__,  5, 30,  5} [__/__, ___] {__/__, ___}
+    -- 145 CHR, 117 DEX, 58 WSD {10 Light MAB, 194 MAB, 30 M.Dmg, 223 M.Acc} [48 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
-    -- back=gear.BST_CHR_WSD_Cape,    -- 30, __, __, 20, 10 [__/__, ___] { 5/ 5, ___}
-    -- waist="Skrymir Cord +1",       -- __, __,  7,  7, __ [__/__, ___] {__/__, ___}
+    -- back=gear.BST_CHR_WSD_Cape,    -- 30, __, 10 {__, __, __, __} [10/__, ___] {__/__, ___}; use with epam ring
+    -- ring2="Epaminondas's Ring",    -- __, __,  5 {__, __, __, __} [__/__, ___] {__/__, ___}; use with ambu cape
+    -- waist="Skrymir Cord +1",       -- __, __, __ {__,  7, 35,  7} [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Primal Rend'].MaxTP = set_combine(sets.precast.WS['Primal Rend'], {
-    ear2="Novio Earring",             -- __, __,  7, __, __ [__/__, ___] {__/__, ___}
+    ear2="Novio Earring",             -- __, __, __ {__,  7, __, __} [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Primal Rend'].AttCappedMaxTP = set_combine(sets.precast.WS['Primal Rend'].MaxTP, {})
 
   -- 40% STR/40% MND. Dmg varies with TP. Thunder elemental.
   sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS['Primal Rend'], {
     ring1="Sroda Ring",
-    -- back=gear.BST_MND_WSD_Cape,    -- __, 30, 10, 20, __ [__/__, ___] { 5/ 5, ___}
+    -- back=gear.BST_MND_WSD_Cape,
   })
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Primal Rend'].MaxTP, {
     ring1="Sroda Ring",

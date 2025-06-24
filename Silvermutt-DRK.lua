@@ -605,21 +605,21 @@ function init_gear_sets()
 
   -- 50% MND / 30% STR. Dark elemental. Absorbs HP. dStat = INT
   sets.precast.WS['Sanguine Blade'] = {
-    ammo="Seething Bomblet +1",       -- __, 15, __,  7, __ [__/__, ___]
-    head="Pixie Hairpin +1",          -- __, __, 27, __, __ [__/__, ___]; Dark MAB+28
-    body=gear.Nyame_B_body,           -- 37, 45, 42, 30, 13 [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 40, 17, 28, 30, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 32, 58, 44, 30, 12 [ 8/ 8, 150]
-    feet="Heathen's Sollerets +3",    -- 26, 33, 22, 50, 12 [__/__, 119]
-    neck="Baetyl Pendant",            -- __, __, __, 13, __ [__/__, ___]
-    ear1="Malignance Earring",        --  8, __,  8,  8, __ [__/__, ___]
-    ear2="Friomisi Earring",          -- __, __, __, 10, __ [__/__, ___]
-    ring1="Epaminondas's Ring",       -- __, __, __, __,  5 [__/__, ___]
-    ring2="Archon Ring",              -- __, __, __, __, __ [__/__, ___]; Dark MAB+5
-    back=gear.DRK_MAB_Cape,           -- __, __, 30, 10, __ [10/__, ___]
-    waist="Eschan Stone",             -- __, __, __,  7, __ [__/__, ___]
-    -- DRK traits/gifts/etc                               8
-    -- 143 MND, 168 STR, 201 INT, 195 MAB, 61 WSD [34 PDT/24 MDT, 520 M.Eva]
+    ammo="Seething Bomblet +1",       -- __, 15, __, __ {__,  7, __, __} [__/__, ___]
+    head="Pixie Hairpin +1",          -- __, __, 27, __ {28, __, __, __} [__/__, ___]
+    body=gear.Nyame_B_body,           -- 37, 45, 42, 13 {__, 30, __, 40} [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 40, 17, 28, 11 {__, 30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 32, 58, 44, 12 {__, 30, __, 40} [ 8/ 8, 150]
+    feet="Heathen's Sollerets +3",    -- 26, 33, 22, 12 {__, 50, __, 60} [__/__, 119]
+    neck="Baetyl Pendant",            -- __, __, __, __ {__, 13, __, __} [__/__, ___]
+    ear1="Malignance Earring",        --  8, __,  8, __ {__,  8, __, 10} [__/__, ___]
+    ear2="Friomisi Earring",          -- __, __, __, __ {__, 10, __, __} [__/__, ___]
+    ring1="Epaminondas's Ring",       -- __, __, __,  5 {__, __, __, __} [__/__, ___]
+    ring2="Archon Ring",              -- __, __, __, __ { 5, __, __,  5} [__/__, ___]
+    back=gear.DRK_MAB_Cape,           -- __, __, 30, __ {__, 10, 20, 20} [10/__, ___]
+    waist="Eschan Stone",             -- __, __, __, __ {__,  7, __,  7} [__/__, ___]
+    -- DRK traits/gifts/etc                           8
+    -- 143 MND, 168 STR, 201 INT, 61 WSD {33 Dark MAB, 195 MAB, 20 M.Dmg, 222 M.Acc} [34 PDT/24 MDT, 520 M.Eva]
   }
 
   -- 80% VIT; Damage varies with TP
@@ -708,24 +708,24 @@ function init_gear_sets()
 
   -- 70% INT/30% STR; Dark elemental. Att down varies with TP
   sets.precast.WS['Infernal Scythe'] = {
-    ammo="Seething Bomblet +1",       -- 15, __,  7, __ [__/__, ___]
-    head="Pixie Hairpin +1",          -- __, 27, __, __ [__/__, ___]; Dark MAB+28
-    body=gear.Nyame_B_body,           -- 45, 42, 30, 13 [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 17, 28, 30, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 58, 44, 30, 12 [ 8/ 8, 150]
-    feet="Heathen's Sollerets +3",    -- 33, 22, 50, 12 [__/__, 119]
-    neck="Sibyl Scarf",               -- __, 10, 10, __ [__/__, ___]
-    ear1="Malignance Earring",        -- __,  8,  8, __ [__/__, ___]
-    ear2="Moonshade Earring",         -- __, __, __, __ [__/__, ___]; TP bonus
-    ring1="Metamorph Ring +1",        -- __, 16, __, __ [__/__, ___]
-    ring2="Archon Ring",              -- __, __, __, __ [__/__, ___]; Dark MAB+5
-    back=gear.DRK_MAB_Cape,           -- __, 30, 10, __ [10/__, ___]
-    waist="Eschan Stone",             -- __, __,  7, __ [__/__, ___]
-    -- DRK traits/gifts/etc                           8
-    -- 168 STR, 227 INT, 182 MAB, 56 WSD [34 PDT/24 MDT, 520 M.Eva]
+    ammo="Seething Bomblet +1",       -- 15, __, __ {__,  7, __, __} [__/__, ___]
+    head="Pixie Hairpin +1",          -- __, 27, __ {28, __, __, __} [__/__, ___]
+    body=gear.Nyame_B_body,           -- 45, 42, 13 {__, 30, __, 40} [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 17, 28, 11 {__, 30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 58, 44, 12 {__, 30, __, 40} [ 8/ 8, 150]
+    feet="Heathen's Sollerets +3",    -- 33, 22, 12 {__, 50, __, 60} [__/__, 119]
+    neck="Sibyl Scarf",               -- __, 10, __ {__, 10, __, __} [__/__, ___]
+    ear1="Malignance Earring",        -- __,  8, __ {__,  8, __, 10} [__/__, ___]
+    ear2="Moonshade Earring",         -- __, __, __ {__, __, __, __} [__/__, ___]; TP bonus
+    ring1="Metamorph Ring +1",        -- __, 16, __ {__, __, __, 15} [__/__, ___]
+    ring2="Archon Ring",              -- __, __, __ { 5, __, __,  5} [__/__, ___]
+    back=gear.DRK_MAB_Cape,           -- __, 30, __ {__, 10, 20, 20} [10/__, ___]
+    waist="Eschan Stone",             -- __, __, __ {__,  7, __,  7} [__/__, ___]
+    -- DRK traits/gifts/etc                       8
+    -- 168 STR, 227 INT, 56 WSD {33 Dark MAB, 182 MAB, 20 M.Dmg, 237 M.Acc} [34 PDT/24 MDT, 520 M.Eva]
   }
   sets.precast.WS['Infernal Scythe'].MaxTP = set_combine(sets.precast.WS['Infernal Scythe'], {
-    ear2="Friomisi Earring",          -- __, __, 10, __ [__/__, ___]
+    ear2="Friomisi Earring",          -- __, __, __ {__, 10, __, __} [__/__, ___]
   })
   sets.precast.WS['Infernal Scythe'].AttCappedMaxTP = set_combine(sets.precast.WS['Infernal Scythe'].MaxTP, {})
 
@@ -835,21 +835,21 @@ function init_gear_sets()
 
   -- 40% DEX/40% INT; wind elemental, dmg varies with TP
   sets.precast.WS['Aeolian Edge'] = {
-    ammo="Ghastly Tathlum +1",                -- __, 11, __, __ [__/__, ___]
-    head=gear.Nyame_B_head,                   -- 25, 28, 30, 11 [ 7/ 7, 123]
-    body="Fallen's Cuirass +3",               -- 32, 32, 60, __ [__/__,  68]
-    hands="Fallen's Finger Gauntlets +3",     -- 39, 24, 62, __ [__/__,  46]
-    legs=gear.Nyame_B_legs,                   -- __, 44, 30, 12 [ 8/ 8, 150]
-    feet="Heathen's Sollerets +3",            -- 25, 22, 50, 12 [__/__, 119]
-    neck="Sibyl Scarf",                       -- __, 10, 10, __ [__/__, ___]
-    ear1="Malignance Earring",                -- __,  8,  8, __ [__/__, ___]
-    ear2="Friomisi Earring",                  -- __, __, 10, __ [__/__, ___]
-    ring1="Metamorph Ring +1",                -- __, 16, __, __ [__/__, ___]
-    ring2="Defending Ring",                   -- __, __, __, __ [10/10, ___]
-    back=gear.DRK_MAB_Cape,                   -- __, 30, 10, __ [10/__, ___]
-    waist="Eschan Stone",                     -- __, __,  7, __ [__/__, ___]
-    -- DRK traits/gifts/etc                                   8
-    -- 121 DEX, 225 INT, 277 MAB, 43 WSD [35 PDT/25 MDT, 506 M.Eva]
+    ammo="Ghastly Tathlum +1",                -- __, 11, __ {__, 21, __} [__/__, ___]
+    head=gear.Nyame_B_head,                   -- 25, 28, 11 {30, __, 40} [ 7/ 7, 123]
+    body="Fallen's Cuirass +3",               -- 32, 32, __ {60, __, 40} [__/__,  68]
+    hands="Fallen's Finger Gauntlets +3",     -- 39, 24, __ {62, __, 38} [__/__,  46]
+    legs=gear.Nyame_B_legs,                   -- __, 44, 12 {30, __, 40} [ 8/ 8, 150]
+    feet="Heathen's Sollerets +3",            -- 25, 22, 12 {50, __, 60} [__/__, 119]
+    neck="Sibyl Scarf",                       -- __, 10, __ {10, __, __} [__/__, ___]
+    ear1="Malignance Earring",                -- __,  8, __ { 8, __, 10} [__/__, ___]
+    ear2="Friomisi Earring",                  -- __, __, __ {10, __, __} [__/__, ___]
+    ring1="Metamorph Ring +1",                -- __, 16, __ {__, __, 15} [__/__, ___]
+    ring2="Defending Ring",                   -- __, __, __ {__, __, __} [10/10, ___]
+    back=gear.DRK_MAB_Cape,                   -- __, 30, __ {10, 20, 20} [10/__, ___]
+    waist="Eschan Stone",                     -- __, __, __ { 7, __,  7} [__/__, ___]
+    -- DRK traits/gifts/etc                               8
+    -- 121 DEX, 225 INT, 43 WSD {277 MAB, 41 M.Dmg, 270 M.Acc} [35 PDT/25 MDT, 506 M.Eva]
   }
 
   sets.precast.WS['Armor Break'] = {

@@ -930,17 +930,17 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,           -- 16, __ < 3,  3, __> [__/__,  75] {__/__, ___}
     feet="Mpaca's Boots",             -- 32, __ <__,  3, __> [ 6/__,  96] {__/__, ___}
     neck="Puppetmaster's Collar +2",  -- 15, __ <__, __, __> [__/__, ___] {__/__, ___}
-    ear1="Odr Earring",               -- 10, __ <__, __, __> [__/__, ___] {__/__, ___}
+    ear1="Mache Earring +1",          --  8, __ < 2, __, __> [__/__, ___] {__/__, ___}
     ear2="Schere Earring",            -- __, __ < 6, __, __> [__/__, ___] {__/__, ___}
     ring1="Niqmaddu Ring",            -- 10, __ <__, __,  3> [__/__, ___] {__/__, ___}
     ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.PUP_STR_Crit_Cape,      -- __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 238 DEX, 5 WSD <14 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    -- 236 DEX, 5 WSD <16 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
 
     -- ear2="Karagoz Earring +2",     -- 15, __ <__, __, __> [__/__, ___] {__/__,   1}
     -- back=gear.PUP_DEX_DA_Cape,     -- 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-    -- 283 DEX, 5 WSD <18 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv}
+    -- 281 DEX, 5 WSD <20 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv}
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {})
   

@@ -802,24 +802,24 @@ function init_gear_sets()
 
   -- 40% INT / 40% STR. dStat = INT. Deals lightning elemental damage. Damage varies with TP. 1.0-3.0 fTP
   sets.precast.WS["Raiden Thrust"] = set_combine(sets.precast.WS, {
-    ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21, __, __ [__/__, ___]
-    head=gear.Nyame_B_head,           -- 28, 26, 30, __, __, 40, 11 [ 7/ 7, 123]
-    body=gear.Nyame_B_body,           -- 42, 45, 30, __, __, 40, 13 [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 28, 17, 30, __, __, 40, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 44, 58, 30, __, __, 40, 12 [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 25, 23, 30, __, __, 40, 11 [ 7/ 7, 150]
-    neck="Sibyl Scarf",               -- 10, __, 10, __, __, __, __ [__/__, ___]
-    ear1="Friomisi Earring",          -- __, __, 10, __, __, __, __ [__/__, ___]
-    ear2="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-    ring1="Shiva Ring +1",            --  9, __,  3, __, __, __, __ [__/__, ___]
-    ring2="Metamorph Ring +1",        -- 16, __, __, __, __, 15, __ [__/__, ___]
-    back="Argochampsa Mantle",        -- __, __, 12, __, __, __, __ [__/__, ___]
-    waist="Skrymir Cord",             -- __, __,  5, __, 30,  5, __ [__/__, ___]
-    -- 213 INT, 169 STR, 197 MAB, 0 Thunder MAB, 51 M.Dmg, 220 M.Acc, 58 WSD [38 PDT/38 MDT, 674 M.Eva]
+    ammo="Ghastly Tathlum +1",        -- 11, __, __ {__, 21, __} [__/__, ___]
+    head=gear.Nyame_B_head,           -- 28, 26, 11 {30, __, 40} [ 7/ 7, 123]
+    body=gear.Nyame_B_body,           -- 42, 45, 13 {30, __, 40} [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 28, 17, 11 {30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 44, 58, 12 {30, __, 40} [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- 25, 23, 11 {30, __, 40} [ 7/ 7, 150]
+    neck="Sibyl Scarf",               -- 10, __, __ {10, __, __} [__/__, ___]
+    ear1="Friomisi Earring",          -- __, __, __ {10, __, __} [__/__, ___]
+    ear2="Novio Earring",             -- __, __, __ { 7, __, __} [__/__, ___]
+    ring1="Shiva Ring +1",            --  9, __, __ { 3, __, __} [__/__, ___]
+    ring2="Metamorph Ring +1",        -- 16, __, __ {__, __, 15} [__/__, ___]
+    back="Argochampsa Mantle",        -- __, __, __ {12, __, __} [__/__, ___]
+    waist="Skrymir Cord",             -- __, __, __ { 5, 30,  5} [__/__, ___]
+    -- 213 INT, 169 STR, 58 WSD {197 MAB, 51 M.Dmg, 220 M.Acc} [38 PDT/38 MDT, 674 M.Eva]
     
-    -- back=gear.DRG_MAB_Cape,        -- 30, __, 10, __, 20, 20, __ [10/__, ___]
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __, 35,  7, __ [__/__, ___]
-    -- 243 INT, 169 STR, 197 MAB, 0 Thunder MAB, 76 M.Dmg, 242 M.Acc, 58 WSD [48 PDT/38 MDT, 674 M.Eva]
+    -- back=gear.DRG_MAB_Cape,        -- 30, __, __ {10, 20, 20} [10/__, ___]
+    -- waist="Skrymir Cord +1",       -- __, __, __ { 7, 35,  7} [__/__, ___]
+    -- 243 INT, 169 STR, 58 WSD {197 MAB, 76 M.Dmg, 242 M.Acc} [48 PDT/38 MDT, 674 M.Eva]
   })
   sets.precast.WS["Raiden Thrust"].MaxTP = set_combine(sets.precast.WS["Raiden Thrust"], {})
   sets.precast.WS["Raiden Thrust"].AttCapped = set_combine(sets.precast.WS["Raiden Thrust"], {})
@@ -838,31 +838,31 @@ function init_gear_sets()
   -- 30% INT/30% STR. dStat = INT. 2.75-5.0 fTP, 1 hit (aoe-magical)
   -- Stack MAB > WSD
   sets.precast.WS["Cataclysm"] = set_combine(sets.precast.WS["Raiden Thrust"], {
-    ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21, __, __ [__/__, ___]
-    head="Pixie Hairpin +1",          -- 27, __, __, 28, __, __, __ [__/__, ___]
-    body=gear.Nyame_B_body,           -- 42, 45, 30, __, __, 40, 13 [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 28, 17, 30, __, __, 40, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 44, 58, 30, __, __, 40, 12 [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 25, 23, 30, __, __, 40, 11 [ 7/ 7, 150]
-    neck="Sibyl Scarf",               -- 10, __, 10, __, __, __, __ [__/__, ___]
-    ear1="Friomisi Earring",          -- __, __, 10, __, __, __, __ [__/__, ___]
-    ear2="Moonshade Earring",         -- __, __, __, __, __, __, __ [__/__, ___]; TP bonus
-    ring1="Shiva Ring +1",            --  9, __,  3, __, __, __, __ [__/__, ___]
-    ring2="Archon Ring",              -- __, __, __,  5, __,  5, __ [__/__, ___]
-    back="Argochampsa Mantle",        -- __, __, 12, __, __, __, __ [__/__, ___]
-    waist="Skrymir Cord",             -- __, __,  5, __, 30,  5, __ [__/__, ___]
-    -- 196 INT, 143 STR, 160 MAB, 33 Dark MAB, 51 M.Dmg, 170 M.Acc, 47 WSD [31 PDT/31 MDT, 551 M.Eva]
+    ammo="Ghastly Tathlum +1",        -- 11, __, __ {__, __, 21, __} [__/__, ___]
+    head="Pixie Hairpin +1",          -- 27, __, __ {28, __, __, __} [__/__, ___]
+    body=gear.Nyame_B_body,           -- 42, 45, 13 {__, 30, __, 40} [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 28, 17, 11 {__, 30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 44, 58, 12 {__, 30, __, 40} [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- 25, 23, 11 {__, 30, __, 40} [ 7/ 7, 150]
+    neck="Sibyl Scarf",               -- 10, __, __ {__, 10, __, __} [__/__, ___]
+    ear1="Friomisi Earring",          -- __, __, __ {__, 10, __, __} [__/__, ___]
+    ear2="Moonshade Earring",         -- __, __, __ {__, __, __, __} [__/__, ___]; TP bonus
+    ring1="Shiva Ring +1",            --  9, __, __ {__,  3, __, __} [__/__, ___]
+    ring2="Archon Ring",              -- __, __, __ { 5, __, __,  5} [__/__, ___]
+    back="Argochampsa Mantle",        -- __, __, __ {__, 12, __, __} [__/__, ___]
+    waist="Skrymir Cord",             -- __, __, __ {__,  5, 30,  5} [__/__, ___]
+    -- 196 INT, 143 STR, 47 WSD {33 Dark MAB, 160 MAB, 51 M.Dmg, 170 M.Acc} [31 PDT/31 MDT, 551 M.Eva]
     
-    -- back=gear.DRG_MAB_Cape,        -- 30, __, 10, __, 20, 20, __ [10/__, ___]
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __, 35,  7, __ [__/__, ___]
-    -- 226 INT, 143 STR, 160 MAB, 33 Dark MAB, 76 M.Dmg, 192 M.Acc, 47 WSD [41 PDT/31 MDT, 551 M.Eva]
+    -- back=gear.DRG_MAB_Cape,        -- 30, __, __ {__, 10, 20, 20} [10/__, ___]
+    -- waist="Skrymir Cord +1",       -- __, __, __ {__,  7, 35,  7} [__/__, ___]
+    -- 226 INT, 143 STR, 160 MAB, 76 M.Dmg, 192 M.Acc, 47 WSD {33 Dark MAB, 160 MAB, 76 M.Dmg, 192 M.Acc} [41 PDT/31 MDT, 551 M.Eva]
   })
   sets.precast.WS["Cataclysm"].MaxTP = set_combine(sets.precast.WS["Cataclysm"], {
-    ear2="Novio Earring",           -- __,  7, __, __
+    ear2="Novio Earring",             -- __, __, __ {__,  7, __, __} [__/__, ___]
   })
   sets.precast.WS["Cataclysm"].AttCapped = set_combine(sets.precast.WS["Cataclysm"], {})
   sets.precast.WS["Cataclysm"].AttCappedMaxTP = set_combine(sets.precast.WS["Cataclysm"].AttCapped, {
-    ear2="Novio Earring",           -- __,  7, __, __
+    ear2="Novio Earring",             -- __, __, __ {__,  7, __, __} [__/__, ___]
   })
 
 

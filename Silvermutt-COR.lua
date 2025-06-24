@@ -941,23 +941,23 @@ function init_gear_sets()
 
   sets.precast.WS['Wildfire'] = {
     -- Assume Living Bullet
-    head=gear.Nyame_B_head,           -- 23, 30, __, __, 40, 11 [ 7/ 7, 123]
-    body="Lanun Frac +3",             -- 43, 61, __, __, 40, __ [ 6/__,  84]
-    hands=gear.Nyame_B_hands,         -- 12, 30, __, __, 40, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 34, 30, __, __, 40, 12 [ 8/ 8, 150]
-    feet="Lanun Bottes +4",           -- 49, 58, __, __, 41, 12 [ 6/__, 129]
-    neck="Commodore Charm +2",        -- 15,  7, __, 25, 25, __ [__/__, ___]
-    ear1="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
-    ear2="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
-    ring1="Dingir Ring",              -- 10, 10, __, __, __, __ [__/__, ___]
-    ring2="Epaminondas's Ring",       -- __, __, __, __, __,  5 [__/__, ___]
-    back=gear.COR_WS1_Cape,           -- 30, 10, __, 20, 20, __ [10/__, ___]
-    waist="Skrymir Cord",             -- __,  5, __, 30,  5, __ [__/__, ___]
-    -- 216 AGI, 258 MAB, 0 Fire MAB, 75 M.Dmg, 251 M.Acc, 51 WSD [44 PDT/22 MDT, 598 M.Eva]
+    head=gear.Nyame_B_head,           -- 23, 11 {30, __, 40} [ 7/ 7, 123]
+    body="Lanun Frac +3",             -- 43, __ {61, __, 40} [ 6/__,  84]
+    hands=gear.Nyame_B_hands,         -- 12, 11 {30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 34, 12 {30, __, 40} [ 8/ 8, 150]
+    feet="Lanun Bottes +4",           -- 49, 12 {58, __, 41} [ 6/__, 129]
+    neck="Commodore Charm +2",        -- 15, __ { 7, 25, 25} [__/__, ___]
+    ear1="Friomisi Earring",          -- __, __ {10, __, __} [__/__, ___]
+    ear2="Novio Earring",             -- __, __ { 7, __, __} [__/__, ___]
+    ring1="Dingir Ring",              -- 10, __ {10, __, __} [__/__, ___]
+    ring2="Epaminondas's Ring",       -- __,  5 {__, __, __} [__/__, ___]
+    back=gear.COR_WS1_Cape,           -- 30, __ {10, 20, 20} [10/__, ___]
+    waist="Skrymir Cord",             -- __, __ { 5, 30,  5} [__/__, ___]
+    -- 216 AGI, 51 WSD {258 MAB, 75 M.Dmg, 251 M.Acc} [44 PDT/22 MDT, 598 M.Eva]
 
-    -- body="Lanun Frac +4",          -- 43, 64, __, __, 45, __ [ 6/__, 124]
-    -- waist="Skrymir Cord +1",       -- __,  7, __, 35,  7, __ [__/__, ___]
-    -- 216 AGI, 263 MAB, 0 Fire MAB, 80 M.Dmg, 258 M.Acc, 51 WSD [44 PDT/22 MDT, 638 M.Eva]
+    -- body="Lanun Frac +4",          -- 43, __ {64, __, 45} [ 6/__, 124]
+    -- waist="Skrymir Cord +1",       -- __, __ { 7, 35,  7} [__/__, ___]
+    -- 216 AGI, 51 WSD {263 MAB, 80 M.Dmg, 258 M.Acc} [44 PDT/22 MDT, 638 M.Eva]
   }
   sets.precast.WS['Wildfire'].MaxTP = set_combine(sets.precast.WS['Wildfire'], {
   })
@@ -994,82 +994,82 @@ function init_gear_sets()
     ear2="Novio Earring",
   })
 
-  sets.precast.WS['Aeolian Edge'] = {
-    -- Assume Living Bullet
-    head=gear.Nyame_B_head,           -- 25, 28, 30, __, __, 40, 11 [ 7/ 7, 123]
-    body="Lanun Frac +3",             -- 39, 36, 61, __, __, 40, __ [ 6/__,  84]
-    hands=gear.Nyame_B_hands,         -- 42, 28, 30, __, __, 40, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- __, 44, 30, __, __, 40, 12 [ 8/ 8, 150]
-    feet="Lanun Bottes +4",           -- 34, 22, 58, __, __, 41, 12 [ 6/__, 129]
-    neck="Commodore Charm +2",        -- __, __,  7, __, 25, 25, __ [__/__, ___]
-    ear1="Friomisi Earring",          -- __, __, 10, __, __, __, __ [__/__, ___]
-    ear2="Moonshade Earring",         -- __, __, __, __, __, __, __ [__/__, ___]; TP Bonus +250
-    ring1="Dingir Ring",              -- __, __, 10, __, __, __, __ [__/__, ___]
-    ring2="Epaminondas's Ring",       -- __, __, __, __, __, __,  5 [__/__, ___]
-    back=gear.COR_WS4_Cape,           -- __, 30, 10, __, 20, 20, __ [10/__, ___]
-    waist="Skrymir Cord",             -- __, __,  5, __, 30,  5, __ [__/__, ___]
-    -- 140 DEX, 188 INT, 251 MAB, 0 Wind MAB, 75 M.Dmg, 251 M.Acc, 51 WSD [44 PDT/22 MDT, 598 M.Eva]
-
-    -- body="Lanun Frac +4",          -- 39, 39, 64, __, __, 45, __ [ 6/__, 124]
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __, 35,  7, __ [__/__, ___]
-    -- 140 DEX, 191 INT, 256 MAB, 0 Wind MAB, 80 M.Dmg, 258 M.Acc, 51 WSD [44 PDT/22 MDT, 638 M.Eva]
-  }
-  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ear2="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-  })
-  sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
-  })
-  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
-    ear2="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-  })
-  sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
-  })
-  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
-    ear2="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-  })
-  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
-  })
-  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
-    ear2="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-  })
-
   sets.precast.WS['Leaden Salute'] = {
     -- Assume Living Bullet
-    head="Pixie Hairpin +1",          -- __, __, 28, __, __, __ [__/__, ___]
-    body="Lanun Frac +3",             -- 43, 61, __, __, 40, __ [ 6/__,  84]
-    hands=gear.Nyame_B_hands,         -- 12, 30, __, __, 40, 11 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 34, 30, __, __, 40, 12 [ 8/ 8, 150]
-    feet="Lanun Bottes +4",           -- 49, 58, __, __, 41, 12 [ 6/__, 129]
-    neck="Commodore Charm +2",        -- 15,  7, __, 25, 25, __ [__/__, ___]
-    ear1="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
-    ear2="Moonshade Earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus +250
-    ring1="Archon Ring",              -- __, __,  5, __,  5, __ [__/__, ___]
-    ring2="Epaminondas's Ring",       -- __, __, __, __, __,  5 [__/__, ___]
-    back=gear.COR_WS1_Cape,           -- 30, 10, __, 20, 20, __ [10/__, ___]
-    waist="Skrymir Cord",             -- __,  5, __, 30,  5, __ [__/__, ___]
-    -- 183 AGI, 211 MAB, 33 Dark MAB, 75 M.Dmg, 216 M.Acc, 40 WSD, 0 PDL [37 PDT/15 MDT, 475 M.Eva]
+    head="Pixie Hairpin +1",          -- __, __ {28, __, __, __} [__/__, ___]
+    body="Lanun Frac +3",             -- 43, __ {__, 61, __, 40} [ 6/__,  84]
+    hands=gear.Nyame_B_hands,         -- 12, 11 {__, 30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 34, 12 {__, 30, __, 40} [ 8/ 8, 150]
+    feet="Lanun Bottes +4",           -- 49, 12 {__, 58, __, 41} [ 6/__, 129]
+    neck="Commodore Charm +2",        -- 15, __ {__,  7, 25, 25} [__/__, ___]
+    ear1="Friomisi Earring",          -- __, __ {__, 10, __, __} [__/__, ___]
+    ear2="Moonshade Earring",         -- __, __ {__, __, __, __} [__/__, ___]; TP Bonus +250
+    ring1="Archon Ring",              -- __, __ { 5, __, __,  5} [__/__, ___]
+    ring2="Epaminondas's Ring",       -- __,  5 {__, __, __, __} [__/__, ___]
+    back=gear.COR_WS1_Cape,           -- 30, __ {__, 10, 20, 20} [10/__, ___]
+    waist="Skrymir Cord",             -- __, __ {__,  5, 30,  5} [__/__, ___]
+    -- 183 AGI, 40 WSD {33 Dark MAB, 211 MAB, 75 M.Dmg, 216 M.Acc} [37 PDT/15 MDT, 475 M.Eva]
 
-    -- body="Lanun Frac +4",          -- 43, 64, __, __, 45, __ [ 6/__, 124]
-    -- waist="Skrymir Cord +1",       -- __,  7, __, 35,  7, __ [__/__, ___]
-    -- 183 AGI, 216 MAB, 33 Dark MAB, 80 M.Dmg, 223 M.Acc, 40 WSD [37 PDT/15 MDT, 515 M.Eva]
+    -- body="Lanun Frac +4",          -- 43, __ {__, 64, __, 45} [ 6/__, 124]
+    -- waist="Skrymir Cord +1",       -- __, __ {__,  7, 35,  7} [__/__, ___]
+    -- 183 AGI, 40 WSD {33 Dark MAB, 216 MAB, 80 M.Dmg, 223 M.Acc} [37 PDT/15 MDT, 515 M.Eva]
   }
   sets.precast.WS['Leaden Salute'].MaxTP = set_combine(sets.precast.WS['Leaden Salute'], {
-    ear2="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
+    ear2="Novio Earring",             -- __, __ {__, 7, __, __} [__/__, ___]
   })
   sets.precast.WS['Leaden Salute'].LowAcc = set_combine(sets.precast.WS['Leaden Salute'], {
   })
   sets.precast.WS['Leaden Salute'].LowAccMaxTP = set_combine(sets.precast.WS['Leaden Salute'].LowAcc, {
-    ear2="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
+    ear2="Novio Earring",             -- __, __ {__, 7, __, __} [__/__, ___]
   })
   sets.precast.WS['Leaden Salute'].MidAcc = set_combine(sets.precast.WS['Leaden Salute'].LowAcc, {
   })
   sets.precast.WS['Leaden Salute'].MidAccMaxTP = set_combine(sets.precast.WS['Leaden Salute'].MidAcc, {
-    ear2="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
+    ear2="Novio Earring",             -- __, __ {__, 7, __, __} [__/__, ___]
   })
   sets.precast.WS['Leaden Salute'].HighAcc = set_combine(sets.precast.WS['Leaden Salute'].MidAcc, {
   })
   sets.precast.WS['Leaden Salute'].HighAccMaxTP = set_combine(sets.precast.WS['Leaden Salute'].HighAcc, {
-    ear2="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
+    ear2="Novio Earring",             -- __, __ {__, 7, __, __} [__/__, ___]
+  })
+
+  sets.precast.WS['Aeolian Edge'] = {
+    -- Assume Living Bullet
+    head=gear.Nyame_B_head,           -- 25, 28, 11 {30, __, 40} [ 7/ 7, 123]
+    body="Lanun Frac +3",             -- 39, 36, __ {61, __, 40} [ 6/__,  84]
+    hands=gear.Nyame_B_hands,         -- 42, 28, 11 {30, __, 40} [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- __, 44, 12 {30, __, 40} [ 8/ 8, 150]
+    feet="Lanun Bottes +4",           -- 34, 22, 12 {58, __, 41} [ 6/__, 129]
+    neck="Commodore Charm +2",        -- __, __, __ { 7, 25, 25} [__/__, ___]
+    ear1="Friomisi Earring",          -- __, __, __ {10, __, __} [__/__, ___]
+    ear2="Moonshade Earring",         -- __, __, __ {__, __, __} [__/__, ___]; TP Bonus +250
+    ring1="Dingir Ring",              -- __, __, __ {10, __, __} [__/__, ___]
+    ring2="Epaminondas's Ring",       -- __, __,  5 {__, __, __} [__/__, ___]
+    back=gear.COR_WS4_Cape,           -- __, 30, __ {10, 20, 20} [10/__, ___]
+    waist="Skrymir Cord",             -- __, __, __ { 5, 30,  5} [__/__, ___]
+    -- 140 DEX, 188 INT, 51 WSD {251 MAB, 75 M.Dmg, 251 M.Acc} [44 PDT/22 MDT, 598 M.Eva]
+
+    -- body="Lanun Frac +4",          -- 39, 39, __ {64, __, 45} [ 6/__, 124]
+    -- waist="Skrymir Cord +1",       -- __, __, __ { 7, 35,  7} [__/__, ___]
+    -- 140 DEX, 191 INT, 51 WSD {256 MAB, 80 M.Dmg, 258 M.Acc} [44 PDT/22 MDT, 638 M.Eva]
+  }
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear2="Novio Earring",             -- __, __, __ { 7, __, __} [__/__, ___]
+  })
+  sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
+  })
+  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+    ear2="Novio Earring",             -- __, __, __ { 7, __, __} [__/__, ___]
+  })
+  sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+    ear2="Novio Earring",             -- __, __, __ { 7, __, __} [__/__, ___]
+  })
+  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
+    ear2="Novio Earring",             -- __, __, __ { 7, __, __} [__/__, ___]
   })
 
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
@@ -1083,14 +1083,14 @@ function init_gear_sets()
     ear1="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]
     ring1="Ilabrat Ring",             -- 10, 25, __, __ (__, __) <__, __, __> [__/__, ___]
-    ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
+    ring2="Ephramad's Ring",          -- 10, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
     back=gear.COR_TP_Cape,            -- 30, 20, __, __ (__, __) <10, __, __> [10/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
-    -- 217 DEX, 166 Att, 8 WSD, 10 PDL (19 Crit Rate, 17 Crit Dmg) <10 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 388 M.Eva]
+    -- 217 DEX, 186 Att, 8 WSD, 10 PDL (19 Crit Rate, 17 Crit Dmg) <10 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 388 M.Eva]
     
     -- hands="Chasseur's Gants +3",   -- 49, __, 12, __ ( 8, __) <__, __, __> [__/__,  93]
     -- back=gear.COR_WS5_Cape,        -- 30, 20, __, __ (10, __) <__, __, __> [10/__, ___]
-    -- 222 DEX, 166 Att, 12 WSD, 10 PDL (30 Crit Rate, 17 Crit Dmg) <0 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 398 M.Eva]
+    -- 222 DEX, 186 Att, 12 WSD, 10 PDL (30 Crit Rate, 17 Crit Dmg) <0 DA, 6 TA, 0 QA> [25 PDT/5 MDT, 398 M.Eva]
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ear2="Mache Earring +1",

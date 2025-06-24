@@ -1,6 +1,5 @@
 --[[
 File Status: Good.
-TODO: Cancel Boost buff if tp = 3000
 
 Author: Silvermutt
 Required external libraries: SilverLibs
