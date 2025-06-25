@@ -545,7 +545,7 @@ function init_gear_sets()
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     ammo="Knobkierrie",               -- __, __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body="Bhikku Cyclas +3",          -- 40, 39, 74, 64, 12, __ <__, __, __> [__/__, 109]
     hands=gear.Nyame_B_hands,         -- 17, 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 58, __, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
@@ -557,7 +557,7 @@ function init_gear_sets()
     ring2="Ephramad's Ring",          -- 10, 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- 20, 20, 20, 20, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 246 STR, 167 DEX, 453 Att, 341 Acc, 52 WSD, 10 PDL <32 DA, 16 TA, 0 QA> [45 PDT/28 MDT, 590 M.Eva]
+    -- 246 STR, 167 DEX, 453 Att, 341 Acc, 52 WSD, 10 PDL <37 DA, 16 TA, 0 QA> [45 PDT/28 MDT, 590 M.Eva]
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     head=gear.Nyame_B_head,           -- 26, 25, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
@@ -565,7 +565,7 @@ function init_gear_sets()
   })
   sets.precast.WS.AttCapped = {
     ammo="Knobkierrie",               -- __, __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 17, 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Mpaca's Hose",              -- 49, __, 70, 55, __,  8 <__,  4, __> [ 9/__, 106]
@@ -577,7 +577,7 @@ function init_gear_sets()
     ring2="Ephramad's Ring",          -- 10, 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- 20, 20, 20, 20, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 242 STR, 167 DEX, 449 Att, 352 Acc, 41 WSD, 28 PDL <33 DA, 20 TA, 0 QA> [55 PDT/29 MDT, 576 M.Eva]
+    -- 242 STR, 167 DEX, 449 Att, 352 Acc, 41 WSD, 28 PDL <38 DA, 20 TA, 0 QA> [55 PDT/29 MDT, 576 M.Eva]
   }
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     head=gear.Nyame_B_head,           -- 26, 25, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
@@ -677,7 +677,7 @@ function init_gear_sets()
   -- TP Bonus > crit dmg > multihit > WSD
   sets.precast.WS["Ascetic's Fury"] = {
     ammo="Coiste Bodhar",               -- 10, __, 15, __, __, __ < 3, __, __> (__, __) [__/__, ___]
-    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ <__,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ < 5,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
     body="Mpaca's Doublet",             -- 39, 34, 70, 55, __, __ <__,  4, __> ( 7, __) [10/__,  86]
     hands="Mpaca's Gloves",             -- 20, 38, 70, 55, __, __ <__,  3, __> ( 5, __) [ 8/__,  59]
     legs="Mpaca's Hose",                -- 49, 32, 70, 55, __,  8 <__,  4, __> ( 6, __) [ 9/__, 106]
@@ -689,7 +689,7 @@ function init_gear_sets()
     ring2="Regal Ring",                 -- 10, 10, 20, __, __, __ <__, __, __> (__, __) [__/__, ___]
     back=gear.MNK_STR_DA_Cape,          -- 30, __, 20, 20, __, __ <10, __, __> (__, __) [10/__, ___]
     waist="Fotia Belt",                 -- __, __, __, 10, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+
-    -- 222 STR, 150 VIT, 385 Att, 316 Acc, 0 WSD, 8 PDL <19 DA, 19 TA, 0 QA> (22 Crit Rate, 5 Crit Dmg) [37 PDT/0 MDT, 395 M.Eva]
+    -- 222 STR, 150 VIT, 385 Att, 316 Acc, 0 WSD, 8 PDL <24 DA, 19 TA, 0 QA> (22 Crit Rate, 5 Crit Dmg) [37 PDT/0 MDT, 395 M.Eva]
   }
   sets.precast.WS["Ascetic's Fury"].MaxTP = set_combine(sets.precast.WS["Ascetic's Fury"], {
     head=gear.Adhemar_B_head,           -- 31, 15, 56, __, __, __ <__,  4, __> (__,  6) [__/__,  59]
@@ -697,7 +697,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Ascetic's Fury"].AttCapped = {
     ammo="Crepuscular Earring",         --  3,  3, __, __, __,  3 <__, __, __> (__, __) [ 3/ 3, ___]
-    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ <__,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ < 5,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
     body="Mpaca's Doublet",             -- 39, 34, 70, 55, __, __ <__,  4, __> ( 7, __) [10/__,  86]
     hands=gear.Ryuo_A_hands,            -- 24, 30, __, 53, __, __ <__, __, __> ( 5,  5) [__/__,  32]
     legs="Mpaca's Hose",                -- 49, 32, 70, 55, __,  8 <__,  4, __> ( 6, __) [ 9/__, 106]
@@ -709,7 +709,7 @@ function init_gear_sets()
     ring2="Ephramad's Ring",            -- 10, __, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
     back=gear.MNK_STR_DA_Cape,          -- 30, __, 20, 20, __, __ <10, __, __> (__, __) [10/__, ___]
     waist="Fotia Belt",                 -- __, __, __, 10, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+
-    -- 219 STR, 135 VIT, 300 Att, 334 Acc, 0 WSD, 21 PDL <16 DA, 16 TA, 0 QA> (22 Crit Rate, 10 Crit Dmg) [41 PDT/3 MDT, 368 M.Eva]
+    -- 219 STR, 135 VIT, 300 Att, 334 Acc, 0 WSD, 21 PDL <21 DA, 16 TA, 0 QA> (22 Crit Rate, 10 Crit Dmg) [41 PDT/3 MDT, 368 M.Eva]
   }
   sets.precast.WS["Ascetic's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].AttCapped, {
     head=gear.Adhemar_B_head,           -- 31, 15, 56, __, __, __ <__,  4, __> (__,  6) [__/__,  59]
@@ -717,7 +717,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Ascetic's Fury"].Safe = {
     ammo="Coiste Bodhar",               -- 10, __, 15, __, __, __ < 3, __, __> (__, __) [__/__, ___]
-    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ <__,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ < 5,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,             -- 45, 45, 65, 40, 13, __ < 7, __, __> (__, __) [ 9/ 9, 139]
     hands="Mpaca's Gloves",             -- 20, 38, 70, 55, __, __ <__,  3, __> ( 5, __) [ 8/__,  59]
     legs="Mpaca's Hose",                -- 49, 32, 70, 55, __,  8 <__,  4, __> ( 6, __) [ 9/__, 106]
@@ -729,14 +729,14 @@ function init_gear_sets()
     ring2="Regal Ring",                 -- 10, 10, 20, __, __, __ <__, __, __> (__, __) [__/__, ___]
     back=gear.MNK_STR_DA_Cape,          -- 30, __, 20, 20, __, __ <10, __, __> (__, __) [10/__, ___]
     waist="Moonbow Belt +1",            -- 20, __, __, __, __, __ <__,  8, __> (__, __) [ 6/ 6, ___]
-    -- 255 STR, 175 VIT, 426 Att, 307 Acc, 24 WSD, 8 PDL <31 DA, 23 TA, 0 QA> (15 Crit Rate, 0 Crit Dmg) [56 PDT/22 MDT, 523 M.Eva]
+    -- 255 STR, 175 VIT, 426 Att, 307 Acc, 24 WSD, 8 PDL <36 DA, 23 TA, 0 QA> (15 Crit Rate, 0 Crit Dmg) [56 PDT/22 MDT, 523 M.Eva]
   }
   sets.precast.WS["Ascetic's Fury"].SafeMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].Safe, {
     ear1="Sherida Earring",             --  5, __, __, __, __, __ < 5, __, __> (__, __) [__/__, ___]
   })
   sets.precast.WS["Ascetic's Fury"].SafeAttCapped = {
     ammo="Crepuscular Earring",         --  3,  3, __, __, __,  3 <__, __, __> (__, __) [ 3/ 3, ___]
-    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ <__,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",                 -- 33, 26, 70, 55, __, __ < 5,  3, __> ( 4, __) [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,             -- 45, 45, 65, 40, 13, __ < 7, __, __> (__, __) [ 9/ 9, 139]
     hands=gear.Ryuo_A_hands,            -- 24, 30, __, 53, __, __ <__, __, __> ( 5,  5) [__/__,  32]
     legs="Mpaca's Hose",                -- 49, 32, 70, 55, __,  8 <__,  4, __> ( 6, __) [ 9/__, 106]
@@ -748,7 +748,7 @@ function init_gear_sets()
     ring2="Ephramad's Ring",            -- 10, __, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
     back=gear.MNK_STR_DA_Cape,          -- 30, __, 20, 20, __, __ <10, __, __> (__, __) [10/__, ___]
     waist="Moonbow Belt +1",            -- 20, __, __, __, __, __ <__,  8, __> (__, __) [ 6/ 6, ___]
-    -- 252 STR, 160 VIT, 341 Att, 325 Acc, 24 WSD, 21 PDL <28 DA, 20 TA, 0 QA> (15 Crit Rate, 5 Crit Dmg) [51 PDT/25 MDT, 496 M.Eva]
+    -- 252 STR, 160 VIT, 341 Att, 325 Acc, 24 WSD, 21 PDL <33 DA, 20 TA, 0 QA> (15 Crit Rate, 5 Crit Dmg) [51 PDT/25 MDT, 496 M.Eva]
   }
   sets.precast.WS["Ascetic's Fury"].SafeAttCappedMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].SafeAttCapped, {
     head=gear.Adhemar_B_head,           -- 31, 15, 56, __, __, __ <__,  4, __> (__,  6) [__/__,  59]
@@ -759,7 +759,7 @@ function init_gear_sets()
   -- DEX > multihit > WSD
   sets.precast.WS['Shijin Spiral'] = {
     ammo="Coiste Bodhar",             -- 10, 15, __, __, __ < 3, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus
+    head="Mpaca's Cap",               -- 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus
     body=gear.Nyame_B_body,           -- 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands="Mpaca's Gloves",           -- 49, 70, 55, __, __ <__,  3, __> [ 8/__,  59]
     legs="Mpaca's Hose",              -- __, 70, 55, __,  8 <__,  4, __> [ 9/__, 106]
@@ -771,7 +771,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
     back=gear.MNK_DEX_DA_Cape,        -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 214 DEX, 410 Att, 323 Acc, 24 WSD, 18 PDL <36 DA, 18 TA, 3 QA> [56 PDT/29 MDT, 523 M.Eva]
+    -- 214 DEX, 410 Att, 323 Acc, 24 WSD, 18 PDL <41 DA, 18 TA, 3 QA> [56 PDT/29 MDT, 523 M.Eva]
   }
   sets.precast.WS['Shijin Spiral'].MaxTP = set_combine(sets.precast.WS['Shijin Spiral'], {})
   sets.precast.WS['Shijin Spiral'].AttCapped = {
@@ -903,7 +903,7 @@ function init_gear_sets()
   -- TP Bonus > WSD > Multihit (assuming always used with high TP)
   sets.precast.WS['Raging Fists'] = {
     ammo="Knobkierrie",               -- __, __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body="Bhikku Cyclas +3",          -- 40, 39, 74, 64, 12, __ <__, __, __> [__/__, 109]
     hands=gear.Nyame_B_hands,         -- 17, 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 58, __, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
@@ -915,7 +915,7 @@ function init_gear_sets()
     ring2="Ephramad's Ring",          -- 10, 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- 20, 20, 20, 20, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 246 STR, 167 DEX, 453 Att, 341 Acc, 52 WSD, 10 PDL <32 DA, 16 TA, 0 QA> [45 PDT/28 MDT, 590 M.Eva]
+    -- 246 STR, 167 DEX, 453 Att, 341 Acc, 52 WSD, 10 PDL <37 DA, 16 TA, 0 QA> [45 PDT/28 MDT, 590 M.Eva]
   }
   sets.precast.WS['Raging Fists'].MaxTP = set_combine(sets.precast.WS['Raging Fists'], {
     head=gear.Nyame_B_head,           -- 26, 25, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
@@ -923,7 +923,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Raging Fists'].AttCapped = {
     ammo="Knobkierrie",               -- __, __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 17, 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Mpaca's Hose",              -- 49, __, 70, 55, __,  8 <__,  4, __> [ 9/__, 106]
@@ -935,7 +935,7 @@ function init_gear_sets()
     ring2="Ephramad's Ring",          -- 10, 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- 20, 20, 20, 20, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 242 STR, 167 DEX, 449 Att, 352 Acc, 41 WSD, 28 PDL <33 DA, 20 TA, 0 QA> [55 PDT/29 MDT, 576 M.Eva]
+    -- 242 STR, 167 DEX, 449 Att, 352 Acc, 41 WSD, 28 PDL <38 DA, 20 TA, 0 QA> [55 PDT/29 MDT, 576 M.Eva]
   }
   sets.precast.WS['Raging Fists'].AttCappedMaxTP = set_combine(sets.precast.WS['Raging Fists'].AttCapped, {
     head=gear.Nyame_B_head,           -- 26, 25, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
@@ -956,7 +956,7 @@ function init_gear_sets()
   -- TP Bonus > Multihit > WSD
   sets.precast.WS['Howling Fist'] = {
     ammo="Coiste Bodhar",             -- __, 10, 15, __, __, __ < 3, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 26, 33, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 26, 33, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands="Mpaca's Gloves",           -- 38, 20, 70, 55, __, __ <__,  3, __> [ 8/__,  59]
     legs="Mpaca's Hose",              -- 32, 49, 70, 55, __,  8 <__,  4, __> [ 9/__, 106]
@@ -968,10 +968,10 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, 10, __, __, __, __ <__, __,  3> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- __, 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- __, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 175 VIT, 255 STR, 411 Att, 282 Acc, 24 WSD, 8 PDL <30 DA, 23 TA, 3 QA> [56 PDT/22 MDT, 523 M.Eva]
+    -- 175 VIT, 255 STR, 411 Att, 282 Acc, 24 WSD, 8 PDL <35 DA, 23 TA, 3 QA> [56 PDT/22 MDT, 523 M.Eva]
 
     -- back=gear.MNK_VIT_DA_Cape,     -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
-    -- 205 VIT, 225 STR, 411 Att, 282 Acc, 24 WSD, 8 PDL <30 DA, 23 TA, 3 QA> [56 PDT/22 MDT, 523 M.Eva]
+    -- 205 VIT, 225 STR, 411 Att, 282 Acc, 24 WSD, 8 PDL <35 DA, 23 TA, 3 QA> [56 PDT/22 MDT, 523 M.Eva]
   }
   sets.precast.WS['Howling Fist'].MaxTP = set_combine(sets.precast.WS['Howling Fist'], {
     head=gear.Adhemar_B_head,         -- 15, 31, 56, __, __, __ <__,  4, __> [__/__,  59]
@@ -979,7 +979,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Howling Fist'].AttCapped = {
     ammo="Coiste Bodhar",             -- __, 10, 15, __, __, __ < 3, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 26, 33, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 26, 33, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Herc_TA_hands,         -- 30, 16,  4, 24, __, __ <__,  6, __> [ 2/__,  43]
     legs="Mpaca's Hose",              -- 32, 49, 70, 55, __,  8 <__,  4, __> [ 9/__, 106]
@@ -991,10 +991,10 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, 10, __, __, __, __ <__, __,  3> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- __, 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- __, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 153 VIT, 244 STR, 278 Att, 271 Acc, 13 WSD, 28 PDL <25 DA, 27 TA, 3 QA> [45 PDT/15 MDT, 352 M.Eva]
+    -- 153 VIT, 244 STR, 278 Att, 271 Acc, 13 WSD, 28 PDL <30 DA, 27 TA, 3 QA> [45 PDT/15 MDT, 352 M.Eva]
 
     -- back=gear.MNK_VIT_DA_Cape,     -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
-    -- 183 VIT, 214 STR, 278 Att, 271 Acc, 13 WSD, 28 PDL <25 DA, 27 TA, 3 QA> [45 PDT/15 MDT, 352 M.Eva]
+    -- 183 VIT, 214 STR, 278 Att, 271 Acc, 13 WSD, 28 PDL <30 DA, 27 TA, 3 QA> [45 PDT/15 MDT, 352 M.Eva]
   }
   sets.precast.WS['Howling Fist'].AttCappedMaxTP = set_combine(sets.precast.WS['Howling Fist'].AttCapped, {
     head=gear.Adhemar_B_head,         -- 15, 31, 56, __, __, __ <__,  4, __> [__/__,  59]
@@ -1007,7 +1007,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Howling Fist'].SafeAttCapped = {
     ammo="Coiste Bodhar",             -- __, 10, 15, __, __, __ < 3, __, __> [__/__, ___]
-    head="Mpaca's Cap",               -- 26, 33, 70, 55, __, __ <__,  3, __> [ 7/__,  69]; TP bonus +200
+    head="Mpaca's Cap",               -- 26, 33, 70, 55, __, __ < 5,  3, __> [ 7/__,  69]; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 54, 17, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Mpaca's Hose",              -- 32, 49, 70, 55, __,  8 <__,  4, __> [ 9/__, 106]
@@ -1019,10 +1019,10 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, 10, __, __, __, __ <__, __,  3> [__/__, ___]
     back=gear.MNK_STR_DA_Cape,        -- __, 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- __, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___]
-    -- 190 VIT, 257 STR, 395 Att, 319 Acc, 24 WSD, 28 PDL <30 DA, 18 TA, 3 QA> [54 PDT/22 MDT, 522 M.Eva]
+    -- 190 VIT, 257 STR, 395 Att, 319 Acc, 24 WSD, 28 PDL <35 DA, 18 TA, 3 QA> [54 PDT/22 MDT, 522 M.Eva]
 
     -- back=gear.MNK_VIT_DA_Cape,     -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
-    -- 220 VIT, 227 STR, 395 Att, 319 Acc, 24 WSD, 28 PDL <30 DA, 18 TA, 3 QA> [54 PDT/22 MDT, 522 M.Eva]
+    -- 220 VIT, 227 STR, 395 Att, 319 Acc, 24 WSD, 28 PDL <35 DA, 18 TA, 3 QA> [54 PDT/22 MDT, 522 M.Eva]
   }
   sets.precast.WS['Howling Fist'].SafeAttCappedMaxTP = set_combine(sets.precast.WS['Howling Fist'].SafeAttCapped, {
     head="Kendatsuba Jinpachi +1",    -- 32, 23, __, 50, __, __ <__,  4, __> [__/__, 101]
@@ -1033,7 +1033,7 @@ function init_gear_sets()
   -- Kick Attacks attack+, TP Bonus > Multihit > WSD
   sets.precast.WS['Dragon Kick'] = {
     ammo="Coiste Bodhar",             -- 10, 10, 15, __, __, __ < 3, __, __> [__/__, ___] ___
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69] ___; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69] ___; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139] ___
     hands=gear.Nyame_B_hands,         -- 17, 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112] ___
     legs=gear.Nyame_B_legs,           -- 58, __, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150] ___
@@ -1045,14 +1045,14 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Moonbow Belt +1",          -- 20, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___] ___
-    -- 257 STR, 186 DEX, 331 Att, 290 Acc, 36 WSD, 10 PDL <36 DA, 16 TA, 3 QA> [47 PDT/24 MDT, 554 M.Eva] 140 KA att
+    -- 257 STR, 186 DEX, 331 Att, 290 Acc, 36 WSD, 10 PDL <41 DA, 16 TA, 3 QA> [47 PDT/24 MDT, 554 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].MaxTP = set_combine(sets.precast.WS['Dragon Kick'], {
     ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
   })
   sets.precast.WS['Dragon Kick'].AttCapped = {
     ammo="Coiste Bodhar",             -- 10, 10, 15, __, __, __ < 3, __, __> [__/__, ___] ___
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69] ___; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69] ___; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139] ___
     hands=gear.Herc_TA_hands,         -- 30, 16,  4, 24, __, __ <__,  6, __> [ 2/__,  43] ___
     legs=gear.Nyame_B_legs,           -- 58, __, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150] ___
@@ -1064,7 +1064,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Moonbow Belt +1",          -- 20, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___] ___
-    -- 270 STR, 170 DEX, 274 Att, 294 Acc, 25 WSD, 20 PDL <31 DA, 17 TA, 3 QA> [42 PDT/17 MDT, 485 M.Eva] 140 KA att
+    -- 270 STR, 170 DEX, 274 Att, 294 Acc, 25 WSD, 20 PDL <36 DA, 17 TA, 3 QA> [42 PDT/17 MDT, 485 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].AttCappedMaxTP = set_combine(sets.precast.WS['Dragon Kick'].AttCapped, {
     ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
@@ -1075,7 +1075,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Dragon Kick'].SafeAttCapped = {
     ammo="Crepuscular Pebble",        --  3, __, __, __, __,  3 <__, __, __> [ 3/ 3, ___] ___
-    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ <__,  3, __> [ 7/__,  69] ___; TP bonus +200
+    head="Mpaca's Cap",               -- 33, 30, 70, 55, __, __ < 5,  3, __> [ 7/__,  69] ___; TP bonus +200
     body=gear.Nyame_B_body,           -- 45, 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139] ___
     hands=gear.Nyame_B_hands,         -- 17, 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112] ___
     legs=gear.Nyame_B_legs,           -- 58, __, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150] ___
@@ -1087,7 +1087,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Moonbow Belt +1",          -- 20, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___] ___
-    -- 250 STR, 186 DEX, 320 Att, 310 Acc, 36 WSD, 23 PDL <33 DA, 11 TA, 3 QA> [50 PDT/33 MDT, 554 M.Eva] 140 KA att
+    -- 250 STR, 186 DEX, 320 Att, 310 Acc, 36 WSD, 23 PDL <38 DA, 11 TA, 3 QA> [50 PDT/33 MDT, 554 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].SafeAttCappedMaxTP = set_combine(sets.precast.WS['Dragon Kick'].Safe, {
     ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
