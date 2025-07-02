@@ -1420,9 +1420,15 @@ function init_gear_sets()
     -- 350 INT, 467 MAcc, 419 MAB, 255 MAccSk, 438 MDmg, 45 MB Dmg%, 11 MB2 Dmg%
   })
 
-  sets.midcast.Kaustra = set_combine(sets.midcast['Elemental Magic'], {})
-  sets.midcast.Kaustra.MB = set_combine(sets.midcast['Elemental Magic'].MB, {})
-  sets.midcast.Kaustra.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
+  sets.midcast.Kaustra = set_combine(sets.midcast['Elemental Magic'], {
+    waist="Hachirin-no-Obi",
+  })
+  sets.midcast.Kaustra.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
+    waist="Hachirin-no-Obi",
+  })
+  sets.midcast.Kaustra.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {
+    waist="Hachirin-no-Obi",
+  })
 
   sets.midcast.Helix = {
     main="Bunzi's Rod",               -- 15, 50, 60, 255, 248, 10, __
@@ -1439,8 +1445,8 @@ function init_gear_sets()
     ring1="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
-    waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
-    -- 348 INT, 390 MAcc, 286 MAB, 255 MAccSk, 564 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
+    waist="Skrymir Cord",             -- __,  5,  5, ___,  30, __, __
+    -- 325 INT, 380 MAcc, 291 MAB, 255 MAccSk, 594 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
 
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
@@ -1457,9 +1463,9 @@ function init_gear_sets()
     -- ring1="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
-    -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
+    -- waist="Skrymir Cord +1",       -- __,  7,  7, ___,  35, __, __
     -- Mallquis set bonus             --  8, __, __, ___, ___, __, __
-    -- 352 INT, 426 MAcc, 312 MAB, 255 MAccSk, 596 MDmg, 41 MB Dmg%, 16 MB2 Dmg%
+    -- 329 INT, 418 MAcc, 319 MAB, 255 MAccSk, 631 MDmg, 41 MB Dmg%, 16 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     ring1="Archon Ring",
@@ -2121,8 +2127,6 @@ function apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
         equip(sets.Immanence.SIRD)
       -- Use SubtleBlow set if in SubtleBlow ImmanenceMode and not using tier 2 helix
       elseif state.ImmanenceMode.current == 'SubtleBlow' and not (spellMap == 'Helix' and spell.english:endswith(' II')) then
-        -- Temporarily disable elemental belt swaps
-        tempDisableElementalBelt = true
         equip(sets.Immanence.SubtleBlow)
       end
     end
