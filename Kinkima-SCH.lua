@@ -1445,7 +1445,7 @@ function init_gear_sets()
     ring1="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
-    waist="Skrymir Cord",             -- __,  5,  5, ___,  30, __, __
+    -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
     -- 325 INT, 380 MAcc, 291 MAB, 255 MAccSk, 594 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
 
     -- Ideal:
