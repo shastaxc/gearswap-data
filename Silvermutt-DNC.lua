@@ -697,20 +697,20 @@ function init_gear_sets()
 
   -- Default WS set. Used if no specific set is defined.
   sets.precast.WS = {
-    ammo="Coiste Bodhar",             -- 10, 10, __, 15, __ < 3, __, __> [__/__, ___]
-    head="Maculele Tiara +3",         -- 31, 38, 12, 71, __ <__, __, __> [__/__,  99]
-    body=gear.Nyame_B_body,           -- 45, 24, 13, 65, __ < 7, __, __> [ 9/ 9, 139]
-    hands="Maxixi Bangles +4",        -- 21, 48, 12, 40, __ <__, __, __> [__/__,  82]
-    legs=gear.Nyame_B_legs,           -- 58, __, 12, 65, __ < 6, __, __> [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 23, 26, 11, 65, __ < 5, __, __> [ 7/ 7, 150]
+    ammo="Coiste Bodhar",             -- 10, 10, 15, __, __ < 3, __, __> [__/__, ___]
+    head="Maculele Tiara +3",         -- 31, 38, 71, 12, __ <__, __, __> [__/__,  99]
+    body=gear.Nyame_B_body,           -- 45, 24, 65, 13, __ < 7, __, __> [ 9/ 9, 139]
+    hands="Maxixi Bangles +4",        -- 21, 48, 40, 12, __ <__, __, __> [__/__,  82]
+    legs=gear.Nyame_B_legs,           -- 58, __, 65, 12, __ < 6, __, __> [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- 23, 26, 65, 11, __ < 5, __, __> [ 7/ 7, 150]
     neck="Fotia Gorget",              -- __, __, __, __, __ <__, __, __> [__/__, ___]; fTP bonus
     ear1="Sherida Earring",           --  5,  5, __, __, __ < 5, __, __> [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __, __ <__, __, __> [__/__, ___]; TP bonus+250
-    ring1="Ephramad's Ring",          -- 10, 10, __, 20, 10 <__, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",          -- 10, 10, 20, __, 10 <__, __, __> [__/__, ___]
     ring2="Epona's Ring",             -- __, __, __, __, __ < 3,  3, __> [__/__, ___]
-    back=gear.DNC_WS1_Cape,           -- __, 30, 10, __, __ <__, __, __> [10/__, ___]
+    back=gear.DNC_WS1_Cape,           -- __, 30, __, 10, __ <__, __, __> [10/__, ___]
     waist="Fotia Belt",               -- __, __, __, __, __ <__, __, __> [__/__, ___]; fTP bonus
-    -- 203 STR, 191 DEX, 70 WSD, 341 Att, 10 PDL <29 DA, 3 TA, 0 QA> [34 PDT/24 MDT, 620 M.Eva]
+    -- 203 STR, 191 DEX, 341 Att, 70 WSD, 10 PDL <29 DA, 3 TA, 0 QA> [34 PDT/24 MDT, 620 M.Eva]
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Odr Earring",               -- __, 10, __, __, __ <__, __, __> [__/__, ___]
@@ -793,7 +793,7 @@ function init_gear_sets()
     ring2="Gere Ring",                -- 10, __, 16, __, __ <__,  5, __> [__/__, ___]
     back=gear.DNC_WS2_Cape,           -- __, 30, 20, __, __ <10, __, __> [10/__, ___]
     waist="Engraved Belt",            --  7, __, __, __, __ <__, __, __> [__/__, ___]; Ele resist
-    -- 204 STR, 162 DEX, 58 WSD, 376 Att, 0 PDL <46 DA, 5 TA, 0 QA> [63 PDT/53 MDT, 674 M.Eva]
+    -- 204 STR, 162 DEX, 376 Att, 58 WSD, 0 PDL <46 DA, 5 TA, 0 QA> [63 PDT/53 MDT, 674 M.Eva]
   }
   sets.precast.WS['Pyrrhic Kleos'].SafeMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].Safe, {})
   sets.precast.WS['Pyrrhic Kleos'].SafeAttCapped = set_combine(sets.precast.WS['Pyrrhic Kleos'].Safe, {})
