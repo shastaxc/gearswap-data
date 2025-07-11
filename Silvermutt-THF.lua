@@ -727,9 +727,28 @@ function init_gear_sets()
     -- 203 AGI, 386 Att, 283 Acc, 58 WSD, 0 PDL <46 DA, 29 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
   }
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {})
-  sets.precast.WS['Exenterator'].AttCapped = set_combine(sets.precast.WS['Exenterator'], {
+  sets.precast.WS['Exenterator'].AttCapped = {
+    ammo="Coiste Bodhar",               -- __, __, __, __, __ < 3, __, __> [__/__, ___]
+    head=gear.Nyame_B_head,             -- 23, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
+    body="Gleti's Cuirass",             -- 26, 70, 55, __,  9 <10, __, __> [ 9/__, 102]
+    hands=gear.Nyame_B_hands,           -- 12, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,             -- 34, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,             -- 46, 65, 53, 11, __ < 5, __, __> [ 7/ 7, 150]
+    neck="Fotia Gorget",                -- __, __, 10, __, __ <__, __, __> [__/__, ___]; ftp+
+    ear1="Sherida Earring",             -- __, __, __, __, __ < 5, __, __> [__/__, ___]
+    ear2="Skulker's Earring +1",        -- __, __, 12, __, __ <__,  4, __> [__/__, ___]
+    ring1="Gere Ring",                  -- __, 16, __, __, __ <__,  5, __> [__/__, ___]
     ring2="Ephramad's Ring",            -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
-  })
+    back=gear.THF_WS1_Cape,             -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
+    waist="Fotia Belt",                 -- __, __, 10, __, __ <__, __, __> [__/__, ___]; ftp+
+    -- Traits/Merits/Gifts              -- __, __, __, __, __ <__, 19, __> [__/__, ___]
+    -- 158 AGI, 386 Att, 275 Acc, 68 WSD, 0 PDL <36 DA, 28 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
+
+    -- head="Skulker's Bonnet +3",      -- 39, 61, 61, __, 10 <__,  6, __> [__/__, 109]
+    -- ear2="Skulker's Earring +2",     -- 15, __, 20, __, __ <__,  5, __> [__/__, ___]
+    -- back=gear.THF_WS3_Cape,          -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
+    -- 203 AGI, 386 Att, 283 Acc, 58 WSD, 0 PDL <46 DA, 29 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
+  }
   sets.precast.WS['Exenterator'].AttCappedMaxTP = set_combine(sets.precast.WS['Exenterator'].AttCapped, {})
   
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
@@ -744,16 +763,17 @@ function init_gear_sets()
     ear1="Odr Earring",                 -- 10, __, 10, __, __ <__, __, __> ( 5, __) [__/__, ___]
     ear2="Moonshade Earring",           -- __, __,  4, __, __ <__, __, __> (__, __) [__/__, ___]; tp bonus+250
     ring1="Mummu Ring",                 -- __, __,  6, __, __ <__, __, __> ( 3, __) [__/__, ___]
-    ring2="Hetairoi Ring",              -- __, __, __, __, __ <__,  2, __> ( 1, __) [__/__, ___]
+    ring2="Gere Ring",                  -- __, 16, __, __, __ <__,  5, __> (__, __) [__/__, ___]
     back=gear.THF_WS1_Cape,             -- 30, 20, 20, 10, __ <__, __, __> (__, __) [10/__, ___]
     waist="Fotia Belt",                 -- __, __, 10, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __, __ <__, 19, __> (__, 22) [__/__, ___]
-    -- 200 DEX, 264 Att, 301 Acc, 10 WSD, 13 PDL <0 DA, 28 TA, 0 QA> (28 Crit Rate, 43 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva]
+    -- 200 DEX, 290 Att, 301 Acc, 10 WSD, 13 PDL <0 DA, 31 TA, 0 QA> (27 Crit Rate, 43 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva]
 
     -- back=gear.THF_WS4_Cape,          -- 30, 20, 20, __, __ <__, __, __> (10, __) [10/__, ___]
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ear2="Sherida Earring",             --  5, __, __, __, __ < 5, __, __> (__, __) [__/__, ___]
+
     -- ear2="Skulker's Earring +2",     -- 15, __, 20, __, __ <__,  5, __> (__, __) [__/__, ___]
   })
   sets.precast.WS['Evisceration'].AttCapped = {
@@ -767,16 +787,18 @@ function init_gear_sets()
     ear1="Odr Earring",                 -- 10, __, 10, __, __ <__, __, __> ( 5, __) [__/__, ___]
     ear2="Moonshade Earring",           -- __, __,  4, __, __ <__, __, __> (__, __) [__/__, ___]; tp bonus+250
     ring1="Ephramad's Ring",            -- 10, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
-    ring2="Hetairoi Ring",              -- __, __, __, __, __ <__,  2, __> ( 1, __) [__/__, ___]
+    ring2="Gere Ring",                  -- __, 16, __, __, __ <__,  5, __> (__, __) [__/__, ___]
     back=gear.THF_WS1_Cape,             -- 30, 20, 20, 10, __ <__, __, __> (__, __) [10/__, ___]
     waist="Fotia Belt",                 -- __, __, 10, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __, __ <__, 19, __> (__, 22) [__/__, ___]
-    -- 219 DEX, 214 Att, 313 Acc, 16 WSD, 17 PDL <0 DA, 28 TA, 0 QA> (20 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva]
+    -- 219 DEX, 240 Att, 313 Acc, 16 WSD, 17 PDL <0 DA, 31 TA, 0 QA> (19 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva]
     
+    -- head="Skulker's Bonnet +3",      -- 43, 61, 61, __, 10 <__,  6, __> (__, __) [__/__, 109]
     -- back=gear.THF_WS4_Cape,          -- 30, 20, 20, __, __ <__, __, __> (10, __) [10/__, ___]
   }
   sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {
     ear2="Sherida Earring",             --  5, __, __, __, __ < 5, __, __> (__, __) [__/__, ___]
+
     -- ear2="Skulker's Earring +2",     -- 15, __, 20, __, __ <__,  5, __> (__, __) [__/__, ___]
   })
 
@@ -801,6 +823,7 @@ function init_gear_sets()
     -- body="Skulker's Vest +3",        -- 51, 64, 64, 12, __ [__/__, 119]
     -- legs="Plunderer's Culottes +4",  -- 21, 74, 51,  9, __ [__/__, 129]
     -- ear2="Skulker's Earring +2",     -- 15, __, 20, __, __ [__/__, ___]
+    -- 265 DEX, 413 Att, 361, Acc, 64 WSD, 10 PDL [31 PDT/21 MDT, 633 M.Eva]
   }
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear1="Odr Earring",                 -- 10, __, 10, __, __ [__/__, ___]
@@ -819,28 +842,32 @@ function init_gear_sets()
     ear1="Moonshade Earring",           -- __, __,  4, __, __ [__/__, ___]; tp bonus+250
     ear2="Odr Earring",                 -- 10, __, 10, __, __ [__/__, ___]
     ring1="Ephramad's Ring",            -- 10, 20, 20, __, 10 [__/__, ___]
-    ring2="Epaminondas's Ring",         -- __,  5, __, __, __ [__/__, ___]
+    ring2="Epaminondas's Ring",         -- __, __, __,  5, __ [__/__, ___]
     back=gear.THF_WS1_Cape,             -- 30, 20, 20, 10, __ [10/__, ___]
     waist="Kentarch Belt +1",           -- 10, __, 14, __, __ [__/__, ___]
     -- Lustratio set bonus              -- __, __, __,  4, __ [__/__, ___]
-    -- 267 DEX, 293 Att, 243 Acc, 49 WSD, 10 PDL [33 PDT/23 MDT, 374 M.Eva]
+    -- 267 DEX, 288 Att, 243 Acc, 54 WSD, 10 PDL [33 PDT/23 MDT, 374 M.Eva]
     
     -- head="Skulker's Bonnet +3",      -- 43, 61, 61, __, 10 [__/__, 109]
+    -- body="Skulker's Vest +3",        -- 51, 64, 64, 12, __ [__/__, 119]
+    -- legs="Plunderer's Culottes +4",  -- 21, 74, 51,  9, __ [__/__, 129]
+    -- feet=gear.Nyame_B_feet,          -- 26, 65, 53, 11, __ [ 7/ 7, 150]
     -- ear2="Skulker's Earring +2",     -- 15, __, 20, __, __ [__/__, ___]
+    -- 273 DEX, 384 Att, 372 Acc, 58 WSD, 20 PDL [24 PDT/14 MDT, 619 M.Eva]
   }
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
   })
   -- Is overlaid, don't set_combine
   sets.precast.WS["Rudra's Storm"].SA = {
     ammo="Yetshila +1",                 -- __, __, __, __, __ [__/__, ___]
-    head="Pillager's Bonnet +3",        -- 37, __, 53,  6, __ [__/__,  83]
+    head="Pillager's Bonnet +3",        -- 37, __, 53,  6, __ [__/__,  83]; Crit dmg
     hands="Skulker's Armlets +3",       -- 53, 72, 62, __, __ [11/11,  93]; SA+30
 
     -- head="Skulker's Bonnet +3",      -- 43, 61, 61, __, 10 [__/__, 109]
   }
   sets.precast.WS["Rudra's Storm"].TA = { -- TA uses AGI; do not use lustratio
     ammo="Yetshila +1",                 -- __, __, __, __, __ [__/__, ___]
-    head="Pillager's Bonnet +3",        -- 37, __, 53,  6, __ [__/__,  83]
+    head="Pillager's Bonnet +3",        -- 37, __, 53,  6, __ [__/__,  83]; Crit dmg
     body="Plunderer's Vest +3",         -- 46, 65, 40, __, __ [__/__,  84]; TA+10
     hands="Pillager's Armlets +3",      -- 45, __, 48, __, __ [__/__,  67]; TA+20
     legs=gear.Nyame_B_legs,             -- __, 65, 40, 12, __ [ 8/ 8, 150]
@@ -854,17 +881,10 @@ function init_gear_sets()
   -- Since it uses dex and agi, lustratio is not ideal
   sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS["Rudra's Storm"], {})
   sets.precast.WS["Shark Bite"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MaxTP, {})
-  sets.precast.WS["Shark Bite"].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
-    feet=gear.Nyame_B_feet,             -- 26, 65, 53, 11, __ [ 7/ 7, 150]
+  sets.precast.WS["Shark Bite"].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {})
+  sets.precast.WS["Shark Bite"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCappedMaxTP, {})
 
-    -- legs="Plunderer's Culottes +4",  -- 21, 74, 51,  9, __ [__/__, 129]
-  })
-  sets.precast.WS["Shark Bite"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCappedMaxTP, {
-    feet=gear.Nyame_B_feet,             -- 26, 65, 53, 11, __ [ 7/ 7, 150]
-
-    -- legs="Plunderer's Culottes +4",  -- 21, 74, 51,  9, __ [__/__, 129]
-  })
-
+  -- 60% DEX; ftp 4.0-8.5
   sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS["Rudra's Storm"], {})
   sets.precast.WS['Mandalic Stab'].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MaxTP, {})
   sets.precast.WS['Mandalic Stab'].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {})
