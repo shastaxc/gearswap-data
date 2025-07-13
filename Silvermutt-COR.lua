@@ -540,13 +540,14 @@ function init_gear_sets()
 
   sets.precast.JA['Snake Eye'] = {
     legs="Lanun Trews +1", -- Increase chance of 0 recast; +1 is acceptable
-    -- legs="Lanun Trews +3", -- Increase chance of 0 recast; +1 is acceptable
+    -- legs="Lanun Trews +4", -- Increase chance of 0 recast; +1 is acceptable
   }
   sets.precast.JA['Wild Card'] = {
     feet="Lanun Bottes +4", -- Reduce chance of rolling 1 or 2; +1 is acceptable
   }
   sets.precast.JA['Random Deal'] = {
     body="Lanun Frac +3", -- Reduce failure chance, allow restoring 2 JAs ; +1 is acceptable
+    -- body="Lanun Frac +4", -- Reduce failure chance, allow restoring 2 JAs ; +1 is acceptable
   }
 
   -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
@@ -565,15 +566,15 @@ function init_gear_sets()
     waist="Flume Belt +1",          --  4/__, ___ (__, __, __)
     -- 57 PDT / 36 MDT, 518 M.Eva (7 PR Potency, 105 PR Duration, 0 PR Delay)
 
-    -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __, __); 50% chance of job align bonus
+    -- head="Lanun Tricorne +4",    -- __/__, 113 (__, __, __); 50% chance of job align bonus
     -- hands="Chasseur's Gants +3", -- __/__,  93 (__, 60, __)
     -- legs="Desultor Tassets",     -- __/__, ___ (__, __,  5); PR Delay -5
-    -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 110 PR Duration, 5 PR Delay)
+    -- 52 PDT / 30 MDT, 485 M.Eva (7 PR Potency, 110 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll.Duration = {
     main=gear.Rostam_C,             -- __/__, ___ ( 8, 60, __)
     range="Compensator",            -- __/__, ___ (__, 20, __)
-    -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
+    -- 52 PDT / 30 MDT, 485 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
   }
   -- Intentionally excluding Blitzer's Roll bonus from Chasseur's Tricorne because
   -- the chance at proc from relic head bonus is much more significant.
@@ -617,8 +618,9 @@ function init_gear_sets()
     waist="Eschan Stone",         -- __,  7,  7, __, __/__
     -- 232 AGI, 320 MAB, 208 M.Acc, 24 STP, 30PDT/8MDT
 
+    -- body="Lanun Frac +4",      -- 43, 64, 45, __,  6/__
     -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
-    -- 232 AGI, 330 MAB, 228 M.Acc, 14 STP, 30PDT/8MDT
+    -- 232 AGI, 333 MAB, 233 M.Acc, 14 STP, 30PDT/8MDT
   }
 
   -- Full STP; and more recast reduction
@@ -658,6 +660,7 @@ function init_gear_sets()
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
     -- 271 AGI, 445 M.Acc, 35 PDT/25 MDT
 
+    -- head="Laksamana's Tricorne +4",-- 44, 66, __/__
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
   }
   sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
@@ -748,7 +751,9 @@ function init_gear_sets()
     -- 71 Snapshot / 84 Rapid Shot [43 PDT/30 MDT, 384 M.Eva]
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 71 Snapshot / 86 Rapid Shot [44 PDT/31 MDT, 394 M.Eva]
+    -- body="Laksamana's Frac +4",    -- __/20 [__/__, 109]
+    -- hands="Lanun Gants +4",        -- 13/__ [__/__,  97]
+    -- 71 Snapshot / 86 Rapid Shot [44 PDT/31 MDT, 459 M.Eva]
   }
   -- Account for having embrava buff
   sets.Snapshot35 = {
@@ -769,7 +774,8 @@ function init_gear_sets()
     -- 70 Snapshot / 100 Rapid Shot [38 PDT/24 MDT, 370 M.Eva]
   
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 70 Snapshot / 102 Rapid Shot [39 PDT/25 MDT, 380 M.Eva]
+    -- body="Laksamana's Frac +4",    -- __/20 [__/__, 109]
+    -- 70 Snapshot / 102 Rapid Shot [39 PDT/25 MDT, 405 M.Eva]
   }
   -- Account for having flurry 2 buff
   sets.Snapshot32 = {
@@ -790,7 +796,8 @@ function init_gear_sets()
     -- 72 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 72 Snapshot / 102 Rapid Shot [46 PDT/24 MDT, 380 M.Eva]
+    -- body="Laksamana's Frac +4",    -- __/20 [__/__, 109]
+    -- 72 Snapshot / 102 Rapid Shot [46 PDT/24 MDT, 405 M.Eva]
   }
   -- Account for having flurry 1 buff + embrava
   sets.Snapshot28 = {
@@ -811,7 +818,8 @@ function init_gear_sets()
     -- 78 Snapshot / 100 Rapid Shot [51 PDT/29 MDT, 370 M.Eva]
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 78 Snapshot / 102 Rapid Shot [52 PDT/30 MDT, 380 M.Eva]
+    -- body="Laksamana's Frac +4",    -- __/20 [__/__, 109]
+    -- 78 Snapshot / 102 Rapid Shot [52 PDT/30 MDT, 405 M.Eva]
   }
   -- Account for having flurry 2 buff + embrava
   -- Use same as previous set because they don't get any better
@@ -1114,19 +1122,19 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Sniper Shot'] = {
-    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
-    body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
-    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
-    legs="Chasseur's Culottes +3",    -- 43, 12, 63/63 <__> {_} (__) [12/12, 125]
-    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
-    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
-    ear1="Beyla Earring",             -- __, __, 15/__ <__> {_} (__) [__/__, ___]
-    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
-    ring1="Cacoethic Ring +1",        -- 10, __, 16/__ <__> {_} (__) [__/__, ___]
-    ring2="Crepuscular Ring",         -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
-    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
-    waist="Kwahu Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- 242 AGI, 70 STP, 438 racc/267 ratt <5 crit> {10 PDL} (68 Recycle) [44 PDT/34 MDT, 602 M.Eva]
+    head="Ikenga's Hat",              -- 29, 55, 55,  8 [__/__,  96]
+    body="Chasseur's Frac +3",        -- 49, 64, 64, __ [13/13, 119]
+    hands="Malignance Gloves",        -- 24, 50, 50, 12 [ 5/ 5, 112]
+    legs="Chasseur's Culottes +3",    -- 43, 63, 63, 12 [12/12, 125]
+    feet="Malignance Boots",          -- 49, 50, 50,  9 [ 4/ 4, 150]
+    neck="Null Loop",                 -- __, 50, 50, __ [ 5/ 5, ___]
+    ear1="Crepuscular Earring",       -- __, 10, 10,  5 [__/__, ___]
+    ear2="Telos Earring",             -- __, 10, __,  5 [__/__, ___]
+    ring1="Cacoethic Ring +1",        -- 10, 16, __, __ [__/__, ___]
+    ring2="Crepuscular Ring",         -- __, 10, 10,  6 [__/__, ___]
+    back=gear.COR_RA_Cape,            -- 30, 20, __, 10 [10/__, ___]
+    waist="Null Belt",                -- __, 30, 30, __ [__/__,  30]
+    -- 234 AGI, 428 R.Acc, 382 M.Acc, 67 STP [49 PDT/39 MDT, 632 M.Eva]
   }
 
 
@@ -1276,7 +1284,7 @@ function init_gear_sets()
     -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
-    hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
+    hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  57] (__, __) (__, __); Occ. Quad Shot
     legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
     feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
     neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
@@ -1288,13 +1296,15 @@ function init_gear_sets()
     waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 271 AGI, 36 STP, 339 racc/252 ratt <10 crit> {0 PDL} (68 Recycle) [23 PDT/13 MDT, 555 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
+    -- 271 AGI, 36 STP, 339 racc/252 ratt <10 crit> {0 PDL} (68 Recycle) [23 PDT/13 MDT, 528 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
+    
+    -- hands="Lanun Gants +4",        -- 22, __, 49/86 <__> {_} (__) [__/__,  97] (__, __) (__, __); Occ. Quad Shot
   }
   sets.TripleShot.Safe = {
     -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
-    hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
+    hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  57] (__, __) (__, __); Occ. Quad Shot
     legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
     feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
     neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
@@ -1306,7 +1316,9 @@ function init_gear_sets()
     waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 251 AGI, 31 STP, 339 racc/227 ratt <10 crit> {0 PDL} (58 Recycle) [40 PDT/22 MDT, 555 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
+    -- 251 AGI, 31 STP, 339 racc/227 ratt <10 crit> {0 PDL} (58 Recycle) [40 PDT/22 MDT, 528 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
+    
+    -- hands="Lanun Gants +4",        -- 22, __, 49/86 <__> {_} (__) [__/__,  97] (__, __) (__, __); Occ. Quad Shot
   }
 
   sets.TripleShot.Critical = {
@@ -2055,10 +2067,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.precast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
-  -- Gear
   if spell.type == 'CorsairRoll' and not silibs.midaction() then
     roll_timer = os.clock()
   elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
@@ -2104,14 +2112,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
   if locked_waist then equip({ waist=player.equipment.waist }) end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  silibs.midcast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -2155,16 +2158,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
   if locked_waist then equip({ waist=player.equipment.waist }) end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   state.CastingMode:reset()
 
   if spell.type == 'CorsairRoll' then
@@ -2173,11 +2170,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   elseif spell.english == 'Light Shot' then
     send_command('@timers c "Light Shot ['..spell.target.name..']" 60 down abilities/00195.png')
   end
-end
-
-function job_post_aftercast(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_buff_change(buff,gain)
@@ -2321,21 +2313,6 @@ function customize_defense_set(defenseSet)
   end
 
   return defenseSet
-end
-
-function user_customize_idle_set(idleSet)
-  -- Any non-silibs modifications should go in customize_idle_set function
-  return silibs.customize_idle_set(idleSet)
-end
-
-function user_customize_melee_set(meleeSet)
-  -- Any non-silibs modifications should go in customize_melee_set function
-  return silibs.customize_melee_set(meleeSet)
-end
-
-function user_customize_defense_set(defenseSet)
-  -- Any non-silibs modifications should go in customize_defense_set function
-  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
