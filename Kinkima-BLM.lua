@@ -1138,7 +1138,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
 
     if customEquipSet then
       equip(customEquipSet)
-      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
     end
 
     -- Add magic burst set if exists
@@ -1148,7 +1148,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
 
     if customEquipSet then
       equip(customEquipSet)
-      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
     end
   end
 end

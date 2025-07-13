@@ -1639,9 +1639,6 @@ function filtered_action(spell, action, spellMap, eventArgs)
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.precast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-  
   -- If targeting self with Caper, cancel spell
   if spell.english == 'Caper Emissarius' and spell.target.type == 'SELF' then
     add_to_chat(167, 'Cancelling Caper Emissarius due to targeting self.')
@@ -1672,18 +1669,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
     equip(sets.CaitSith)
   end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  silibs.midcast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if spell.action_type == 'Magic' then
     if spellMap == 'Helix' then
-      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
       if spell.english:startswith('Lumino') then
         equip(sets.midcast.LightHelix)
       elseif spell.english:startswith('Nocto') then
@@ -1704,26 +1695,26 @@ function job_midcast(spell, action, spellMap, eventArgs)
       if spell.type == 'WhiteMagic' and (state.Buff['Light Arts'] or state.Buff['Addendum: White']) then
         if customEquipSet['Grimoire'] then
           equip(customEquipSet['Grimoire'])
-          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+          eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
         elseif customEquipSet['LightArts'] then
           equip(customEquipSet['LightArts'])
-          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+          eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
         end
       elseif spell.type == 'BlackMagic' and (state.Buff['Dark Arts'] or state.Buff['Addendum: Black']) then
         -- Add Grimoire set if exists
         if customEquipSet['Grimoire'] then
           equip(customEquipSet['Grimoire'])
-          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+          eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
         elseif customEquipSet['DarkArts'] then
           equip(customEquipSet['DarkArts'])
-          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+          eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
         end
       end
 
       -- Add magic burst set if exists
       if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and customEquipSet['MB'] then
         equip(customEquipSet['MB'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+        eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
       end
     end
   end
@@ -1775,15 +1766,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       state.Buff['Ebullience'] = true
     end
   end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-  
   -- Remove temporary lock on elemental belt swaps
   tempDisableElementalBelt = false
 
@@ -1830,11 +1815,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   if in_battle_mode() then
     equip(select_weapons())
   end
-end
-
-function job_post_aftercast(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 
@@ -1964,21 +1944,6 @@ function customize_defense_set(defenseSet)
   end
 
   return defenseSet
-end
-
-function user_customize_idle_set(idleSet)
-  -- Any non-silibs modifications should go in customize_idle_set function
-  return silibs.customize_idle_set(idleSet)
-end
-
-function user_customize_melee_set(meleeSet)
-  -- Any non-silibs modifications should go in customize_melee_set function
-  return silibs.customize_melee_set(meleeSet)
-end
-
-function user_customize_defense_set(defenseSet)
-  -- Any non-silibs modifications should go in customize_defense_set function
-  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Function to display the current relevant user state when doing an update.

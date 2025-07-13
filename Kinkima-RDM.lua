@@ -2164,14 +2164,14 @@ function job_midcast(spell, action, spellMap, eventArgs)
   
         if customEquipSet['MB'] then
           equip(customEquipSet['MB'])
-          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+          eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
         end
       end
     end
 
     if not sets.midcast[spell.english] and selected_set and sets.midcast[selected_set] then
       equip(sets.midcast[selected_set])
-      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
     end
   end
 end

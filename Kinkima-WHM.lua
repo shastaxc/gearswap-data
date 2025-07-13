@@ -1300,7 +1300,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   if spellMap == 'StatusRemoval' and not buffactive['Divine Caress'] and spell.english ~= 'Erase' then
     equip(sets.precast.FC.QuickStatusRemoval)
-    eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+    eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
   end
 end
 
@@ -1335,10 +1335,10 @@ function job_midcast(spell, action, spellMap, eventArgs)
       end
       if (buffactive['Light Arts'] or buffactive['Addendum: White']) and customEquipSet['LightArts'] then
         equip(customEquipSet['LightArts'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+        eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
       elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and customEquipSet['DarkArts'] then
         equip(customEquipSet['DarkArts'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+        eventArgs.handled = true -- Prevents Mote lib from overwriting the equipSet
       end
     end
   end
