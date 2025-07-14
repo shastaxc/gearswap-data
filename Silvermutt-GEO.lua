@@ -1582,9 +1582,6 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.precast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
     send_command('input /ja "Light Arts" <me>')
     eventArgs.cancel = true
@@ -1623,14 +1620,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  silibs.midcast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -1663,14 +1655,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
   if not spell.interrupted then
     if spell.english:startswith('Indi-') then
       send_command('@timers d "'..spell.target.name..': '..indi_timer..'"')
@@ -1715,8 +1702,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 
@@ -1841,21 +1826,6 @@ function customize_defense_set(defenseSet)
   end
 
   return defenseSet
-end
-
-function user_customize_idle_set(idleSet)
-  -- Any non-silibs modifications should go in customize_idle_set function
-  return silibs.customize_idle_set(idleSet)
-end
-
-function user_customize_melee_set(meleeSet)
-  -- Any non-silibs modifications should go in customize_melee_set function
-  return silibs.customize_melee_set(meleeSet)
-end
-
-function user_customize_defense_set(defenseSet)
-  -- Any non-silibs modifications should go in customize_defense_set function
-  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Function to display the current relevant user state when doing an update.

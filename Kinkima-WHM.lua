@@ -1293,9 +1293,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.precast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   refine_various_spells(spell, action, spellMap, eventArgs)
 
   if spellMap == 'StatusRemoval' and not buffactive['Divine Caress'] and spell.english ~= 'Erase' then
@@ -1317,15 +1314,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  silibs.midcast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if spell.action_type == 'Magic' then
     if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
       local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
@@ -1374,15 +1365,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if not spell.interrupted then
     if in_battle_mode() and spell.english == 'Dispelga' then
       equip(select_weapons())
@@ -1403,8 +1388,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 

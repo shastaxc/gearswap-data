@@ -266,7 +266,6 @@ function job_setup()
   -- Spells that require high/uncapped enhancing magic skill
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
-  last_midcast_set = {} -- DO NOT MODIFY
   enfeebling_dur_gear = {
     -- Base = multiplier form of the base enhancing duration stat
     -- Aug = multiplier form of the enhancing duration stat from augments
@@ -2031,9 +2030,6 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.precast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   refine_various_spells(spell, action, spellMap, eventArgs)
 
   if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
@@ -2066,15 +2062,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
     equip(sets.CaitSith)
   end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  silibs.midcast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-  
   if spell.action_type == 'Magic' then
     local selected_set
     if spellMap == 'Cure' or spellMap == 'Curaga' then
@@ -2205,16 +2195,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
     equip(sets.CaitSith)
   end
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
-  last_midcast_set = set_combine(gearswap.equip_list, {})
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if not spell.interrupted then
     if in_battle_mode() and spell.english == 'Dispelga' then
       equip(select_weapons())
@@ -2441,21 +2424,6 @@ function customize_defense_set(defenseSet)
   end
 
   return defenseSet
-end
-
-function user_customize_idle_set(idleSet)
-  -- Any non-silibs modifications should go in customize_idle_set function
-  return silibs.customize_idle_set(idleSet)
-end
-
-function user_customize_melee_set(meleeSet)
-  -- Any non-silibs modifications should go in customize_melee_set function
-  return silibs.customize_melee_set(meleeSet)
-end
-
-function user_customize_defense_set(defenseSet)
-  -- Any non-silibs modifications should go in customize_defense_set function
-  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -2781,7 +2749,7 @@ end
 function set_enfeeble_timer(spell)
   -- Create the custom timer
   if enf_timer_spells:contains(spell.english) then
-    local totalDuration = get_enfeebling_duration(spell, last_midcast_set)
+    local totalDuration = get_enfeebling_duration(spell, silibs.last_midcast_set)
     -- add_to_chat(1, spell.english..' duration: '..totalDuration)
     send_command('@timers c "'..spell.english..' ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00'..spell.id..'.png')
   end

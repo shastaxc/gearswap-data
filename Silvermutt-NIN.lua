@@ -1594,9 +1594,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.precast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if spell.skill == 'Ninjutsu' then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
   end
@@ -1620,14 +1617,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   equip(select_weapons())
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  silibs.midcast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
 end
 
 -- Run after the general midcast() is done.
@@ -1676,17 +1668,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   equip(select_weapons())
-
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if not spell.interrupted and spell.english == "Migawari: Ichi" then
     state.Buff.Migawari = true
   end
@@ -1696,8 +1682,6 @@ end
 
 -- Called after the default aftercast handling is complete.
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes above this line -----------
-  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 
@@ -1861,21 +1845,6 @@ function customize_defense_set(defenseSet)
   defenseSet = set_combine(defenseSet, select_weapons())
 
   return defenseSet
-end
-
-function user_customize_idle_set(idleSet)
-  -- Any non-silibs modifications should go in customize_idle_set function
-  return silibs.customize_idle_set(idleSet)
-end
-
-function user_customize_melee_set(meleeSet)
-  -- Any non-silibs modifications should go in customize_melee_set function
-  return silibs.customize_melee_set(meleeSet)
-end
-
-function user_customize_defense_set(defenseSet)
-  -- Any non-silibs modifications should go in customize_defense_set function
-  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Function to display the current relevant user state when doing an update.
