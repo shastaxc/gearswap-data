@@ -1817,9 +1817,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if cmdParams[1] == 'equipweapons' then
     equip(select_weapons())
   elseif cmdParams[1] == 'weaponset' then

@@ -2301,9 +2301,6 @@ function update_idle_groups()
 end
 
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if not eventArgs.handled then
     if cmdParams[1] == 'step' then
       send_command('@input /ja "'..state.MainStep.value..'" <t>')

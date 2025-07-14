@@ -2470,9 +2470,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true

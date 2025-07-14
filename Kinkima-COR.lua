@@ -2478,9 +2478,6 @@ windower.raw_register_event('action',
 )
 
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if cmdParams[1] == 'qd' then
     if cmdParams[2] == 't' then
       state.IgnoreTargetting:set()

@@ -1296,9 +1296,6 @@ end
 
 -- Called for direct player commands.
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')

@@ -1572,9 +1572,6 @@ end
 
 -- Called for custom player commands.
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-  
   if cmdParams[1]:lower() == 'siphon' then
     handle_siphoning()
     eventArgs.handled = true

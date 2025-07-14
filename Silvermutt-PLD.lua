@@ -1644,9 +1644,6 @@ function update_idle_groups()
 end
 
 function job_self_command(cmdParams, eventArgs)
-  silibs.self_command(cmdParams, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
   if cmdParams[1] == 'phalanxsird' then
     if not is_naturally_sird_capped() then
       enable_phalanx_sird = true
