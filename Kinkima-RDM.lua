@@ -2746,7 +2746,7 @@ end
 function set_enfeeble_timer(spell)
   -- Create the custom timer
   if enf_timer_spells:contains(spell.english) then
-    local totalDuration = get_enfeebling_duration(spell, silibs.last_midcast_set)
+    local totalDuration = get_enfeebling_duration(spell, silibs.get_last_midcast_set())
     -- add_to_chat(1, spell.english..' duration: '..totalDuration)
     send_command('@timers c "'..spell.english..' ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00'..spell.id..'.png')
   end
