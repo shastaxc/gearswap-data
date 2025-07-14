@@ -349,7 +349,7 @@ function init_gear_sets()
     ear1="Infused Earring",           --  1 {__}
     ring1="Chirich Ring +1",          --  2 {__}
     ring2="Chirich Ring +1",          --  2 {__}
-    -- feet="Pteroslaver Greaves +3", -- __ {10}
+    -- feet="Pteroslaver Greaves +4", -- __ {10}
   } -- 24 Regen {10 Pet Regen}
   sets.latent_refresh = {
     ring1="Stikini Ring +1",      --  1
@@ -391,15 +391,15 @@ function init_gear_sets()
   -- A tic must pass with the HP+ equipment still on before the HP gains are counted for the ability.
   sets.precast.JA['Spirit Surge'] = {
     body="Pteroslaver Mail +1", -- Duration +20s; +1 is acceptable
-    -- body="Pteroslaver Mail +3", -- Duration +20s; +1 is acceptable
+    -- body="Pteroslaver Mail +4", -- Duration +20s; +1 is acceptable
   }
   sets.precast.JA['Call Wyvern'] = {
     body="Pteroslaver Mail +1", -- Add support job abilities to pet; +1 is acceptable
-    -- body="Pteroslaver Mail +3", -- Add support job abilities to pet; +1 is acceptable
+    -- body="Pteroslaver Mail +4", -- Add support job abilities to pet; +1 is acceptable
   }
   sets.precast.JA['Ancient Circle'] = {
     legs="Vishap Brais +2", -- Duration +50%, potency +2%; +1 is acceptable
-    -- legs="Vishap Brais +3", -- Duration +50%, potency +2%; +1 is acceptable
+    -- legs="Vishap Brais +4", -- Duration +50%, potency +2%; +1 is acceptable
   }
 
   sets.precast.JA['Spirit Link'] = {
@@ -424,6 +424,9 @@ function init_gear_sets()
     back=gear.DRG_STP_Cape,               -- 10, 20 <20, __, __> [10/__, ___]
     waist="Ioskeha Belt +1",              -- __, 17 < 9, __, __> [__/__, ___]
     -- 73 STP, 289 Acc <44 DA, 5 TA, 3 QA> [39 PDT/22 MDT, 378 M.Eva]
+    
+    -- legs="Pteroslaver Brais +4",       -- 10, 44 <__, __, __> [__/__, 135]
+    -- 73 STP, 294 Acc <44 DA, 5 TA, 3 QA> [39 PDT/22 MDT, 418 M.Eva]
   }
   sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {})
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
@@ -537,6 +540,9 @@ function init_gear_sets()
     back=gear.DRG_WS1_Cape,             -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                 -- __, __, 10, __, __ <__, __, __> [__/__, ___]; ftp+
     -- 229 STR, 377 Att, 276 Acc, 34 WSD, 9 PDL <47 DA, 7 TA, 3 QA> [41 PDT/22 MDT, 577 M.Eva]
+    
+    -- head="Pteroslaver Armet +4",     -- 42, 87, 49, __, __ <__,  4, __> [__/__, 103]
+    -- 234 STR, 387 Att, 281 Acc, 34 WSD, 9 PDL <47 DA, 7 TA, 3 QA> [41 PDT/22 MDT, 617 M.Eva]
   }
   sets.precast.WS["Stardiver"].MaxTP = set_combine(sets.precast.WS["Stardiver"], {
     ear1="Brutal Earring",              -- __, __, __, __, __ < 5, __, __> [__/__, ___]
@@ -557,8 +563,9 @@ function init_gear_sets()
     waist="Fotia Belt",                 -- __, __, 10, __, __ <__, __, __> [__/__, ___]; ftp+
     -- 233 STR, 412 Att, 340 Acc, 22 WSD, 48 PDL <30 DA, 9 TA, 3 QA> [44 PDT/17 MDT, 502 M.Eva]
 
+    -- head="Pteroslaver Armet +4",     -- 42, 87, 49, __, __ <__,  4, __> [__/__, 103]
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 <__, __, __> [__/__, ___]
-    -- 248 STR, 412 Att, 346 Acc, 23 WSD, 48 PDL <30 DA, 9 TA, 3 QA> [44 PDT/17 MDT, 502 M.Eva]
+    -- 253 STR, 422 Att, 351 Acc, 23 WSD, 48 PDL <30 DA, 9 TA, 3 QA> [44 PDT/17 MDT, 542 M.Eva]
   }
   sets.precast.WS["Stardiver"].AttCappedMaxTP = set_combine(sets.precast.WS["Stardiver"].AttCapped, {
     ear1="Brutal Earring",              -- __, __, __, __, __ < 5, __, __> [__/__, ___]
@@ -888,6 +895,9 @@ function init_gear_sets()
     back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__, __, __> [10/__, ___] {__/__}
     waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 25 Haste, 79 STP, 285 Att, 287 Acc, 19 Crit Rate <21 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
+    
+    -- legs="Pteroslaver Brais +4", --  5, 10, 74, 44, __ <__, __, __> [__/__, 135] {11/__}
+    -- 25 Haste, 79 STP, 295 Att, 292 Acc, 19 Crit Rate <21 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 418 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
@@ -899,7 +909,7 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     hands="Gazu Bracelets +1",
-    -- body="Vishap Mail +3",
+    -- body="Vishap Mail +4",
   })
 
   sets.engaged.SamRoll = {
@@ -917,6 +927,9 @@ function init_gear_sets()
     back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
     -- 25 Haste, 68 STP, 255 Att, 313 Acc, 14 Crit Rate <33 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
+    
+    -- legs="Pteroslaver Brais +4", --  5, 10, 74, 44, __ <__, __, __> [__/__, 135] {11/__}
+    -- 25 Haste, 68 STP, 265 Att, 318 Acc, 14 Crit Rate <33 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 451 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc.SamRoll = set_combine(sets.engaged.SamRoll, {
     ring1="Chirich Ring +1",
@@ -928,7 +941,7 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc.SamRoll = set_combine(sets.engaged.MidAcc.SamRoll, {
     hands="Gazu Bracelets +1",
-    -- body="Vishap Mail +3",
+    -- body="Vishap Mail +4",
   })
 
 
@@ -951,6 +964,9 @@ function init_gear_sets()
     back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__, __, __> [10/__, ___] {__/__}
     waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 26 Haste, 63 STP, 375 Att, 308 Acc, 23 Crit Rate <20 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
+    
+    -- legs="Pteroslaver Brais +4", --  5, 10, 74, 44, __ <__, __, __> [__/__, 135] {11/__}
+    -- 26 Haste, 63 STP, 385 Att, 313 Acc, 23 Crit Rate <20 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 482 Meva] {44 PetPDT/33 PetMDT}
   })
   sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.LowAcc, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}

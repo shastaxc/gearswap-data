@@ -337,6 +337,7 @@ function init_gear_sets()
 
   sets.latent_regain = {
     head="Wakido Kabuto +3", -- 4
+    -- head="Wakido Kabuto +4", -- 4
   }
   sets.latent_regen = {
     body="Sacro Breastplate", --10
@@ -383,22 +384,26 @@ function init_gear_sets()
 
   sets.precast.JA['Meikyo Shisui'] = {
     feet="Sakonji Sune-ate +1", -- Reduce WS cost to 750 TP; +1 is acceptable
-    -- feet="Sakonji Sune-ate +3", -- Reduce WS cost to 750 TP; +1 is acceptable
+    -- feet="Sakonji Sune-ate +4", -- Reduce WS cost to 750 TP; +1 is acceptable
   }
 
   sets.precast.JA['Warding Circle'] = {
     head="Wakido Kabuto +3", -- Duration +50%, potency +2%; +1 is acceptable
+    -- head="Wakido Kabuto +4", -- Duration +50%, potency +2%; +1 is acceptable
   }
 
   sets.precast.JA['Third Eye'] = {
     legs="Sakonji Haidate +1", -- Increase counter rate under Seigan
-    -- legs="Sakonji Haidate +3", -- Increase counter rate under Seigan
+    -- legs="Sakonji Haidate +4", -- Increase counter rate under Seigan
   }
 
   sets.precast.JA['Meditate'] = {
     head="Wakido Kabuto +3", -- Increase duration
     hands="Sakonji Kote +3", -- Increase duration
     back="Smertrios's Mantle", -- Increase duration
+    
+    -- head="Wakido Kabuto +4", -- Increase duration
+    -- hands="Sakonji Kote +4", -- Increase duration
   }
 
   sets.precast.JA['Seigan'] = {
@@ -407,11 +412,12 @@ function init_gear_sets()
 
   sets.precast.JA['Shikikoyo'] = {
     legs="Sakonji Haidate +1", -- Retain some TP based on merits
-    -- legs="Sakonji Haidate +3", -- Retain some TP based on merits
+    -- legs="Sakonji Haidate +4", -- Retain some TP based on merits
   }
 
   sets.precast.JA['Blade Bash'] = {
     hands="Sakonji Kote +3", -- +1 is acceptable
+    -- hands="Sakonji Kote +4", -- +1 is acceptable
   }
 
   sets.precast.JA['Sengikori'] = {

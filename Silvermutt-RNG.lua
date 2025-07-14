@@ -509,22 +509,27 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Eagle Eye Shot'] = {
-    -- legs="Arcadian Braccae +3", -- Damage +20%
+    -- legs="Arcadian Braccae +4", -- Damage +20%
   }
   sets.precast.JA['Bounty Shot'] = {
     hands="Amini Glovelettes +2", -- Increase initial TH level
+    -- hands="Amini Glovelettes +3", -- Increase initial TH level
   }
   sets.precast.JA['Camouflage'] = {
     body="Orion Jerkin +3", -- Duration +100s; +1 is acceptable
+    -- body="Orion Jerkin +4", -- Duration +100s; +1 is acceptable
   }
   sets.precast.JA['Scavenge'] = {
     feet="Orion Socks +3", -- Recover more ammo
+    -- feet="Orion Socks +4", -- Recover more ammo
   }
   sets.precast.JA['Shadowbind'] = {
     hands="Orion Bracers +3", -- Increase duration
+    -- hands="Orion Bracers +4", -- Increase duration
   }
   sets.precast.JA['Sharpshot'] = {
     legs="Orion Braccae +3", -- Increase ranged accuracy
+    -- legs="Orion Braccae +4", -- Increase ranged accuracy
   }
 
   sets.precast.Waltz = {
@@ -584,6 +589,9 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- 72 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
+    
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
+    -- 72 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 411 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Gastra on
   sets.Snapshot51 = {
@@ -602,11 +610,15 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          10/__
     -- 72 Snapshot / 87 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
+
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
+    -- feet="Arcadian Socks +4",    -- __/10 [__/__, 129] {__}
+    -- 72 Snapshot / 87 Rapid Shot [28 PDT/15 MDT, 451 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Flurry 1 buff
   sets.Snapshot47 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
+    body="Arcadian Jerkin +3",      -- __/16 [__/__,  84] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
@@ -619,12 +631,16 @@ function init_gear_sets()
     waist="Yemaya Belt",            -- __/ 5 [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          15/__
-    -- 70 Snapshot / 98 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
+    -- 70 Snapshot / 98 Rapid Shot [28 PDT/15 MDT, 364 M.Eva] {12% Velocity Shot}
+    
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
+    -- body="Arcadian Jerkin +4",   -- __/16 [__/__, 106] {__}
+    -- 70 Snapshot / 98 Rapid Shot [28 PDT/15 MDT, 411 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Embrava buff
   sets.Snapshot37 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
+    body="Arcadian Jerkin +3",      -- __/16 [__/__,  84] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
@@ -637,12 +653,17 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          25/__
-    -- 73 Snapshot / 103 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
+    -- 73 Snapshot / 103 Rapid Shot [25 PDT/15 MDT, 384 M.Eva] {12% Velocity Shot}
+    
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
+    -- body="Arcadian Jerkin +4",   -- __/16 [__/__, 124] {__}
+    -- feet="Arcadian Socks +4",    -- __/10 [__/__, 129] {__}
+    -- 73 Snapshot / 103 Rapid Shot [25 PDT/15 MDT, 489 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Flurry 2 buff
   sets.Snapshot31 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
+    body="Arcadian Jerkin +3",      -- __/16 [__/__,  84] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
@@ -655,12 +676,17 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          30/__
-    -- 71 Snapshot / 103 Rapid Shot [38 PDT/20 MDT, 406 M.Eva] {12% Velocity Shot}
+    -- 71 Snapshot / 103 Rapid Shot [38 PDT/20 MDT, 384 M.Eva] {12% Velocity Shot}
+    
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
+    -- body="Arcadian Jerkin +4",   -- __/16 [__/__, 124] {__}
+    -- feet="Arcadian Socks +4",    -- __/10 [__/__, 129] {__}
+    -- 71 Snapshot / 103 Rapid Shot [38 PDT/20 MDT, 489 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Flurry 1 + Embrava buff
   sets.Snapshot27 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
+    body="Arcadian Jerkin +3",      -- __/16 [__/__,  84] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Pursuer_A_legs,       -- __/19 [__/__,  69] {__}
     feet=gear.Nyame_B_feet,         -- __/__ [ 7/ 7, 150] {__}
@@ -673,7 +699,11 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          40/__
-    -- 78 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
+    -- 78 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 439 M.Eva] {12% Velocity Shot}
+    
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
+    -- body="Arcadian Jerkin +4",   -- __/16 [__/__, 124] {__}
+    -- 78 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 504 M.Eva] {12% Velocity Shot}
   }
   -- Higher combos of buffs don't matter because we already have a bis set
 
@@ -701,7 +731,8 @@ function init_gear_sets()
     -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 383 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 393 M.Eva] {38% Velocity Shot}
+    -- legs="Orion Braccae +4",     -- 15/__ [__/__, 114] {__}
+    -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 418 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Gastra on
   sets.Velocity.Snapshot52 = {
@@ -722,8 +753,10 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          10/__
     -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
 
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
+    -- legs="Orion Braccae +4",     -- 15/__ [__/__, 114] {__}
+    -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 463 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Flurry 1 buff
   sets.Velocity.Snapshot47 = {
@@ -744,8 +777,9 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          15/__
     -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 369 M.Eva] {36% Velocity Shot}
 
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 399 M.Eva] {38% Velocity Shot}
+    -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 424 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Embrava buff
   sets.Velocity.Snapshot37 = {
@@ -766,8 +800,10 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          25/__
     -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
 
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 419 M.Eva] {38% Velocity Shot}
+    -- feet="Arcadian Socks +4",    -- __/10 [__/__, 129] {__}
+    -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 484 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Flurry 2 buff
   sets.Velocity.Snapshot34 = {
@@ -788,8 +824,10 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          30/__
     -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
 
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 419 M.Eva] {38% Velocity Shot}
+    -- feet="Arcadian Socks +4",    -- __/10 [__/__, 129] {__}
+    -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 484 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Flurry 1 + Embrava buff
   sets.Velocity.Snapshot24 = {
@@ -810,8 +848,10 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          40/__
     -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
 
+    -- head="Orion Beret +4",       -- __/18 [__/__,  98] {__}
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
+    -- feet="Arcadian Socks +4",    -- __/10 [__/__, 129] {__}
+    -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 478 M.Eva] {38% Velocity Shot}
   }
   -- Higher combos of buffs don't matter because we already have a bis set
 
@@ -888,6 +928,8 @@ function init_gear_sets()
     ear2="Telos Earring",             -- __, 10, 10, __, __ [__/__, ___]
     ring2="Cacoethic Ring +1",        -- 10, __, 16, __, __ [__/__, ___]
     waist="Kwahu Kachina Belt +1",    --  8, __, 20, __, __ [__/__, ___]
+    
+    -- feet="Orion Socks +4",         -- 54, 41, 64, __, __ [__/__, 114]
   })
   sets.precast.WS['Last Stand'].HighAccMaxTP = set_combine(sets.precast.WS['Last Stand'].HighAcc, {})
 
@@ -1124,7 +1166,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",       -- 45, 46, 50, __, __ (__,  6) <__, __, __> [ 8/__,  64]
     hands=gear.Nyame_B_hands,         -- 42, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs="Amini Bragues +3",          -- __, __, 63, __, __ ( 6, __) <__, __, __> [13/13, 125]
-    feet="Arcadian Socks +4",         -- 34, __, __, __, __ ( 8, __) <__, __, __> [__/__, 129]
+    feet="Arcadian Socks +3",         -- 34, __, __, __, __ ( 8, __) <__, __, __> [__/__,  89]
     neck="Fotia Gorget",              -- __, __, 10, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     ear1="Odr Earring",               -- 10, __, 10, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ear2="Amini Earring +1",          -- __, __, 11, __,  8 ( 3, __) <__, __, __> [__/__, ___]
@@ -1132,8 +1174,9 @@ function init_gear_sets()
     ring2="Begrudging Ring",          -- __,  7,  7, __, __ ( 5, __) <__, __, __> [-10/-10, _]
     back=gear.RNG_WS2_Cape,           -- __, __, __, 10, __ (__, __) <__, __, __> [10/__, ___] 
     waist="Fotia Belt",               -- __, __, 10, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
-    -- 174 DEX, 194 Att, 221 Acc, 21 WSD, 18 PDL (27 Crit Rate, 12 Crit Dmg) <5 DA, 4 TA, 0 QA> [28 PDT/10 MDT, 489 M.Eva]
+    -- 174 DEX, 194 Att, 221 Acc, 21 WSD, 18 PDL (27 Crit Rate, 12 Crit Dmg) <5 DA, 4 TA, 0 QA> [28 PDT/10 MDT, 449 M.Eva]
 
+    -- feet="Arcadian Socks +4",      -- 34, __, __, __, __ ( 8, __) <__, __, __> [__/__, 129]
     -- back=gear.RNG_WS4_Cape,        -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]
   }
 
@@ -1210,14 +1253,17 @@ function init_gear_sets()
     -- Merits/Traits/Gifts                                      (55)
     -- 252 AGI [84 STP] 322 racc / 222 ratt <10 crit> {29 PDL} (93 Recycle) 29 PDT/19 MDT
 
+    -- head="Arcadian Beret +4",    -- 37 [__]  42/ 72 <_> {__} (38) __/__
     -- hands="Amini Glovelettes +3",-- 26 [11]  62/ 62 <_> {__} (__) 11/11; Archery+38
-    -- 254 AGI [83 STP] 334 racc / 284 ratt <10 crit> {25 PDL} (93 Recycle) 35 PDT/25 MDT
+    -- 254 AGI [83 STP] 339 racc / 294 ratt <10 crit> {25 PDL} (93 Recycle) 35 PDT/25 MDT
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ring2="Ephramad's Ring",        -- 10 [__]  20/ 20 <_> {__} (__) __/__
     body="Orion Jerkin +3",         -- 40 [ 8]  60/ 41 <_> {__} (__) __/__
     -- AF set bonus                    __ [__]  __/ __ <_> {__} (__) __/__
     -- 265 AGI [74 STP] 359 racc / 275 ratt <5 crit> {18 PDL} (93 Recycle) 35 PDT/25 MDT
+    
+    -- body="Orion Jerkin +4",      -- 45 [ 8]  70/ 46 <_> {__} (__) __/__
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear1="Beyla Earring",           -- __ [__]  15/ __ <_> {__} (__) __/__
@@ -1232,6 +1278,8 @@ function init_gear_sets()
     -- feet="Amini Bottillons +3",  -- 56 [__]  60/ 60 <_> {__} (__) __/__; Marksmanship+38
     -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
     -- 284 AGI [51 STP] 425 racc / 317 ratt <5 crit> {16 PDL} (55 Recycle) 31 PDT/21 MDT
+    
+    -- head="Orion Beret +4",       -- 44 [__]  57/ 39 <_> {__} (__) __/__
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
@@ -1252,12 +1300,18 @@ function init_gear_sets()
     hands="Oshosi Gloves +1", -- 5
     legs="Oshosi Trousers +1", --7
     feet="Oshosi Leggings +1", --4
+    
+    -- head="Arcadian Beret +4",
+    -- body="Arcadian Jerkin +4",
   }
   sets.DoubleShot.Acc = {
     head="Arcadian Beret +3",
     body="Arcadian Jerkin +3",
     legs="Oshosi Trousers +1", --7
     feet="Oshosi Leggings +1", --4
+    
+    -- head="Arcadian Beret +4",
+    -- body="Arcadian Jerkin +4",
   }
 
   sets.DoubleShot.Critical = {
@@ -1742,12 +1796,14 @@ function init_gear_sets()
   }
   sets.buff.Barrage = {
     hands="Orion Bracers +3"
+    -- hands="Orion Bracers +4"
   }
   sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
     body="Amini Caban +2",
   })
   sets.buff.Camouflage = {
     body="Orion Jerkin +3"
+    -- body="Orion Jerkin +4"
   }
 
   sets.FallbackShield = {sub="Nusku Shield"}

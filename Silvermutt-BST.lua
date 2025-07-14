@@ -633,17 +633,17 @@ end
 -- head=gear.Anwig_Salade,          -- [__/__, ___] {10/10, ___}
 -- head=gear.Taeon_Pet_DT_head,     -- [__/__,  73] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
 -- body=gear.Taeon_Pet_DT_body,     -- [__/__,  84] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
--- body="Totemic Jackcoat +3",      -- [__/__,  84] {10/10, ___}
+-- body="Totemic Jackcoat +4",      -- [__/__, 109] {10/10, ___}
 -- body=gear.Emicho_D_body,         -- [__/__,  53] { 4/ 4, ___}
 -- hands=gear.Taeon_Pet_DT_hands,   -- [__/__,  57] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
 -- hands="Gleti's Gauntlets",       -- [ 7/__,  75] { 8/ 8, ___}
--- hands="Ankusa Gloves +3",        -- [__/__,  57] { 6/__,  17}; Pet Level snapshots on summoning
+-- hands="Ankusa Gloves +4",        -- [__/__,  97] { 6/__,  17}; Pet Level snapshots on summoning
 -- legs="Tali'ah Seraweels +2",     -- [__/__,  69] { 5/ 5, ___}
 -- legs=gear.Taeon_Pet_DT_legs,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
 -- legs="Nukumi Quijotes +3",       -- [13/13, 130] { 8/ 8, ___}
 -- feet=gear.Taeon_Pet_DT_feet,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
 -- feet="Gleti's Boots",            -- [ 5/__, 112] {__/__,   1}
--- feet="Ankusa Gaiters +3",        -- [__/__,  89] { 5/__, ___}
+-- feet="Ankusa Gaiters +4",        -- [__/__, 129] { 5/__, ___}
 -- neck="Shepherd's Chain",         -- [__/__, ___] { 2/ 2, ___}
 -- ear1="Handler's Earring +1",     -- [__/__, ___] { 4/__, ___}
 -- ear1="Enmerkar Earring",         -- [__/__, ___] { 3/ 3, ___}
@@ -844,9 +844,10 @@ function init_gear_sets()
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
     -- [29 PDT/17 MDT, 464 M.Eva] {Pet: 36 PDT/36 MDT, 2 Lv | 42 DA, 21 STP, 327 Acc/292 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
 
+    -- body="Totemic Jackcoat +4",    -- [__/__, 109] {10/10, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- [30 PDT/18 MDT, 474 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 45 DA, 21 STP, 337 Acc/302 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
+    -- [30 PDT/18 MDT, 499 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 45 DA, 21 STP, 337 Acc/302 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
   }
   -- More squishy for master
   sets.idle.PetEngaged.PetDD = {
@@ -867,8 +868,10 @@ function init_gear_sets()
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, __, 15/15, __/__, __, __}
     -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 55 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
 
+    -- body="Ankusa Jackcoat +4",     -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
+    -- legs="Ankusa Trousers +4",     -- [__/__, 129] {__/__, ___ | __,  7, __/__, __/__,  6, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 58 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
+    -- [10 PDT/5 MDT, 430 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 58 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
   }
 
   -- Cap master DT
@@ -891,9 +894,10 @@ function init_gear_sets()
     -- [47 PDT/35 MDT, 464 M.Eva] {Pet: 36 PDT/36 MDT, 2 Lv | 37 DA, 14 STP, 314 Acc/279 Racc, 50 Att/30 Ratt, 27 Haste, 0 Regen}
 
     -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- body="Totemic Jackcoat +4",    -- [__/__, 109] {10/10, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- [49 PDT/37 MDT, 519 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 40 DA, 14 STP, 334 Acc/299 Racc, 50 Att/30 Ratt, 27 Haste, 0 Regen}
+    -- [49 PDT/37 MDT, 543 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 40 DA, 14 STP, 334 Acc/299 Racc, 50 Att/30 Ratt, 27 Haste, 0 Regen}
   }
   -- Cap master DT
   sets.idle.PetEngaged.PetDTDD = {
@@ -935,7 +939,7 @@ function init_gear_sets()
 
 	sets.precast.JA['Bestial Loyalty'] = {
     hands="Ankusa Gloves +1", -- Adds 17 pet levels, snapshots; +1 is acceptable
-    -- hands="Ankusa Gloves +3", -- Adds 17 pet levels, snapshots; +1 is acceptable
+    -- hands="Ankusa Gloves +4", -- Adds 17 pet levels, snapshots; +1 is acceptable
   }
 	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
 
@@ -961,18 +965,23 @@ function init_gear_sets()
 
     -- main="Farsha",                 -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- sub=gear.Reward_Axe,           -- 17, __, __, __ [__/__, ___] {__/__, __}
+    -- body="Totemic Jackcoat +4",    -- 36, __, 26, __ [__/__, 109] {10/10, __}; Removes status effects
+    -- legs="Ankusa Trousers +4",     -- 27, __, __, 21 [__/__, 129] {__/__, __}
+    -- feet="Ankusa Gaiters +4",      -- 22,  4, 41, __ [__/__, 129] { 5/__, __}; Enhances Beast Healer
     -- back=gear.BST_MND_WSD_Cape,    -- 30, __, 30, __ [10/__, ___] {__/__, __}
-    -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
+    -- 232 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 441 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
   }
 	sets.precast.JA['Killer Instinct'] = {
     head="Ankusa Helm +1", -- Increase duration based on merits; +1 is acceptable
-    -- head="Ankusa Helm +3", -- Increase duration based on merits; +1 is acceptable
+    -- head="Ankusa Helm +4", -- Increase duration based on merits; +1 is acceptable
   }
 	sets.precast.JA.Familiar = {
     legs="Ankusa Trousers +3", -- Increase duration, pet haste +10%; +1 is acceptable
+    -- legs="Ankusa Trousers +4", -- Increase duration, pet haste +10%; +1 is acceptable
   }
 	sets.precast.JA.Tame = {
     head="Totemic Helm +3", -- Increase success rate
+    -- head="Totemic Helm +4", -- Increase success rate
   }
 
   -- Charm+ gear cap for accuracy at 99%?
@@ -996,9 +1005,13 @@ function init_gear_sets()
     
     -- main="Habilitator +1",         -- 28, __ [ 3/__, ___]
     -- sub=gear.Digirbalag_CHR,       -- 25, __ [__/__, ___]
-    -- hands="Ankusa Gloves +3",      -- 27, 13 [__/__,  57]
+    -- head="Totemic Helm +4",        -- 34, 35 [__/__,  98]
+    -- body="Ankusa Jackcoat +4",     -- 33, 16 [__/__,  84]
+    -- hands="Ankusa Gloves +4",      -- 27, 13 [__/__,  97]
+    -- legs="Ankusa Trousers +4",     -- 21, 11 [__/__, 129]
+    -- feet="Ankusa Gaiters +4",      -- 40, 12 [__/__, 129]
     -- back=gear.BST_CHR_WSD_Cape,    -- 30, __ [10/__, ___]
-    -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
+    -- 276 CHR, 107 Charm [29 PDT/18 MDT, 537 M.Eva]
   }
 	sets.precast.JA.Spur = {
     main=gear.Skullrender_C,
@@ -1027,6 +1040,7 @@ function init_gear_sets()
     -- 467 M.Acc [32 PDT/32 MDT, 484 M.Eva]
     
     -- head="Nukumi Cabasset +3",     -- 61 [11/11,  98]
+    -- body="Ankusa Jackcoat +4",     -- 40 [__/__,  84]; Feral Howl Duration+
     -- hands="Nukumi Manoplas +3",    -- 62 [11/11,  82]
     -- legs="Nukumi Quijotes +3",     -- 63 [13/13, 130]
     -- feet="Nukumi Ocreae +3",       -- 60 [__/__, 130]
@@ -1600,9 +1614,10 @@ function init_gear_sets()
     -- 0 DW, 8 STP, 319 Acc <0 DA, 0 TA, 0 QA> [39 PDT/27 MDT, 499 M.Eva] {Pet: 35 PDT/35 MDT, 2 Lv | 37 DA, 14 STP, 296 Acc/281 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- body="Totemic Jackcoat +4",    -- __, __, 60 <__, __, __> [__/__, 109] {10/10, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- 0 DW, 8 STP, 344 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 519 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 14 STP, 316 Acc/301 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
+    -- 0 DW, 8 STP, 354 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 543 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 14 STP, 316 Acc/301 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
   }
   sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {})
 
@@ -1623,6 +1638,7 @@ function init_gear_sets()
     -- 0 DW, 7 STP, 311 Acc <0 DA, 0 TA, 0 QA> [32 PDT/27 MDT, 456 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 46 DA, 21 STP, 286 Acc/251 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- body="Ankusa Jackcoat +4",     -- __, __, 40 <__, __, __> [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- 0 DW, 7 STP, 336 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 476 M.Eva] {Pet: 16 PDT/16 MDT, 2 Lv | 49 DA, 21 STP, 306 Acc/271 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
@@ -1651,9 +1667,10 @@ function init_gear_sets()
     -- 0 DW, 8 STP, 309 Acc <0 DA, 0 TA, 0 QA> [49 PDT/37 MDT, 499 M.Eva] {Pet: 35 PDT/35 MDT, 2 Lv | 37 DA, 8 STP, 289 Acc/271 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- body="Totemic Jackcoat +4",    -- __, __, 60 <__, __, __> [__/__, 109] {10/10, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- 0 DW, 8 STP, 334 Acc <0 DA, 0 TA, 0 QA> [51 PDT/39 MDT, 519 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 8 STP, 306 Acc/291 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
+    -- 0 DW, 8 STP, 344 Acc <0 DA, 0 TA, 0 QA> [51 PDT/39 MDT, 543 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 8 STP, 306 Acc/291 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
   }
   sets.engaged.PetDTTank.Acc = set_combine(sets.engaged.PetDTTank, {})
 

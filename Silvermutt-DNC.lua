@@ -374,8 +374,9 @@ function init_gear_sets()
     waist="Kasiri Belt",              --  3 [__/__, ___]
     -- 68 Enmity [28 PDT/8 MDT, 421 M.Eva]
 
+    -- hands="Horos Bangles +4",      --  9 [__/__,  97]
     -- back=gear.DNC_Enmity_Cape,     -- 10 [10/__, ___]
-    -- 78 Enmity [28 PDT/8 MDT, 421 M.Eva]
+    -- 78 Enmity [28 PDT/8 MDT, 461 M.Eva]
   }
 
   sets.HybridAcc = {
@@ -393,6 +394,9 @@ function init_gear_sets()
     back="Null Shawl",                -- 50, 50 [__/__,  50]
     waist="Null Belt",                -- 30, 30 [__/__,  30]
     -- 462 Acc, 452 MAcc [49 PDT/43 MDT, 611 M.Eva]
+    
+    -- body="Horos Casaque +4",       -- 55, 45 [ 6/__, 124]
+    -- 467 Acc, 457 MAcc [49 PDT/43 MDT, 651 M.Eva]
   }
 
 
@@ -510,48 +514,58 @@ function init_gear_sets()
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['No Foot Rise'] = {
     body="Horos Casaque +3", -- Grant TP return based on merits; +1 is acceptable
+    -- body="Horos Casaque +4", -- Grant TP return based on merits; +1 is acceptable
   }
   sets.precast.JA['Trance'] = {
     head="Horos Tiara +3" -- Duration +20s; +1 is acceptable
+    -- head="Horos Tiara +4" -- Duration +20s; +1 is acceptable
   }
 
   -- Waltz Potency/CHR
   sets.precast.Waltz = {
-    ammo="Staunch Tathlum +1",      -- __(_), __, __ <__> [ 3/ 3, ___]
-    head=gear.Anwig_Salade,         -- __(_),  4, __ <-2> [__/__, ___]
-    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2> [__/__,  84]
-    hands="Maculele Bangles +3",    -- __(_), 28, 40 <__> [11/11,  83]
-    legs="Dashing Subligar",        -- 10(_), 11, 16 <__> [__/__,  69]; Gives Blink
-    feet="Maxixi Toe Shoes +3",     -- 14(_), 40, 22 <__> [__/__,  89]
-    neck="Etoile Gorget +2",        -- 10(_), 25, __ <__> [__/__, ___]
-    ear1="Genmei Earring",          -- __(_), __,  2 <__> [ 2/__, ___]
-    ear2="Odnowa Earring +1",       -- __(_), __,  3 <__> [ 3/ 5, ___]
-    ring1="Metamorph Ring +1",      -- __(_), 16, __ <__> [__/__, ___]
-    ring2="Defending Ring",         -- __(_), __, __ <__> [10/10, ___]
-    back=gear.DNC_WTZ_Cape,         -- __(_), 30, __ <__> [10/__, ___]; Enmity-10
-    waist="Aristo Belt",            -- __(_),  8, __ <__> [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __(_), __, __ <__> [ 3/ 3, ___]
+    head=gear.Anwig_Salade,           -- __(_),  4, __ <-2> [__/__, ___]
+    body="Maxixi Casaque +3",         -- 19(8), 33, 34 <-2> [__/__,  84]
+    hands="Maculele Bangles +3",      -- __(_), 28, 40 <__> [11/11,  83]
+    legs="Dashing Subligar",          -- 10(_), 11, 16 <__> [__/__,  69]; Gives Blink
+    feet="Maxixi Toe Shoes +3",       -- 14(_), 40, 22 <__> [__/__,  89]
+    neck="Etoile Gorget +2",          -- 10(_), 25, __ <__> [__/__, ___]
+    ear1="Genmei Earring",            -- __(_), __,  2 <__> [ 2/__, ___]
+    ear2="Odnowa Earring +1",         -- __(_), __,  3 <__> [ 3/ 5, ___]
+    ring1="Metamorph Ring +1",        -- __(_), 16, __ <__> [__/__, ___]
+    ring2="Defending Ring",           -- __(_), __, __ <__> [10/10, ___]
+    back=gear.DNC_WTZ_Cape,           -- __(_), 30, __ <__> [10/__, ___]; Enmity-10
+    waist="Aristo Belt",              -- __(_),  8, __ <__> [__/__, ___]
     -- 53 Potency (8 Self Potency), 195 CHR, 117 VIT <-4 Delay> [39 PDT/29 MDT, 325 M.Eva]
+    
+    -- body="Maxixi Casaque +4",      -- 19(8), 35, 34 <-2> [__/__, 109]
+    -- feet="Maxixi Toe Shoes +4",    -- 14(_), 42, 22 <__> [__/__, 114]
   }
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
-    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2> [__/__,  84]
+    body="Maxixi Casaque +3",         -- 19(8), 33, 34 <-2> [__/__,  84]
     -- 53 Potency (8 Self Potency), 195 CHR, 117 VIT <-4 Delay> [39 PDT/29 MDT, 325 M.Eva]
+    
+    -- body="Maxixi Casaque +4",      -- 19(8), 35, 34 <-2> [__/__, 109]
   })
   sets.precast.WaltzSafe = {
-    ammo="Staunch Tathlum +1",      -- __(_), __, __ <__> [ 3/ 3, ___]
-    head=gear.Nyame_B_head,         -- __(_), 24, 24 <__> [ 7/ 7, 123]
-    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2> [__/__,  84]
-    hands="Maculele Bangles +3",    -- __(_), 28, 40 <__> [11/11,  83]
-    legs=gear.Nyame_B_legs,         -- __(_), 24, 30 <__> [ 8/ 8, 150]
-    feet="Maxixi Toe Shoes +3",     -- 14(_), 40, 22 <__> [__/__,  89]
-    neck="Etoile Gorget +2",        -- 10(_), 25, __ <__> [__/__, ___]
-    -- ear1="Sjofn Earring",        -- 10(_), __, __ <__> [__/__, ___]
-    ear2="Odnowa Earring +1",       -- __(_), __,  3 <__> [ 3/ 5, ___]
-    ring1="Moonlight Ring",         -- __(_), __,  3 <__> [ 3/ 5, ___]
-    ring2="Defending Ring",         -- __(_), __, __ <__> [10/10, ___]
-    back=gear.DNC_WTZ_Cape,         -- __(_), 30, __ <__> [10/__, ___]; Enmity-10
-    waist="Null Belt",              -- __(_), __, __ <__> [__/__,  30]
+    ammo="Staunch Tathlum +1",        -- __(_), __, __ <__> [ 3/ 3, ___]
+    head=gear.Nyame_B_head,           -- __(_), 24, 24 <__> [ 7/ 7, 123]
+    body="Maxixi Casaque +3",         -- 19(8), 33, 34 <-2> [__/__,  84]
+    hands="Maculele Bangles +3",      -- __(_), 28, 40 <__> [11/11,  83]
+    legs=gear.Nyame_B_legs,           -- __(_), 24, 30 <__> [ 8/ 8, 150]
+    feet="Maxixi Toe Shoes +3",       -- 14(_), 40, 22 <__> [__/__,  89]
+    neck="Etoile Gorget +2",          -- 10(_), 25, __ <__> [__/__, ___]
+    -- ear1="Sjofn Earring",          -- 10(_), __, __ <__> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __(_), __,  3 <__> [ 3/ 5, ___]
+    ring1="Moonlight Ring",           -- __(_), __,  3 <__> [ 3/ 5, ___]
+    ring2="Defending Ring",           -- __(_), __, __ <__> [10/10, ___]
+    back=gear.DNC_WTZ_Cape,           -- __(_), 30, __ <__> [10/__, ___]; Enmity-10
+    waist="Null Belt",                -- __(_), __, __ <__> [__/__,  30]
     -- 53 Potency (8 Self Potency), 204 CHR, 156 VIT <-2 Delay> [55 PDT/49 MDT, 559 M.Eva]
+    
+    -- body="Maxixi Casaque +4",      -- 19(8), 35, 34 <-2> [__/__, 109]
+    -- feet="Maxixi Toe Shoes +4",    -- 14(_), 42, 22 <__> [__/__, 114]
   }
 
   -- Focus Waltz delay. Dashing Subligar does not give shadows for healing waltz on others
@@ -570,6 +584,8 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,         -- __ [10/__, ___]
     waist="Engraved Belt",            -- __ [__/__, ___]; Resist+
     -- -4 Waltz Delay [59 PDT/51 MDT, 496 M.Eva]
+    
+    -- body="Maxixi Casaque +4",      -- -2 [__/__, 109]
   }
   sets.precast.Waltz['Healing Waltz'].Self = set_combine(sets.precast.Waltz['Healing Waltz'], {
     legs="Dashing Subligar",          -- 10(_), 11, 16 <__> [__/__,  69]; Gives Blink
@@ -577,10 +593,15 @@ function init_gear_sets()
   sets.precast.Samba = {
     head="Maxixi Tiara +3", -- Duration +45s; +1 is acceptable
     back=gear.DNC_TP_DW_Cape,
+
+    -- head="Maxixi Tiara +4", -- Duration +45s; +1 is acceptable
   }
   sets.precast.Jig = {
     legs="Horos Tights +3", -- Increase duration; +2 is acceptable
     feet="Maxixi Toe Shoes +3", -- Increase duration
+    
+    -- legs="Horos Tights +4", -- Increase duration; +2 is acceptable
+    -- feet="Maxixi Toe Shoes +4", -- Increase duration
   }
 
   -- Acc
@@ -600,6 +621,10 @@ function init_gear_sets()
     waist="Null Belt",            -- __/__, 30 (__)
     -- Maxixi set bonus           -- __/__, 15 (__)
     -- 47 PDT / 49 MDT, 424 Acc (99 Step Acc)
+    
+    -- head="Maxixi Tiara +4",    -- __/__, 57 (35)
+    -- feet="Horos Toe Shoes +4", -- __/__, 47 (24); Step TP -20
+    -- 47 PDT / 49 MDT, 439 Acc (99 Step Acc)
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
@@ -612,6 +637,9 @@ function init_gear_sets()
   sets.precast.Flourish1['Violent Flourish'] = set_combine(sets.HybridAcc, {
     body="Horos Casaque +3",          -- 50, 40 [ 6/__,  84]; +41 V. Flourish Acc
     -- 438 Acc, 404 MAcc [44 PDT/28 MDT, 531 M.Eva]
+    
+    -- body="Horos Casaque +4",       -- 55, 45 [ 6/__, 124]; +41 V. Flourish Acc
+    -- 443 Acc, 409 MAcc [44 PDT/28 MDT, 571 M.Eva]
   })
 
   -- Magic Accuracy

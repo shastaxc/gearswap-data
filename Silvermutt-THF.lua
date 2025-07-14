@@ -351,15 +351,20 @@ function init_gear_sets()
   sets.TreasureHunter = {
     hands="Plunderer's Armlets +3", --4
     feet="Skulker's Poulaines +3", --5
+    
+    -- hands="Plunderer's Armlets +4", --4
   }
   -- Set to use with TH enabled while performing ranged attacks
   sets.TreasureHunter.RA = {
     hands="Plunderer's Armlets +3", --4
     feet="Skulker's Poulaines +3", --5
+    
+    -- hands="Plunderer's Armlets +4", --4
   }
 
   sets.Kiting = {
     feet="Pillager's Poulaines +3",
+    -- feet="Pillager's Poulaines +4",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
@@ -568,9 +573,10 @@ function init_gear_sets()
   }
   sets.precast.JA['Flee'] = {
     feet="Pillager's Poulaines +3", -- Increase duration
+    -- feet="Pillager's Poulaines +4", -- Increase duration
   }
   sets.precast.JA['Hide'] = {
-    -- body="Pillager's Vest +3", -- Duration +100s; +1 is acceptable
+    -- body="Pillager's Vest +4", -- Duration +100s; +1 is acceptable
   }
 
   -- Theory is level and acc play a part, so prioritize: ilvl > Steal+ > Acc
@@ -591,11 +597,13 @@ function init_gear_sets()
     -- AF set effect                  -- __, 15
     -- 20 Steal, 399 Acc [31 PDT/21 MDT, 479 M.Eva]
 
+    -- head="Pillager's Bonnet +4",   -- __, 63 [__/__, 108]
     -- body="Skulker's Vest +3",      -- __, 64 [__/__, 119]
     -- legs="Skulker's Culottes +3",  -- __, 63 [13/13, 125]
+    -- feet="Pillager's Poulaines +4",-- 15, 62 [__/__, 124]
     -- ear2="Skulker's Earring +2",   -- __, 20 [__/__, ___]
     -- AF set effect                  -- __, 30
-    -- 20 Steal, 448 Acc [23 PDT/13 MDT, 469 M.Eva]
+    -- 20 Steal, 478 Acc [23 PDT/13 MDT, 519 M.Eva]
   }
 
   sets.precast.JA['Despoil'] = {
@@ -607,10 +615,11 @@ function init_gear_sets()
   }
   sets.precast.JA['Perfect Dodge'] = {
     hands="Plunderer's Armlets +3", -- Duration +10s; +1 is acceptable
+    -- hands="Plunderer's Armlets +4", -- Duration +10s; +1 is acceptable
   }
   -- Must remain equipped for the hit that applies Feint
   sets.precast.JA['Feint'] = {
-    -- legs="Plunderer's Culottes +3", -- Increase evasion down; +1 is acceptable
+    -- legs="Plunderer's Culottes +4", -- Increase evasion down; +1 is acceptable
   }
 
   sets.precast.Waltz = {
@@ -696,11 +705,16 @@ function init_gear_sets()
     ammo="Yetshila +1",                 -- __, __, __, __, __ <__, __, __> ( 2,  6) [__/__, ___]
     head="Pillager's Bonnet +3",        -- 37, __, 53,  6, __ <__, __, __> (__,  5) [__/__,  83]
     hands="Skulker's Armlets +3",       -- 53, 72, 62, __, __ <__, __, __> (__, __) [11/11,  93]; SA+30
+    
+    -- head="Pillager's Bonnet +4",     -- 42, __, 63,  9, __ <__, __, __> (__,  5) [__/__, 108]
   }
   sets.precast.WS.TA = {
     ammo="Yetshila +1",                 -- __, __, __, __, __ <__, __, __> ( 2,  6) [__/__, ___]
     head="Pillager's Bonnet +3",        -- 37, __, 53,  6, __ <__, __, __> (__,  5) [__/__,  83]
     hands="Pillager's Armlets +3",      -- 45, __, 48, __, __ <__, __, __> (__,  4) [__/__,  67]; TA+20
+    
+    -- head="Pillager's Bonnet +4",     -- 42, __, 63,  9, __ <__, __, __> (__,  5) [__/__, 108]
+    -- hands="Pillager's Armlets +4",   -- 50, __, 58, __, __ <__, __, __> (__,  4) [__/__,  92]; TA+20
   }
 
   -- 73-85% AGI, 1.0 FTP, ftp replicating
@@ -769,6 +783,8 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, __, __ <__, 19, __> (__, 22) [__/__, ___]
     -- 200 DEX, 290 Att, 301 Acc, 10 WSD, 13 PDL <0 DA, 31 TA, 0 QA> (27 Crit Rate, 43 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva]
 
+    -- body="Plunderer's Vest +4",      -- 46, 75, 45, __, __ <__, __, __> ( 6,  5) [__/__, 124]
+    -- legs="Pillager's Culottes +4",   -- 20, 35, 64, __, __ <__,  5, __> (__,  5) [__/__, 124]
     -- back=gear.THF_WS4_Cape,          -- 30, 20, 20, __, __ <__, __, __> (10, __) [10/__, ___]
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
@@ -794,6 +810,8 @@ function init_gear_sets()
     -- 219 DEX, 240 Att, 313 Acc, 16 WSD, 17 PDL <0 DA, 31 TA, 0 QA> (19 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva]
     
     -- head="Skulker's Bonnet +3",      -- 43, 61, 61, __, 10 <__,  6, __> (__, __) [__/__, 109]
+    -- body="Plunderer's Vest +4",      -- 46, 75, 45, __, __ <__, __, __> ( 6,  5) [__/__, 124]
+    -- legs="Pillager's Culottes +4",   -- 20, 35, 64, __, __ <__,  5, __> (__,  5) [__/__, 124]
     -- back=gear.THF_WS4_Cape,          -- 30, 20, 20, __, __ <__, __, __> (10, __) [10/__, ___]
   }
   sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {
@@ -874,6 +892,8 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,             -- 26, 65, 53, 11, __ [ 7/ 7, 150]
     
     -- head="Skulker's Bonnet +3",      -- 43, 61, 61, __, 10 [__/__, 109]
+    -- body="Plunderer's Vest +4",      -- 46, 75, 45, __, __ [__/__, 124]; TA+10
+    -- hands="Pillager's Armlets +4",   -- 50, __, 58, __, __ [__/__,  92]; TA+20
     -- legs="Plunderer's Culottes +4",  -- 21, 74, 51,  9, __ [__/__, 129]
   }
 
@@ -1087,8 +1107,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 0 DW, 62 STP, 281 Acc, 61 TA Dmg <3 DA, 43 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
 
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 0 DW, 70 STP, 301 Acc, 61 TA Dmg <3 DA, 44 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
+    -- 0 DW, 70 STP, 306 Acc, 61 TA Dmg <3 DA, 44 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 584 MEVA] 14 PDL
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1121,8 +1142,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 7 DW, 61 STP, 283 Acc, 56 TA Dmg <3 DA, 41 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
     
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 7 DW, 69 STP, 303 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
+    -- 7 DW, 69 STP, 308 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 584 MEVA] 14 PDL
   }
   sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1156,8 +1178,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 12 DW, 53 STP, 293 Acc, 56 TA Dmg <3 DA, 41 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
     
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 12 DW, 61 STP, 313 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
+    -- 12 DW, 61 STP, 318 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 584 MEVA] 14 PDL
   }
   sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1172,6 +1195,8 @@ function init_gear_sets()
     feet="Malignance Boots",            -- __,  9, 50, __ <__, __, __> (__, __) [ 4/ 4, 150]  2
     ear1="Telos Earring",               -- __,  5, 10, __ < 1, __, __> (__, __) [__/__, ___] __
     ear2="Dignitary's Earring",         -- __,  3, 10, __ <__, __, __> (__, __) [__/__, ___] __; Remove if have skulker's +2
+    
+    -- hands="Pillager's Armlets +4",   --  5, __, 58, __ <__, __, __> (__,  4) [__/__,  92] __; AF set
   })
 
   -- High DW (26 needed from gear)
@@ -1191,6 +1216,9 @@ function init_gear_sets()
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 26 DW, 43 STP, 293 Acc, 56 TA Dmg <3 DA, 37 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 552 MEVA] 14 PDL
+    
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
+    -- 26 DW, 43 STP, 298 Acc, 56 TA Dmg <3 DA, 37 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 592 MEVA] 14 PDL
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1205,6 +1233,8 @@ function init_gear_sets()
     feet="Malignance Boots",            -- __,  9, 50, __ <__, __, __> (__, __) [ 4/ 4, 150]  2
     ear1="Telos Earring",               -- __,  5, 10, __ < 1, __, __> (__, __) [__/__, ___] __
     ear2="Dignitary's Earring",         -- __,  3, 10, __ <__, __, __> (__, __) [__/__, ___] __; Remove if have skulker's +2
+    
+    -- hands="Pillager's Armlets +4",   --  5, __, 58, __ <__, __, __> (__,  4) [__/__,  92] __; AF set
   })
 
   -- Super DW (37 needed from gear)
@@ -1224,6 +1254,9 @@ function init_gear_sets()
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 37 DW, 25 STP, 294 Acc, 56 TA Dmg <3 DA, 37 TA, 0 QA> (0 Crit Rate, 26 Crit Dmg) [33 PDT/23 MDT, 506 MEVA] 8 PDL
+    
+    -- hands="Pillager's Armlets +4",   --  5, __, 58, __ <__, __, __> (__,  4) [__/__,  92] __; AF set
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
   }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1255,6 +1288,8 @@ function init_gear_sets()
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 42 DW, 25 STP, 281 Acc, 45 TA Dmg <0 DA, 34 TA, 0 QA> (0 Crit Rate, 26 Crit Dmg) [35 PDT/23 MDT, 492 MEVA] 8 PDL
+    
+    -- hands="Pillager's Armlets +4",   --  5, __, 58, __ <__, __, __> (__,  4) [__/__,  92] __; AF set
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1292,12 +1327,13 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 0 DW, 51 STP, 294 Acc, 61 TA Dmg <0 DA, 39 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
 
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 0 DW, 59 STP, 314 Acc, 61 TA Dmg <0 DA, 40 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
+    -- 0 DW, 59 STP, 319 Acc, 61 TA Dmg <0 DA, 40 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 616 MEVA] 21 PDL
   }
   sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {
     waist="Olseni Belt",                -- __,  3, 20, __ <__, __, __> (__, __) [__/__, ___] __
-    -- 0 DW, 54 STP, 314 Acc, 56 TA Dmg <0 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
+    -- 0 DW, 54 STP, 319 Acc, 56 TA Dmg <0 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 616 MEVA] 21 PDL
   })
   sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.LowAcc.HeavyDef, {
     feet="Malignance Boots",            -- __,  9, 50, __ <__, __, __> (__, __) [ 4/ 4, 150]  2
@@ -1329,14 +1365,14 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 7 DW, 61 STP, 286 Acc, 56 TA Dmg <3 DA, 37 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
     
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 7 DW, 69 STP, 306 Acc, 56 TA Dmg <3 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
+    -- 7 DW, 69 STP, 311 Acc, 56 TA Dmg <3 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 616 MEVA] 21 PDL
   }
   sets.engaged.LowDW.LowAcc.HeavyDef = set_combine(sets.engaged.LowDW.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
     ear1="Telos Earring",               -- __,  5, 10, __ < 1, __, __> (__, __) [__/__, ___] __
-    -- 7 DW, 58 STP, 321 Acc, 56 TA Dmg <1 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 591 MEVA] 21 PDL
-    
+    -- 7 DW, 58 STP, 326 Acc, 56 TA Dmg <1 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 631 MEVA] 21 PDL
   })
   sets.engaged.LowDW.MidAcc.HeavyDef = set_combine(sets.engaged.LowDW.LowAcc.HeavyDef, {
     feet="Malignance Boots",            -- __,  9, 50, __ <__, __, __> (__, __) [ 4/ 4, 150]  2
@@ -1370,8 +1406,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 12 DW, 51 STP, 296 Acc, 56 TA Dmg <0 DA, 37 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
     
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 12 DW, 59 STP, 316 Acc, 56 TA Dmg <0 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
+    -- 12 DW, 59 STP, 321 Acc, 56 TA Dmg <0 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 616 MEVA] 21 PDL
   }
   sets.engaged.MidDW.LowAcc.HeavyDef = set_combine(sets.engaged.MidDW.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1409,6 +1446,9 @@ function init_gear_sets()
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 26 DW, 41 STP, 296 Acc, 56 TA Dmg <0 DA, 33 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 584 MEVA] 21 PDL
+    
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
+    -- 26 DW, 41 STP, 301 Acc, 56 TA Dmg <0 DA, 33 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 624 MEVA] 21 PDL
   }
   sets.engaged.HighDW.LowAcc.HeavyDef = set_combine(sets.engaged.HighDW.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1445,24 +1485,24 @@ function init_gear_sets()
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 37 DW, 22 STP, 269 Acc, 51 TA Dmg <0 DA, 28 TA, 0 QA> (0 Crit Rate, 26 Crit Dmg) [49 PDT/31 MDT, 506 MEVA] 8 PDL
+    
+    -- hands="Pillager's Armlets +4",   --  5, __, 58, __ <__, __, __> (__,  4) [__/__,  92] __; AF set
+    -- feet="Plunderer's Poulaines +4", -- __, __, 41, 11 <__,  5, __> (__, __) [__/__, 129] __
   }
   sets.engaged.SuperDW.LowAcc.HeavyDef = set_combine(sets.engaged.SuperDW.HeavyDef, {
     feet="Malignance Boots",            -- __,  9, 50, __ <__, __, __> (__, __) [ 4/ 4, 150]  2
     ring2="Moonlight Ring",             -- __,  5,  8, __ <__, __, __> (__, __) [ 5/ 5, ___] __
-    -- 37 DW, 36 STP, 291 Acc, 40 TA Dmg <0 DA, 23 TA, 0 QA> (0 Crit Rate, 26 Crit Dmg) [51 PDT/41 MDT, 567 MEVA] 10 PDL
   })
   sets.engaged.SuperDW.MidAcc.HeavyDef = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
     hands="Gleti's Gauntlets",          -- __,  8, 55, __ <__, __, __> ( 6, __) [ 7/__,  75]  7
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
-    -- 32 DW, 47 STP, 338 Acc, 45 TA Dmg <0 DA, 27 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 590 MEVA] 17 PDL
   })
   sets.engaged.SuperDW.HighAcc.HeavyDef = set_combine(sets.engaged.SuperDW.MidAcc.HeavyDef, {
     feet="Skulker's Poulaines +3",      -- __, __, 60, __ <__, __, __> (__, __) [11/11, 125] __
     ear1="Telos Earring",               -- __,  5, 10, __ < 1, __, __> (__, __) [__/__, ___] __
     ear2="Dignitary's Earring",         -- __,  3, 10, __ <__, __, __> (__, __) [__/__, ___] __; Use skulker +1 if you have it
     ring2="Chirich Ring +1",            -- __,  6, 10, __ <__, __, __> (__, __) [__/__, ___] __
-    -- 23 DW, 47 STP, 370 Acc, 45 TA Dmg <1 DA, 27 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [51 PDT/34 MDT, 557 MEVA] 15 PDL
   })
 
   -- Max DW (44 needed from gear)
@@ -1482,23 +1522,22 @@ function init_gear_sets()
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
     -- 42 DW, 27 STP, 264 Acc, 40 TA Dmg <0 DA, 25 TA, 0 QA> (0 Crit Rate, 26 Crit Dmg) [49 PDT/37 MDT, 492 MEVA] 8 PDL
+    
+    -- hands="Pillager's Armlets +4",   --  5, __, 58, __ <__, __, __> (__,  4) [__/__,  92] __; AF set
   }
   sets.engaged.MaxDW.LowAcc.HeavyDef = set_combine(sets.engaged.MaxDW.HeavyDef, {
     hands="Gleti's Gauntlets",          -- __,  8, 55, __ <__, __, __> ( 6, __) [ 7/__,  75]  7
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
-    -- 37 DW, 35 STP, 296 Acc, 45 TA Dmg <0 DA, 29 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/31 MDT, 500 MEVA] 15 PDL
   })
   sets.engaged.MaxDW.MidAcc.HeavyDef = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
     feet="Malignance Boots",            -- __,  9, 50, __ <__, __, __> (__, __) [ 4/ 4, 150]  2
-    -- 32 DW, 47 STP, 338 Acc, 45 TA Dmg <0 DA, 27 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 590 MEVA] 17 PDL
   })
   sets.engaged.MaxDW.HighAcc.HeavyDef = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef, {
     feet="Skulker's Poulaines +3",      -- __, __, 60, __ <__, __, __> (__, __) [11/11, 125] __
     ear1="Telos Earring",               -- __,  5, 10, __ < 1, __, __> (__, __) [__/__, ___] __
     ear2="Dignitary's Earring",         -- __,  3, 10, __ <__, __, __> (__, __) [__/__, ___] __
     ring1="Moonlight Ring",             -- __,  5,  8, __ <__, __, __> (__, __) [ 5/ 5, ___] __
-    -- 32 DW, 43 STP, 356 Acc, 45 TA Dmg <0 DA, 27 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [51 PDT/34 MDT, 565 MEVA] 15 PDL
   })
 
 
@@ -1527,6 +1566,7 @@ function init_gear_sets()
   }
   sets.buff['Trick Attack'] = {
     hands="Pillager's Armlets +3", -- TA+20
+    -- hands="Pillager's Armlets +4", -- TA+20
   }
   sets.buff['Feint'] = set_combine(sets.precast.JA['Feint'], {})
 end

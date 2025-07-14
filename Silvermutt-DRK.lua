@@ -488,28 +488,30 @@ function init_gear_sets()
 
   sets.precast.JA['Blood Weapon'] = {
     body="Fallen's Cuirass +3", -- Duration +10s; +1 is acceptable
+    -- body="Fallen's Cuirass +4", -- Duration +10s; +1 is acceptable
   }
   sets.precast.JA['Arcane Circle'] = {
     feet="Ignominy Sollerets +1", -- Duration +50%, potency +2%; +1 is acceptable
-    -- feet="Ignominy Sollerets +3", -- Duration +50%, potency +2%; +1 is acceptable
+    -- feet="Ignominy Sollerets +4", -- Duration +50%, potency +2%; +1 is acceptable
   }
   sets.precast.JA['Last Resort'] = {
     back=gear.DRK_FC_Cape,
   }
   sets.precast.JA['Weapon Bash'] = {
     hands="Ignominy Gauntlets +2", -- Increase damage, add Chainbound effect
-    -- hands="Ignominy Gauntlets +3", -- Increase damage, add Chainbound effect
+    -- hands="Ignominy Gauntlets +4", -- Increase damage, add Chainbound effect
   }
   sets.precast.JA['Weapon Bash'].Enmity = set_combine(sets.Enmity, {
     hands="Ignominy Gauntlets +2", -- Increase damage, add Chainbound effect
-    -- hands="Ignominy Gauntlets +3", -- Increase damage, add Chainbound effect
+    -- hands="Ignominy Gauntlets +4", -- Increase damage, add Chainbound effect
   })
   sets.precast.JA['Souleater'] = {
     head="Ignominy Burgeonet +1", -- Increase HP consumption and attack boost
-    -- head="Ignominy Burgeonet +3", -- Increase HP consumption and attack boost
+    -- head="Ignominy Burgeonet +4", -- Increase HP consumption and attack boost
   }
   sets.precast.JA['Diabolic Eye'] = {
     hands="Fallen's Finger Gauntlets +3", -- Increase duration based on merits; +1 is acceptable
+    -- hands="Fallen's Finger Gauntlets +4", -- Increase duration based on merits; +1 is acceptable
   }
   sets.precast.JA['Nether Void'] = {
     legs="Heathen's Flanchards +3", -- Increase potency
@@ -850,6 +852,10 @@ function init_gear_sets()
     waist="Eschan Stone",                     -- __, __, __ { 7, __,  7} [__/__, ___]
     -- DRK traits/gifts/etc                               8
     -- 121 DEX, 225 INT, 43 WSD {277 MAB, 41 M.Dmg, 270 M.Acc} [35 PDT/25 MDT, 506 M.Eva]
+    
+    -- body="Fallen's Cuirass +4",            -- 32, 35, __ {63, __, 45} [__/__, 108]
+    -- hands="Fallen's Finger Gauntlets +4",  -- 39, 27, __ {65, __, 43} [__/__,  86]
+    -- 121 DEX, 231 INT, 43 WSD {283 MAB, 41 M.Dmg, 280 M.Acc} [35 PDT/25 MDT, 586 M.Eva]
   }
 
   sets.precast.WS['Armor Break'] = {
@@ -948,6 +954,9 @@ function init_gear_sets()
     back=gear.DRK_FC_Cape,                      -- [10/__, ___]
     waist="Platinum Moogle Belt",               -- [ 3/ 3,  15]
     -- [49 PDT/39 MDT, 615 M.Eva]
+    
+    -- head="Fallen's Burgeonet +4",            -- [__/__,  92]; Duration+50%
+    -- [49 PDT/39 MDT, 655 M.Eva]
   }
 
   -- Not affected by skill.
@@ -997,6 +1006,10 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",           -- __ [ 3/ 3,  15]
     -- ML30 traits                            483
     -- 595 Dark skill [15 PDT/21 MDT, 435 M.Eva]
+    
+    -- head="Fallen's Burgeonet +4",        -- __ [__/__,  92]; Duration+50%
+    -- hands="Fallen's Finger Gauntlets +4",-- 19 [__/__,  86]
+    -- 596 Dark skill [15 PDT/21 MDT, 515 M.Eva]
   }
 
   -- Dark skill only affects acc, not potency.
@@ -1015,6 +1028,9 @@ function init_gear_sets()
     back="Chuparrosa Mantle",               -- __, __, __, 10 [__/__, ___]; Duration+20s
     waist="Null Belt",                      -- __, 30, __, __ [__/__,  30]
     -- 138 INT, 324 M.Acc, 64 Dark skill, 15 Absorb Potency% [19 PDT/25 MDT, 486 M.Eva]
+    
+    -- head="Fallen's Burgeonet +4",        -- 25, 42, __, __ [__/__,  92]; Duration+50%
+    -- 141 INT, 329 M.Acc, 64 Dark skill, 15 Absorb Potency% [19 PDT/25 MDT, 526 M.Eva]
   }
   sets.AbsorbWeapon = {
     -- main="Liberator",
@@ -1068,6 +1084,11 @@ function init_gear_sets()
     -- 129 INT, 244 M.Acc, 577 Dark skill, 59 Drain/Aspir Potency, 5 Dark Affinity [6 PDT/10 MDT, 380 M.Eva] 745 HP
     -- D2 Potency = 742, Drained = 2777 w/ nether void
     -- D3 Potency = 970.5, Drained = 3633 w/ nether void
+    
+    -- head="Fallen's Burgeonet +4",            -- 25, 42, __, __, __ [__/__,  92]  96; Duration+50%
+    -- 132 INT, 249 M.Acc, 577 Dark skill, 59 Drain/Aspir Potency, 5 Dark Affinity [6 PDT/10 MDT, 420 M.Eva] 745 HP
+    -- D2 Potency = 742, Drained = 2777 w/ nether void
+    -- D3 Potency = 970.5, Drained = 3633 w/ nether void
   }
   sets.DrainWeapon = {
     -- main="Father Time",
@@ -1093,6 +1114,9 @@ function init_gear_sets()
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __ [10/__, ___]
     waist="Null Belt",                      -- __, 30, __ [__/__,  30]
     -- 214 INT, 366 M.Acc, 82 Dark skill [22 PDT/16 MDT, 448 M.Eva]
+    
+    -- hands="Fallen's Finger Gauntlets +4",-- 27, 43, 19 [__/__,  86]
+    -- 217 INT, 371 M.Acc, 83 Dark skill [22 PDT/16 MDT, 488 M.Eva]
   }
   sets.midcast.Stun.Enmity = set_combine(sets.Enmity, {})
 
@@ -1111,6 +1135,10 @@ function init_gear_sets()
     back=gear.DRK_MAB_Cape,                 -- 30, 20, 10, 20 [10/__, ___]
     waist="Skrymir Cord",                   -- __,  5,  5, 30 [__/__, ___]
     -- 218 INT, 276 M.Acc, 279 MAB, 50 M.Dmg [35 PDT/25 MDT, 506 M.Eva]
+    
+    -- body="Fallen's Cuirass +4",          -- 35, 45, 63, __ [__/__, 108]
+    -- hands="Fallen's Finger Gauntlets +4",-- 27, 43, 65, __ [__/__,  86]
+    -- 224 INT, 286 M.Acc, 285 MAB, 50 M.Dmg [35 PDT/25 MDT, 586 M.Eva]
   }
 
   -- Elemental magic
@@ -1153,6 +1181,9 @@ function init_gear_sets()
     back=gear.DRK_STP_Cape,                         -- 10, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Sailfi Belt +1",                         -- __, __ < 5,  2, __> (__, __) [__/__, ___]  9
     -- 73 STP, 288 Acc <32 DA, 7 TA, 0 QA> (17 Crit Rate, 0 Crit Dmg) [40 PDT/30 MDT, 404 MEVA] 24 Haste
+    
+    -- legs="Ignominy Flanchard +4",                -- __, 59 <10, __, __> (__, __) [__/__, 109]  5
+    -- 73 STP, 288 Acc <32 DA, 7 TA, 0 QA> (17 Crit Rate, 0 Crit Dmg) [40 PDT/30 MDT, 429 MEVA] 24 Haste
   }
   -- TODO
   sets.engaged.LowAcc = set_combine(sets.engaged, {

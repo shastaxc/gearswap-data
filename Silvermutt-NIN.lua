@@ -300,6 +300,7 @@ function init_gear_sets()
   }
   sets.Kiting.NightMovement = {
     feet="Hachiya Kyahan +3",
+    -- feet="Hachiya Kyahan +4",
   }
 
   sets.CP = {
@@ -326,9 +327,10 @@ function init_gear_sets()
 
     -- head="Hattori Zukin +3",                         -- 10/10, 119 [ 71] <__>
     -- legs="Hattori Hakama +3",                        -- 12/12, 135 [ 80] <__>
+    -- feet="Mochizuki Kyahan +4",                      -- __/__, 124 [ 43] < 8>
     -- ear1="Pluto's Pearl",                            -- __/__, ___ [___] < 4>
     -- back=gear.NIN_Enmity_Cape,                       -- 10/__, ___ [___] <10>
-    -- 50 PDT / 34 MDT, 474 M.Eva [410 HP] <70 Enmity>
+    -- 50 PDT / 34 MDT, 514 M.Eva [420 HP] <70 Enmity>
   }
 
 
@@ -432,8 +434,10 @@ function init_gear_sets()
     -- Traits                            35
     -- 103 DW [33 PDT/17 MDT, 319 M.Eva] 282 Evasion
 
+    -- body="Mochizuki Chainmail +4", --  9 [__/__, 113]  97
     -- hands="Floral Gauntlets",      --  5 [__/ 4,  37]  24
-    -- 103 DW [33 PDT/19 MDT, 319 M.Eva] 282 Evasion
+    -- legs="Mochizuki Hakama +4",    -- 10 [__/__, 124]  88
+    -- 103 DW [33 PDT/19 MDT, 399 M.Eva] 332 Evasion
   }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
@@ -459,9 +463,11 @@ function init_gear_sets()
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Mijin Gakure'] = {
     legs="Mochizuki Hakama +3", -- Damage +50%; +1 is acceptable
+    -- legs="Mochizuki Hakama +4", -- Damage +50%; +1 is acceptable
   }
   sets.precast.JA['Sange'] = {
     body="Mochizuki Chainmail +3", -- Increase ranged attack based on merits; +1 is acceptable
+    -- body="Mochizuki Chainmail +4", -- Increase ranged attack based on merits; +1 is acceptable
   }
 
   sets.precast.Waltz = {
@@ -504,8 +510,9 @@ function init_gear_sets()
     -- JP/Merit/Gifts                    20 [__/__, ___]
     -- 84 FC [29 PDT/15 MDT, 338 M.Eva]
 
+    -- body="Mochizuki Chainmail +4", -- 14 [__/__, 113]
     -- legs="Hattori Hakama +3",      -- __ [12/12, 135]
-    -- 79 FC [41 PDT/27 MDT, 404 M.Eva]
+    -- 79 FC [41 PDT/27 MDT, 444 M.Eva]
   })
 
 
@@ -580,6 +587,8 @@ function init_gear_sets()
     ring2="Ephramad's Ring",
     back=gear.NIN_WSD_STR_Cape,
     waist="Eschan Stone",
+    
+    -- head="Mochizuki Hatsuburi +4",
   }
   sets.HybridWS.MaxTP = set_combine(sets.HybridWS, {
     ear1="Novio Earring",
@@ -600,6 +609,7 @@ function init_gear_sets()
     back=gear.NIN_WSD_STR_Cape,
     waist="Eschan Stone",
 
+    -- head="Mochizuki Hatsuburi +4",
     -- ear2="Hattori Earring +2"
   }
   sets.HybridWS.AttCappedMaxTP = set_combine(sets.HybridWS.AttCapped, {
@@ -636,6 +646,8 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.NIN_MAB_Cape,
     waist="Eschan Stone",
+    
+    -- head="Mochizuki Hatsuburi +4",
   }
   sets.precast.WS['Blade: Ei'].MaxTP = set_combine(sets.precast.WS['Blade: Ei'], {
     ear1="Novio Earring",
@@ -660,6 +672,8 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.NIN_MAB_Cape,
     waist="Eschan Stone",
+    
+    -- head="Mochizuki Hatsuburi +4",
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear1="Novio Earring",
@@ -738,6 +752,7 @@ function init_gear_sets()
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
+    -- head="Hachiya Hatsuburi +4",
     -- ear2="Hattori Earring +2",
     -- back=gear.NIN_WSD_STR_Cape,
   }
@@ -1085,7 +1100,9 @@ function init_gear_sets()
     waist="Eschan Stone",             -- __,  7, __,  7, __ (__, __) [__/__, ___]
     -- 200 INT, 215 MAB, 23 MAccSk, 232 M.Acc, 41 MDmg (23 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 539 M.Eva]
 
-    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __, (15, __) [__/__, 103]; Ninjutsu dmg +18%
+    -- head="Mochizuki Hatsuburi +4", -- 35, 85, __, 42, __ (__, __) [__/__, 103]
+    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __ (15, __) [__/__, 103]; Ninjutsu dmg +18%
+    -- feet="Mochizuki Kyahan +4",    -- __, __, 24, 41, __ (__, __) [__/__, 124]; MAB+25%
   }
   sets.midcast.ElementalNinjutsu.MB = {
     range="empty",
@@ -1104,8 +1121,9 @@ function init_gear_sets()
     waist="Eschan Stone",             -- __,  7, __,  7, __ (__, __) [__/__, ___]
     -- 181 INT, 202 MAB, 23 MAccSk, 232 M.Acc, 41 MDmg (33 MB Dmg%, 5 MB2 Dmg%) [27 PDT/17 MDT, 539 M.Eva]
 
-    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __, (15, __) [__/__, 103]; Ninjutsu dmg +18%
-    -- 186 INT, 204 MAB, 23 MAccSk, 242 M.Acc, 41 MDmg (38 MB Dmg%, 5 MB2 Dmg%) [27 PDT/17 MDT, 549 M.Eva]
+    -- head="Mochizuki Hatsuburi +4", -- 35, 85, __, 42, __ (__, __) [__/__, 103]
+    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __ (15, __) [__/__, 103]; Ninjutsu dmg +18%
+    -- feet="Mochizuki Kyahan +4",    -- __, __, 24, 41, __ (__, __) [__/__, 124]; MAB+25%
   }
 
   -- Mostly for Ongo who has 445 INT at v25. Your dINT is less than -70 so INT is too low to help with M.Acc.
@@ -1129,9 +1147,11 @@ function init_gear_sets()
     waist="Eschan Stone",             -- __,  7, __,  7, __ (__, __) [__/__, ___]
     -- 185 INT, 113 MAB, 48 MAccSk, 313 M.Acc, 20 MDmg (23 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 554 M.Eva]
 
+    -- head="Hachiya Hatsuburi +4",   -- 31, __, 18, 64, __ (__, __) [__/__,  88]
     -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __ (15, __) [__/__, 103]; Ninjutsu dmg +18%
+    -- feet="Mochizuki Kyahan +4",    -- __, __, 24, 41, __ (__, __) [__/__, 124]; MAB+25%
     -- ear2="Novio Earring",          -- __,  7, __, __, __ (__, __) [__/__, ___]; Equip when Hattori Tekko +3
-    -- 190 INT, 122 MAB, 48 MAccSk, 311 M.Acc, 20 MDmg (28 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 554 M.Eva]
+    -- 190 INT, 122 MAB, 48 MAccSk, 322 M.Acc, 20 MDmg (28 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 579 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Resistant.MB = set_combine(sets.midcast.ElementalNinjutsu.Resistant, {})
 
@@ -1152,11 +1172,13 @@ function init_gear_sets()
     waist="Eschan Stone",             --  7, __ [__/__, ___]
     -- 323 M.Acc, 58 Ninjutsu [43 PDT/33 MDT, 499 M.Eva]
     
+    -- head="Hachiya Hatsuburi +4",   -- 64, 18 [__/__,  88]
     -- body="Hattori Ningi +3",       -- 64, __ [13/13, 129]
     -- hands="Hattori Tekko +3",      -- 62, __ [__/__, 103]
     -- legs="Hattori Hakama +3",      -- 63, __ [12/12, 135]
+    -- feet="Mochizuki Kyahan +4",    -- 41, 24 [__/__, 124]
     -- ear2="Hattori Earring +2",     -- 20, __ [__/__, ___]
-    -- 362 M.Acc, 58 Ninjutsu [45 PDT/35 MDT, 529 M.Eva]
+    -- 377 M.Acc, 60 Ninjutsu [45 PDT/35 MDT, 594 M.Eva]
   }
 
   -- The only enhancing ninjutsu that scales with skill is Migawari, but at ML50 the threshold is already down
@@ -1180,12 +1202,12 @@ function init_gear_sets()
 
     -- head="Hattori Zukin +3",       -- __ [10/10, 119]
     -- body="Hattori Ningi +3",       -- __ [13/13, 129]
-    -- hands="Mochizuki Tekko +3",    -- 38 [__/__,  46]
+    -- hands="Mochizuki Tekko +4",    -- 38 [__/__,  86]
     -- legs="Hattori Hakama +3",      -- __ [12/12, 135]
     -- feet="Hattori Kyahan +3",      -- __ [__/__, 125]; Tactical parry+26
     -- waist="Gosha Sarashi",         --  5 [__/__, ___]
     -- Merits/Gifts                      25
-    -- 68 Ninja Tool Expertise [51 PDT/53 MDT, 569 M.Eva]
+    -- 68 Ninja Tool Expertise [51 PDT/53 MDT, 609 M.Eva]
   }
 
   sets.midcast.Stun = set_combine(sets.midcast.EnfeeblingNinjutsu, {})
@@ -1270,6 +1292,8 @@ function init_gear_sets()
     ammo="Date Shuriken",             -- __, __,   5/ 5 <__, __, __> [__/__, ___]   5, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    
+    -- body="Mochizuki Chainmail +4", --  9, __,  56/52 <__, __, __> [__/__, 113]  97, 10
   })
   sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1325,9 +1349,10 @@ function init_gear_sets()
     -- Traits/gifts/etc                                                                54
     -- 25 DW, 78 STP, 301 Acc/217 R.Acc <4 DA, 6 TA, 0 QA> [32 PDT/22 MDT, 463 M.Eva] 349 Evasion, 89 Daken
     
+    -- body="Mochizuki Chainmail +4", --  9, __,  56/52 <__, __, __> [__/__, 113]  97, 10
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- 25 DW, 81 STP, 311 Acc/207 R.Acc <3 DA, 6 TA, 0 QA> [32 PDT/22 MDT, 463 M.Eva] 349 Evasion, 89 Daken
+    -- 25 DW, 81 STP, 316 Acc/212 R.Acc <3 DA, 6 TA, 0 QA> [32 PDT/22 MDT, 503 M.Eva] 374 Evasion, 89 Daken
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
   })
@@ -1385,8 +1410,9 @@ function init_gear_sets()
     -- Traits/gifts/etc                                                                54
     -- 39 DW, 64 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
     
+    -- body="Mochizuki Chainmail +4", --  9, __,  56/52 <__, __, __> [__/__, 113]  97, 10
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- 39 DW, 64 STP, 311 Acc/267 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
+    -- 39 DW, 64 STP, 316 Acc/272 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 581 M.Eva] 432 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -1534,8 +1560,9 @@ function init_gear_sets()
     -- 33 DW, 47 STP, 309 Acc/255 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 525 M.Eva] 391 Evasion, 89 Daken
 
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
+    -- body="Mochizuki Chainmail +4", --  9, __,  56/52 <__, __, __> [__/__, 113]  97, 10
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- 33 DW, 47 STP, 349 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
+    -- 33 DW, 47 STP, 354 Acc/280 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 575 M.Eva] 426 Evasion, 89 Daken
   }
   sets.engaged.SuperDW.LowAcc.HeavyDef = set_combine(sets.engaged.SuperDW.HeavyDef, {
   })
@@ -1564,7 +1591,8 @@ function init_gear_sets()
     -- 38 DW, 39 STP, 319 Acc/265 R.Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 525 M.Eva] 391 Evasion, 89 Daken
 
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
-    -- 38 DW, 39 STP, 329 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
+    -- body="Mochizuki Chainmail +4", --  9, __,  56/52 <__, __, __> [__/__, 113]  97, 10
+    -- 38 DW, 39 STP, 334 Acc/280 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 575 M.Eva] 426 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.LowAcc.HeavyDef = set_combine(sets.engaged.MaxDW.HeavyDef, {
   })

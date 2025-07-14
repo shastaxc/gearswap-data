@@ -439,6 +439,7 @@ function init_gear_sets()
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
     legs="Hesychast's Hose +3", -- Duration +15s; +1 is acceptable
+    -- legs="Hesychast's Hose +4", -- Duration +15s; +1 is acceptable
   }
   sets.precast.JA['Boost'] = {
     waist="Ask Sash",
@@ -459,12 +460,15 @@ function init_gear_sets()
   }
   sets.precast.JA['Dodge'] = {
     feet="Anchorite's Gaiters +3", -- Increase evasion
+    -- feet="Anchorite's Gaiters +4", -- Increase evasion
   }
   sets.precast.JA['Focus'] = {
     head="Anchorite's Crown +3", -- Increase acc and ranged acc
+    -- head="Anchorite's Crown +4", -- Increase acc and ranged acc
   }
   sets.precast.JA['Counterstance'] = {
     feet="Hesychast's Gaiters +3", -- Increase counter rate
+    -- feet="Hesychast's Gaiters +4", -- Increase counter rate
   }
   sets.precast.JA['Footwork'] = {
     feet="Bhikku Gaiters +3", -- Increase attack
@@ -474,6 +478,7 @@ function init_gear_sets()
   }
   sets.precast.JA['Mantra'] = {
     feet="Hesychast's Gaiters +3", -- Increase HP based on merits; +1 is acceptable
+    -- feet="Hesychast's Gaiters +4", -- Increase HP based on merits; +1 is acceptable
   }
 
   -- MND
@@ -490,8 +495,8 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",
     ring1="Defending Ring",
     ring2="Gelatinous Ring +1",
-    -- body="Anchorite's Cyclas +3", -- Increase HP restore, add chance to remove Paralyze
-    -- hands="Hesychast's Gloves +3", -- Increase HP restore, add chance to remove Plague
+    -- body="Anchorite's Cyclas +4", -- Increase HP restore, add chance to remove Paralyze
+    -- hands="Hesychast's Gloves +4", -- Increase HP restore, add chance to remove Plague
   }
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {
@@ -1046,6 +1051,9 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Moonbow Belt +1",          -- 20, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___] ___
     -- 257 STR, 186 DEX, 331 Att, 290 Acc, 36 WSD, 10 PDL <41 DA, 16 TA, 3 QA> [47 PDT/24 MDT, 554 M.Eva] 140 KA att
+    
+    -- feet="Anchorite's Gaiters +4", -- 24, 35, __, 56, __, __ <__, __, __> [__/__, 109] 120
+    -- 257 STR, 191 DEX, 331 Att, 300 Acc, 36 WSD, 10 PDL <41 DA, 16 TA, 3 QA> [47 PDT/24 MDT, 579 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].MaxTP = set_combine(sets.precast.WS['Dragon Kick'], {
     ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
@@ -1065,6 +1073,9 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Moonbow Belt +1",          -- 20, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___] ___
     -- 270 STR, 170 DEX, 274 Att, 294 Acc, 25 WSD, 20 PDL <36 DA, 17 TA, 3 QA> [42 PDT/17 MDT, 485 M.Eva] 140 KA att
+    
+    -- feet="Anchorite's Gaiters +4", -- 24, 35, __, 56, __, __ <__, __, __> [__/__, 109] 120
+    -- 270 STR, 175 DEX, 274 Att, 304 Acc, 25 WSD, 20 PDL <36 DA, 17 TA, 3 QA> [42 PDT/17 MDT, 510 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].AttCappedMaxTP = set_combine(sets.precast.WS['Dragon Kick'].AttCapped, {
     ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
@@ -1088,6 +1099,9 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,        -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Moonbow Belt +1",          -- 20, 20, __, __, __, __ <__,  8, __> [ 6/ 6, ___] ___
     -- 250 STR, 186 DEX, 320 Att, 310 Acc, 36 WSD, 23 PDL <38 DA, 11 TA, 3 QA> [50 PDT/33 MDT, 554 M.Eva] 140 KA att
+    
+    -- feet="Anchorite's Gaiters +4", -- 24, 35, __, 56, __, __ <__, __, __> [__/__, 109] 120
+    -- 250 STR, 191 DEX, 320 Att, 320 Acc, 36 WSD, 23 PDL <38 DA, 11 TA, 3 QA> [50 PDT/33 MDT, 579 M.Eva] 140 KA att
   }
   sets.precast.WS['Dragon Kick'].SafeAttCappedMaxTP = set_combine(sets.precast.WS['Dragon Kick'].Safe, {
     ear2="Sherida Earring",           --  5,  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
@@ -1209,64 +1223,67 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.VerethragnaAM = {
-    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
-    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
-    body="Malignance Tabard",       -- 11, 50,  6, __, __ <__, __, __> [ 9/ 9, 139] (___, __) __, __, __(__)
-    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
-    legs="Hesychast's Hose +3",     -- __, 39, __,  8, __ <__, __, __> [__/__,  84] (___, 19) __, __, 10(__)
-    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
-    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
-    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
-    ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
-    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
-    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
-    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
+    ammo="Crepuscular Pebble",        -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
+    head="Malignance Chapeau",        --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
+    body="Malignance Tabard",         -- 11, 50,  6, __, __ <__, __, __> [ 9/ 9, 139] (___, __) __, __, __(__)
+    hands="Malignance Gloves",        -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
+    legs="Hesychast's Hose +3",       -- __, 39, __,  8, __ <__, __, __> [__/__,  84] (___, 19) __, __, 10(__)
+    feet="Anchorite's Gaiters +3",    -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
+    neck="Monk's Nodowa +2",          -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
+    ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
+    ear2="Bhikku Earring +1",         --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
+    ring1="Gere Ring",                -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
+    ring2="Niqmaddu Ring",            -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
+    back=gear.MNK_DEX_DA_Cape,        -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
+    waist="Moonbow Belt +1",          -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
+    -- Merits/Traits/Gifts               __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
     -- 40 STP, 300 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 70 Subtle Blow
 
     -- Ideal:
-    -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
-    -- 42 STP, 305 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 70 Subtle Blow
+    -- legs="Hesychast's Hose +4",    -- __, 44, __,  8, __ <__, __, __> [__/__, 124] (___, 19) __, __, 10(__)
+    -- feet="Anchorite's Gaiters +4", -- __, 56, __, __, __ <__, __, __> [__/__, 109] (120, 10) __, __, __(__)
+    -- ear2="Bhikku Earring +2",      --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
+    -- 42 STP, 320 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 607 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 70 Subtle Blow
   }
   sets.engaged.VerethragnaAM.Impetus = set_combine(sets.engaged.VerethragnaAM, {
-    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
-    legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    body="Bhikku Cyclas +3",          -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
+    legs="Bhikku Hose +3",            -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
     -- 39 STP, 338 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- Ideal:
-    -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 60 Subtle Blow
+    -- 41 STP, 358 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 612 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 60 Subtle Blow
   })
 
   sets.engaged.VerethragnaAM.HeavyDef = {
-    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
-    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
-    body="Malignance Tabard",       -- 11, 50,  6, __, __ <__, __, __> [ 9/ 9, 139] (___, __) __, __, __(__)
-    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
-    legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
-    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
-    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
-    ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
-    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
-    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
-    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
+    ammo="Crepuscular Pebble",        -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
+    head="Malignance Chapeau",        --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
+    body="Malignance Tabard",         -- 11, 50,  6, __, __ <__, __, __> [ 9/ 9, 139] (___, __) __, __, __(__)
+    hands="Malignance Gloves",        -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
+    legs="Bhikku Hose +3",            -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    feet="Anchorite's Gaiters +3",    -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
+    neck="Monk's Nodowa +2",          -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
+    ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
+    ear2="Bhikku Earring +1",         --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
+    ring1="Gere Ring",                -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
+    ring2="Niqmaddu Ring",            -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
+    back=gear.MNK_DEX_DA_Cape,        -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
+    waist="Moonbow Belt +1",          -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
+    -- Merits/Traits/Gifts               __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
     -- 50 STP, 323 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 577 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- Ideal:
-    -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
-    -- 52 STP, 329 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 577 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 36 Counter, 60 Subtle Blow
+    -- feet="Anchorite's Gaiters +4", -- __, 56, __, __, __ <__, __, __> [__/__, 109] (120, 10) __, __, __(__)
+    -- ear2="Bhikku Earring +2",      --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
+    -- 52 STP, 339 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 602 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 36 Counter, 60 Subtle Blow
   }
   sets.engaged.VerethragnaAM.HeavyDef.Impetus = set_combine(sets.engaged.VerethragnaAM.HeavyDef, {
-    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
-    legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    ring2="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
+    body="Bhikku Cyclas +3",          -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
+    legs="Bhikku Hose +3",            -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    ring2="Defending Ring",           -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
     -- 39 STP, 338 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 55 Subtle Blow
 
     -- Ideal:
-    -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
+    -- 41 STP, 353 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 572 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
   })
 
 
@@ -1285,25 +1302,29 @@ function init_gear_sets()
   }
   sets.Counterstance = {
     feet="Hesychast's Gaiters +3",
+    -- feet="Hesychast's Gaiters +4",
   }
   sets.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
   sets.Schere = { ear2="Schere Earring", }
   sets.CaitSith = {
-    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
-    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
-    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__); Aug Impetus
-    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
-    legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
-    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
-    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    ring1="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
-    ring2="Brass Ring +1",          -- __, __, __, __, __ <__, __, __> [__/__, ___] (___, __) __, __, __(__)
-    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
-    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
-    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
+    ammo="Crepuscular Pebble",        -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
+    head="Malignance Chapeau",        --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
+    body="Bhikku Cyclas +3",          -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__); Aug Impetus
+    hands="Malignance Gloves",        -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
+    legs="Bhikku Hose +3",            -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    feet="Anchorite's Gaiters +3",    -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
+    neck="Monk's Nodowa +2",          -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
+    ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
+    ear2="Bhikku Earring +1",         --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
+    ring1="Defending Ring",           -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
+    ring2="Brass Ring +1",            -- __, __, __, __, __ <__, __, __> [__/__, ___] (___, __) __, __, __(__)
+    back=gear.MNK_DEX_DA_Cape,        -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
+    waist="Moonbow Belt +1",          -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
+    -- Merits/Traits/Gifts               __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
     -- 39 STP, 328 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 0 QA> [44 PDT/34 MDT, 537 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
+    
+    -- feet="Anchorite's Gaiters +4", -- __, 56, __, __, __ <__, __, __> [__/__, 109] (120, 10) __, __, __(__)
+    -- 39 STP, 338 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 0 QA> [44 PDT/34 MDT, 562 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
   }
   sets.BoostRegain = {
     waist="Ask Sash",

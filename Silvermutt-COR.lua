@@ -596,6 +596,7 @@ function init_gear_sets()
   }
   sets.precast.FoldDoubleBust = {
     hands="Lanun Gants +3", -- Add chance to clear 2 Busts; +1 is acceptable
+    -- hands="Lanun Gants +4", -- Add chance to clear 2 Busts; +1 is acceptable
   }
 
   -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.

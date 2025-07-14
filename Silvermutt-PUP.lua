@@ -554,7 +554,7 @@ end
 -- head=gear.Taeon_Pet_DT_head,     -- [__/__,  73] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
 -- body=gear.Taeon_Pet_DT_body,     -- [__/__,  84] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
 -- hands=gear.Taeon_Pet_DT_hands,   -- [__/__,  57] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
--- legs="Foire Churidars +3",       -- [__/__, 104] { 6/ 6, ___}
+-- legs="Foire Churidars +4",       -- [__/__, 109] { 6/ 6, ___}
 -- legs="Tali'ah Seraweels +2",     -- [__/__,  69] { 5/ 5, ___}
 -- legs=gear.Taeon_Pet_DT_legs,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
 -- feet=gear.Taeon_Pet_DT_feet,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
@@ -631,6 +631,9 @@ function init_gear_sets()
     back=gear.PUP_TP_Cape,            -- __ [__/__, ___] { 5/ 5,   1 | __, __}
     waist="Moonbow Belt +1",          -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
     -- 17 Regen [48 PDT/40 MDT, 458 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 10 Regen, 5 Refresh}
+    
+    -- head="Pitre Taj +4",           --  5 [__/__, 103] {__/__, ___ |  5,  5}
+    -- 17 Regen [48 PDT/40 MDT, 498 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 10 Regen, 5 Refresh}
   }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
@@ -692,8 +695,9 @@ function init_gear_sets()
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
     -- [33 PDT/27 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 29 STP, 389 Acc/374 Racc, 142 Att/147 Ratt, 9 Haste, 16 Regen, 0 Enmity}
     
+    -- head="Pitre Taj +4",           -- [__/__, 103] {__/__, ___ | __, __, 42/42, 67/67, __,  5, __}
     -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- [33 PDT/27 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 29 STP, 389 Acc/374 Racc, 142 Att/147 Ratt, 9 Haste, 16 Regen, 0 Enmity}
+    -- [33 PDT/27 MDT, 493 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 29 STP, 394 Acc/379 Racc, 152 Att/157 Ratt, 9 Haste, 16 Regen, 0 Enmity}
   }
   sets.idle.PetEngaged.RangedSpam = set_combine(sets.idle.PetEngaged.RangedSC, {})
   sets.idle.PetEngaged.MeleeSpam = {
@@ -711,6 +715,10 @@ function init_gear_sets()
     back=gear.PUP_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5,   1 | __, __, 20/20, 30/30, 10, __, __}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
     -- [33 PDT/27 MDT, 443 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 10 DA, 29 STP, 389 Acc/354 Racc, 167 Att/147 Ratt, 19 Haste, 5 Regen, 0 Enmity}
+    
+    -- head="Pitre Taj +4",           -- [__/__, 103] {__/__, ___ | __, __, 42/42, 67/67, __,  5, __}
+    -- body="Pitre Tobe +4",          -- [__/__, 113] {__/__, ___ | __, 15, 55/55, 70/70, __, __, __}
+    -- [33 PDT/27 MDT, 523 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 10 DA, 29 STP, 399 Acc/364 Racc, 187 Att/167 Ratt, 19 Haste, 5 Regen, 0 Enmity}
   }
   sets.idle.PetEngaged.MeleeSC = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
   sets.idle.PetEngaged.MeleeSCRegen = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
@@ -731,7 +739,8 @@ function init_gear_sets()
     -- [19 PDT/5 MDT, 445 M.Eva] {Pet: 3 PDT /3 MDT, 120 Lv | 10 DA, 29 STP, 359 Acc/324 Racc, 80 Att/60 Ratt, 18 Haste}
 
     -- head="Karagoz Cappello +3",    -- [__/__,  98] {__/__, ___ | __, __, 61/61, __/__, __}; TP Bonus+600
-    -- [19 PDT/5 MDT, 455 M.Eva] {Pet: 3 PDT /3 MDT, 120 Lv | 10 DA, 29 STP, 369 Acc/334 Racc, 80 Att/60 Ratt, 18 Haste}
+    -- body="Pitre Tobe +4",          -- [__/__, 113] {__/__, ___ | __, 15, 55/55, 70/70, __, __, __}
+    -- [19 PDT/5 MDT, 495 M.Eva] {Pet: 3 PDT /3 MDT, 120 Lv | 10 DA, 29 STP, 374 Acc/339 Racc, 90 Att/70 Ratt, 18 Haste}
   })
   sets.idle.PetEngaged.Heal = {
     range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, __}
@@ -749,11 +758,13 @@ function init_gear_sets()
     waist="Ukko Sash",                -- [__/__, ___] {__/__, ___ |  5, __, __}
     -- [46 PDT/38 MDT, 568 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 15 FC, 15 Regen, 5 Refresh}
 
+    -- head="Pitre Taj +4",           -- [__/__, 103] {__/__, ___ | __,  5,  5}
     -- body=gear.Naga_C_body,         -- [__/__,  53] {__/__, ___ |  3, __, __}
     -- hands=gear.Naga_C_hands,       -- [ 2/ 2,  26] {__/__, ___ |  3, __, __}
+    -- legs="Pitre Churidars +4",     -- [__/__, 124] {__/__, ___ | 10, __, __}
     -- feet=gear.Naga_C_feet,         -- [__/__,  64] {__/__, ___ |  3, __, __}
     -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __}
-    -- [25 PDT/17 MDT, 310 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 24 FC, 15 Regen, 5 Refresh}
+    -- [25 PDT/17 MDT, 390 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 24 FC, 15 Regen, 5 Refresh}
   }
   sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.RangedSC, {})
   sets.idle.PetEngaged.SkillUpMelee = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
@@ -785,8 +796,9 @@ function init_gear_sets()
     -- 60 Overload-, 6 Maneuver+ [56 PDT/35 MDT, 390 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
     
     -- body="Karagoz Farsetto +3",    -- 40, __ [13/13, 109] {__/__, ___}
+    -- hands="Foire Dastanas +4",     --  5,  5 [__/__,  71] {__/__, ___}
     -- ear2="Karagoz Earring +2",     -- __, __ [__/__, ___] {__/__,   1}
-    -- 60 Overload-, 6 Maneuver+ [57 PDT/36 MDT, 400 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
+    -- 60 Overload-, 6 Maneuver+ [57 PDT/36 MDT, 425 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
   }
   sets.precast.JA['Deus Ex Automata'] = set_combine(sets.precast.JA['Activate'], {})
   sets.precast.JA['Maneuver'] = set_combine(sets.precast.JA['Activate'], {})
@@ -801,7 +813,7 @@ function init_gear_sets()
     body=gear.Taeon_Pet_DT_body,      -- __, __ [__/__,  84] { 4/ 4, ___ | ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
     hands=gear.Herc_Repair_hands,     -- __,  7 [ 2/__,  43] {__/__, ___ | ___}
     legs=gear.Herc_Repair_legs,       -- __,  6 [ 2/__,  75] {__/__, ___ | ___}
-    feet="Foire Babouches +3",        --  3, __ [__/__,  87] {__/__, ___ | ___}
+    feet="Foire Babouches +3",        --  3, __ [__/__,  84] {__/__, ___ | ___}
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, ___ | ___}
     ear1="Enmerkar Earring",          -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
     ear2="Guignol Earring",           -- __, 20 [__/__, ___] {__/__, ___ | ___}
@@ -809,12 +821,13 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___ | ___}
     back=gear.PUP_Pet_TP_Cape,        -- __, __ [__/__,  20] { 5/ 5,   1 | ___}
     waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
-    -- 3 Repair+, 33 Repair Potency [38 PDT/21 MDT, 384 M.Eva] {Pet: 20 PDT/20 MDT, 120 Lv | 60 HP}
+    -- 3 Repair+, 33 Repair Potency [38 PDT/21 MDT, 381 M.Eva] {Pet: 20 PDT/20 MDT, 120 Lv | 60 HP}
 
     -- hands=gear.Herc_Repair_hands,  -- __,  8 [ 2/__,  43] {__/__, ___ | ___}
     -- legs=gear.Herc_Repair_legs,    -- __,  8 [ 2/__,  75] {__/__, ___ | ___}
+    -- feet="Foire Babouches +4",     --  3, __ [__/__, 109] {__/__, ___ | ___}
     -- ear1="Pratik Earring",         -- __, 10 [__/__, ___] {__/__, ___ | ___}
-    -- 3 Repair+, 46 Repair Potency [38 PDT/21 MDT, 384 M.Eva] {Pet: 17 PDT/17 MDT, 120 Lv | 60 HP}
+    -- 3 Repair+, 46 Repair Potency [38 PDT/21 MDT, 409 M.Eva] {Pet: 17 PDT/17 MDT, 120 Lv | 60 HP}
   }
 
 	sets.precast.JA['Maintenance'] = {
@@ -823,10 +836,12 @@ function init_gear_sets()
 
   sets.precast.JA['Overdrive'] = {
     body="Pitre Tobe +3", -- Duration +20s; +1 is acceptable
+    -- body="Pitre Tobe +4", -- Duration +20s; +1 is acceptable
   }
 
   sets.precast.JA['Role Reversal'] = {
     feet="Pitre Babouches +3", -- Increase HP exchange; +1 is acceptable
+    -- feet="Pitre Babouches +4", -- Increase HP exchange; +1 is acceptable
   }
 
   sets.precast.JA['Tactical Switch'] = {
@@ -835,6 +850,7 @@ function init_gear_sets()
 
   sets.precast.JA['Ventriloquy'] = {
     legs="Pitre Churidars +3", -- Increase enmity exchange; +1 is acceptable
+    -- legs="Pitre Churidars +4", -- Increase enmity exchange; +1 is acceptable
   }
 
   -- TODO: update
@@ -1118,6 +1134,7 @@ function init_gear_sets()
     waist="Incarnation Sash",
 
     -- head="Karagoz Cappello +3",
+    -- body="Pitre Tobe +4",
   }
 
   -- Specific Pet WS sets are not really used because we cannot detect when pet is about to use a WS.
@@ -1126,8 +1143,8 @@ function init_gear_sets()
   -- -- 50% VIT - Critical hit rate varies w/ TP
   -- sets.midcast.Pet.Weaponskill['String Shredder'] = {
   --   ranged="Neo Animator",
-  --   head="Pitre Taj +3",
-  --   body="Pitre Tobe +3",
+  --   head="Pitre Taj +4",
+  --   body="Pitre Tobe +4",
   --   hands="Tali'ah Gages +2",
   --   legs="Tali'ah Sera. +2",
   --   feet="Tali'ah Crackows +2",
@@ -1178,7 +1195,7 @@ function init_gear_sets()
   -- sets.midcast.Pet.Weaponskill['Arcuballista'] = {
   --   ranged="Neo Animator",
   --   head="Karagoz Cappello +1",
-  --   body="Pitre Tobe +3",
+  --   body="Pitre Tobe +4",
   --   hands="Tali'ah Gages +2",
   --   legs="Tali'ah Sera. +2",
   --   feet="Tali'ah Crackows +2",
@@ -1198,7 +1215,7 @@ function init_gear_sets()
   -- sets.midcast.Pet.Weaponskill['Chimera Ripper'] = {
   --   ranged="Neo Animator",
   --   head="Karagoz Cappello +1",
-  --   body="Pitre Tobe +3",
+  --   body="Pitre Tobe +4",
   --   hands="Karagoz Guanti +1",
   --   legs="Kara. Pantaloni +1",
   --   feet={ name="Naga Kyahan", augments={'Pet: HP+100','Pet: Accuracy+25','Pet: Attack+25',}},
@@ -1271,9 +1288,9 @@ function init_gear_sets()
     -- head=gear.Naga_C_head,         -- [__/ 3,  43] {__/__, ___ |  4, __, __}
     -- body=gear.Naga_C_body,         -- [__/__,  53] {__/__, ___ |  4, __, __}
     -- hands=gear.Naga_C_hands,       -- [ 2/ 2,  26] {__/__, ___ |  4, __, __}
-    -- legs="Foire Churidars +3",     -- [__/__,  84] { 6/ 6, ___ | 16, __, __}
+    -- legs="Foire Churidars +4",     -- [__/__, 109] { 6/ 6, ___ | 16, __, __}
     -- feet=gear.Naga_C_feet,         -- [__/__,  64] {__/__, ___ |  4, 10, __}
-    -- [34 PDT/31 MDT, 270 M.Eva] {Pet: 9 PDT/9 MDT, 119 Lv | 32 Cure Potency, 10 Magic Skill, 8 MND}
+    -- [34 PDT/31 MDT, 295 M.Eva] {Pet: 9 PDT/9 MDT, 119 Lv | 32 Cure Potency, 10 Magic Skill, 8 MND}
   }
   sets.midcast.Pet['Cure'].Halfsies = {
     ranged="Neo Animator",            -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, __}
@@ -1291,10 +1308,10 @@ function init_gear_sets()
     waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __}
     -- 38 STP, 279 Acc <11 DA, 15 TA, 3 QA> [49 PDT/32 MDT, 410 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 12 Cure Potency, 0 Magic Skill, 25 MND}
     
-    -- legs="Foire Churidars +3",     -- __, 49 <__, __, __> [__/__,  84] { 6/ 6, ___ | 16, __, __}
+    -- legs="Foire Churidars +4",     -- __, 59 <__, __, __> [__/__, 109] { 6/ 6, ___ | 16, __, __}
     -- feet="Karagoz Scarpe +3",      -- __, 60 <__, __, __> [__/__, 119] {__/__, ___ | __, __, 30}
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __}
-    -- 42 STP, 346 Acc <11 DA, 15 TA, 3 QA> [49 PDT/32 MDT, 440 M.Eva] {Pet: 11 PDT/11 MDT, 121 Lv | 16 Cure Potency, 0 Magic Skill, 30 MND}
+    -- 42 STP, 356 Acc <11 DA, 15 TA, 3 QA> [49 PDT/32 MDT, 465 M.Eva] {Pet: 11 PDT/11 MDT, 121 Lv | 16 Cure Potency, 0 Magic Skill, 30 MND}
   }
 
   sets.midcast.Pet['Elemental Magic'] = {
@@ -1314,9 +1331,11 @@ function init_gear_sets()
     -- 14 STP, 239 Acc <4 DA, 0 TA, 0 QA> [32 PDT/32 MDT, 419 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 203 MAB, 0 Magic Skill, 0 INT, 288 M.Acc}
     
     -- hands=gear.Naga_D_hands,         -- __, __ <__, __, __> [ 2/ 2,  26] {__/__, ___ | 20, __, __, 20}
+    -- legs="Pitre Churidars +4",       -- __, 51 <__, __, __> [__/__, 124] {__/__, ___ | 54, __, __, 53}
+    -- feet="Pitre Babouches +4",       -- __, 41 <__, __, __> [__/__, 124] {__/__, ___ | 60, __, __, 48}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- back=gear.PUP_Pet_Nuke_Cape,     -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, 30}
-    -- 18 STP, 177 Acc <0 DA, 0 TA, 0 QA> [31 PDT/31 MDT, 333 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 208 MAB, 0 Magic Skill, 0 INT, 283 M.Acc}
+    -- 18 STP, 187 Acc <0 DA, 0 TA, 0 QA> [31 PDT/31 MDT, 413 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 214 MAB, 0 Magic Skill, 0 INT, 293 M.Acc}
     
     -- head=gear.Herc_Pet_Nuke_head,
     -- hands=gear.Herc_Pet_Nuke_hands,
@@ -1337,9 +1356,11 @@ function init_gear_sets()
     waist="Moonbow Belt +1",            -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __, __}
     -- 33 STP, 326 Acc <5 DA, 15 TA, 0 QA> [48 PDT/31 MDT, 405 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 143 MAB, 0 Magic Skill, 0 INT, 320 M.Acc}
     
+    -- legs="Pitre Churidars +4",       -- __, 51 <__, __, __> [__/__, 124] {__/__, ___ | 54, __, __, 53}
+    -- feet="Pitre Babouches +4",       -- __, 41 <__, __, __> [__/__, 124] {__/__, ___ | 60, __, __, 48}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- back=gear.PUP_Pet_Nuke_Cape,     -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, 30}
-    -- 37 STP, 334 Acc <5 DA, 15 TA, 0 QA> [48 PDT/31 MDT, 405 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 143 MAB, 0 Magic Skill, 0 INT, 350 M.Acc}
+    -- 37 STP, 344 Acc <5 DA, 15 TA, 0 QA> [48 PDT/31 MDT, 485 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 149 MAB, 0 Magic Skill, 0 INT, 360 M.Acc}
   })
 
   sets.midcast.Pet['Enfeebling Magic'] = {
@@ -1474,8 +1495,10 @@ function init_gear_sets()
     waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
     -- 15 STP, 299 Acc <0 DA, 11 TA, 0 QA> [49 PDT/43 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 23 STP, 359 Acc/344 Racc, 142 Att/147 Ratt, 0 Haste, 16 Regen, 0 Enmity}
     
+    -- head="Pitre Taj +4",           -- __, 42 <__, __, __> [__/__, 103] {__/__, ___ | __, __, 42/42, 67/67, __,  5, __}
+    -- body="Pitre Tobe +4",          -- __, 55 <__, __, __> [__/__, 113] {__/__, ___ | __, 15, 55/55, 70/70, __, __, __}
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 19 STP, 307 Acc <0 DA, 11 TA, 0 QA> [49 PDT/43 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 23 STP, 359 Acc/344 Racc, 142 Att/147 Ratt, 0 Haste, 16 Regen, 0 Enmity}
+    -- 19 STP, 317 Acc <0 DA, 11 TA, 0 QA> [49 PDT/43 MDT, 533 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 23 STP, 369 Acc/354 Racc, 162 Att/167 Ratt, 0 Haste, 16 Regen, 0 Enmity}
   }
   sets.engaged.PetRangedSC.Acc = set_combine(sets.engaged.PetRangedSC, {})
   sets.engaged.PetRangedSpam = set_combine(sets.engaged.PetRangedSC, {})
@@ -1495,6 +1518,9 @@ function init_gear_sets()
     back=gear.PUP_Pet_TP_Cape,        -- __, __ <__, __, __> [__/__,  20] { 5/ 5,   1 | __, __, 20/20, 30/30, 10, __, __}
     waist="Klouskap Sash +1",         -- __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
     -- 11 STP, 290 Acc <10 DA, 3 TA, 0 QA> [46 PDT/27 MDT, 455 M.Eva] {Pet: 13 PDT/13 MDT, 121 Lv | 10 DA, 29 STP, 352 Acc/317 Racc, 110 Att/90 Ratt, 19 Haste, 0 Regen, 0 Enmity}
+    
+    -- body="Pitre Tobe +4",          -- __, 55 <__, __, __> [__/__, 113] {__/__, ___ | __, 15, 55/55, 70/70, __, __, __}
+    -- 11 STP, 295 Acc <10 DA, 3 TA, 0 QA> [46 PDT/27 MDT, 495 M.Eva] {Pet: 13 PDT/13 MDT, 121 Lv | 10 DA, 29 STP, 357 Acc/322 Racc, 120 Att/100 Ratt, 19 Haste, 0 Regen, 0 Enmity}
   }
   sets.engaged.PetMeleeSpam.Acc = set_combine(sets.engaged.PetMeleeSpam, {})
   sets.engaged.PetMeleeSC = set_combine(sets.engaged.PetMeleeSpam, {})
@@ -1526,11 +1552,15 @@ function init_gear_sets()
     legs="Pitre Churidars +3",        -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 10, __, __}
     waist="Ukko Sash",                -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
     -- STP, Acc <DA, TA, QA> [PDT/MDT, M.Eva] {Pet: PDT/MDT, Lv | FC, Regen, Refresh}
+    
+    -- legs="Pitre Churidars +4",     -- __, 51 <__, __, __> [__/__, 124] {__/__, ___ | 10, __, __}
   })
   sets.engaged.PetHeal.Acc = set_combine(sets.engaged.Acc, {
     legs="Pitre Churidars +3",        -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 10, __, __}
     waist="Ukko Sash",                -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
     -- STP, Acc <DA, TA, QA> [PDT/MDT, M.Eva] {Pet: PDT/MDT, Lv | FC, Regen, Refresh}
+    
+    -- legs="Pitre Churidars +4",     -- __, 51 <__, __, __> [__/__, 124] {__/__, ___ | 10, __, __}
   })
   sets.engaged.PetNuke = set_combine(sets.engaged.PetHeal, {})
   sets.engaged.PetNuke.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
@@ -1580,8 +1610,9 @@ function init_gear_sets()
     waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
     -- 31 STP, 347 Acc <5 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 439 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 0 DA, 23 STP, 330 Acc/315 Racc, 65 Att/70 Ratt, 0 Haste, 1 Regen, 0 Enmity}
 
+    -- body="Pitre Tobe +4",          -- __, 55 <__, __, __> [__/__, 113] {__/__, ___ | __, 15, 55/55, 70/70, __, __, __}
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 35 STP, 355 Acc <5 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 439 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 0 DA, 23 STP, 330 Acc/315 Racc, 65 Att/70 Ratt, 0 Haste, 1 Regen, 0 Enmity}
+    -- 35 STP, 364 Acc <5 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 479 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 0 DA, 23 STP, 335 Acc/320 Racc, 75 Att/80 Ratt, 0 Haste, 1 Regen, 0 Enmity}
   }
   sets.engaged.HalfsiesRangedSC.Acc = set_combine(sets.engaged.HalfsiesRangedSC, {})
   sets.engaged.HalfsiesRangedSpam = set_combine(sets.engaged.HalfsiesRangedSC, {})
@@ -1602,8 +1633,9 @@ function init_gear_sets()
     waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
     -- 25 STP, 314 Acc <15 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 480 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 15 STP, 294 Acc/274 Racc, 110 Att/90 Ratt, 10 Haste, 0 Regen, 0 Enmity}
 
+    -- body="Pitre Tobe +4",          -- __, 55 <__, __, __> [__/__, 113] {__/__, ___ | __, 15, 55/55, 70/70, __, __, __}
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 29 STP, 322 Acc <15 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 480 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 15 STP, 294 Acc/274 Racc, 110 Att/90 Ratt, 10 Haste, 0 Regen, 0 Enmity}
+    -- 29 STP, 327 Acc <15 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 520 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 15 STP, 299 Acc/279 Racc, 120 Att/100 Ratt, 10 Haste, 0 Regen, 0 Enmity}
   }
   sets.engaged.HalfsiesMeleeSpam.Acc = set_combine(sets.engaged.HalfsiesMeleeSpam, {
     legs="Karagoz Pantaloni +3",      -- __, 63 <__, __, __> [12/12, 119] {__/__, ___ | __, __, 63/63, __/__, __, __, __}; Skills+33
