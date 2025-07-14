@@ -495,7 +495,7 @@ function init_gear_sets()
     main="Siriti",                      -- __/__, ___ [ 1, __]
     sub="Genmei Shield",                -- 10/__, ___ [__, __]
     ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
-    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    head="Academic's Mortarboard +4",   -- __/__, 120 [ 4, __]
     body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
     hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
     legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
@@ -507,13 +507,13 @@ function init_gear_sets()
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- 53 PDT / 36 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
+    -- 53 PDT / 36 MDT, 589 M.Eva [16 Sublimation, 2 Refresh]
   }
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]
     sub="Khonsu",                       --  6/ 6, ___ [__, __]
     ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
-    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    head="Academic's Mortarboard +4",   -- __/__, 120 [ 4, __]
     body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
     hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
     legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
@@ -525,7 +525,7 @@ function init_gear_sets()
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
+    -- 49 PDT / 42 MDT, 619 M.Eva [15 Sublimation, 5 Refresh]
   }
 
   sets.idle = set_combine(sets.HeavyDef, {})
@@ -1072,7 +1072,7 @@ function init_gear_sets()
     main="Contemplator +1",             -- 70, 22, __, 20; +228 M.Acc skill
     sub="Khonsu",                       -- 30, __, __, __
     ammo="Pemphredo Tathlum",           --  8, __, __, __
-    head="Academic's Mortarboard +3",   -- 52, 37, __, __
+    head="Academic's Mortarboard +4",   -- 62, 42, __, __
     body="Academic's Gown +3",          -- 50, 39, __, __; +24 enf skill in DA
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Arbatel Pants +3",            -- 63, 38, __, 28; +36 M.acc in Grimoire
@@ -1085,10 +1085,10 @@ function init_gear_sets()
     back="Aurist's Cape +1",            -- 33, 33, __, __
     waist="Obstinate Sash",             -- 15,  5,  5, 15
     -- Academic's set bonus             -- 45, __, __, __
-    -- 518 M.Acc, 291 MND, 35% Enfeebling Duration, 63 Enfeebling Skill
+    -- 528 M.Acc, 296 MND, 35% Enfeebling Duration, 63 Enfeebling Skill
 
     -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
-    -- 543 M.Acc, 298 MND, 35% Enfeebling Duration, 63 Enfeebling Skill
+    -- 553 M.Acc, 303 MND, 35% Enfeebling Duration, 63 Enfeebling Skill
   }
   sets.midcast.MndEnfeebles.LightArts = set_combine(sets.midcast.MndEnfeebles, {
     legs="Arbatel Pants +3",            -- 63, 38, __, 28; +36 M.acc in Grimoire
@@ -1102,7 +1102,7 @@ function init_gear_sets()
     main="Contemplator +1",             -- 70, 12, __, 20; +228 M.Acc skill
     sub="Khonsu",                       -- 30, __, __, __
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
-    head="Academic's Mortarboard +3",   -- 52, 37, __, __
+    head="Academic's Mortarboard +4",   -- 62, 42, __, __
     body="Academic's Gown +3",          -- 50, 44, __, __; +24 enf skill in DA
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Arbatel Pants +3",            -- 63, 38, __, 28; +36 M.acc in Grimoire
@@ -1115,10 +1115,10 @@ function init_gear_sets()
     back="Aurist's Cape +1",            -- 33, 33, __, __
     waist="Obstinate Sash",             -- 15,  5,  5, 15
     -- Academic's set bonus             -- 45, __, __, __
-    -- 518 M.Acc, 293 INT, 35% Enfeebling Duration, 63 Enfeebling Skill
+    -- 528 M.Acc, 298 INT, 35% Enfeebling Duration, 63 Enfeebling Skill
 
     -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
-    -- 528 M.Acc, 300 INT, 35% Enfeebling Duration, 63 Enfeebling Skill
+    -- 538 M.Acc, 305 INT, 35% Enfeebling Duration, 63 Enfeebling Skill
   }
   sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
     body="Academic's Gown +3",          -- 50, 44, __, __; +24 enf skill in DA
@@ -1140,7 +1140,7 @@ function init_gear_sets()
     main="Rubicundity",                   -- 22, 21, 26; +215 M.Acc skill
     sub="Ammurapi Shield",                -- __, 13, 38
     ammo="Pemphredo Tathlum",             -- __,  4,  8
-    head="Academic's Mortarboard +3",     -- __, 37, 52
+    head="Academic's Mortarboard +4",     -- __, 37, 62
     body="Academic's Gown +3",            -- 24, 44, 50
     hands="Academic's Bracers +3",        -- __, 29, 48
     legs="Pedagogy Pants +3",             -- 19, 47, 39
@@ -1154,11 +1154,11 @@ function init_gear_sets()
     waist="Acuity Belt +1",               -- __, 23, __
     -- Academic's set bonus               -- __, __, 60
     -- Base stats                           440,127,___
-    -- 551 Dark magic skill, 391 INT, 395 M.Acc
+    -- 551 Dark magic skill, 391 INT, 405 M.Acc
     
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- back="Bookworm's Cape",            --  8,  5, __
-    -- 554 Dark magic skill, 392 INT, 399 M.Acc
+    -- 554 Dark magic skill, 392 INT, 409 M.Acc
   }
 
   -- Add Drain potency
@@ -1175,7 +1175,7 @@ function init_gear_sets()
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     ammo="Pemphredo Tathlum",             -- __,  8, ___
-    head="Academic's Mortarboard +3",     --  8, 52, ___
+    head="Academic's Mortarboard +4",     --  8, 62, ___
     body="Academic's Gown +3",            -- __, 50, ___
     hands="Academic's Bracers +3",        --  9, 48, ___
     legs="Academic's Pants +3",           -- __, 49, ___
@@ -1189,7 +1189,7 @@ function init_gear_sets()
     --Ideal:
     -- main="Hvergelmir",                 -- 50, __, 269
     -- sub="Khonsu",                      -- __, 30, ___
-    -- head="Academic's Mortarboard +3",  --  8, 52, ___
+    -- head="Academic's Mortarboard +4",  --  8, 62, ___
     -- body="Academic's Gown +3",         -- __, 50, ___
     -- hands="Academic's Bracers +3",     --  9, 48, ___
     -- legs="Academic's Pants +3",        -- __, 49, ___
@@ -1201,7 +1201,7 @@ function init_gear_sets()
     -- back=gear.SCH_INT_MAcc_Cape,       -- 10, 30, ___
     -- waist="Acuity Belt +1",            -- __, 15, ___
     -- Academic's set bonus               -- __, 60, ___
-    -- 81 FC, 460 M.Acc, 269 M.Acc Skill
+    -- 81 FC, 470 M.Acc, 269 M.Acc Skill
   })
 
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
@@ -1514,7 +1514,7 @@ function init_gear_sets()
     main="Bunzi's Rod",
     sub="Genbu's Shield",
     ammo="Incantor Stone",
-    head="Academic's Mortarboard +3",
+    head="Academic's Mortarboard +4",
     body="Pedagogy Gown +3",
     hands="Academic's Bracers +3",
     legs="Assiduity Pants +1",
