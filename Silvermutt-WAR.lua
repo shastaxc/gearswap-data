@@ -2,6 +2,7 @@
 File Status: Good.
 TODO: Missing acc sets. Missing DW sets.
 Experimenting with engaged sets.
+Fix Pumm. Calligae +4 back to long name when in-game name is fixed.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -979,7 +980,7 @@ function init_gear_sets()
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
-    feet="Pummeler's Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
+    feet="Pumm. Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
@@ -995,7 +996,7 @@ function init_gear_sets()
     -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
-    -- feet="Pummeler's Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
+    -- feet="Pumm. Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear1="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
@@ -1028,7 +1029,7 @@ function init_gear_sets()
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
-    feet="Pummeler's Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
+    feet="Pumm. Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
@@ -1044,7 +1045,7 @@ function init_gear_sets()
     -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
-    -- feet="Pummeler's Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
+    -- feet="Pumm. Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear1="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
@@ -1066,7 +1067,7 @@ function init_gear_sets()
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
-    feet="Pummeler's Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
+    feet="Pumm. Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
@@ -1085,7 +1086,7 @@ function init_gear_sets()
     -- body="Hjarrandi Breastplate",      -- [12/12,  69] 10 <__, __, __> 13, __
     -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     -- legs="Agoge Cuisses +4",           -- [__/__, 140] __ <__, __,  6> __,  6; DA dmg+11%
-    -- feet="Pummeler's Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
+    -- feet="Pumm. Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear1="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __
@@ -1111,7 +1112,7 @@ function init_gear_sets()
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
-    feet="Pummeler's Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
+    feet="Pumm. Calligae +4",        -- [__/__, 125]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
@@ -1137,7 +1138,7 @@ function init_gear_sets()
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Boii Cuisses +3",               -- [__/__, 130] __ <__, __,  8> __,  8; DA dmg+11%
-    feet="Pummeler's Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
+    feet="Pumm. Calligae +4",     -- [__/__, 125]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
@@ -1184,7 +1185,7 @@ function init_gear_sets()
     -- body="Hjarrandi Breastplate",      -- [12/12,  69] 10 <__, __, __> (13, __) __
     -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  8 <__, __,  6> (__, __)  4
     -- legs="Agoge Cuisses +4",           -- [__/__, 140] __ <__, __,  6> (__, __)  6; DA dmg+11%
-    -- feet="Pummeler's Calligae +4",     -- [__/__, 125]  4 <__, __,  9> (__, __)  4
+    -- feet="Pumm. Calligae +4",     -- [__/__, 125]  4 <__, __,  9> (__, __)  4
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> (__, __) __
     -- ear1="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> (__, __) __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> ( 8, __) __
