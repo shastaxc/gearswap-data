@@ -2089,6 +2089,8 @@ function apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
         equip(sets.Immanence.SIRD)
       -- Use SubtleBlow set if in SubtleBlow ImmanenceMode and not using tier 2 helix
       elseif state.ImmanenceMode.current == 'SubtleBlow' and not (spellMap == 'Helix' and spell.english:endswith(' II')) then
+        -- Temporarily disable elemental belt swaps
+        tempDisableElementalBelt = true
         equip(sets.Immanence.SubtleBlow)
       end
     end
