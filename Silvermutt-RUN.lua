@@ -282,7 +282,7 @@ function job_setup()
   silibs.enable_equip_loop()
 
   rayke_duration = 46
-  gambit_duration = 92
+  gambit_duration = 96
 
   expended_runes={} -- Do not modify
   rayke_tracker={} -- Do not modify
@@ -563,7 +563,7 @@ function init_gear_sets()
   --     Defense
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  -- Used while idle in PDT mode
+  -- Bumba v25 variant
   -- sets.HeavyDef = {
   --   ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __; Resist Status
   --   head="Erilaz Galea +3",                         -- __/__, 119 [111] __
@@ -582,6 +582,7 @@ function init_gear_sets()
   --   -- HP from belt                                                347
   --   -- 59 PDT / 51 MDT, 685 MEVA [961/1308 HP] 26 Inquartata
   -- }
+  -- Used while idle in PDT mode
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __; Resist Status
     head="Erilaz Galea +3",                         -- __/__, 119 [111] __
