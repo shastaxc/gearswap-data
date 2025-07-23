@@ -563,8 +563,47 @@ function init_gear_sets()
   --     Defense
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
+  -- Used while idle in PDT mode
+  -- sets.HeavyDef = {
+  --   ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __; Resist Status
+  --   head="Erilaz Galea +3",                         -- __/__, 119 [111] __
+  --   body="Erilaz Surcoat +3",                       -- __/__, 130 [143] __; Retain enmity, Convert dmg to MP
+  --   hands="Erilaz Gauntlets +3",                    -- 11/11,  87 [ 59] __; Status Resist
+  --   legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100]  4
+  --   feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] __; Resist elements
+  --   neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] __
+  --   ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] __
+  --   ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resists
+  --   ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] __
+  --   ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] __
+  --   back="Shadow Mantle",                           -- __/__, ___ [___] __; Annuls phys dmg
+  --   waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] __; HP+10%
+  --   -- Merits/Traits/Gifts                                              19
+  --   -- HP from belt                                                347
+  --   -- 59 PDT / 51 MDT, 685 MEVA [961/1308 HP] 26 Inquartata
+  -- }
   sets.HeavyDef = {
-    ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __
+    ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __; Resist Status
+    head="Erilaz Galea +3",                         -- __/__, 119 [111] __
+    body="Erilaz Surcoat +3",                       -- __/__, 130 [143] __; Retain enmity, Convert dmg to MP
+    hands="Erilaz Gauntlets +3",                    -- 11/11,  87 [ 59] __; Status Resist
+    legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100]  4
+    feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] __; Resist elements
+    neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] __
+    ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] __
+    ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resists
+    ring1="Shadow Ring",                            -- __/__, ___ [___] __; Annul magic dmg
+    ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] __
+    back=gear.RUN_HPD_Cape,                         -- 10/__,  20 [ 80]  3
+    waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] __; HP+10%
+    -- Merits/Traits/Gifts                                              19
+    -- HP from belt                                                347
+    -- 59 PDT / 51 MDT, 685 MEVA [961/1308 HP] 26 Inquartata
+  }
+
+  -- Used while engaged in PDT mode
+  sets.HeavyDef.Engaged = {
+    ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __; Resist Status
     head=gear.Nyame_B_head,                         --  7/ 7, 123 [ 91] __
     body="Erilaz Surcoat +3",                       -- __/__, 130 [143] __; Retain enmity, Convert dmg to MP
     hands="Turms Mittens +1",                       -- __/__, 101 [ 74] __; HP+100 on parry
@@ -582,6 +621,7 @@ function init_gear_sets()
     -- 48 PDT / 42 MDT, 723 MEVA [979/1326 HP] 36 Inquartata
   }
 
+  -- Used when idle, with IdleMode set to HeavyDef, and DefenseMode off.
   sets.HeavyDefForIdle = {
     -- Assume Utu Grip              -- [__/__, ___]  70
     ammo="Staunch Tathlum +1",      -- [ 3/ 3, ___] ___
@@ -622,6 +662,10 @@ function init_gear_sets()
     -- 49 PDT / 49 MDT, 671 MEVA [916/1257 HP] (19 Status Resist, 55 Element Resist)
   }
 
+  sets.defense.PDT.Engaged = set_combine(sets.HeavyDef.Engaged, {})
+  sets.defense.MDT.Engaged = set_combine(sets.defense.MDT, {})
+
+  -- Overlaid when Batutta is active
   sets.defense.Parry = {
     hands="Turms Mittens +1",       -- Parry: Recover HP+100
     legs="Erilaz Leg Guards +3",    -- Inquartata+4
@@ -1887,8 +1931,18 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
-    return set_combine(defenseSet, sets.Encumbrance)
+  if state.DefenseMode.value ~= 'None' then
+    if state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
+      return set_combine(defenseSet, sets.Encumbrance)
+    
+    -- Swap to "engaged" tank set if defense mode is engaged and weapon is drawn
+    elseif player.status == 'Engaged' then
+      if state.DefenseMode.value == 'Magical' then
+        defenseSet = set_combine(defenseSet, sets.defense.MDT.Engaged)
+      else
+        defenseSet = set_combine(defenseSet, sets.defense.PDT.Engaged)
+      end
+    end
   end
 
   if buffactive['Battuta'] and state.DefenseMode.value ~= 'Magical' then
