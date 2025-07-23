@@ -987,7 +987,7 @@ function init_gear_sets()
   sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'], {
     ear2="Moonshade Earring",
   })
-  sets.precast.WS['Hot Shot'].MaxTP = set_combine(sets.precast.WS['Hot Shot'].MaxTP, {
+  sets.precast.WS['Hot Shot'].MaxTP = set_combine(sets.precast.WS['Hot Shot'], {
     ear2="Novio Earring",
   })
   sets.precast.WS['Hot Shot'].LowAcc = set_combine(sets.precast.WS['Hot Shot'], {})
