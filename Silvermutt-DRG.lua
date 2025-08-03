@@ -242,7 +242,7 @@ function user_setup()
 
   include('Global-Binds.lua') -- Additional local binds
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Trishula', 'Staff', 'Aeolian'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Trishula', 'Staff', 'Onion', 'Aeolian'}
 
   update_melee_groups()
   select_default_macro_book()
@@ -296,10 +296,12 @@ function init_gear_sets()
     sub="Ternion Dagger +1",
     -- sub="Kraken Club",
   }
-  sets.WeaponSet['Aeolian'] = {main="Malevolence", sub="Regis",}
-  sets.WeaponSet['Aeolian'].DW = {main="Malevolence", sub="Malevolence",}
   sets.WeaponSet['Trishula'] = {main="Trishula", sub="Utu Grip",}
   sets.WeaponSet['Staff'] = {main="Reikikon", sub="Utu Grip",}
+  sets.WeaponSet['Onion'] = {main="Onion Sword III", sub="Regis",}
+  sets.WeaponSet['Onion'].DW = {main="Onion Sword III", sub="Naegling",}
+  sets.WeaponSet['Aeolian'] = {main="Malevolence", sub="Regis",}
+  sets.WeaponSet['Aeolian'].DW = {main="Malevolence", sub="Malevolence",}
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -536,10 +538,10 @@ function init_gear_sets()
     ear1="Moonshade Earring",           -- __, __,  4, __, __ <__, __, __> [__/__, ___]; tp bonus +250
     ear2="Sherida Earring",             --  5, __, __, __, __ < 5, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",              -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
-    ring2="Epona's Ring",               -- __, __, __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Ephramad's Ring",            -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.DRG_WS1_Cape,             -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                 -- __, __, 10, __, __ <__, __, __> [__/__, ___]; ftp+
-    -- 229 STR, 377 Att, 276 Acc, 34 WSD, 9 PDL <47 DA, 7 TA, 3 QA> [41 PDT/22 MDT, 577 M.Eva]
+    -- 239 STR, 397 Att, 296 Acc, 34 WSD, 19 PDL <44 DA, 4 TA, 3 QA> [41 PDT/22 MDT, 577 M.Eva]
     
     -- head="Pteroslaver Armet +4",     -- 42, 87, 49, __, __ <__,  4, __> [__/__, 103]
     -- 234 STR, 387 Att, 281 Acc, 34 WSD, 9 PDL <47 DA, 7 TA, 3 QA> [41 PDT/22 MDT, 617 M.Eva]
@@ -806,6 +808,54 @@ function init_gear_sets()
     -- 190 DEX, 441 Attack, 379 Accuracy, 56 WSD, 47 PDL [25 PDT/7 MDT, 555 M.Eva]
   }
   sets.precast.WS["Geirskogul"].AttCappedMaxTP = set_combine(sets.precast.WS["Geirskogul"].AttCapped, {})
+
+  -- 80% DEX; 2 hit, 1.8-5.0 FTP
+  sets.precast.WS["Fast Blade II"] = {
+    ammo="Coiste Bodhar",                   -- 10, 15, __, __, __ < 3, __, __> [__/__, ___]
+    head="Pteroslaver Armet +3",            -- 25, 77, 44, __, __ <__,  4, __> [__/__,  63]
+    body=gear.Nyame_B_body,                 -- 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,               -- 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
+    legs="Gleti's Breeches",                -- __, 70, 55, __,  8 <__,  5, __> [ 8/__, 112]
+    feet=gear.Nyame_B_feet,                 -- 26, 65, 53, 11, __ < 5, __, __> [ 7/ 7, 150]
+    neck="Fotia Gorget",                    -- __, __, 10, __, __ <__, __, __> [__/__, ___]; ftp+
+    ear1="Sherida Earring",                 --  5, __, __, __, __ < 5, __, __> [__/__, ___]
+    ear2="Moonshade Earring",               -- __, __, __,  3, __ <__, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",                -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
+    ring2="Niqmaddu Ring",                  -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
+    back=gear.DRG_WS2_Cape,                 -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
+    waist="Sailfi Belt +1",                 -- __, 15, __, __, __ < 5,  2, __> [__/__, ___]
+    -- 152 DEX, 412 Attack, 282 Accuracy, 48 WSD, 18 PDL <30 DA, 11 TA, 3 QA> [41 PDT/23 MDT, 576 M.Eva]
+
+    -- head="Pteroslaver Armet +4",         -- 25, 87, 49, __, __ <__,  4, __> [__/__, 103]
+    -- back=gear.DRG_WS5_Cape,              -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
+    -- 182 DEX, 422 Attack, 287 Accuracy, 38 WSD, 18 PDL <40 DA, 11 TA, 3 QA> [41 PDT/23 MDT, 616 M.Eva]
+  }
+  sets.precast.WS["Fast Blade II"].MaxTP = set_combine(sets.precast.WS["Fast Blade II"], {
+    ear2="Brutal Earring",
+  })
+  sets.precast.WS["Fast Blade II"].AttCapped = {
+    ammo="Coiste Bodhar",                   -- 10, 15, __, __, __ < 3, __, __> [__/__, ___]
+    head="Pteroslaver Armet +3",            -- 25, 77, 44, __, __ <__,  4, __> [__/__,  63]
+    body=gear.Nyame_B_body,                 -- 24, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,               -- 42, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
+    legs="Gleti's Breeches",                -- __, 70, 55, __,  8 <__,  5, __> [ 8/__, 112]
+    feet=gear.Nyame_B_feet,                 -- 26, 65, 53, 11, __ < 5, __, __> [ 7/ 7, 150]
+    neck="Dragoon's Collar +2",             -- __, 25, 25, __, 10 <__, __, __> [__/__, ___]
+    ear1="Sherida Earring",                 --  5, __, __, __, __ < 5, __, __> [__/__, ___]
+    ear2="Moonshade Earring",               -- __, __, __,  3, __ <__, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",                -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
+    ring2="Niqmaddu Ring",                  -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
+    back=gear.DRG_WS2_Cape,                 -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
+    waist="Sailfi Belt +1",                 -- __, 15, __, __, __ < 5,  2, __> [__/__, ___]
+    -- 152 DEX, 437 Attack, 297 Accuracy, 48 WSD, 28 PDL <30 DA, 11 TA, 3 QA> [41 PDT/23 MDT, 576 M.Eva]
+
+    -- head="Pteroslaver Armet +4",         -- 25, 87, 49, __, __ <__,  4, __> [__/__, 103]
+    -- back=gear.DRG_WS5_Cape,              -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
+    -- 182 DEX, 447 Attack, 302 Accuracy, 38 WSD, 28 PDL <40 DA, 11 TA, 3 QA> [41 PDT/23 MDT, 616 M.Eva]
+  }
+  sets.precast.WS["Fast Blade II"].AttCappedMaxTP = set_combine(sets.precast.WS["Fast Blade II"].AttCapped, {
+    ear2="Brutal Earring",
+  })
 
   -- 40% INT / 40% STR. dStat = INT. Deals lightning elemental damage. Damage varies with TP. 1.0-3.0 fTP
   sets.precast.WS["Raiden Thrust"] = set_combine(sets.precast.WS, {
