@@ -190,6 +190,8 @@ function job_setup()
   state.AttCapped = M(true, 'Attack Capped')
   state.CP = M(false, 'Capacity Points Mode')
 
+  state.WeaponSet = M{['description']='Weapon Set', 'Trishula', 'Naegling', 'Shining One', 'Staff', 'Onion', 'Aeolian'}
+
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
@@ -241,8 +243,6 @@ function user_setup()
   ----------- Non-silibs content goes below this line -----------
 
   include('Global-Binds.lua') -- Additional local binds
-
-  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Trishula', 'Staff', 'Onion', 'Aeolian'}
 
   update_melee_groups()
   select_default_macro_book()
@@ -583,18 +583,20 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,                 -- 58, 30, 65, 40, 12, __ [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,                 -- 23, 24, 65, 53, 11, __ [ 7/ 7, 150]
     neck="Dragoon's Collar +2",             -- 15, 15, 25, 25, __, 10 [__/__, ___]
-    ear1="Thrud Earring",                   -- 10, 10, __, __,  3, __ [__/__, ___]
+    ear1="Moonshade Earring",               -- __, __, __, __, __, __ [__/__, ___]; TP bonus
     ear2="Ishvara Earring",                 -- __, __, __, __,  2, __ [__/__, ___]
-    ring1="Epaminondas's Ring",             -- __, __, __, __,  5, __ [__/__, ___]
-    ring2="Ephramad's Ring",                -- 10, __, 20, 20, __, 10 [__/__, ___]
+    ring1="Ephramad's Ring",                -- 10, __, 20, 20, __, 10 [__/__, ___]
+    ring2="Defending Ring",                 -- __, __, __, __, __, __ [10/10, ___]
     back=gear.DRG_WS2_Cape,                 -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",                 -- 15, __, 15, __, __, __ [__/__, ___]
-    -- 263 STR, 194 VIT, 442 Att, 310 Acc, 86 WSD, 20 PDL [34 PDT/24 MDT, 623 M.Eva]
+    -- 253 STR, 184 VIT, 442 Att, 310 Acc, 78 WSD, 20 PDL [44 PDT/34 MDT, 623 M.Eva]
     
     -- ear2="Peltast's Earring +2",         -- 15, 15, __, 20, __,  9 [__/__, ___]
-    -- 278 STR, 209 VIT, 442 Att, 330 Acc, 86 WSD, 29 PDL [34 PDT/24 MDT, 623 M.Eva]
+    -- 268 STR, 199 VIT, 442 Att, 330 Acc, 78 WSD, 29 PDL [44 PDT/34 MDT, 623 M.Eva]
   }
-  sets.precast.WS["Camlann's Torment"].MaxTP = set_combine(sets.precast.WS["Camlann's Torment"], {})
+  sets.precast.WS["Camlann's Torment"].MaxTP = set_combine(sets.precast.WS["Camlann's Torment"], {
+    ear1="Thrud Earring",                   -- 10, 10, __, __,  3, __ [__/__, ___]
+  })
   sets.precast.WS["Camlann's Torment"].AttCapped = {
     ammo="Knobkierrie",                     -- __, __, 23, __,  6, __ [__/__, ___]
     head="Peltast's Mezail +3",             -- 36, 35, 71, 61, 12, __ [__/__,  98]
@@ -603,18 +605,20 @@ function init_gear_sets()
     legs="Gleti's Breeches",                -- 49, 37, 70, 55, __,  8 [ 8/__, 112]
     feet=gear.Nyame_B_feet,                 -- 23, 24, 65, 53, 11, __ [ 7/ 7, 150]
     neck="Dragoon's Collar +2",             -- 15, 15, 25, 25, __, 10 [__/__, ___]
-    ear1="Thrud Earring",                   -- 10, 10, __, __,  3, __ [__/__, ___]
+    ear1="Moonshade Earring",               -- __, __, __, __, __, __ [__/__, ___]; TP bonus
     ear2="Peltast's Earring +1",            -- __, __, __, 14, __,  8 [__/__, ___]
-    ring1="Epaminondas's Ring",             -- __, __, __, __,  5, __ [__/__, ___]
-    ring2="Ephramad's Ring",                -- 10, __, 20, 20, __, 10 [__/__, ___]
+    ring1="Ephramad's Ring",                -- 10, __, 20, 20, __, 10 [__/__, ___]
+    ring2="Defending Ring",                 -- __, __, __, __, __, __ [10/10, ___]
     back=gear.DRG_WS2_Cape,                 -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",                 -- 15, __, 15, __, __, __ [__/__, ___]
-    -- 252 STR, 209 VIT, 456 Att, 363 Acc, 59 WSD, 46 PDL [25 PDT/7 MDT, 555 M.Eva]
+    -- 242 STR, 199 VIT, 456 Att, 363 Acc, 51 WSD, 46 PDL [35 PDT/17 MDT, 555 M.Eva]
     
     -- ear2="Peltast's Earring +2",         -- 15, 15, __, 20, __,  9 [__/__, ___]
-    -- 267 STR, 224 VIT, 456 Att, 369 Acc, 59 WSD, 47 PDL [25 PDT/7 MDT, 555 M.Eva]
+    -- 257 STR, 214 VIT, 456 Att, 369 Acc, 51 WSD, 47 PDL [35 PDT/17 MDT, 555 M.Eva]
   }
-  sets.precast.WS["Camlann's Torment"].AttCappedMaxTP = set_combine(sets.precast.WS["Camlann's Torment"].AttCapped, {})
+  sets.precast.WS["Camlann's Torment"].AttCappedMaxTP = set_combine(sets.precast.WS["Camlann's Torment"].AttCapped, {
+    ear1="Thrud Earring",                   -- 10, 10, __, __,  3, __ [__/__, ___]
+  })
 
   -- 40% STR/40% DEX
   -- WSD > STR <> DEX
