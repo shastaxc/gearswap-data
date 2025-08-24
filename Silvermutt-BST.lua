@@ -460,8 +460,8 @@ function job_setup()
     ['Molting Plumage'] = {id=0, name='', set='Macc', charges=0, tp_affected=false, multihit=false, range_type='AoE', effect='Dispel',},
     ['Swooping Frenzy'] = {id=0, name='', set='Macc', charges=0, tp_affected=false, multihit=false, range_type='Conal', effect='-Def & -MDB',},
     ['Spider Web'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='AoE', effect='Slow',},
+    ['TP Drainkiss'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Absorb TP',},
 
-    ['TP Drainkiss'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Absorb TP',}, -- Putting in Buff set because it never misses, doesn't need m.acc
     ['Wild Carrot'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='AoE', effect='Cure',},
     ['Bubble Curtain'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='MDT',},
     ['Scissor Guard'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Def',},
@@ -1781,8 +1781,9 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   -- If using a Ready move, 
   if spell.type == 'Monster' then
-    if buffactive['Unleash'] then -- If Unleash is active don't swap gear
+    if buffactive['Unleash'] then -- If Unleash is active keep pet midcast gear on
       equip(get_bst_pet_midcast_set(spell, spellMap))
+      equip(sets.precast.ReadyRecast)
       eventArgs.handled = true
     elseif sets.precast.ReadyRecast then -- Equip recast reduction gear in the precast
       equip(sets.precast.ReadyRecast)
@@ -1820,8 +1821,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Always put this last in job_post_precast
-  -- Prevent swapping weapons if not in Pet mode or engaged
-  if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') or player.status == 'Engaged' then
+  -- In some cases, we want to override the precast set's weapons:
+  -- Never if Unleashed or move is on always_swap_moves list
+  -- Always if idle and HybridMode is Master or Halfsies
+  if not buffactive['Unleash']
+      and not always_swap_moves:contains(spell.english)
+      and (state.HybridMode.value == 'Master' or state.HybridMode.value == 'Halfsies') then
     equip({main="", sub=""})
   elseif not silibs.can_dual_wield() then
     equip(sets.FallbackShield)
@@ -1843,8 +1848,13 @@ end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
   -- Always put this last in job_post_midcast
-  -- Prevent swapping weapons if not in Pet mode and engaged
-  if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') or player.status == 'Engaged' then
+  -- In some cases, we want to override the midcast set's weapons:
+  -- Never if Unleashed or move is on always_swap_moves list
+  -- Always if engaged
+  -- Always if idle and HybridMode is Master or Halfsies
+  if not buffactive['Unleash']
+      and not always_swap_moves:contains(spell.english)
+      and (state.HybridMode.value == 'Master' or state.HybridMode.value == 'Halfsies') then
     equip({main="", sub=""})
   elseif not silibs.can_dual_wield() then
     equip(sets.FallbackShield)
@@ -1859,20 +1869,26 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-	if spell.type == 'Monster' and not spell.interrupted then
-    equip(get_bst_pet_midcast_set(spell, spellMap))
-    last_pet_midcast_set = set_combine(gearswap.equip_list, {})
-    last_pet_midaction_time = os.clock()
-    if (state.HybridMode.value ~= 'Master' and not always_swap_moves:contains(spell.english))
-        or buffactive['Unleash'] then
-      eventArgs.handled = true
-    end
-  end
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-  -- If weapons are not what's set in the WeaponSet cycle, equip them
-	if spell.type ~= 'Monster' or spell.interrupted then
+	if spell.type == 'Monster' and not spell.interrupted then
+    -- Keep pet midcast set on after issuing Ready command until it fires
+    equip(get_bst_pet_midcast_set(spell, spellMap))
+    last_pet_midcast_set = set_combine(gearswap.equip_list, {})
+    last_pet_midaction_time = os.clock()
+
+    -- In some cases, we want to override the pet midcast weapons:
+    -- Never if Unleashed or move is on always_swap_moves list
+    -- Always if HybridMode is Master or Halfsies
+    if not buffactive['Unleash']
+        and not always_swap_moves:contains(spell.english)
+        and (state.HybridMode.value == 'Master' or state.HybridMode.value == 'Halfsies') then
+      equip({main="", sub=""})
+    else
+      equip(select_offhand(gearswap.equip_list.sub))
+    end
+  else
     equip(select_weapons())
   end
 end
@@ -2016,46 +2032,45 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if not pending_pet_ability() then
-    if buffactive['Unleash'] then
-      if pet.isvalid then
-        idleSet = set_combine(idleSet, last_pet_midcast_set)
-      end
-    else
-      -- If not in DT mode put on move speed gear
-      if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-        -- Apply movement speed gear
-        if classes.CustomIdleGroups:contains('Adoulin') then
-          idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
-        else
-          idleSet = set_combine(idleSet, sets.Kiting)
-        end
-
-        -- Apply pet engaged set
-        if pet.isvalid and pet.status == 'Engaged' then
-          local mode = state.HybridMode.value
-          if state.PetMode.value ~= 'Normal' then
-            mode = mode..state.PetMode.value
-          end
-          if sets.idle.PetEngaged[mode] then
-            idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
-          else
-            idleSet = set_combine(idleSet, sets.idle.PetEngaged)
-          end
-        end
+  -- Keep set locked in the last pet midcast set if Unleash is active
+  if buffactive['Unleash'] then
+    if pet.isvalid then
+      idleSet = set_combine(idleSet, last_pet_midcast_set)
+    end
+  elseif not pending_pet_ability() then
+    -- If not in DT mode put on move speed gear
+    if state.Kiting.value and state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+      if classes.CustomIdleGroups:contains('Adoulin') then
+        idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+      else
+        idleSet = set_combine(idleSet, sets.Kiting)
       end
     end
-  end
 
-  if state.Kiting.value then
-    idleSet = set_combine(idleSet, sets.Kiting)
+    -- Apply pet engaged set
+    if pet.isvalid and pet.status == 'Engaged' then
+      local mode = state.HybridMode.value
+      if state.PetMode.value ~= 'Normal' then
+        mode = mode..state.PetMode.value
+      end
+      if sets.idle.PetEngaged[mode] then
+        idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
+      else
+        idleSet = set_combine(idleSet, sets.idle.PetEngaged)
+      end
+    end
+
+    -- Prevent loss of TP in certain PetModes
+    if state.HybridMode.value == 'Master' or state.HybridMode.value == 'Halfsies' then
+      idleSet = set_combine(idleSet, select_weapons())
+    else
+      idleSet = set_combine(idleSet, select_offhand(idleSet.sub))
+    end
   end
 
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
-
-  idleSet = set_combine(idleSet, select_weapons())
 
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
@@ -2073,12 +2088,13 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if not ((state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability()) then
-    if buffactive['Unleash'] then
-      if pet.isvalid then
-        meleeSet = set_combine(meleeSet, last_pet_midcast_set)
-      end
-    else
+  -- Keep set locked in the last pet midcast set if Unleash is active
+  if buffactive['Unleash'] then
+    if pet.isvalid then
+      meleeSet = set_combine(meleeSet, last_pet_midcast_set)
+    end
+  elseif not pending_pet_ability() then -- Allowed to swap gear
+    if state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT' then
       -- Apply pet engaged set
       if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
         local set = sets.engaged
@@ -2095,15 +2111,17 @@ function customize_melee_set(meleeSet)
           end
         end
         meleeSet = set_combine(meleeSet, set)
+        meleeSet = set_combine(meleeSet, select_offhand(meleeSet.sub))
       end
-
-      if state.CP.current == 'on' then
-        meleeSet = set_combine(meleeSet, sets.CP)
-      end
+    else
+      meleeSet = set_combine(meleeSet, select_weapons())
     end
   end
 
-  meleeSet = set_combine(meleeSet, select_weapons())
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
   if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
@@ -2123,11 +2141,18 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
+  -- Keep set locked in the last pet midcast set if Unleash is active
+  if buffactive['Unleash'] then
+    if pet.isvalid then
+      defenseSet = set_combine(defenseSet, last_pet_midcast_set)
+    end
+  elseif not pending_pet_ability() then -- Allowed to swap gear
+    defenseSet = set_combine(defenseSet, select_weapons())
+  end
+
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
-
-  defenseSet = set_combine(defenseSet, select_weapons())
 
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
@@ -2208,13 +2233,18 @@ function select_weapons()
     weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
   end
 
-  -- If trying to equip weapon in offhand but cannot DW, equip empty
-  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
-    local sub_to_use = sets.FallbackShield and sets.FallbackShield.sub or 'empty'
-    weapons_to_equip = set_combine(weapons_to_equip, {sub=sub_to_use})
-  end
+  weapons_to_equip = set_combine(weapons_to_equip, select_offhand(weapons_to_equip.sub))
 
   return weapons_to_equip
+end
+
+function select_offhand(option)
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not silibs.can_dual_wield() and option and silibs.is_weapon(option) then
+    local sub_to_use = sets.FallbackShield and sets.FallbackShield.sub or 'empty'
+    return {sub=sub_to_use}
+  end
+  return {sub=option}
 end
 
 function cycle_pet_mode(cycle_dir)
@@ -2377,7 +2407,7 @@ function get_bst_pet_midcast_set(spell, spellMap)
   if ready_move and pet.isvalid and sets.midcast and sets.midcast.Pet then
     equipSet = sets.midcast.Pet
     
-    -- Determine type of set to use
+    -- Determine type of pet midcast set to use
     if ready_move.set and equipSet[ready_move.set] then
       equipSet = equipSet[ready_move.set]
     end
@@ -2385,14 +2415,13 @@ function get_bst_pet_midcast_set(spell, spellMap)
     -- Equip offensive/defensive variants as appropriate
     -- If in Master mode...
     if state.HybridMode.current == 'Master' then
-      -- Swap into Halfsies set if idle, do not swap if engaged
-      -- Override if Unleash is active
-      if player.status ~= 'Engaged' or buffactive['Unleash'] then
+      -- Use Halfsies variant if: Unleash is active, player is not engaged, or pet ability is on always_swap_moves list
+      if buffactive['Unleash'] or player.status ~= 'Engaged' or always_swap_moves:contains(spell.english) then
         if equipSet['Halfsies'] then
           equipSet = equipSet['Halfsies']
         end
-      elseif not always_swap_moves:contains(spell.english) then
-        return {} -- Do not swap if Master mode, engaged, and spell is not on always_swap_moves list
+      else
+        return {} -- Do not swap if Master mode and excepting conditions are not met
       end
     -- If in Halfsies mode, swap into Halfsies set always
     elseif state.HybridMode.current == 'Halfsies' and equipSet['Halfsies'] then
@@ -2431,11 +2460,14 @@ function get_bst_pet_midcast_set(spell, spellMap)
     end
     
     -- Always ensure this check is last
-    -- Prevent swapping weapons if not in Pet mode
-    if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') or player.status == 'Engaged' then
+    -- Prevent swapping weapons if in Master/Halfsies mode, unless Unleash is active or move is an "always swap" move
+    if ((state.HybridMode.current == 'Master' or state.HybridMode.current == 'Halfsies'))
+        and not always_swap_moves:contains(spell.english)
+        and not buffactive['Unleash'] then
       equipSet = set_combine(equipSet, {main="", sub=""})
-    elseif not silibs.can_dual_wield() then
-      equipSet = set_combine(equipSet, sets.FallbackShield)
+    -- Equip shield in offhand if player cannot dual wield and specified offhand in the upcoming set is a weapon
+    else
+      equipSet = set_combine(equipSet, select_offhand(equipSet.sub))
     end
   end
 
