@@ -190,7 +190,7 @@ function job_setup()
   state.AttCapped = M(true, 'Attack Capped')
   state.CP = M(false, 'Capacity Points Mode')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Trishula', 'Naegling', 'Shining One', 'Staff', 'Onion', 'Aeolian'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Staff', 'Trishula', 'Onion', 'Aeolian'}
 
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
