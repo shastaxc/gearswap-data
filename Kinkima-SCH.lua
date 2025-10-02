@@ -1424,7 +1424,22 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",
   })
   sets.midcast.Kaustra.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
-    waist="Hachirin-no-Obi",
+    main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
+    sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    ammo="Ghastly Tathlum +1",     -- 11, __, __, ___,  21, __, __
+    head="Arbatel Bonnet +3",      -- 38, 61, 51, ___,  31, __, __; Ebullience +21%
+    body="Agwu's Robe",            -- 47, 55, 60, ___,  30, 10, __
+    hands="Agwu's Gages",          -- 33, 55, 60, ___,  20,  8,  6
+    legs="Agwu's Slops",           -- 54, 55, 60, ___,  20,  9, __
+    feet="Arbatel Loafers +3",     -- 34, 60, 50, ___,  30, __,  5
+    neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
+    ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
+    ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
+    ring2="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
+    back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
+    waist="Hachirin-no-Obi",       -- __, __, __, ___, ___, __, __
+    -- 334 INT, 461 MAcc, 424 MAB, 255 MAccSk, 480 MDmg, 47 MB Dmg%, 11 MB2 Dmg%; 496 Dark MSkill
   })
   sets.midcast.Kaustra.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {
     waist="Hachirin-no-Obi",
