@@ -580,7 +580,7 @@ function init_gear_sets()
   --   waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] __; HP+10%
   --   -- Merits/Traits/Gifts                                              19
   --   -- HP from belt                                                347
-  --   -- 59 PDT / 51 MDT, 685 MEVA [961/1308 HP] 26 Inquartata
+  --   -- 59 PDT / 51 MDT, 685 MEVA [961/1308 HP] 23 Inquartata
   -- }
   -- Used while idle in PDT mode
   sets.HeavyDef = {
