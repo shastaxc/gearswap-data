@@ -164,6 +164,211 @@ function job_setup()
     },
   }
 
+  song_timers = {
+    ["Foe Lullaby"] =           { enabled=true, base_duration=30, timer_name="Lullaby", append_target_name=true, icon="spells/00376.png" },
+    ["Foe Lullaby II"] =        { enabled=true, base_duration=60, timer_name="Lullaby II", append_target_name=true, icon="spells/00377.png" },
+    ["Horde Lullaby"] =         { enabled=true, base_duration=30, timer_name="Lullaby", append_target_name=true, icon="spells/00376.png" },
+    ["Horde Lullaby II"] =      { enabled=true, base_duration=60, timer_name="Lullaby II", append_target_name=true, icon="spells/00377.png" },
+  }
+
+  song_gear_caps = {
+    Aria=7,
+    Aubade=7,
+    Ballad=8,
+    Capriccio=7,
+    Carol=9,
+    Dirge=7,
+    Etude=9,
+    Fantasia=7,
+    Gavotte=7,
+    Hymnus=7,
+    Madrigal=9,
+    Mambo=9,
+    March=8,
+    Mazurka=7,
+    Minne=9,
+    Minuet=8,
+    Nocturne=7,
+    Operetta=7,
+    Paeon=9,
+    Pastoral=7,
+    Prelude=8,
+    Round=7,
+    Scherzo=8,
+    Sirvente=7,
+    Virelai=7,
+    Elegy=7,
+    Finale=7,
+    Lullaby=9,
+    Requiem=7,
+    Threnody=9,
+  }
+
+  song_gear_stats = {
+    ['main'] = {
+      ["Carnwenhan"] =          { duration=0.5,  all=0 },
+      ["Legato Dagger"] =       { duration=0.05, all=0 },
+      ["Kali"] =                { duration=0.05, all=0 },
+    },
+    ['sub'] = {
+      ["Legato Dagger"] =       { duration=0.05, all=0 },
+      ["Kali"] =                { duration=0.05, all=0 },
+    },
+    ['range'] = {
+      ["Loughnashade"] =        { duration=0,    all=4 },
+      ["Daurdabla"] =           { duration=0.3,  all=0 },
+      ["Gjallarhorn"] =         { duration=0,    all=4 },
+      ["Marsyas"] =             { duration=0.5,  all=0 },
+      ["Blurred Harp"] =        { duration=0,    all=1, Lullaby=2 },
+      ["Blurred Harp +1"] =     { duration=0,    all=2, Ballad=2, Lullaby=2 },
+      ["Linos"] =               { duration=0,    all=3 },
+      ["Nibiru Harp"] =         { duration=0,    all=2, Carol=2 },
+      ["Eminent Harp"] =        { duration=0,    all=2 },
+      ["Crooner's Cithara"] =   { duration=0,    all=0, Ballad=1 },
+      ["Crumhorn"] =            { duration=0,    all=0, Carol=1 },
+      ["Crumhorn +1"] =         { duration=0,    all=0, Carol=2 },
+      ["Crumhorn +2"] =         { duration=0,    all=0, Carol=2 },
+      ["Langeleik"] =           { duration=0,    all=0, Etude=3, March=3 },
+      ["Mythic Harp"] =         { duration=0,    all=0, Etude=1 },
+      ["Mythic Harp +1"] =      { duration=0,    all=0, Etude=2 },
+      ["Rose Harp"] =           { duration=0,    all=0, Etude=1 },
+      ["Rose Harp +1"] =        { duration=0,    all=0, Etude=2 },
+      ["Cantabank's Horn"] =    { duration=0,    all=0, Madrigal=3, Prelude=3 },
+      ["Traversiere"] =         { duration=0,    all=0, Madrigal=1 },
+      ["Traversiere +1"] =      { duration=0,    all=0, Madrigal=2 },
+      ["Traversiere +2"] =      { duration=0,    all=0, Madrigal=2 },
+      ["Vihuela"] =             { duration=0,    all=0, Mambo=3, Mazurka=3 },
+      ["Gemshorn"] =            { duration=0,    all=0, Mambo=1 },
+      ["Gemshorn +1"] =         { duration=0,    all=0, Mambo=2 },
+      ["Hellish Bugle"] =       { duration=0,    all=0, Mambo=1 },
+      ["Hellish Bugle +1"] =    { duration=0,    all=0, Mambo=2 },
+      ["Iron Ram Horn"] =       { duration=0,    all=0, March=2 },
+      ["Faerie Piccolo"] =      { duration=0,    all=0, March=2 },
+      ["San d'Orian Horn"] =    { duration=0,    all=0, March=1 },
+      ["Kingdom Horn"] =        { duration=0,    all=0, March=1 },
+      ["Royal Spearman's Horn"]={ duration=0,    all=0, March=1 },
+      ["Harlequin's Horn"] =    { duration=0,    all=0, Mazurka=2 },
+      ["Syrinx"] =              { duration=0,    all=0, Minne=3, Elegy=3 },
+      ["Harp"] =                { duration=0,    all=0, Minne=1 },
+      ["Harp +1"] =             { duration=0,    all=0, Minne=2 },
+      ["Maple Harp +1"] =       { duration=0,    all=0, Minne=1 },
+      ["Apollo's Flute"] =      { duration=0,    all=0, Minuet=3 },
+      ["Cornette"] =            { duration=0,    all=0, Minuet=1 },
+      ["Cornette +1"] =         { duration=0,    all=0, Minuet=2 },
+      ["Cornette +2"] =         { duration=0,    all=0, Minuet=2 },
+      ["Oneiros Harp"] =        { duration=0,    all=0, Paeon=3 },
+      ["Ebony Harp"] =          { duration=0,    all=0, Paeon=1 },
+      ["Ebony Harp +1"] =       { duration=0,    all=0, Paeon=2 },
+      ["Ebony Harp +2"] =       { duration=0,    all=0, Paeon=2 },
+      ["Angel Flute"] =         { duration=0,    all=0, Prelude=1 },
+      ["Angel Flute +1"] =      { duration=0,    all=0, Prelude=2 },
+      ["Mass Chalemie"] =       { duration=0,    all=0, Hymnus=3, Scherzo=1 },
+      ["Angel Lyre"] =          { duration=0,    all=0, Hymnus=2 },
+      ["Horn"] =                { duration=0,    all=0, Elegy=1 },
+      ["Horn +1"] =             { duration=0,    all=0, Elegy=2 },
+      ["Pan's Horn"] =          { duration=0,    all=0, Finale=3, Lullaby=3 },
+      ["Ney"] =                 { duration=0,    all=0, Finale=2 },
+      ["Military Harp"] =       { duration=0,    all=0, Finale=2 },
+      ["Damani Horn"] =         { duration=0,    all=0, Lullaby=2 },
+      ["Damani Horn +1"] =      { duration=0,    all=0, Lullaby=3 },
+      ["Cradle Horn"] =         { duration=0,    all=0, Lullaby=2 },
+      ["Nursemaid's Harp"] =    { duration=0,    all=0, Lullaby=2 },
+      ["Mary's Horn"] =         { duration=0,    all=0, Lullaby=1 },
+      ["Sorrowful Harp"] =      { duration=0,    all=0, Threnody=3 },
+      ["Piccolo"] =             { duration=0,    all=0, Threnody=1 },
+      ["Piccolo +1"] =          { duration=0,    all=0, Threnody=2 },
+      ["Requiem Flute"] =       { duration=0,    all=0, Requiem=4 },
+      ["Shofar"] =              { duration=0,    all=0, Requiem=2 },
+      ["Shofar +1"] =           { duration=0,    all=0, Requiem=3 },
+      ["Hamelin Flute"] =       { duration=0,    all=0, Requiem=2 },
+      ["Siren Flute"] =         { duration=0,    all=0, Requiem=2 },
+      ["Flute +1"] =            { duration=0,    all=0, Requiem=1 },
+      ["Flute +2"] =            { duration=0,    all=0, Requiem=1 },
+    },
+    ['ammo'] = {},
+    ['head'] = {
+      ["Aoidos' Calot +2"] =    { duration=0,    all=0, Madrigal=1 },
+      ["Fili Calot"] =          { duration=0,    all=0, Madrigal=1 },
+      ["Fili Calot +1"] =       { duration=0,    all=0, Madrigal=1 },
+      ["Fili Calot +2"] =       { duration=0,    all=0, Madrigal=1 },
+      ["Fili Calot +3"] =       { duration=0,    all=0, Madrigal=1 },
+      ["Brioso Roundlet"] =     { duration=0,    all=0, Paeon=1 },
+      ["Brioso Roundlet +1"] =  { duration=0,    all=0, Paeon=1 },
+      ["Brioso Roundlet +2"] =  { duration=0,    all=0, Paeon=1 },
+      ["Brioso Roundlet +3"] =  { duration=0,    all=0, Paeon=2 },
+      ["Brioso Roundlet +4"] =  { duration=0,    all=0, Paeon=2 },
+      ["Mousai Turban"] =       { duration=0,    all=0, Etude=1 },
+      ["Mousai Turban +1"] =    { duration=0,    all=0, Etude=2 },
+    },
+    ['neck'] = {
+      ["Aoidos' Matinee"] =     { duration=0.10, all=0 },
+      ["Brioso Whistle"] =      { duration=0,    all=1 },
+      ["Mnbw. Whistle"] =       { duration=0,    all=2 },
+      ["Moonbow Whistle"] =     { duration=0,    all=2 },
+      ["Mnbw. Whistle +1"] =    { duration=0,    all=3 },
+      ["Moonbow Whistle +1"] =  { duration=0,    all=3 },
+    },
+    ['left_ear'] = {},
+    ['right_ear'] = {},
+    ['body'] = {
+      ["Aoidos' Hongreline +2"]={ duration=0.10, all=0, Minuet=1 },
+      ["Fili Hongreline"] =     { duration=0.11, all=0, Minuet=1 },
+      ["Fili Hongreline +1"] =  { duration=0.12, all=0, Minuet=1 },
+      ["Fili Hongreline +2"] =  { duration=0.13, all=0, Minuet=1 },
+      ["Fili Hongreline +3"] =  { duration=0.14, all=0, Minuet=1 },
+      ["Mou. Manteel"] =        { duration=0,    all=0, Threnody=1 },
+      ["Mousai Manteel"] =      { duration=0,    all=0, Threnody=1 },
+      ["Mou. Manteel +1"] =     { duration=0,    all=0, Threnody=2 },
+      ["Mousai Manteel +1"] =   { duration=0,    all=0, Threnody=2 },
+    },
+    ['hands'] = {
+      ["Brioso Cuffs"] =        { duration=0,    all=0, Lullaby=1 },
+      ["Brioso Cuffs +1"] =     { duration=0,    all=0, Lullaby=1 },
+      ["Brioso Cuffs +2"] =     { duration=0,    all=0, Lullaby=1 },
+      ["Brioso Cuffs +3"] =     { duration=0,    all=0, Lullaby=2 },
+      ["Brioso Cuffs +4"] =     { duration=0,    all=0, Lullaby=2 },
+      ["Aoidos' Manchettes +2"]={ duration=0,    all=0, March=1 },
+      ["Fili Manchettes"] =     { duration=0,    all=0, March=1 },
+      ["Fili Manchettes +1"] =  { duration=0,    all=0, March=1 },
+      ["Fili Manchettes +2"] =  { duration=0,    all=0, March=1 },
+      ["Fili Manchettes +3"] =  { duration=0,    all=0, March=1 },
+      ["Mousai Gages"] =        { duration=0,    all=0, Carol=1 },
+      ["Mousai Gages +1"] =     { duration=0,    all=0, Carol=2 },
+    },
+    ['left_ring'] = {},
+    ['right_ring'] = {},
+    ['back'] = {
+      ["Intarabus's Cape"] =    { duration=0,    all=0, Madrigal=1, Prelude=1 },
+    },
+    ['waist'] = {},
+    ['legs'] = {
+      ["Inyanga Shalwar"] =     { duration=0.12, all=0 },
+      ["Inyanga Shalwar +1"] =  { duration=0.15, all=0 },
+      ["Inyanga Shalwar +2"] =  { duration=0.17, all=0 },
+      ["Aoidos' Rhingrave +2"] ={ duration=0,    all=0, Ballad=1 },
+      ["Fili Rhingrave"] =      { duration=0,    all=0, Ballad=1 },
+      ["Fili Rhingrave +1"] =   { duration=0,    all=0, Ballad=1 },
+      ["Fili Rhingrave +2"] =   { duration=0,    all=0, Ballad=1 },
+      ["Fili Rhingrave +3"] =   { duration=0,    all=0, Ballad=1 },
+      ["Mousai Seraweels"] =    { duration=0,    all=0, Minne=1 },
+      ["Mousai Seraweels +1"] = { duration=0,    all=0, Minne=2 },
+    },
+    ['feet'] = {
+      ["Brioso Slippers"] =     { duration=0.10, all=0 },
+      ["Brioso Slippers +1"] =  { duration=0.11, all=0 },
+      ["Brioso Slippers +2"] =  { duration=0.13, all=0 },
+      ["Brioso Slippers +3"] =  { duration=0.15, all=0 },
+      ["Brioso Slippers +4"] =  { duration=0.15, all=0 },
+      ["Aoidos' Cothurnes +2"] ={ duration=0,    all=0, Scherzo=1 },
+      ["Fili Cothurnes"] =      { duration=0,    all=0, Scherzo=1 },
+      ["Fili Cothurnes +1"] =   { duration=0,    all=0, Scherzo=1 },
+      ["Fili Cothurnes +2"] =   { duration=0,    all=0, Scherzo=1 },
+      ["Fili Cothurnes +3"] =   { duration=0,    all=0, Scherzo=1 },
+      ["Mousai Crackows"] =     { duration=0,    all=0, Mambo=1 },
+      ["Mousai Crackows +1"] =  { duration=0,    all=0, Mambo=2 },
+    },
+  }
+
   set_main_keybinds:schedule(2)
 end
 
@@ -610,67 +815,6 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
   }
 
-  -- Song-specific gear to enhance party buff songs.
-  sets.midcast.Ballad = {
-    -- legs="Fili Rhingrave +1",
-  }
-  sets.midcast.Minne = {
-    -- legs="Mousai Seraweels +1",
-  }
-  sets.midcast.Minuet = {
-    -- body="Fili Hongreline +1", -- No potency change with +1
-  }
-  sets.midcast.Madrigal = {
-    -- head="Fili Calot +1", -- No potency change with +1
-    -- Ambuscape cape has Madrigal+1 but will be combined in later
-  }
-  sets.midcast.Prelude = {
-    -- Ambuscape cape has Prelude+1 but will be combined in later
-  }
-  sets.midcast.March = {
-    -- hands="Fili Manchettes +1", -- No potency change with +1
-  }
-  sets.midcast["Sentinel's Scherzo"] = {
-    feet="Fili Cothurnes +1",
-  }
-  sets.midcast.Carol = {
-    -- hands="Mousai Gages +1",
-  }
-  sets.midcast.Paeon = {
-    -- head="Brioso Roundlet +3",
-  }
-  sets.midcast.Mambo = {
-    -- feet="Mousai Crackows"
-  }
-  sets.midcast.Etude = {
-    -- head="Mousai Turban +1",
-  }
-
-  -- Song-specific gear to enhance offensive songs.
-  sets.midcast.Lullaby = {
-    -- hands="Brioso Cuffs +3",
-  }
-  sets.midcast.HonorMarch = {
-    range="Marsyas",
-    -- hands="Fili Manchettes +1",
-  }
-  sets.midcast.Threnody = {
-    -- body="Mou. Manteel +1",
-  }
-  sets.midcast['Adventurer\'s Dirge'] = {
-    range="Marsyas",
-    -- hands="Bihu Cuffs +3",
-  }
-  sets.midcast['Foe Sirvente'] = {
-    -- head="Bihu Roundlet +3",
-  }
-  sets.midcast['Magic Finale'] = {
-    -- legs="Fili Rhingrave +1",
-  }
-  sets.midcast["Chocobo Mazurka"] = {
-    range="Marsyas",
-  }
-
   -- For song buffs (duration and AF3 set bonus)
   -- Song-specific gear will be combined in later
   sets.midcast.SongEnhancing = {
@@ -690,8 +834,6 @@ function init_gear_sets()
     -- feet="Brioso Slippers +3",
     -- neck="Mnbw. Whistle +1",
   }
-
-  -- For the following song sets, instrument may be replaced later situationally
 
   -- For song debuffs (duration primary, accuracy secondary)
   sets.midcast.SongEnfeeble = {
@@ -723,6 +865,72 @@ function init_gear_sets()
     -- Set bonuses                 __, __, 60, ___
   }) -- 266 CHR, 65% Duration, 542 M.Acc, 255 M.Acc skill
 
+  -- Placeholder song; minimize duration to make it easy to overwrite.
+  sets.midcast.SongPlaceholder = set_combine(sets.midcast.SongEnhancing, {
+    range=info.ExtraSongInstrument,
+  })
+
+
+  -- Overlays on top of SongEnhancing, SongEnfeeble, SongEnfeebleAcc, and SongPlaceholder
+  -- Party buff songs
+  sets.midcast.Aria = {
+    -- range="Loughnashade",
+  }
+  sets.midcast.Ballad = {
+    -- legs="Fili Rhingrave +1",
+  }
+  sets.midcast.Carol = {
+    -- hands="Mousai Gages +1",
+  }
+  sets.midcast.Etude = {
+    -- head="Mousai Turban +1",
+  }
+  sets.midcast.Madrigal = {
+    -- head="Fili Calot +1", -- No potency change with +1
+    -- Ambuscape cape has Madrigal+1 but will be combined in later
+  }
+  sets.midcast.Mambo = {
+    -- feet="Mousai Crackows"
+  }
+  sets.midcast.March = {
+    -- hands="Fili Manchettes +1", -- No potency change with +1
+  }
+  sets.midcast.Mazurka = {
+    range="Marsyas",
+  }
+  sets.midcast.Minne = {
+    -- legs="Mousai Seraweels +1",
+  }
+  sets.midcast.Minuet = {
+    -- body="Fili Hongreline +1", -- No potency change with +1
+  }
+  sets.midcast.Paeon = {
+    -- head="Brioso Roundlet +3",
+  }
+  sets.midcast.Prelude = {
+    -- Ambuscape cape has Prelude+1 but will be combined in later
+  }
+  sets.midcast.Scherzo = {
+    feet="Fili Cothurnes +1",
+  }
+
+  -- Offensive songs
+  sets.midcast.Finale = {
+    -- legs="Fili Rhingrave +1",
+  }
+  sets.midcast.Lullaby = {
+    -- hands="Brioso Cuffs +3",
+  }
+  sets.midcast.Threnody = {
+    -- body="Mou. Manteel +1",
+  }
+
+  -- Individual song customizations
+  sets.midcast["Honor March"] = {
+    range="Marsyas",
+    -- hands="Fili Manchettes +1",
+  }
+
   -- For Horde Lullaby increased AOE range
   -- Horde II 7' radius = 567 skill
   -- Horde II 8' radius = 648 skill
@@ -731,11 +939,6 @@ function init_gear_sets()
     ring2="Stikini Ring +1",
     -- ear2="Darkside Earring",
   }
-
-  -- Placeholder song; minimize duration to make it easy to overwrite.
-  sets.midcast.SongPlaceholder = set_combine(sets.midcast.SongEnhancing, {
-    range=info.ExtraSongInstrument,
-  })
 
   -- Other general spells and classes.
 
@@ -1128,10 +1331,11 @@ function job_precast(spell, action, spellMap, eventArgs)
             return
         end
     end]]
-    if spell.name == 'Honor March' then
+    if spell.name == 'Aria of Passion' then
+      equip({range="Loughnashade"})
+    elseif spell.name == 'Honor March' then
       equip({range="Marsyas"})
-    end
-    if string.find(spell.name,'Lullaby') then
+    elseif spellMap == 'Lullaby' then
       if buffactive.Troubadour then
         equip({range="Marsyas"})
       elseif state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
@@ -1148,6 +1352,20 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
+    end
+  elseif spell.type == 'BardSong' then
+    if spell.name == 'Aria of Passion' then
+      equip({range="Loughnashade"})
+    elseif spell.name == 'Honor March' then
+      equip({range="Marsyas"})
+    elseif spellMap == 'Lullaby' then
+      if buffactive.Troubadour then
+        equip({range="Marsyas"})
+      elseif state.LullabyMode.value == 'Harp' and spell.english:contains('Horde') then
+        equip({range="Daurdabla"})
+      else
+        equip({range="Gjallarhorn"})
+      end
     end
   end
 
@@ -1182,9 +1400,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'BardSong' then
-    if spell.name == 'Honor March' then
-      equip({range="Marsyas"})
-    elseif string.find(spell.name,'Lullaby') then
+    if spellMap == 'Lullaby' then
       if buffactive.Troubadour then
         -- Increase curation
         equip({range="Marsyas"})
@@ -1224,8 +1440,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  if spell.english:contains('Lullaby') and not spell.interrupted then
-    get_lullaby_duration(spell)
+  if song_timers[spell.english] and song_timers[spell.english].enabled and not spell.interrupted then
+    get_song_duration(spell, spellMap)
   end
 end
 
@@ -1510,7 +1726,14 @@ function get_song_class(spell)
   end
 end
 
-function get_lullaby_duration(spell)
+function get_song_duration(spell, spellMap)
+  local song_timer_info = song_timers[spell.english]
+  local base = song_timer_info.base_duration
+
+  if not base or base == 0 then
+    return
+  end
+
   local self = windower.ffxi.get_player()
 
   local troubadour = false
@@ -1525,53 +1748,53 @@ function get_lullaby_duration(spell)
       if v == 231 then marcato = true end
   end
 
-  local mult = 1
+  local gear_mult = 1
 
-  if player.equipment.range == 'Daurdabla' then mult = mult + 0.3 end -- change to 0.25 with 90 Daur
-  if player.equipment.range == "Gjallarhorn" then mult = mult + 0.4 end -- change to 0.3 with 95 Gjall
-  if player.equipment.range == "Marsyas" then mult = mult + 0.5 end
+  -- Get duration multiplier from gear
+  -- "all" and spellMap enhancements add 10% duration each
+  -- "song duration" gear adds what it specifies too
 
-  if player.equipment.main == "Carnwenhan" then mult = mult + 0.5 end -- 0.1 for 75, 0.4 for 95, 0.5 for 99/119
-  if player.equipment.main == "Legato Dagger" then mult = mult + 0.05 end
-  if player.equipment.main == "Kali" then mult = mult + 0.05 end
-  if player.equipment.sub == "Kali" then mult = mult + 0.05 end
-  if player.equipment.sub == "Legato Dagger" then mult = mult + 0.05 end
-  if player.equipment.neck == "Aoidos' Matinee" then mult = mult + 0.1 end
-  if player.equipment.neck == "Mnbw. Whistle" then mult = mult + 0.2 end
-  if player.equipment.neck == "Mnbw. Whistle +1" then mult = mult + 0.3 end
-  if player.equipment.body == "Fili Hongreline +1" then mult = mult + 0.12 end
-  if player.equipment.legs == "Inyanga Shalwar +1" then mult = mult + 0.15 end
-  if player.equipment.legs == "Inyanga Shalwar +2" then mult = mult + 0.17 end
-  if player.equipment.feet == "Brioso Slippers" then mult = mult + 0.1 end
-  if player.equipment.feet == "Brioso Slippers +1" then mult = mult + 0.11 end
-  if player.equipment.feet == "Brioso Slippers +2" then mult = mult + 0.13 end
-  if player.equipment.feet == "Brioso Slippers +3" then mult = mult + 0.15 end
-  if player.equipment.hands == 'Brioso Cuffs +1' then mult = mult + 0.1 end
-  if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.1 end
-  if player.equipment.hands == 'Brioso Cuffs +3' then mult = mult + 0.2 end
+  for slot,gear in pairs(silibs.get_last_midcast_set()) do
+    -- Discover player's equipment in this slot
+    local gear_name = type(gear) == 'table' and gear.name or gear
+    if gear_name then
+      -- Check if it's in the list of song gear stats
+      local stats = song_gear_stats[slot][gear_name]
+      if stats then
+        local potency = stats.all + (spellMap and stats.spellMap or 0)
+        gear_mult = gear_mult + stats.duration + (potency * 0.1)
+      end
+    end
+  end
 
   --JP Duration Gift
   if self.job_points.brd.jp_spent >= 1200 then
-    mult = mult + 0.05
+    gear_mult = gear_mult + 0.05
   end
 
   if troubadour then
-    mult = mult * 2
+    gear_mult = gear_mult * 2
   end
 
-  if spell.en == "Foe Lullaby II" or spell.en == "Horde Lullaby II" then
-    base = 60
-  elseif spell.en == "Foe Lullaby" or spell.en == "Horde Lullaby" then
-    base = 30
+  if spellMap == 'Hymnus' or spellMap == 'Mazurka' or spellMap == 'Scherzo' then
+    if soulvoice then
+      gear_mult = gear_mult * 2
+    elseif marcato then
+      gear_mult = gear_mult * 1.5
+    end
   end
 
-  totalDuration = math.floor(mult * base)
+  local totalDuration = math.floor(base * gear_mult)
 
-  -- Job Points Buff
-  totalDuration = totalDuration + self.job_points.brd.lullaby_duration
-  if troubadour then
+  -- Additional modifiers after gear
+
+  if spellMap == 'Lullaby' then
+    -- Job Points Buff
     totalDuration = totalDuration + self.job_points.brd.lullaby_duration
-    -- adding it a second time if Troubadour up
+    if troubadour then
+      totalDuration = totalDuration + self.job_points.brd.lullaby_duration
+      -- adding it a second time if Troubadour up
+    end
   end
 
   if clarioncall then
@@ -1588,12 +1811,19 @@ function get_lullaby_duration(spell)
     totalDuration = totalDuration + self.job_points.brd.marcato_effect
   end
 
+  -- TODO: Add Tenuto job point duration increase
+
   -- Create the custom timer
-  if spell.english == "Foe Lullaby II" or spell.english == "Horde Lullaby II" then
-    send_command('@timers c "Lullaby II ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00377.png')
-  elseif spell.english == "Foe Lullaby" or spell.english == "Horde Lullaby" then
-    send_command('@timers c "Lullaby ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00376.png')
+  if song_timer_info.enabled then
+    local timer_name = song_timer_info.timer_name
+    if song_timer_info.append_target_name then
+      timer_name = timer_name..' ['..spell.target.name..']'
+    end
+    
+    send_command('@timers c "'..timer_name..'" ' ..totalDuration.. ' down '..song_timer_info.icon)
   end
+
+  return totalDuration
 end
 
 function check_gear()
