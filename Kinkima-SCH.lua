@@ -470,6 +470,7 @@ function init_gear_sets()
   --     Idle
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
+  -- Used when Sublimation is not charging
   sets.passive_refresh = {
     main="Mpaca's Staff",           -- __/__, ___ [ 2]
     sub="Khonsu",                   --  6/ 6, ___ [__]
@@ -491,6 +492,7 @@ function init_gear_sets()
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
+  -- This variant is used when you are above 80% MP and Sublimation is charging.
   sets.Sublimation = {
     main="Siriti",                      -- __/__, ___ [ 1, __]
     sub="Genmei Shield",                -- 10/__, ___ [__, __]
@@ -509,6 +511,7 @@ function init_gear_sets()
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
     -- 53 PDT / 36 MDT, 589 M.Eva [16 Sublimation, 2 Refresh]
   }
+  -- This variant is used when you are below 80% MP and Sublimation is charging.
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]
     sub="Khonsu",                       --  6/ 6, ___ [__, __]
