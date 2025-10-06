@@ -164,6 +164,7 @@ function job_setup()
     },
   }
 
+  -- All songs in this table will have custom timers created when casted.
   song_timers = {
     ["Foe Lullaby"] =           { enabled=true, base_duration=30, timer_name="Lullaby", append_target_name=true, icon="spells/00376.png" },
     ["Foe Lullaby II"] =        { enabled=true, base_duration=60, timer_name="Lullaby II", append_target_name=true, icon="spells/00377.png" },
