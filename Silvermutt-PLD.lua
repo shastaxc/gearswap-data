@@ -1224,6 +1224,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   equip(select_weapons())
 
+  -- Handle weapon swaps
+  if spell.type == 'WeaponSkill' or spell.english == 'Chivalry' then
+    -- Don't change weapons, need to keep TP
+    equip({main="",sub="",range=""})
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1254,6 +1260,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
     -- Override with weapons to be equipped
     equip(select_weapons())
+  end
+
+  -- Don't change weapons, need to keep TP
+  if spell.type == 'WeaponSkill' or spell.english == 'Chivalry' then
+    equip({main="",sub="",range=""})
   end
 
   -- If slot is locked, keep current equipment on
