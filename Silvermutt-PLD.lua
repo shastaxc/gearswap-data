@@ -602,14 +602,14 @@ function init_gear_sets()
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
   sets.defense.MDT = set_combine(sets.HeavyDef, {
-    ammo="Flame Sachet", -- Swap for different element sachet as needed
+    ammo="Thunder Sachet", -- Swap for different element sachet as needed
     neck="Warder's Charm +1",
     ear1="Sanare Earring",
     ring2="Shadow Ring",
   })
   sets.defense.PDT.Engaged = set_combine(sets.HeavyDef.Engaged, {})
   sets.defense.MDT.Engaged = set_combine(sets.HeavyDef.Engaged, {
-    ammo="Flame Sachet", -- Swap for different element sachet as needed
+    ammo="Thunder Sachet", -- Swap for different element sachet as needed
     hands="Sakpata's Gauntlets",
     neck="Warder's Charm +1",
     ear1="Odnowa Earring +1",
