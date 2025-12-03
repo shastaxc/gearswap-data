@@ -215,8 +215,8 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'RDM', 'OverdriveDD', 'Nuke'}
-  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'RDM', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'MagicTank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'RDM', 'OverdriveDD', 'Nuke'}
+  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'MagicTank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'RDM', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
 
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
@@ -228,6 +228,7 @@ function job_setup()
 	defaultManeuvers = {
     RDM =           L{'Wind', 'Earth', 'Light'},
 		Tank =          L{'Light', 'Fire', 'Fire'},
+		MagicTank =     L{'Light', 'Fire', 'Water'},
 		RangedSpam =    L{'Wind', 'Wind', 'Wind'},
 		RangedSC =      L{'Wind', 'Wind', 'Fire'},
 		Heal =          L{'Light', 'Light', 'Dark'},
@@ -258,6 +259,22 @@ function job_setup()
       slot12="Auto-Repair Kit III",
     },
     ['Tank'] = T{
+      frame="Valoredge Frame",
+      head="Soulsoother Head",
+      slot01="Steam Jacket",
+      slot02="Strobe",
+      slot03="Strobe II",
+      slot04="Mana Jammer III",
+      slot05="Mana Jammer IV",
+      slot06="Armor Plate II",
+      slot07="Armor Plate IV",
+      slot08="Barrier Module II",
+      slot09="Auto-Repair Kit IV",
+      slot10="Optic Fiber",
+      slot11="Optic Fiber II",
+      slot12="Flashbulb",
+    },
+    ['MagicTank'] = T{
       frame="Valoredge Frame",
       head="Soulsoother Head",
       slot01="Steam Jacket",
@@ -678,6 +695,7 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
     -- [11 PDT/5 MDT, 429 M.Eva] {Pet: 22 PDT /22 MDT, 122 Lv | 10 DA, 14 STP, 290 Acc/255 Racc, 40 Att/20 Ratt, 22 Haste, 13 Regen, 23 Enmity}
   }
+  sets.idle.PetEngaged.MagicTank = set_combine(sets.idle.PetEngaged.Tank, {})
   -- Haste does not affect the ranged pet
   sets.idle.PetEngaged.RangedSC = {
     range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
@@ -1479,6 +1497,8 @@ function init_gear_sets()
     -- 19 STP, 218 Acc <0 DA, 3 TA, 0 QA> [50 PDT/31 MDT, 496 M.Eva] {Pet: 17 PDT /17 MDT, 122 Lv | 10 DA, 8 STP, 270 Acc/255 Racc, 20 Att/20 Ratt, 18 Haste, 10 Regen, 11 Enmity}
   }
   sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {})
+  sets.engaged.PetMagicTank = set_combine(sets.engaged.PetTank, {})
+  sets.engaged.PetMagicTank.Acc = set_combine(sets.engaged.PetTank.Acc, {})
   sets.engaged.PetRangedSC = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Pitre Taj +3",              -- __, 37 <__, __, __> [__/__,  63] {__/__, ___ | __, __, 37/37, 57/57, __,  5, __}
@@ -1594,6 +1614,8 @@ function init_gear_sets()
     -- 37 STP, 327 Acc <15 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 493 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 304 Acc/284 Racc, 40 Att/20 Ratt, 0 Haste, 10 Regen, 0 Enmity}
   }
   sets.engaged.HalfsiesTank.Acc = set_combine(sets.engaged.HalfsiesTank, {})
+  sets.engaged.HalfsiesMagicTank = set_combine(sets.engaged.HalfsiesTank, {})
+  sets.engaged.HalfsiesMagicTank.Acc = set_combine(sets.engaged.HalfsiesTank.Acc, {})
   sets.engaged.HalfsiesRangedSC = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Mpaca's Cap",               -- __, 55 < 5,  3, __> [ 7/__,  69] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
@@ -1797,7 +1819,7 @@ function customize_idle_set(idleSet)
   end
 
   if pet.isvalid and pet.status == 'Engaged' then
-    if state.HybridMode.value == 'Pet' and state.PetMode.value ~= 'Tank' then
+    if state.HybridMode.value == 'Pet' and state.PetMode.value ~= 'Tank' and state.PetMode.value ~= 'MagicTank' then
       -- If Inhibitor or Speedloader are not equipped and pet is > 1000 TP, equip Pet WS set.
       local att = pet.attachments
       if att and not att['inhibitor'] and not att['inhibitor ii']
