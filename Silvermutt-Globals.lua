@@ -110,6 +110,7 @@ function define_global_sets()
   sets.org.global[6] = {back="Nexus Cape"}
   sets.org.global[7] = {back="Orpheus's Sash"}
   sets.org.global[8] = {back="Hachirin-no-Obi"}
+  sets.org.global[9] = {neck="Airmid's Gorget"}
   include('Global-Augments.lua')
   include('Silvermutt-Augments.lua')
 end
